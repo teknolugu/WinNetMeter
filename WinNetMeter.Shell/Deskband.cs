@@ -12,8 +12,8 @@ namespace WinNetMeter.Shell
 {
     [ComVisible(true)]
     [Guid("0F0283BE-FADD-4EAA-9984-9C1822AE469A")]
-    [CSDeskBand.CSDeskBandRegistration(Name = "WinNetMeter", ShowDeskBand = false)]
-    public class Deskband : CSDeskBand.CSDeskBandWin
+    [CSDeskBandRegistration(Name = "WinNetMeter", ShowDeskBand = true)]
+    public class Deskband : CSDeskBandWin
     {
         private static Control _control;
 

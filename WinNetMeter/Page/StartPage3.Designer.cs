@@ -72,6 +72,7 @@
             // lblDetecting
             // 
             this.lblDetecting.AutoSize = true;
+            this.lblDetecting.BackColor = System.Drawing.Color.Transparent;
             this.lblDetecting.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetecting.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDetecting.Location = new System.Drawing.Point(259, 296);

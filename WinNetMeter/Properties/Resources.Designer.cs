@@ -153,6 +153,16 @@ namespace WinNetMeter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Join_our_development_256px {
+            get {
+                object obj = ResourceManager.GetObject("Join_our_development_256px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_arrow_down_black_16px {
             get {
                 object obj = ResourceManager.GetObject("outline_arrow_down_black_16px", resourceCulture);
@@ -186,6 +196,16 @@ namespace WinNetMeter.Properties {
         internal static System.Drawing.Bitmap outline_arrow_up_white_16px {
             get {
                 object obj = ResourceManager.GetObject("outline_arrow_up_white_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_192px {
+            get {
+                object obj = ResourceManager.GetObject("refresh_192px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

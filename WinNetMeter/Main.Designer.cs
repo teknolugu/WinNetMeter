@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnIntegrate = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
             this.BtnDatabase = new System.Windows.Forms.Button();
             this.BtnCustomization = new System.Windows.Forms.Button();
@@ -89,8 +90,15 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnRegister = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,11 +111,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.BtnIntegrate);
             this.panel1.Controls.Add(this.BtnAbout);
             this.panel1.Controls.Add(this.BtnDatabase);
             this.panel1.Controls.Add(this.BtnCustomization);
@@ -119,8 +129,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 483);
+            this.panel1.Size = new System.Drawing.Size(201, 483);
             this.panel1.TabIndex = 0;
+            // 
+            // BtnIntegrate
+            // 
+            this.BtnIntegrate.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnIntegrate.FlatAppearance.BorderSize = 0;
+            this.BtnIntegrate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIntegrate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIntegrate.Image = global::WinNetMeter.Properties.Resources.Database_filled_16px;
+            this.BtnIntegrate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnIntegrate.Location = new System.Drawing.Point(3, 237);
+            this.BtnIntegrate.Name = "BtnIntegrate";
+            this.BtnIntegrate.Size = new System.Drawing.Size(235, 46);
+            this.BtnIntegrate.TabIndex = 7;
+            this.BtnIntegrate.Text = "          Integration";
+            this.BtnIntegrate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnIntegrate.UseVisualStyleBackColor = false;
+            this.BtnIntegrate.Click += new System.EventHandler(this.BtnIntegrate_Click);
             // 
             // BtnAbout
             // 
@@ -225,7 +252,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape3});
-            this.shapeContainer2.Size = new System.Drawing.Size(238, 483);
+            this.shapeContainer2.Size = new System.Drawing.Size(201, 483);
             this.shapeContainer2.TabIndex = 5;
             this.shapeContainer2.TabStop = false;
             // 
@@ -384,6 +411,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(207, -7);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -411,7 +439,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(617, 535);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnSaveGeneral
@@ -453,7 +481,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(617, 535);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Log";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnSaveLog
@@ -599,7 +627,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(617, 535);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Customize";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnSaveStyle
@@ -792,6 +820,80 @@
             this.lineShape1.Y1 = -7;
             this.lineShape1.Y2 = 473;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.BtnRegister);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.shapeContainer5);
+            this.tabPage4.Location = new System.Drawing.Point(23, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(617, 535);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Integration";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(31, 84);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(347, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "If WinNetMeter not working properly in Taskbar, you can try Re-Register";
+            // 
+            // BtnRegister
+            // 
+            this.BtnRegister.Location = new System.Drawing.Point(22, 154);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(162, 64);
+            this.BtnRegister.TabIndex = 15;
+            this.BtnRegister.Text = "Re-Register";
+            this.BtnRegister.UseVisualStyleBackColor = true;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(29, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 25);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Integration";
+            // 
+            // shapeContainer5
+            // 
+            this.shapeContainer5.Location = new System.Drawing.Point(3, 3);
+            this.shapeContainer5.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer5.Name = "shapeContainer5";
+            this.shapeContainer5.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape7});
+            this.shapeContainer5.Size = new System.Drawing.Size(611, 529);
+            this.shapeContainer5.TabIndex = 14;
+            this.shapeContainer5.TabStop = false;
+            // 
+            // lineShape7
+            // 
+            this.lineShape7.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape7.Name = "lineShape7";
+            this.lineShape7.X1 = 19;
+            this.lineShape7.X2 = 551;
+            this.lineShape7.Y1 = 51;
+            this.lineShape7.Y2 = 51;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(31, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(501, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Before click Re-Register, please remove WinNetMeter from Toolbar in Taskbar for b" +
+    "etter troubleshooting.";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,6 +926,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -891,6 +995,14 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private Cyotek.Windows.Forms.ColorGrid colorGrid1;
         private System.Windows.Forms.Button btnSaveStyle;
+        private System.Windows.Forms.Button BtnIntegrate;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BtnRegister;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer5;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
+        private System.Windows.Forms.Label label17;
     }
 }
 

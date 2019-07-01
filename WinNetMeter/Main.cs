@@ -14,6 +14,7 @@ namespace WinNetMeter
         public Main()
         {
             InitializeComponent();
+            panel1.Width = 240;
             NetworkIntefaceModule netModule = new NetworkIntefaceModule();
             var adapters = netModule.GetNetworkInterface();
             foreach (String adapter in adapters)
@@ -242,6 +243,27 @@ namespace WinNetMeter
 
         private void Main_Load(object sender, EventArgs e)
         {
+        }
+
+        private void BtnIntegrate_Click(object sender, EventArgs e)
+        {
+            PnlSelector.Location = new Point(0, BtnDatabase.Location.Y);
+            setSelected(BtnDatabase, BtnGeneral, BtnCustomization, BtnAbout);
+            tabControl1.SelectedTab = tabPage4;
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Integration integration = new Integration();
+                integration.ReinstallToolbar();
+                MessageBox.Show("Re-Register .dll Successfully.", "WinNetMeter Integration");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Something happened. {ex.Message}", "WinNetMeter Integration");
+            }
         }
     }
 }

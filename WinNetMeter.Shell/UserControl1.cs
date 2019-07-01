@@ -5,7 +5,9 @@ using System.Windows.Forms;
 using WinNetMeter.Shell.Controller;
 using WinNetMeter.Shell.Helper;
 using System.IO;
+using System.Threading;
 using WinNetMeter.Shell.Model;
+using System.Drawing.Text;
 
 namespace WinNetMeter.Shell
 {
@@ -15,66 +17,79 @@ namespace WinNetMeter.Shell
         private NetworkMonitor monitor;
         private string Format;
         private RegistryManager registryManager = new RegistryManager();
+        private StyleConfiguration styleConfiguration;
+        private DbManager dataManager = new DbManager();
 
         public UserControl1(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
-            
+            ConfigureStyle();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if(m.Msg == NativeMethods.WM_RESTART)
+            {
+                RestartDesk();
+            }
+            base.WndProc(ref m);
+        }
+
+        private void RestartDesk()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+            UserControl1_Load(new EventArgs(), new EventArgs());
+            ConfigureStyle();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-
-            var styleConfig = registryManager.GetStyleConfiguration();
-
-            LblDownload.ForeColor = ColorTranslator.FromHtml(styleConfig.TextColor);
-            LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfig.TextColor);
-            LblDownload.Font = new Font(styleConfig.FontFamily, LblDownload.Font.Size);
-            LblUpload.Font = new Font(styleConfig.FontFamily, LblUpload.Font.Size);
-
+            registryManager.SaveHwnd(this.Handle.ToString());
+            
             //get taskbar color
+
             var taskBar = new TaskBarHelper();
             Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
 
             bool IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
 
-            if (styleConfig.Icon == IconStyle.Arrow && IsDark == false)
+            if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
             {
                 pictDownload.Image = Properties.Resources.down_black_16px;
                 pictUpload.Image = Properties.Resources.up_black_16px;
+
+                pictDownload.Location = new Point(10, 14);
             }
-            else if (styleConfig.Icon == IconStyle.Arrow && IsDark)
+            else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
             {
                 pictDownload.Image = Properties.Resources.down_white_16px;
                 pictUpload.Image = Properties.Resources.up_white_16px;
+
+                pictDownload.Location = new Point(10, 14);
             }
-            else if (styleConfig.Icon == IconStyle.TriangleArrow && IsDark == false)
+            else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
             {
                 pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
 
-                pictDownload.Location = new Point(3, 15);
             }
-            else if (styleConfig.Icon == IconStyle.TriangleArrow && IsDark)
+            else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
             {
                 pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
-
-                pictDownload.Location = new Point(3, 15);
             }
-            else if (styleConfig.Icon == IconStyle.Outline_Arrow && IsDark == false)
+            else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
             {
                 pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
 
-                pictDownload.Location = new Point(3, 15);
             }
-            else if (styleConfig.Icon == IconStyle.Outline_Arrow && IsDark)
+            else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
             {
                 pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
 
-                pictDownload.Location = new Point(3, 15);
             }
 
             var config = registryManager.GetGeneralConfiguration();
@@ -88,6 +103,19 @@ namespace WinNetMeter.Shell
                 monitor.Start();
                 timer1.Start();
             }
+        }
+
+        private void ConfigureStyle()
+        {
+            this.BackColor = ColorTranslator.FromHtml("#000");
+
+            styleConfiguration = registryManager.GetStyleConfiguration();
+
+            LblDownload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
+            LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
+
+            LblDownload.Font = new Font(styleConfiguration.FontFamily, LblDownload.Font.Size);
+            LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -115,9 +143,27 @@ namespace WinNetMeter.Shell
             }
         }
 
-        private void UserControl1_Resize(object sender, EventArgs e)
+        private void LblUpload_Click(object sender, EventArgs e)
         {
-            
+            RestartDesk();
+        }
+
+
+    }
+    public class MyLabel : Label
+    {
+        private TextRenderingHint _textRenderingHint = TextRenderingHint.SystemDefault;
+
+        public TextRenderingHint TextRenderingHint
+        {
+            get { return _textRenderingHint; }
+            set { _textRenderingHint = value; }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            e.Graphics.TextRenderingHint = _textRenderingHint;
+            base.OnPaint(e);
         }
     }
 }

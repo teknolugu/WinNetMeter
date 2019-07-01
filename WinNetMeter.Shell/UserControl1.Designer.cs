@@ -29,33 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.LblDownload = new System.Windows.Forms.Label();
             this.pictDownload = new System.Windows.Forms.PictureBox();
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.LblUpload = new System.Windows.Forms.Label();
+            this.LblDownload = new WinNetMeter.Shell.MyLabel();
+            this.LblUpload = new WinNetMeter.Shell.MyLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LblDownload
-            // 
-            this.LblDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblDownload.BackColor = System.Drawing.Color.Black;
-            this.LblDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblDownload.Location = new System.Drawing.Point(30, 15);
-            this.LblDownload.Name = "LblDownload";
-            this.LblDownload.Size = new System.Drawing.Size(68, 12);
-            this.LblDownload.TabIndex = 0;
-            this.LblDownload.Text = "......";
-            this.LblDownload.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pictDownload
             // 
             this.pictDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictDownload.Image = global::WinNetMeter.Shell.Properties.Resources.down_white_16px;
-            this.pictDownload.Location = new System.Drawing.Point(10, 14);
+            this.pictDownload.Location = new System.Drawing.Point(3, 15);
             this.pictDownload.Name = "pictDownload";
             this.pictDownload.Size = new System.Drawing.Size(12, 15);
             this.pictDownload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -66,7 +53,7 @@
             // 
             this.pictUpload.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictUpload.Image = global::WinNetMeter.Shell.Properties.Resources.up_white_16px;
-            this.pictUpload.Location = new System.Drawing.Point(4, 2);
+            this.pictUpload.Location = new System.Drawing.Point(3, 2);
             this.pictUpload.Name = "pictUpload";
             this.pictUpload.Size = new System.Drawing.Size(12, 15);
             this.pictUpload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,18 +64,32 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // LblDownload
+            // 
+            this.LblDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LblDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblDownload.Location = new System.Drawing.Point(30, 16);
+            this.LblDownload.Name = "LblDownload";
+            this.LblDownload.Size = new System.Drawing.Size(68, 12);
+            this.LblDownload.TabIndex = 6;
+            this.LblDownload.Text = "......";
+            this.LblDownload.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LblDownload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
             // LblUpload
             // 
-            this.LblUpload.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblUpload.BackColor = System.Drawing.Color.Black;
+            this.LblUpload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblUpload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUpload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblUpload.Location = new System.Drawing.Point(30, 0);
+            this.LblUpload.Location = new System.Drawing.Point(30, 1);
             this.LblUpload.Name = "LblUpload";
             this.LblUpload.Size = new System.Drawing.Size(68, 12);
-            this.LblUpload.TabIndex = 4;
+            this.LblUpload.TabIndex = 5;
             this.LblUpload.Text = "......";
             this.LblUpload.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LblUpload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.LblUpload.Click += new System.EventHandler(this.LblUpload_Click);
             // 
             // UserControl1
             // 
@@ -97,14 +98,13 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.LblDownload);
             this.Controls.Add(this.LblUpload);
             this.Controls.Add(this.pictUpload);
             this.Controls.Add(this.pictDownload);
-            this.Controls.Add(this.LblDownload);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(101, 32);
+            this.Size = new System.Drawing.Size(101, 33);
             this.Load += new System.EventHandler(this.UserControl1_Load);
-            this.Resize += new System.EventHandler(this.UserControl1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).EndInit();
             this.ResumeLayout(false);
@@ -112,11 +112,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LblDownload;
         private System.Windows.Forms.PictureBox pictDownload;
         private System.Windows.Forms.PictureBox pictUpload;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label LblUpload;
+        private MyLabel LblUpload;
+        private MyLabel LblDownload;
     }
 }

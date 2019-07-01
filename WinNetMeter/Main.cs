@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
 using WinNetMeter.Model;
@@ -176,7 +178,8 @@ namespace WinNetMeter
                 };
                 //save the settings
                 registryManager.Save(config);
-                MessageBox.Show(this, "Settings saved successfully", "Saved!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
             }
         }
 
@@ -225,24 +228,17 @@ namespace WinNetMeter
                 else if (radioPictOutline.Checked == true) styleConfiguration.Icon = IconStyle.Outline_Arrow;
 
                 registryManager.Save(styleConfiguration);
-                MessageBox.Show(this, "Settings saved successfully", "Saved!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show(this, "You have not chosen font style", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
         }
-
-        private void KillWindowsExplorer()
-        {
-            foreach (var process in Process.GetProcessesByName("explorer"))
-            {
-                process.Kill();
-            }
-        }
-
         private void Main_Load(object sender, EventArgs e)
         {
+            int nTaskBarHeight = Screen.PrimaryScreen.Bounds.Bottom - Screen.PrimaryScreen.WorkingArea.Bottom;
+            MessageBox.Show(nTaskBarHeight.ToString());
         }
 
         private void BtnIntegrate_Click(object sender, EventArgs e)

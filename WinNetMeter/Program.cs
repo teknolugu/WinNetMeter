@@ -16,7 +16,6 @@ namespace WinNetMeter
         [STAThread]
         static void Main()
         {
-            Properties.Settings.Default.Reset();
             bool first = false;
             m = new Mutex(true, Application.ProductName.ToString(), out first);
             if ((first))

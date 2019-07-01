@@ -10,7 +10,7 @@ namespace WinNetMeter.Shell.Helper
     {
         public static string SizeFormat(long bytes, string suffix = null)
         {
-            string[] norm = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+            string[] norm = { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
             int count = norm.Length - 1;
             decimal size = bytes;
             int x = 0;

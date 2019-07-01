@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using WinNetMeter.Model;
+using System.Drawing.Text;
 
 namespace WinNetMeter.Helper
 {
@@ -92,23 +93,6 @@ namespace WinNetMeter.Helper
             StyleConfiguration.SetValue("Icon", config.Icon, RegistryValueKind.String);
         }
 
-        public void Initialize()
-        {
-            //get settings from registry
-            config.Monitoring = Convert.ToBoolean(key.GetValue("Monitoring"));
-            config.AutoUpdate = Convert.ToBoolean(key.GetValue("AutoUpdate"));
-            config.Language = (Language)Enum.Parse(typeof(Language), key.GetValue("Language").ToString());
-            config.Format = key.GetValue("Format").ToString();
-            config.TrafficLogging = Convert.ToBoolean(key.GetValue("TrafficLogging"));
-            config.MonitoredAdapter = key.GetValue("MonitoredAdapter").ToString();
-            config.CustomLogLocation = key.GetValue("CustomLogLocation").ToString();
-        }
-
-        public void ReloadSettings()
-        {
-            Initialize();
-        }
-
         public Configuration GetGeneralConfiguration()
         {
             config.Monitoring = Convert.ToBoolean(GeneralConfiguration.GetValue("Monitoring"));
@@ -136,6 +120,17 @@ namespace WinNetMeter.Helper
             styleConfig.Icon = (IconStyle)Enum.Parse(typeof(IconStyle), StyleConfiguration.GetValue("Icon").ToString());
 
             return styleConfig;
+        }
+
+        public void SaveHwnd(string value)
+        {
+            var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
+            hwndLoc.SetValue("hwnd", value, RegistryValueKind.String);
+        }
+        public string GetHwnd()
+        {
+            var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
+            return hwndLoc.GetValue("hwnd").ToString();
         }
     }
 }

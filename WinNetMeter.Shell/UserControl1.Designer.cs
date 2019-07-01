@@ -32,8 +32,8 @@
             this.pictDownload = new System.Windows.Forms.PictureBox();
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.LblUpload = new WinNetMeter.Shell.MyLabel();
             this.LblDownload = new WinNetMeter.Shell.MyLabel();
+            this.LblUpload = new WinNetMeter.Shell.MyLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).BeginInit();
             this.SuspendLayout();
@@ -64,20 +64,9 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // LblUpload
-            // 
-            this.LblUpload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUpload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblUpload.Location = new System.Drawing.Point(30, 0);
-            this.LblUpload.Name = "LblUpload";
-            this.LblUpload.Size = new System.Drawing.Size(68, 12);
-            this.LblUpload.TabIndex = 5;
-            this.LblUpload.Text = "......";
-            this.LblUpload.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.LblUpload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            // 
             // LblDownload
             // 
+            this.LblDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblDownload.Location = new System.Drawing.Point(30, 15);
@@ -87,6 +76,20 @@
             this.LblDownload.Text = "......";
             this.LblDownload.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.LblDownload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            // 
+            // LblUpload
+            // 
+            this.LblUpload.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LblUpload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUpload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblUpload.Location = new System.Drawing.Point(30, 0);
+            this.LblUpload.Name = "LblUpload";
+            this.LblUpload.Size = new System.Drawing.Size(68, 12);
+            this.LblUpload.TabIndex = 5;
+            this.LblUpload.Text = "......";
+            this.LblUpload.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LblUpload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.LblUpload.Click += new System.EventHandler(this.LblUpload_Click);
             // 
             // UserControl1
             // 

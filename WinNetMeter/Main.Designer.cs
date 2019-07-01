@@ -91,6 +91,7 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -103,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -577,21 +579,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.btnSaveStyle);
-            this.tabPage2.Controls.Add(this.colorGrid1);
-            this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.pictureBox4);
-            this.tabPage2.Controls.Add(this.radioPictOutline);
-            this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Controls.Add(this.radioPictTriangleArrow);
-            this.tabPage2.Controls.Add(this.radioPictArrow);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.ComboboxFont);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.shapeContainer1);
             this.tabPage2.Location = new System.Drawing.Point(23, 4);
@@ -619,7 +608,7 @@
             // 
             // colorGrid1
             // 
-            this.colorGrid1.Location = new System.Drawing.Point(34, 90);
+            this.colorGrid1.Location = new System.Drawing.Point(12, 42);
             this.colorGrid1.Name = "colorGrid1";
             this.colorGrid1.Size = new System.Drawing.Size(247, 165);
             this.colorGrid1.TabIndex = 39;
@@ -627,7 +616,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WinNetMeter.Properties.Resources.Triangle_down_arrow_black_16px;
-            this.pictureBox3.Location = new System.Drawing.Point(159, 382);
+            this.pictureBox3.Location = new System.Drawing.Point(137, 334);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(14, 14);
             this.pictureBox3.TabIndex = 38;
@@ -636,7 +625,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::WinNetMeter.Properties.Resources.Triangle_up_arrow_black_16px;
-            this.pictureBox4.Location = new System.Drawing.Point(159, 365);
+            this.pictureBox4.Location = new System.Drawing.Point(137, 317);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(14, 14);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -646,7 +635,7 @@
             // radioPictOutline
             // 
             this.radioPictOutline.AutoSize = true;
-            this.radioPictOutline.Location = new System.Drawing.Point(299, 375);
+            this.radioPictOutline.Location = new System.Drawing.Point(277, 327);
             this.radioPictOutline.Name = "radioPictOutline";
             this.radioPictOutline.Size = new System.Drawing.Size(14, 13);
             this.radioPictOutline.TabIndex = 35;
@@ -655,7 +644,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WinNetMeter.Properties.Resources.outline_arrow_down_black_16px;
-            this.pictureBox5.Location = new System.Drawing.Point(275, 382);
+            this.pictureBox5.Location = new System.Drawing.Point(253, 334);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(14, 14);
             this.pictureBox5.TabIndex = 34;
@@ -664,7 +653,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::WinNetMeter.Properties.Resources.outline_arrow_up_black_16px;
-            this.pictureBox6.Location = new System.Drawing.Point(275, 365);
+            this.pictureBox6.Location = new System.Drawing.Point(253, 317);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(14, 14);
             this.pictureBox6.TabIndex = 33;
@@ -673,7 +662,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WinNetMeter.Properties.Resources.down_black_16px;
-            this.pictureBox2.Location = new System.Drawing.Point(41, 382);
+            this.pictureBox2.Location = new System.Drawing.Point(19, 334);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(14, 14);
             this.pictureBox2.TabIndex = 32;
@@ -682,7 +671,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WinNetMeter.Properties.Resources.up_black_16px;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 365);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 317);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(14, 14);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -692,7 +681,7 @@
             // radioPictTriangleArrow
             // 
             this.radioPictTriangleArrow.AutoSize = true;
-            this.radioPictTriangleArrow.Location = new System.Drawing.Point(186, 375);
+            this.radioPictTriangleArrow.Location = new System.Drawing.Point(164, 327);
             this.radioPictTriangleArrow.Name = "radioPictTriangleArrow";
             this.radioPictTriangleArrow.Size = new System.Drawing.Size(14, 13);
             this.radioPictTriangleArrow.TabIndex = 28;
@@ -702,7 +691,7 @@
             // 
             this.radioPictArrow.AutoSize = true;
             this.radioPictArrow.Checked = true;
-            this.radioPictArrow.Location = new System.Drawing.Point(64, 375);
+            this.radioPictArrow.Location = new System.Drawing.Point(42, 327);
             this.radioPictArrow.Name = "radioPictArrow";
             this.radioPictArrow.Size = new System.Drawing.Size(14, 13);
             this.radioPictArrow.TabIndex = 27;
@@ -714,7 +703,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label16.Location = new System.Drawing.Point(30, 337);
+            this.label16.Location = new System.Drawing.Point(8, 289);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 21);
             this.label16.TabIndex = 22;
@@ -725,7 +714,7 @@
             this.ComboboxFont.BackColor = System.Drawing.SystemColors.Control;
             this.ComboboxFont.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboboxFont.FormattingEnabled = true;
-            this.ComboboxFont.Location = new System.Drawing.Point(34, 295);
+            this.ComboboxFont.Location = new System.Drawing.Point(12, 247);
             this.ComboboxFont.Name = "ComboboxFont";
             this.ComboboxFont.Size = new System.Drawing.Size(295, 21);
             this.ComboboxFont.TabIndex = 20;
@@ -735,7 +724,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label15.Location = new System.Drawing.Point(30, 66);
+            this.label15.Location = new System.Drawing.Point(8, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(84, 21);
             this.label15.TabIndex = 19;
@@ -746,7 +735,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label14.Location = new System.Drawing.Point(30, 271);
+            this.label14.Location = new System.Drawing.Point(8, 223);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 21);
             this.label14.TabIndex = 18;
@@ -792,6 +781,28 @@
             this.lineShape1.Y1 = -7;
             this.lineShape1.Y2 = 473;
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.colorGrid1);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.ComboboxFont);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.radioPictOutline);
+            this.panel2.Controls.Add(this.radioPictArrow);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.radioPictTriangleArrow);
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(22, 66);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(544, 360);
+            this.panel2.TabIndex = 41;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,6 +835,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -891,6 +904,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private Cyotek.Windows.Forms.ColorGrid colorGrid1;
         private System.Windows.Forms.Button btnSaveStyle;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

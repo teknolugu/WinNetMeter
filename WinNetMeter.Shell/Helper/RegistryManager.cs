@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using WinNetMeter.Shell.Model;
+using System.Drawing.Text;
 
 namespace WinNetMeter.Shell.Helper
 {
@@ -53,6 +54,22 @@ namespace WinNetMeter.Shell.Helper
             StyleConfiguration = parent.CreateSubKey("Style", RegistryKeyPermissionCheck.ReadWriteSubTree);
         }
 
+        public void Save(string config, string value, ConfigurationType type)
+        {
+            switch (type)
+            {
+                case ConfigurationType.GeneralConfiguration:
+                    GeneralConfiguration.SetValue(config, value, RegistryValueKind.String);
+                    break;
+                case ConfigurationType.DatabaseConfiguration:
+                    DatabaseConfiguration.SetValue(config, value, RegistryValueKind.String);
+                    break;
+                case ConfigurationType.StyleConfiguration:
+                    StyleConfiguration.SetValue(config, value, RegistryValueKind.String);
+                    break;
+            }
+        }
+
         public void Save(Configuration config)
         {
             GeneralConfiguration.SetValue("Monitoring", config.Monitoring, RegistryValueKind.String);
@@ -74,23 +91,6 @@ namespace WinNetMeter.Shell.Helper
             StyleConfiguration.SetValue("TextColor", config.TextColor, RegistryValueKind.String);
             StyleConfiguration.SetValue("Font", config.FontFamily, RegistryValueKind.String);
             StyleConfiguration.SetValue("Icon", config.Icon, RegistryValueKind.String);
-        }
-
-        public void Initialize()
-        {
-            //get settings from registry
-            config.Monitoring = Convert.ToBoolean(key.GetValue("Monitoring"));
-            config.AutoUpdate = Convert.ToBoolean(key.GetValue("AutoUpdate"));
-            config.Language = (Language)Enum.Parse(typeof(Language), key.GetValue("Language").ToString());
-            config.Format = key.GetValue("Format").ToString();
-            config.TrafficLogging = Convert.ToBoolean(key.GetValue("TrafficLogging"));
-            config.MonitoredAdapter = key.GetValue("MonitoredAdapter").ToString();
-            config.CustomLogLocation = key.GetValue("CustomLogLocation").ToString();
-        }
-
-        public void ReloadSettings()
-        {
-            Initialize();
         }
 
         public Configuration GetGeneralConfiguration()
@@ -122,22 +122,15 @@ namespace WinNetMeter.Shell.Helper
             return styleConfig;
         }
 
-        public object GetConfiguration(string config, ConfigurationType type)
+        public void SaveHwnd(string value)
         {
-            object result = null;
-            switch (type)
-            {
-                case ConfigurationType.GeneralConfiguration:
-                    result = GeneralConfiguration.GetValue(config);
-                    break;
-                case ConfigurationType.DatabaseConfiguration:
-                    result = DatabaseConfiguration.GetValue(config);
-                    break;
-                case ConfigurationType.StyleConfiguration:
-                    result = StyleConfiguration.GetValue(config);
-                    break;
-            }
-            return result;
+            var hwndLoc = key.OpenSubKey(@"WinNetMeter",true);
+            hwndLoc.SetValue("hwnd", value, RegistryValueKind.String);
+        }
+        public string GetHwnd()
+        {
+            var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
+            return hwndLoc.GetValue("hwnd").ToString();
         }
     }
 }

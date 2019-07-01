@@ -18,7 +18,7 @@ namespace WinNetMeter.Shell
         private string Format;
         private RegistryManager registryManager = new RegistryManager();
         private StyleConfiguration styleConfiguration;
-        private DbManager dataManager;
+        private DbManager dataManager = new DbManager();
 
         public UserControl1(CSDeskBand.CSDeskBandWin w)
         {
@@ -103,8 +103,6 @@ namespace WinNetMeter.Shell
                 monitor.Start();
                 timer1.Start();
             }
-
-            dataManager = new DbManager();
         }
 
         private void ConfigureStyle()

@@ -69,7 +69,7 @@
             this.LblDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblDownload.Location = new System.Drawing.Point(30, 15);
+            this.LblDownload.Location = new System.Drawing.Point(30, 16);
             this.LblDownload.Name = "LblDownload";
             this.LblDownload.Size = new System.Drawing.Size(68, 12);
             this.LblDownload.TabIndex = 6;
@@ -82,7 +82,7 @@
             this.LblUpload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblUpload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUpload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblUpload.Location = new System.Drawing.Point(30, 0);
+            this.LblUpload.Location = new System.Drawing.Point(30, 1);
             this.LblUpload.Name = "LblUpload";
             this.LblUpload.Size = new System.Drawing.Size(68, 12);
             this.LblUpload.TabIndex = 5;

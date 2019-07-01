@@ -20,7 +20,6 @@ namespace WinNetMeter.Shell
         public Deskband()
         {
             Options.MinHorizontalSize = new Size(100, 30);
-            Options.
             _control = new UserControl1(this);
         }
 

@@ -123,6 +123,26 @@ namespace WinNetMeter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chain_filled_16px {
+            get {
+                object obj = ResourceManager.GetObject("Chain_filled_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chain_grey_180px {
+            get {
+                object obj = ResourceManager.GetObject("Chain_grey_180px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checked_outline_16px {
             get {
                 object obj = ResourceManager.GetObject("Checked_outline_16px", resourceCulture);

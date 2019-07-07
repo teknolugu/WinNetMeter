@@ -28,45 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressInstaller = new System.Windows.Forms.ProgressBar();
             this.LblStatus = new System.Windows.Forms.Label();
-            this.LabelProgressStatus = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ToggleInstaller = new MetroFramework.Controls.MetroToggle();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // progressInstaller
-            // 
-            this.progressInstaller.Location = new System.Drawing.Point(40, 365);
-            this.progressInstaller.Name = "progressInstaller";
-            this.progressInstaller.Size = new System.Drawing.Size(744, 23);
-            this.progressInstaller.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressInstaller.TabIndex = 10;
             // 
             // LblStatus
             // 
             this.LblStatus.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblStatus.Location = new System.Drawing.Point(130, 177);
+            this.LblStatus.Location = new System.Drawing.Point(148, 178);
             this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(502, 36);
+            this.LblStatus.Size = new System.Drawing.Size(482, 36);
             this.LblStatus.TabIndex = 12;
-            this.LblStatus.Text = "Finalizing setup";
+            this.LblStatus.Text = "Install Toolbar";
             this.LblStatus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LabelProgressStatus
-            // 
-            this.LabelProgressStatus.AutoSize = true;
-            this.LabelProgressStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelProgressStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LabelProgressStatus.Location = new System.Drawing.Point(37, 340);
-            this.LabelProgressStatus.Name = "LabelProgressStatus";
-            this.LabelProgressStatus.Size = new System.Drawing.Size(78, 17);
-            this.LabelProgressStatus.TabIndex = 13;
-            this.LabelProgressStatus.Text = "Please wait..";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WinNetMeter.Properties.Resources.refresh_192px;
+            this.pictureBox1.Image = global::WinNetMeter.Properties.Resources.Chain_grey_180px;
             this.pictureBox1.Location = new System.Drawing.Point(278, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 129);
@@ -74,14 +56,47 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(176, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(428, 70);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Switch the toggle ON to install the toolbar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(191, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Toolbar Integration";
+            // 
+            // ToggleInstaller
+            // 
+            this.ToggleInstaller.AutoSize = true;
+            this.ToggleInstaller.Location = new System.Drawing.Point(503, 255);
+            this.ToggleInstaller.Name = "ToggleInstaller";
+            this.ToggleInstaller.Size = new System.Drawing.Size(80, 17);
+            this.ToggleInstaller.TabIndex = 15;
+            this.ToggleInstaller.Text = "Off";
+            this.ToggleInstaller.UseSelectable = true;
+            this.ToggleInstaller.CheckedChanged += new System.EventHandler(this.ToggleInstaller_CheckedChanged);
+            // 
             // StartPage5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LabelProgressStatus);
+            this.Controls.Add(this.ToggleInstaller);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.progressInstaller);
             this.Name = "StartPage5";
             this.Size = new System.Drawing.Size(819, 510);
             this.Load += new System.EventHandler(this.StartPage5_Load);
@@ -92,9 +107,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.ProgressBar progressInstaller;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LblStatus;
-        private System.Windows.Forms.Label LabelProgressStatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroToggle ToggleInstaller;
     }
 }

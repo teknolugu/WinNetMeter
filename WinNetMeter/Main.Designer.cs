@@ -68,6 +68,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.toggleTraffic = new MetroFramework.Controls.MetroToggle();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -95,6 +96,7 @@
             this.BtnRegister = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -109,12 +111,14 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnUninstall = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -433,11 +437,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(207, -7);
+            this.tabControl1.Location = new System.Drawing.Point(204, -5);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(644, 543);
+            this.tabControl1.Size = new System.Drawing.Size(595, 493);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -605,6 +609,15 @@
             this.shapeContainer4.Size = new System.Drawing.Size(617, 535);
             this.shapeContainer4.TabIndex = 0;
             this.shapeContainer4.TabStop = false;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 8;
+            this.lineShape4.X2 = 8;
+            this.lineShape4.Y1 = -1;
+            this.lineShape4.Y2 = 479;
             // 
             // lineShape5
             // 
@@ -843,6 +856,10 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label21);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.BtnUninstall);
+            this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.BtnRegister);
             this.tabPage4.Controls.Add(this.label10);
@@ -850,30 +867,29 @@
             this.tabPage4.Location = new System.Drawing.Point(23, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(617, 535);
+            this.tabPage4.Size = new System.Drawing.Size(568, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(31, 84);
+            this.label18.Location = new System.Drawing.Point(31, 101);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(410, 45);
+            this.label18.Size = new System.Drawing.Size(410, 62);
             this.label18.TabIndex = 18;
-            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar\r\nYou can try Re-Register it" +
-    ". Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the TaskB" +
-    "ar for better troubleshooting";
+            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, \r\nYou can try Re-Register " +
+    "Shell. Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the " +
+    "TaskBar for better troubleshooting";
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(34, 149);
+            this.BtnRegister.Location = new System.Drawing.Point(306, 166);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(162, 64);
+            this.BtnRegister.Size = new System.Drawing.Size(135, 40);
             this.BtnRegister.TabIndex = 15;
-            this.BtnRegister.Text = "Re-Register";
+            this.BtnRegister.Text = "Re-Register Shell";
             this.BtnRegister.UseVisualStyleBackColor = true;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
@@ -895,9 +911,18 @@
             this.shapeContainer5.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape9,
             this.lineShape7});
-            this.shapeContainer5.Size = new System.Drawing.Size(611, 529);
+            this.shapeContainer5.Size = new System.Drawing.Size(562, 479);
             this.shapeContainer5.TabIndex = 14;
             this.shapeContainer5.TabStop = false;
+            // 
+            // lineShape9
+            // 
+            this.lineShape9.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.lineShape9.Name = "lineShape9";
+            this.lineShape9.X1 = 8;
+            this.lineShape9.X2 = 8;
+            this.lineShape9.Y1 = -1;
+            this.lineShape9.Y2 = 749;
             // 
             // lineShape7
             // 
@@ -924,7 +949,7 @@
             this.tabPage5.Controls.Add(this.shapeContainer6);
             this.tabPage5.Location = new System.Drawing.Point(23, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(617, 535);
+            this.tabPage5.Size = new System.Drawing.Size(568, 485);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1050,27 +1075,9 @@
             this.shapeContainer6.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape10,
             this.lineShape8});
-            this.shapeContainer6.Size = new System.Drawing.Size(617, 535);
+            this.shapeContainer6.Size = new System.Drawing.Size(568, 485);
             this.shapeContainer6.TabIndex = 25;
             this.shapeContainer6.TabStop = false;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 19;
-            this.lineShape8.X2 = 551;
-            this.lineShape8.Y1 = 102;
-            this.lineShape8.Y2 = 102;
-            // 
-            // lineShape9
-            // 
-            this.lineShape9.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 8;
-            this.lineShape9.X2 = 8;
-            this.lineShape9.Y1 = -1;
-            this.lineShape9.Y2 = 749;
             // 
             // lineShape10
             // 
@@ -1081,14 +1088,53 @@
             this.lineShape10.Y1 = -1;
             this.lineShape10.Y2 = 479;
             // 
-            // lineShape4
+            // lineShape8
             // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 8;
-            this.lineShape4.X2 = 8;
-            this.lineShape4.Y1 = -1;
-            this.lineShape4.Y2 = 479;
+            this.lineShape8.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 19;
+            this.lineShape8.X2 = 551;
+            this.lineShape8.Y1 = 102;
+            this.lineShape8.Y2 = 102;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(33, 274);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(408, 35);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nth" +
+    "en replace with new Version.";
+            // 
+            // BtnUninstall
+            // 
+            this.BtnUninstall.Location = new System.Drawing.Point(306, 312);
+            this.BtnUninstall.Name = "BtnUninstall";
+            this.BtnUninstall.Size = new System.Drawing.Size(135, 40);
+            this.BtnUninstall.TabIndex = 20;
+            this.BtnUninstall.Text = "Uninstall Shell";
+            this.BtnUninstall.UseVisualStyleBackColor = true;
+            this.BtnUninstall.Click += new System.EventHandler(this.BtnUninstall_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label17.Location = new System.Drawing.Point(31, 71);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(163, 25);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Re-Register Shell";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label21.Location = new System.Drawing.Point(31, 249);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(135, 25);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Uninstall Shell";
             // 
             // Main
             // 
@@ -1220,6 +1266,10 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape10;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button BtnUninstall;
+        private System.Windows.Forms.Label label13;
     }
 }
 

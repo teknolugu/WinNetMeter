@@ -307,6 +307,12 @@
   <ItemGroup>
     <None Include="Resources\refresh_192px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chain_filled_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chain_grey_180px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

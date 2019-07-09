@@ -69,51 +69,68 @@
             this.toggleTraffic = new MetroFramework.Controls.MetroToggle();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnSaveStyle = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.colorGrid1 = new Cyotek.Windows.Forms.ColorGrid();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.radioPictOutline = new System.Windows.Forms.RadioButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radioPictTriangleArrow = new System.Windows.Forms.RadioButton();
-            this.radioPictArrow = new System.Windows.Forms.RadioButton();
-            this.label16 = new System.Windows.Forms.Label();
-            this.ComboboxFont = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ComboboxFont = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.radioPictOutline = new System.Windows.Forms.RadioButton();
+            this.radioPictArrow = new System.Windows.Forms.RadioButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.radioPictTriangleArrow = new System.Windows.Forms.RadioButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSaveStyle = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.BtnRegister = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.shapeContainer5 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.lblCopyright = new System.Windows.Forms.Label();
+            this.richDescription = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.shapeContainer6 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,7 +157,7 @@
             this.BtnIntegrate.FlatAppearance.BorderSize = 0;
             this.BtnIntegrate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIntegrate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIntegrate.Image = global::WinNetMeter.Properties.Resources.Database_filled_16px;
+            this.BtnIntegrate.Image = global::WinNetMeter.Properties.Resources.Chain_filled_16px;
             this.BtnIntegrate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnIntegrate.Location = new System.Drawing.Point(3, 237);
             this.BtnIntegrate.Name = "BtnIntegrate";
@@ -166,6 +183,7 @@
             this.BtnAbout.Text = "          About";
             this.BtnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAbout.UseVisualStyleBackColor = false;
+            this.BtnAbout.Click += new System.EventHandler(this.BtnAbout_Click);
             // 
             // BtnDatabase
             // 
@@ -271,10 +289,10 @@
             // 
             this.LineDivider.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.LineDivider.Name = "LineDivider";
-            this.LineDivider.X1 = 5;
-            this.LineDivider.X2 = 5;
-            this.LineDivider.Y1 = -7;
-            this.LineDivider.Y2 = 473;
+            this.LineDivider.X1 = 8;
+            this.LineDivider.X2 = 8;
+            this.LineDivider.Y1 = -1;
+            this.LineDivider.Y2 = 479;
             // 
             // lineShape2
             // 
@@ -414,6 +432,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(207, -7);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -581,8 +600,8 @@
             this.shapeContainer4.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer4.Name = "shapeContainer4";
             this.shapeContainer4.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape5,
-            this.lineShape4});
+            this.lineShape4,
+            this.lineShape5});
             this.shapeContainer4.Size = new System.Drawing.Size(617, 535);
             this.shapeContainer4.TabIndex = 0;
             this.shapeContainer4.TabStop = false;
@@ -595,15 +614,6 @@
             this.lineShape5.X2 = 551;
             this.lineShape5.Y1 = 51;
             this.lineShape5.Y2 = 51;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 8;
-            this.lineShape4.X2 = 8;
-            this.lineShape4.Y1 = -7;
-            this.lineShape4.Y2 = 473;
             // 
             // tabPage2
             // 
@@ -619,6 +629,163 @@
             this.tabPage2.Text = "Customize";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.colorGrid1);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.ComboboxFont);
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.radioPictOutline);
+            this.panel2.Controls.Add(this.radioPictArrow);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.radioPictTriangleArrow);
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(22, 66);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(544, 360);
+            this.panel2.TabIndex = 41;
+            // 
+            // colorGrid1
+            // 
+            this.colorGrid1.Location = new System.Drawing.Point(12, 42);
+            this.colorGrid1.Name = "colorGrid1";
+            this.colorGrid1.Size = new System.Drawing.Size(247, 165);
+            this.colorGrid1.TabIndex = 39;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label14.Location = new System.Drawing.Point(8, 223);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 21);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Fonts";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label15.Location = new System.Drawing.Point(8, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 21);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Text Color";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WinNetMeter.Properties.Resources.Triangle_down_arrow_black_16px;
+            this.pictureBox3.Location = new System.Drawing.Point(137, 334);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
+            // 
+            // ComboboxFont
+            // 
+            this.ComboboxFont.BackColor = System.Drawing.SystemColors.Control;
+            this.ComboboxFont.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ComboboxFont.FormattingEnabled = true;
+            this.ComboboxFont.Location = new System.Drawing.Point(12, 247);
+            this.ComboboxFont.Name = "ComboboxFont";
+            this.ComboboxFont.Size = new System.Drawing.Size(295, 21);
+            this.ComboboxFont.TabIndex = 20;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::WinNetMeter.Properties.Resources.Triangle_up_arrow_black_16px;
+            this.pictureBox4.Location = new System.Drawing.Point(137, 317);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label16.Location = new System.Drawing.Point(8, 289);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 21);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Icon";
+            // 
+            // radioPictOutline
+            // 
+            this.radioPictOutline.AutoSize = true;
+            this.radioPictOutline.Location = new System.Drawing.Point(277, 327);
+            this.radioPictOutline.Name = "radioPictOutline";
+            this.radioPictOutline.Size = new System.Drawing.Size(14, 13);
+            this.radioPictOutline.TabIndex = 35;
+            this.radioPictOutline.UseVisualStyleBackColor = true;
+            // 
+            // radioPictArrow
+            // 
+            this.radioPictArrow.AutoSize = true;
+            this.radioPictArrow.Checked = true;
+            this.radioPictArrow.Location = new System.Drawing.Point(42, 327);
+            this.radioPictArrow.Name = "radioPictArrow";
+            this.radioPictArrow.Size = new System.Drawing.Size(14, 13);
+            this.radioPictArrow.TabIndex = 27;
+            this.radioPictArrow.TabStop = true;
+            this.radioPictArrow.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::WinNetMeter.Properties.Resources.outline_arrow_down_black_16px;
+            this.pictureBox5.Location = new System.Drawing.Point(253, 334);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox5.TabIndex = 34;
+            this.pictureBox5.TabStop = false;
+            // 
+            // radioPictTriangleArrow
+            // 
+            this.radioPictTriangleArrow.AutoSize = true;
+            this.radioPictTriangleArrow.Location = new System.Drawing.Point(164, 327);
+            this.radioPictTriangleArrow.Name = "radioPictTriangleArrow";
+            this.radioPictTriangleArrow.Size = new System.Drawing.Size(14, 13);
+            this.radioPictTriangleArrow.TabIndex = 28;
+            this.radioPictTriangleArrow.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::WinNetMeter.Properties.Resources.outline_arrow_up_black_16px;
+            this.pictureBox6.Location = new System.Drawing.Point(253, 317);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox6.TabIndex = 33;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinNetMeter.Properties.Resources.up_black_16px;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 317);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinNetMeter.Properties.Resources.down_black_16px;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 334);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(14, 14);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnSaveStyle
             // 
             this.btnSaveStyle.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -633,141 +800,6 @@
             this.btnSaveStyle.Text = "  Save";
             this.btnSaveStyle.UseVisualStyleBackColor = true;
             this.btnSaveStyle.Click += new System.EventHandler(this.BtnSaveStyle_Click);
-            // 
-            // colorGrid1
-            // 
-            this.colorGrid1.Location = new System.Drawing.Point(12, 42);
-            this.colorGrid1.Name = "colorGrid1";
-            this.colorGrid1.Size = new System.Drawing.Size(247, 165);
-            this.colorGrid1.TabIndex = 39;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::WinNetMeter.Properties.Resources.Triangle_down_arrow_black_16px;
-            this.pictureBox3.Location = new System.Drawing.Point(137, 334);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox3.TabIndex = 38;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::WinNetMeter.Properties.Resources.Triangle_up_arrow_black_16px;
-            this.pictureBox4.Location = new System.Drawing.Point(137, 317);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 37;
-            this.pictureBox4.TabStop = false;
-            // 
-            // radioPictOutline
-            // 
-            this.radioPictOutline.AutoSize = true;
-            this.radioPictOutline.Location = new System.Drawing.Point(277, 327);
-            this.radioPictOutline.Name = "radioPictOutline";
-            this.radioPictOutline.Size = new System.Drawing.Size(14, 13);
-            this.radioPictOutline.TabIndex = 35;
-            this.radioPictOutline.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::WinNetMeter.Properties.Resources.outline_arrow_down_black_16px;
-            this.pictureBox5.Location = new System.Drawing.Point(253, 334);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox5.TabIndex = 34;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::WinNetMeter.Properties.Resources.outline_arrow_up_black_16px;
-            this.pictureBox6.Location = new System.Drawing.Point(253, 317);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox6.TabIndex = 33;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinNetMeter.Properties.Resources.down_black_16px;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 334);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinNetMeter.Properties.Resources.up_black_16px;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 317);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(14, 14);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
-            // radioPictTriangleArrow
-            // 
-            this.radioPictTriangleArrow.AutoSize = true;
-            this.radioPictTriangleArrow.Location = new System.Drawing.Point(164, 327);
-            this.radioPictTriangleArrow.Name = "radioPictTriangleArrow";
-            this.radioPictTriangleArrow.Size = new System.Drawing.Size(14, 13);
-            this.radioPictTriangleArrow.TabIndex = 28;
-            this.radioPictTriangleArrow.UseVisualStyleBackColor = true;
-            // 
-            // radioPictArrow
-            // 
-            this.radioPictArrow.AutoSize = true;
-            this.radioPictArrow.Checked = true;
-            this.radioPictArrow.Location = new System.Drawing.Point(42, 327);
-            this.radioPictArrow.Name = "radioPictArrow";
-            this.radioPictArrow.Size = new System.Drawing.Size(14, 13);
-            this.radioPictArrow.TabIndex = 27;
-            this.radioPictArrow.TabStop = true;
-            this.radioPictArrow.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label16.Location = new System.Drawing.Point(8, 289);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 21);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Icon";
-            // 
-            // ComboboxFont
-            // 
-            this.ComboboxFont.BackColor = System.Drawing.SystemColors.Control;
-            this.ComboboxFont.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ComboboxFont.FormattingEnabled = true;
-            this.ComboboxFont.Location = new System.Drawing.Point(12, 247);
-            this.ComboboxFont.Name = "ComboboxFont";
-            this.ComboboxFont.Size = new System.Drawing.Size(295, 21);
-            this.ComboboxFont.TabIndex = 20;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label15.Location = new System.Drawing.Point(8, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 21);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Text Color";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label14.Location = new System.Drawing.Point(8, 223);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 21);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Fonts";
             // 
             // label12
             // 
@@ -804,36 +836,14 @@
             // 
             this.lineShape1.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 5;
-            this.lineShape1.X2 = 5;
-            this.lineShape1.Y1 = -7;
-            this.lineShape1.Y2 = 473;
+            this.lineShape1.X1 = 8;
+            this.lineShape1.X2 = 8;
+            this.lineShape1.Y1 = -1;
+            this.lineShape1.Y2 = 479;
             // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.colorGrid1);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.ComboboxFont);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.radioPictOutline);
-            this.panel2.Controls.Add(this.radioPictArrow);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.radioPictTriangleArrow);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(22, 66);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(544, 360);
-            this.panel2.TabIndex = 41;
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.BtnRegister);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.shapeContainer5);
@@ -845,18 +855,21 @@
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // label18
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(31, 84);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(347, 13);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "If WinNetMeter not working properly in Taskbar, you can try Re-Register";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(31, 84);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(410, 45);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar\r\nYou can try Re-Register it" +
+    ". Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the TaskB" +
+    "ar for better troubleshooting";
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(22, 154);
+            this.BtnRegister.Location = new System.Drawing.Point(34, 149);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(162, 64);
             this.BtnRegister.TabIndex = 15;
@@ -880,6 +893,7 @@
             this.shapeContainer5.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer5.Name = "shapeContainer5";
             this.shapeContainer5.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape9,
             this.lineShape7});
             this.shapeContainer5.Size = new System.Drawing.Size(611, 529);
             this.shapeContainer5.TabIndex = 14;
@@ -894,15 +908,187 @@
             this.lineShape7.Y1 = 51;
             this.lineShape7.Y2 = 51;
             // 
-            // label17
+            // tabPage5
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(31, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(501, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Before click Re-Register, please remove WinNetMeter from Toolbar in Taskbar for b" +
-    "etter troubleshooting.";
+            this.tabPage5.Controls.Add(this.linkLabel5);
+            this.tabPage5.Controls.Add(this.linkLabel4);
+            this.tabPage5.Controls.Add(this.linkLabel3);
+            this.tabPage5.Controls.Add(this.linkLabel2);
+            this.tabPage5.Controls.Add(this.lblCopyright);
+            this.tabPage5.Controls.Add(this.richDescription);
+            this.tabPage5.Controls.Add(this.label20);
+            this.tabPage5.Controls.Add(this.linkLabel1);
+            this.tabPage5.Controls.Add(this.lblVersion);
+            this.tabPage5.Controls.Add(this.pictureBox7);
+            this.tabPage5.Controls.Add(this.label19);
+            this.tabPage5.Controls.Add(this.shapeContainer6);
+            this.tabPage5.Location = new System.Drawing.Point(23, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(617, 535);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "About";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(42, 227);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(169, 13);
+            this.linkLabel5.TabIndex = 32;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Jovan Ferryal Ervanda Firmansyah";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(42, 206);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(70, 13);
+            this.linkLabel4.TabIndex = 31;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Jeremy Albert";
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Location = new System.Drawing.Point(42, 188);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(52, 13);
+            this.linkLabel3.TabIndex = 30;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Azhe Zyu";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(42, 168);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(90, 13);
+            this.linkLabel2.TabIndex = 29;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Muhammad Arfan";
+            // 
+            // lblCopyright
+            // 
+            this.lblCopyright.AutoSize = true;
+            this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyright.Location = new System.Drawing.Point(39, 447);
+            this.lblCopyright.Name = "lblCopyright";
+            this.lblCopyright.Size = new System.Drawing.Size(185, 15);
+            this.lblCopyright.TabIndex = 28;
+            this.lblCopyright.Text = "Copyright © 2019 WinTenDev Inc.";
+            // 
+            // richDescription
+            // 
+            this.richDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.richDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richDescription.Location = new System.Drawing.Point(42, 309);
+            this.richDescription.Name = "richDescription";
+            this.richDescription.ReadOnly = true;
+            this.richDescription.Size = new System.Drawing.Size(471, 113);
+            this.richDescription.TabIndex = 22;
+            this.richDescription.Text = "";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(38, 136);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(95, 20);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Contributors";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(106, 70);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Report a problem";
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.Location = new System.Drawing.Point(106, 49);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(51, 17);
+            this.lblVersion.TabIndex = 17;
+            this.lblVersion.Text = "v1.0.0.0";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::WinNetMeter.Properties.Resources.WinNetMeter_128px;
+            this.pictureBox7.Location = new System.Drawing.Point(42, 28);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(58, 55);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 16;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(105, 28);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(234, 21);
+            this.label19.TabIndex = 15;
+            this.label19.Text = "WinNetMeter By WinTenDev Inc.";
+            // 
+            // shapeContainer6
+            // 
+            this.shapeContainer6.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer6.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer6.Name = "shapeContainer6";
+            this.shapeContainer6.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape10,
+            this.lineShape8});
+            this.shapeContainer6.Size = new System.Drawing.Size(617, 535);
+            this.shapeContainer6.TabIndex = 25;
+            this.shapeContainer6.TabStop = false;
+            // 
+            // lineShape8
+            // 
+            this.lineShape8.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 19;
+            this.lineShape8.X2 = 551;
+            this.lineShape8.Y1 = 102;
+            this.lineShape8.Y2 = 102;
+            // 
+            // lineShape9
+            // 
+            this.lineShape9.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.lineShape9.Name = "lineShape9";
+            this.lineShape9.X1 = 8;
+            this.lineShape9.X2 = 8;
+            this.lineShape9.Y1 = -1;
+            this.lineShape9.Y2 = 749;
+            // 
+            // lineShape10
+            // 
+            this.lineShape10.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.lineShape10.Name = "lineShape10";
+            this.lineShape10.X1 = 8;
+            this.lineShape10.X2 = 8;
+            this.lineShape10.Y1 = -1;
+            this.lineShape10.Y2 = 479;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 8;
+            this.lineShape4.X2 = 8;
+            this.lineShape4.Y1 = -1;
+            this.lineShape4.Y2 = 479;
             // 
             // Main
             // 
@@ -930,16 +1116,19 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -978,7 +1167,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TabPage tabPage3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroToggle toggleTraffic;
         private System.Windows.Forms.TextBox txtLogPath;
@@ -1011,11 +1199,27 @@
         private System.Windows.Forms.Button BtnIntegrate;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnRegister;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer5;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.RichTextBox richDescription;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer6;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
+        private System.Windows.Forms.Label lblCopyright;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape10;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
     }
 }
 

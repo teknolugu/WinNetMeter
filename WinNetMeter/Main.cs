@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
@@ -24,7 +26,7 @@ namespace WinNetMeter
                 ListAdapter.Items.Add(adapter);
             }
 
-            //set to default value
+            //Set to default value
             comboBoxFormat.SelectedItem = "Auto";
             comboBoxLanguage.SelectedItem = "English";
             if (ListAdapter.Items != null)
@@ -50,30 +52,47 @@ namespace WinNetMeter
         private void BtnGeneral_Click(object sender, EventArgs e)
         {
             PnlSelector.Location = new Point(0, BtnGeneral.Location.Y);
-            setSelected(BtnGeneral, BtnCustomization, BtnDatabase, BtnAbout);
+            setSelected(BtnGeneral, BtnCustomization, BtnDatabase, BtnIntegrate, BtnAbout);
             tabControl1.SelectedTab = tabPage1;
+        }
+
+        private void BtnIntegrate_Click(object sender, EventArgs e)
+        {
+            PnlSelector.Location = new Point(0, BtnIntegrate.Location.Y);
+            setSelected(BtnIntegrate, BtnDatabase, BtnGeneral, BtnCustomization, BtnAbout);
+            tabControl1.SelectedTab = tabPage4;
         }
 
         private void BtnCustomization_Click(object sender, EventArgs e)
         {
             PnlSelector.Location = new Point(0, BtnCustomization.Location.Y);
-            setSelected(BtnCustomization, BtnGeneral, BtnDatabase, BtnAbout);
+            setSelected(BtnCustomization, BtnGeneral, BtnDatabase, BtnIntegrate, BtnAbout);
             tabControl1.SelectedTab = tabPage2;
         }
-
-        private void setSelected(Button selectedBtn, Button btn1, Button btn2, Button btn3)
+ 
+        private void setSelected(Button selectedBtn, Button btn1, Button btn2, Button btn3, Button btn4)
         {
             selectedBtn.BackColor = ColorTranslator.FromHtml("#F0F0F0");
             btn1.BackColor = Color.Transparent;
             btn2.BackColor = Color.Transparent;
             btn3.BackColor = Color.Transparent;
+            btn4.BackColor = Color.Transparent;
         }
 
         private void BtnDatabase_Click(object sender, EventArgs e)
         {
             PnlSelector.Location = new Point(0, BtnDatabase.Location.Y);
-            setSelected(BtnDatabase, BtnGeneral, BtnCustomization, BtnAbout);
+            setSelected(BtnDatabase, BtnIntegrate, BtnGeneral, BtnCustomization, BtnAbout);
             tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void BtnAbout_Click(object sender, EventArgs e)
+        {
+            PnlSelector.Location = new Point(0, BtnAbout.Location.Y);
+            setSelected(BtnAbout, BtnGeneral, BtnCustomization, BtnDatabase, BtnIntegrate);
+            tabControl1.SelectedTab = tabPage5;
+
+            FillAbout();
         }
 
         #endregion custom
@@ -155,6 +174,28 @@ namespace WinNetMeter
             catch { }
         }
 
+        private void FillAbout()
+        {
+            var assemblyInfo = Assembly.GetExecutingAssembly();
+            var assemblyCompany = assemblyInfo
+            .GetCustomAttributes(typeof(AssemblyCompanyAttribute), false)
+            .OfType<AssemblyCompanyAttribute>()
+            .FirstOrDefault();
+
+            var assemblyDescription = assemblyInfo
+            .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false)
+            .OfType<AssemblyDescriptionAttribute>()
+            .FirstOrDefault();
+
+            if(assemblyDescription != null)
+            {
+                richDescription.Text = assemblyDescription.Description;
+            }
+
+            lblVersion.Text = "v" + Application.ProductVersion;
+            lblCopyright.Text = "Copyright © 2019 " + assemblyCompany.Company;
+        }
+
         private void ToggleTraffic_CheckedChanged(object sender, EventArgs e)
         {
             bool check = (toggleTraffic.Checked) ? groupBox1.Enabled = true : groupBox1.Enabled = false;
@@ -176,10 +217,15 @@ namespace WinNetMeter
                     MonitoredAdapter = ListAdapter.SelectedItem.ToString(),
                     CustomLogLocation = null
                 };
+
                 //save the settings
                 registryManager.Save(config);
 
-                NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
+                try
+                {
+                    NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
+                }
+                catch { }
             }
         }
 
@@ -233,20 +279,27 @@ namespace WinNetMeter
             {
                 MessageBox.Show(this, "You have not chosen font style", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
+
+            try
+            {
+                NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
+            }
+            catch { }
         }
-        private void Main_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e) 
         {
-            int nTaskBarHeight = Screen.PrimaryScreen.Bounds.Bottom - Screen.PrimaryScreen.WorkingArea.Bottom;
-            MessageBox.Show(nTaskBarHeight.ToString());
+            var args = Environment.GetCommandLineArgs();
+            try
+            {
+                if (args[1] == "-about")
+                {
+                    BtnAbout.PerformClick();
+                }
+            }
+            catch { }
+           
         }
 
-        private void BtnIntegrate_Click(object sender, EventArgs e)
-        {
-            PnlSelector.Location = new Point(0, BtnDatabase.Location.Y);
-            setSelected(BtnDatabase, BtnGeneral, BtnCustomization, BtnAbout);
-            tabControl1.SelectedTab = tabPage4;
-        }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {

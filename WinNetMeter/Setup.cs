@@ -74,7 +74,6 @@ namespace WinNetMeter
             else if (page == 4 && panelContainer.Controls.ContainsKey("StartPage5"))
             {
                 panelContainer.Controls["StartPage5"].BringToFront();
-                moveProductTitle(MoveLabel.Left);
                 page = 5;
             }
             else if (page == 1 && panelContainer.Controls.ContainsKey("StartPage2") == false)
@@ -117,7 +116,6 @@ namespace WinNetMeter
                 page5.Dock = DockStyle.Fill;
                 panelContainer.Controls.Add(page5);
 
-                moveProductTitle(MoveLabel.Left);
                 panelContainer.Controls["StartPage5"].BringToFront();
                 page = 5;
             }

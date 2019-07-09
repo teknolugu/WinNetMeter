@@ -14,7 +14,7 @@ namespace WinNetMeter
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             bool first = false;
             m = new Mutex(true, Application.ProductName.ToString(), out first);

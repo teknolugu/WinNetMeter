@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using WinNetMeter.Core;
+using WinNetMeter.Helper;
 using WinNetMeter.Shell.Helper;
 
 namespace WinNetMeter.UserControls
@@ -12,11 +14,11 @@ namespace WinNetMeter.UserControls
     {
         private WebClient _webClient;
         private Stopwatch sw = new Stopwatch();
-        private string urlDashboard = "https://cdn.azhe.space/products/dashboard-internal/update/DashboardInternal.aim";
-        private string urlUpdater = "https://cdn.azhe.space/products/dashboard-internal/update/Updater.exe";
+        private string urlDashboard = "https://cdn.azhe.space/products/win-netmeter/release/WinNetMeter.exe";
+        private string urlShell = "https://cdn.azhe.space/products/win-netmeter/release/WinNetMeter.Shell.dll";
         private bool isDownloadDashboard = false;
-        private string imageInsall = "DashboardInternal.aim";
-        private string execInstall = "Updater.exe";
+        private string imageInsall = "WinNetMeter.aim";
+        private string imageShell = "WinNetMeter.Shell.aim";
         private string moduleName = "Updater";
 
         public AppUpdater()
@@ -27,6 +29,11 @@ namespace WinNetMeter.UserControls
 
         private void DownloadFile(string urlAddress, string location)
         {
+            using (WebClient wc = new WebClient())
+            {
+                wc.DownloadFile(urlShell, imageShell);
+            }
+
             using (_webClient = new WebClient())
             {
                 _webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
@@ -37,7 +44,7 @@ namespace WinNetMeter.UserControls
                     ? new Uri(urlAddress)
                     : new Uri("https://" + urlAddress);
 
-                if (urlAddress.Contains("Dashboard"))
+                if (urlAddress.Contains("exe"))
                 {
                     isDownloadDashboard = true;
                 }
@@ -82,16 +89,18 @@ namespace WinNetMeter.UserControls
                 Title.ResetText();
                 Description.ResetText();
 
-                File.Delete(imageInsall);
+                FileHelper.SafeDelete(imageInsall);
+                FileHelper.SafeDelete(imageShell);
             }
             else
             {
                 if (isDownloadDashboard)
                 {
-                    MessageBox.Show("Download completed!");
+                    // MessageBox.Show("Download completed!");
                     Title.Text = "Restarting App..";
                     BtnCheckUpdates.Enabled = true;
                     BtnCancel.Enabled = false;
+                    ThisApp.InstallUpdates();
                 }
             }
         }

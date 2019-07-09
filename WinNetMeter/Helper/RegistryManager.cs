@@ -2,6 +2,7 @@
 using System;
 using WinNetMeter.Model;
 using System.Drawing.Text;
+using System.Windows.Forms;
 
 namespace WinNetMeter.Helper
 {
@@ -126,6 +127,17 @@ namespace WinNetMeter.Helper
         {
             var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
             hwndLoc.SetValue("hwnd", value, RegistryValueKind.String);
+        }
+
+        public void SaveExecutableLocation()
+        {
+            var exeKey = key.OpenSubKey(@"WinNetMeter", true);
+            exeKey.SetValue("ExecutablePath", Application.ExecutablePath, RegistryValueKind.String);
+        }
+        public string GetExecutableLocation()
+        {
+            var exeKey = key.OpenSubKey(@"WinNetMeter", true);
+            return exeKey.GetValue("ExecutablePath").ToString();
         }
         public string GetHwnd()
         {

@@ -305,8 +305,8 @@
             // 
             this.LineDivider.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.LineDivider.Name = "LineDivider";
-            this.LineDivider.X1 = 8;
-            this.LineDivider.X2 = 8;
+            this.LineDivider.X1 = 13;
+            this.LineDivider.X2 = 13;
             this.LineDivider.Y1 = -1;
             this.LineDivider.Y2 = 479;
             // 
@@ -626,10 +626,10 @@
             // 
             this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 8;
-            this.lineShape4.X2 = 8;
-            this.lineShape4.Y1 = -1;
-            this.lineShape4.Y2 = 479;
+            this.lineShape4.X1 = 13;
+            this.lineShape4.X2 = 13;
+            this.lineShape4.Y1 = 3;
+            this.lineShape4.Y2 = 482;
             // 
             // lineShape5
             // 
@@ -861,8 +861,8 @@
             // 
             this.lineShape1.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 8;
-            this.lineShape1.X2 = 8;
+            this.lineShape1.X1 = 13;
+            this.lineShape1.X2 = 13;
             this.lineShape1.Y1 = -1;
             this.lineShape1.Y2 = 479;
             // 
@@ -970,8 +970,8 @@
             // 
             this.lineShape9.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 8;
-            this.lineShape9.X2 = 8;
+            this.lineShape9.X1 = 13;
+            this.lineShape9.X2 = 13;
             this.lineShape9.Y1 = -1;
             this.lineShape9.Y2 = 749;
             // 
@@ -1147,8 +1147,8 @@
             // 
             this.lineShape10.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape10.Name = "lineShape10";
-            this.lineShape10.X1 = 8;
-            this.lineShape10.X2 = 8;
+            this.lineShape10.X1 = 13;
+            this.lineShape10.X2 = 13;
             this.lineShape10.Y1 = -1;
             this.lineShape10.Y2 = 479;
             // 

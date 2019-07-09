@@ -71,6 +71,7 @@
             // 
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.BackColor = System.Drawing.Color.Transparent;
+            this.metroCheckBox1.Enabled = false;
             this.metroCheckBox1.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.metroCheckBox1.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
             this.metroCheckBox1.Location = new System.Drawing.Point(267, 356);

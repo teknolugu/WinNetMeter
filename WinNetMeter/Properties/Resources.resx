@@ -208,4 +208,16 @@
   <data name="Chain_grey_180px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chain_grey_180px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="github_black_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\github_black_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="github_black_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\github_black_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Love_colored_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Love_colored_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Share_blue_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Share_blue_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

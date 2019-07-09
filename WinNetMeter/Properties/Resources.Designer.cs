@@ -173,9 +173,39 @@ namespace WinNetMeter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap github_black_16px {
+            get {
+                object obj = ResourceManager.GetObject("github_black_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap github_black_24px {
+            get {
+                object obj = ResourceManager.GetObject("github_black_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Join_our_development_256px {
             get {
                 object obj = ResourceManager.GetObject("Join_our_development_256px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Love_colored_16px {
+            get {
+                object obj = ResourceManager.GetObject("Love_colored_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +296,16 @@ namespace WinNetMeter.Properties {
         internal static System.Drawing.Bitmap Settings_colored_16px {
             get {
                 object obj = ResourceManager.GetObject("Settings_colored_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Share_blue_16px {
+            get {
+                object obj = ResourceManager.GetObject("Share_blue_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

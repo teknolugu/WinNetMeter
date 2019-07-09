@@ -313,6 +313,18 @@
   <ItemGroup>
     <None Include="Resources\Chain_grey_180px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Love_colored_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Share_blue_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github_black_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github_black_16px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

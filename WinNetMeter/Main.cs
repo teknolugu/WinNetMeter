@@ -69,7 +69,7 @@ namespace WinNetMeter
             setSelected(BtnCustomization, BtnGeneral, BtnDatabase, BtnIntegrate, BtnAbout);
             tabControl1.SelectedTab = tabPage2;
         }
- 
+
         private void setSelected(Button selectedBtn, Button btn1, Button btn2, Button btn3, Button btn4)
         {
             selectedBtn.BackColor = ColorTranslator.FromHtml("#F0F0F0");
@@ -187,7 +187,7 @@ namespace WinNetMeter
             .OfType<AssemblyDescriptionAttribute>()
             .FirstOrDefault();
 
-            if(assemblyDescription != null)
+            if (assemblyDescription != null)
             {
                 richDescription.Text = assemblyDescription.Description;
             }
@@ -286,7 +286,8 @@ namespace WinNetMeter
             }
             catch { }
         }
-        private void Main_Load(object sender, EventArgs e) 
+
+        private void Main_Load(object sender, EventArgs e)
         {
             var args = Environment.GetCommandLineArgs();
             try
@@ -297,9 +298,7 @@ namespace WinNetMeter
                 }
             }
             catch { }
-           
         }
-
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
@@ -307,11 +306,29 @@ namespace WinNetMeter
             {
                 Integration integration = new Integration();
                 integration.ReinstallToolbar();
-                MessageBox.Show("Re-Register .dll Successfully.", "WinNetMeter Integration");
+                MessageBox.Show("Re-Register Shell Integration Successfully.", "WinNetMeter Integration",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Something happened. {ex.Message}", "WinNetMeter Integration");
+                MessageBox.Show($"Something happened. {ex.Message}", "WinNetMeter Integration",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnUninstall_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Integration integration = new Integration();
+                integration.UninstallToolbar();
+                MessageBox.Show("Uninstall Shell Integration Successfully.", "WinNetMeter Integration",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Something happened. {ex.Message}", "WinNetMeter Integration",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

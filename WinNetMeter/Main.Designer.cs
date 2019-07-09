@@ -99,15 +99,6 @@
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -124,6 +115,10 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnUninstall = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -139,9 +134,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -301,8 +293,8 @@
             // 
             this.LineDivider.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.LineDivider.Name = "LineDivider";
-            this.LineDivider.X1 = 10;
-            this.LineDivider.X2 = 10;
+            this.LineDivider.X1 = 8;
+            this.LineDivider.X2 = 8;
             this.LineDivider.Y1 = -1;
             this.LineDivider.Y2 = 479;
             // 
@@ -445,11 +437,11 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(207, -7);
+            this.tabControl1.Location = new System.Drawing.Point(204, -5);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(644, 543);
+            this.tabControl1.Size = new System.Drawing.Size(595, 493);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -620,10 +612,10 @@
             // 
             // lineShape4
             // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 10;
-            this.lineShape4.X2 = 10;
+            this.lineShape4.X1 = 8;
+            this.lineShape4.X2 = 8;
             this.lineShape4.Y1 = -1;
             this.lineShape4.Y2 = 479;
             // 
@@ -857,13 +849,17 @@
             // 
             this.lineShape1.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 10;
-            this.lineShape1.X2 = 10;
+            this.lineShape1.X1 = 8;
+            this.lineShape1.X2 = 8;
             this.lineShape1.Y1 = -1;
             this.lineShape1.Y2 = 479;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label21);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.BtnUninstall);
+            this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.BtnRegister);
             this.tabPage4.Controls.Add(this.label10);
@@ -871,30 +867,29 @@
             this.tabPage4.Location = new System.Drawing.Point(23, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(617, 535);
+            this.tabPage4.Size = new System.Drawing.Size(568, 485);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(31, 84);
+            this.label18.Location = new System.Drawing.Point(31, 101);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(410, 45);
+            this.label18.Size = new System.Drawing.Size(410, 62);
             this.label18.TabIndex = 18;
-            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar\r\nYou can try Re-Register it" +
-    ". Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the TaskB" +
-    "ar for better troubleshooting";
+            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, \r\nYou can try Re-Register " +
+    "Shell. Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the " +
+    "TaskBar for better troubleshooting";
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(34, 149);
+            this.BtnRegister.Location = new System.Drawing.Point(306, 166);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(162, 64);
+            this.BtnRegister.Size = new System.Drawing.Size(135, 40);
             this.BtnRegister.TabIndex = 15;
-            this.BtnRegister.Text = "Re-Register";
+            this.BtnRegister.Text = "Re-Register Shell";
             this.BtnRegister.UseVisualStyleBackColor = true;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
@@ -916,7 +911,7 @@
             this.shapeContainer5.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape9,
             this.lineShape7});
-            this.shapeContainer5.Size = new System.Drawing.Size(611, 529);
+            this.shapeContainer5.Size = new System.Drawing.Size(562, 479);
             this.shapeContainer5.TabIndex = 14;
             this.shapeContainer5.TabStop = false;
             // 
@@ -924,8 +919,8 @@
             // 
             this.lineShape9.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 10;
-            this.lineShape9.X2 = 10;
+            this.lineShape9.X1 = 8;
+            this.lineShape9.X2 = 8;
             this.lineShape9.Y1 = -1;
             this.lineShape9.Y2 = 749;
             // 
@@ -940,15 +935,6 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.linkLabel8);
-            this.tabPage5.Controls.Add(this.pictureBox10);
-            this.tabPage5.Controls.Add(this.label21);
-            this.tabPage5.Controls.Add(this.label17);
-            this.tabPage5.Controls.Add(this.pictureBox9);
-            this.tabPage5.Controls.Add(this.linkLabel7);
-            this.tabPage5.Controls.Add(this.pictureBox8);
-            this.tabPage5.Controls.Add(this.label13);
-            this.tabPage5.Controls.Add(this.linkLabel6);
             this.tabPage5.Controls.Add(this.linkLabel5);
             this.tabPage5.Controls.Add(this.linkLabel4);
             this.tabPage5.Controls.Add(this.linkLabel3);
@@ -963,108 +949,17 @@
             this.tabPage5.Controls.Add(this.shapeContainer6);
             this.tabPage5.Location = new System.Drawing.Point(23, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(617, 535);
+            this.tabPage5.Size = new System.Drawing.Size(568, 485);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // linkLabel8
-            // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel8.Location = new System.Drawing.Point(281, 270);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(146, 17);
-            this.linkLabel8.TabIndex = 41;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "GitHub repository page";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::WinNetMeter.Properties.Resources.github_black_16px;
-            this.pictureBox10.Location = new System.Drawing.Point(262, 270);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox10.TabIndex = 40;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(165, 270);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(97, 17);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "And our official";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(172, 291);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(150, 17);
-            this.label17.TabIndex = 38;
-            this.label17.Text = "For further development";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::WinNetMeter.Properties.Resources.Love_colored_16px;
-            this.pictureBox9.Location = new System.Drawing.Point(45, 292);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox9.TabIndex = 37;
-            this.pictureBox9.TabStop = false;
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel7.Location = new System.Drawing.Point(64, 291);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(110, 17);
-            this.linkLabel7.TabIndex = 36;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Send us donation";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::WinNetMeter.Properties.Resources.Share_blue_16px;
-            this.pictureBox8.Location = new System.Drawing.Point(45, 269);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox8.TabIndex = 35;
-            this.pictureBox8.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(41, 238);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 20);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Support";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.Location = new System.Drawing.Point(64, 270);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(104, 17);
-            this.linkLabel6.TabIndex = 33;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Visit our website";
-            // 
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.Location = new System.Drawing.Point(42, 208);
+            this.linkLabel5.Location = new System.Drawing.Point(42, 227);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(204, 17);
+            this.linkLabel5.Size = new System.Drawing.Size(169, 13);
             this.linkLabel5.TabIndex = 32;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Jovan Ferryal Ervanda Firmansyah";
@@ -1072,10 +967,9 @@
             // linkLabel4
             // 
             this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(42, 187);
+            this.linkLabel4.Location = new System.Drawing.Point(42, 206);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(88, 17);
+            this.linkLabel4.Size = new System.Drawing.Size(70, 13);
             this.linkLabel4.TabIndex = 31;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Jeremy Albert";
@@ -1083,10 +977,9 @@
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(42, 169);
+            this.linkLabel3.Location = new System.Drawing.Point(42, 188);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(60, 17);
+            this.linkLabel3.Size = new System.Drawing.Size(52, 13);
             this.linkLabel3.TabIndex = 30;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Azhe Zyu";
@@ -1094,10 +987,9 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(42, 149);
+            this.linkLabel2.Location = new System.Drawing.Point(42, 168);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(113, 17);
+            this.linkLabel2.Size = new System.Drawing.Size(90, 13);
             this.linkLabel2.TabIndex = 29;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Muhammad Arfan";
@@ -1106,7 +998,7 @@
             // 
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(39, 453);
+            this.lblCopyright.Location = new System.Drawing.Point(39, 447);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(185, 15);
             this.lblCopyright.TabIndex = 28;
@@ -1117,7 +1009,7 @@
             this.richDescription.BackColor = System.Drawing.SystemColors.Control;
             this.richDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richDescription.Location = new System.Drawing.Point(42, 322);
+            this.richDescription.Location = new System.Drawing.Point(42, 309);
             this.richDescription.Name = "richDescription";
             this.richDescription.ReadOnly = true;
             this.richDescription.Size = new System.Drawing.Size(471, 113);
@@ -1128,7 +1020,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(38, 117);
+            this.label20.Location = new System.Drawing.Point(38, 136);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(95, 20);
             this.label20.TabIndex = 19;
@@ -1183,7 +1075,7 @@
             this.shapeContainer6.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape10,
             this.lineShape8});
-            this.shapeContainer6.Size = new System.Drawing.Size(617, 535);
+            this.shapeContainer6.Size = new System.Drawing.Size(568, 485);
             this.shapeContainer6.TabIndex = 25;
             this.shapeContainer6.TabStop = false;
             // 
@@ -1191,8 +1083,8 @@
             // 
             this.lineShape10.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.lineShape10.Name = "lineShape10";
-            this.lineShape10.X1 = 10;
-            this.lineShape10.X2 = 10;
+            this.lineShape10.X1 = 8;
+            this.lineShape10.X2 = 8;
             this.lineShape10.Y1 = -1;
             this.lineShape10.Y2 = 479;
             // 
@@ -1204,6 +1096,45 @@
             this.lineShape8.X2 = 551;
             this.lineShape8.Y1 = 102;
             this.lineShape8.Y2 = 102;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(33, 274);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(408, 35);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nth" +
+    "en replace with new Version.";
+            // 
+            // BtnUninstall
+            // 
+            this.BtnUninstall.Location = new System.Drawing.Point(306, 312);
+            this.BtnUninstall.Name = "BtnUninstall";
+            this.BtnUninstall.Size = new System.Drawing.Size(135, 40);
+            this.BtnUninstall.TabIndex = 20;
+            this.BtnUninstall.Text = "Uninstall Shell";
+            this.BtnUninstall.UseVisualStyleBackColor = true;
+            this.BtnUninstall.Click += new System.EventHandler(this.BtnUninstall_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label17.Location = new System.Drawing.Point(31, 71);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(163, 25);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Re-Register Shell";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label21.Location = new System.Drawing.Point(31, 249);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(135, 25);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Uninstall Shell";
             // 
             // Main
             // 
@@ -1243,9 +1174,6 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
@@ -1338,15 +1266,10 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape10;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.LinkLabel linkLabel7;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.LinkLabel linkLabel8;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button BtnUninstall;
+        private System.Windows.Forms.Label label13;
     }
 }
 

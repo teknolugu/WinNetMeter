@@ -33,6 +33,8 @@ namespace WinNetMeter.Helper
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
             }
+
+
             File.Create(batchFileLocation).Close();
 
             //Get .NET Framework path Information

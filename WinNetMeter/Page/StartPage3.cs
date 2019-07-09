@@ -53,7 +53,15 @@ namespace WinNetMeter.Page
 
         private void ListAdapter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedAdapter = listAdapter.SelectedItem.ToString();
+            try
+            {
+                SelectedAdapter = listAdapter.SelectedItem.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("List adapter sedang dimuat, silakan tunggu.", "WinNetMeter Setup",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

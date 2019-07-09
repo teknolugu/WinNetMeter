@@ -119,6 +119,7 @@
     <Compile Include="Helper\NativeMethods.cs" />
     <Compile Include="Helper\Integration.cs" />
     <Compile Include="Helper\NetworkMonitor.cs" />
+    <Compile Include="Helper\Numeric.cs" />
     <Compile Include="Helper\RegistryManager.cs" />
     <Compile Include="Helper\TaskBarHelper.cs" />
     <Compile Include="Main.cs">
@@ -172,6 +173,12 @@
     <Compile Include="Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AppUpdater.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppUpdater.Designer.cs">
+      <DependentUpon>AppUpdater.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AppUpdater.resx">
+      <DependentUpon>AppUpdater.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

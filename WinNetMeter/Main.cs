@@ -331,5 +331,10 @@ namespace WinNetMeter
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnCheckUpdates_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

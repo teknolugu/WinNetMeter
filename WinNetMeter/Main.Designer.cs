@@ -119,6 +119,7 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
             this.label22 = new System.Windows.Forms.Label();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.label23 = new System.Windows.Forms.Label();
@@ -986,6 +987,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.appUpdater1);
             this.tabPage5.Controls.Add(this.label24);
             this.tabPage5.Controls.Add(this.linkLabel8);
             this.tabPage5.Controls.Add(this.pictureBox10);
@@ -1045,7 +1047,7 @@
             this.linkLabel3.Size = new System.Drawing.Size(60, 17);
             this.linkLabel3.TabIndex = 30;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Azhe Zyu";
+            this.linkLabel3.Text = "Azhe Kun";
             // 
             // linkLabel2
             // 
@@ -1076,7 +1078,7 @@
             this.richDescription.Location = new System.Drawing.Point(42, 313);
             this.richDescription.Name = "richDescription";
             this.richDescription.ReadOnly = true;
-            this.richDescription.Size = new System.Drawing.Size(471, 113);
+            this.richDescription.Size = new System.Drawing.Size(471, 74);
             this.richDescription.TabIndex = 22;
             this.richDescription.Text = "";
             // 
@@ -1250,6 +1252,12 @@
             this.label24.Size = new System.Drawing.Size(148, 17);
             this.label24.TabIndex = 41;
             this.label24.Text = "for further development";
+            // appUpdater1
+            // 
+            this.appUpdater1.Location = new System.Drawing.Point(288, 136);
+            this.appUpdater1.Name = "appUpdater1";
+            this.appUpdater1.Size = new System.Drawing.Size(249, 104);
+            this.appUpdater1.TabIndex = 33;
             // 
             // Main
             // 
@@ -1397,6 +1405,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.Label label22;
+        private UserControls.AppUpdater appUpdater1;
     }
 }
 

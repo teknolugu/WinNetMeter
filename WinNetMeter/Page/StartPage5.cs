@@ -17,7 +17,8 @@ namespace WinNetMeter.Page
 
         private void StartPage5_Load(object sender, EventArgs e)
         {
-
+            RegistryManager registryManager = new RegistryManager();
+            registryManager.SaveExecutableLocation();
         }
 
         private void ToggleInstaller_CheckedChanged(object sender, EventArgs e)

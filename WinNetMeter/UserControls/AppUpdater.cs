@@ -100,7 +100,10 @@ namespace WinNetMeter.UserControls
                     Title.Text = "Restarting App..";
                     BtnCheckUpdates.Enabled = true;
                     BtnCancel.Enabled = false;
-                    ThisApp.InstallUpdates();
+                    //ThisApp.InstallUpdates();
+
+                    Process.Start("Updater.exe");
+                    Application.Exit();
                 }
             }
         }

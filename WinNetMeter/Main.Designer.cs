@@ -128,6 +128,10 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.BatasBawahGeneral = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -147,6 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -327,7 +332,7 @@
             this.ListAdapter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListAdapter.FormattingEnabled = true;
             this.ListAdapter.ItemHeight = 15;
-            this.ListAdapter.Location = new System.Drawing.Point(34, 297);
+            this.ListAdapter.Location = new System.Drawing.Point(6, 217);
             this.ListAdapter.Name = "ListAdapter";
             this.ListAdapter.Size = new System.Drawing.Size(510, 120);
             this.ListAdapter.TabIndex = 2;
@@ -337,7 +342,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(31, 265);
+            this.label3.Location = new System.Drawing.Point(3, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 21);
             this.label3.TabIndex = 3;
@@ -346,7 +351,7 @@
             // ToggleMonitor
             // 
             this.ToggleMonitor.AutoSize = true;
-            this.ToggleMonitor.Location = new System.Drawing.Point(446, 84);
+            this.ToggleMonitor.Location = new System.Drawing.Point(418, 9);
             this.ToggleMonitor.Name = "ToggleMonitor";
             this.ToggleMonitor.Size = new System.Drawing.Size(80, 17);
             this.ToggleMonitor.TabIndex = 4;
@@ -357,7 +362,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 84);
+            this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 5;
@@ -377,7 +382,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 126);
+            this.label6.Location = new System.Drawing.Point(3, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(187, 17);
             this.label6.TabIndex = 8;
@@ -386,7 +391,7 @@
             // ToggleAutoUpdate
             // 
             this.ToggleAutoUpdate.AutoSize = true;
-            this.ToggleAutoUpdate.Location = new System.Drawing.Point(446, 126);
+            this.ToggleAutoUpdate.Location = new System.Drawing.Point(418, 51);
             this.ToggleAutoUpdate.Name = "ToggleAutoUpdate";
             this.ToggleAutoUpdate.Size = new System.Drawing.Size(80, 17);
             this.ToggleAutoUpdate.TabIndex = 7;
@@ -397,7 +402,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 171);
+            this.label7.Location = new System.Drawing.Point(4, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 9;
@@ -412,7 +417,7 @@
             "Auto",
             "KB",
             "MB"});
-            this.comboBoxFormat.Location = new System.Drawing.Point(405, 171);
+            this.comboBoxFormat.Location = new System.Drawing.Point(377, 96);
             this.comboBoxFormat.Name = "comboBoxFormat";
             this.comboBoxFormat.Size = new System.Drawing.Size(121, 21);
             this.comboBoxFormat.TabIndex = 10;
@@ -426,7 +431,7 @@
             this.comboBoxLanguage.Items.AddRange(new object[] {
             "English",
             "Indonesian"});
-            this.comboBoxLanguage.Location = new System.Drawing.Point(405, 217);
+            this.comboBoxLanguage.Location = new System.Drawing.Point(377, 142);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLanguage.TabIndex = 11;
@@ -435,7 +440,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(32, 217);
+            this.label8.Location = new System.Drawing.Point(4, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 12;
@@ -458,18 +463,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.ToggleAutoUpdate);
-            this.tabPage1.Controls.Add(this.comboBoxLanguage);
             this.tabPage1.Controls.Add(this.btnSaveGeneral);
-            this.tabPage1.Controls.Add(this.ToggleMonitor);
-            this.tabPage1.Controls.Add(this.comboBoxFormat);
-            this.tabPage1.Controls.Add(this.ListAdapter);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.shapeContainer3);
             this.tabPage1.Location = new System.Drawing.Point(23, 4);
             this.tabPage1.Name = "tabPage1";
@@ -1258,6 +1254,56 @@
             this.lineShape8.Y1 = 102;
             this.lineShape8.Y2 = 102;
             // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.BatasBawahGeneral);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.ListAdapter);
+            this.panel3.Controls.Add(this.comboBoxLanguage);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.comboBoxFormat);
+            this.panel3.Controls.Add(this.ToggleMonitor);
+            this.panel3.Controls.Add(this.ToggleAutoUpdate);
+            this.panel3.Location = new System.Drawing.Point(17, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(545, 373);
+            this.panel3.TabIndex = 15;
+            // 
+            // BatasBawahGeneral
+            // 
+            this.BatasBawahGeneral.Location = new System.Drawing.Point(184, 411);
+            this.BatasBawahGeneral.Name = "BatasBawahGeneral";
+            this.BatasBawahGeneral.Size = new System.Drawing.Size(81, 20);
+            this.BatasBawahGeneral.TabIndex = 13;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(4, 372);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(137, 17);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Server Update Stream";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "https://cdn.winten.space",
+            "https://cdn.azhe.space"});
+            this.comboBox1.Location = new System.Drawing.Point(228, 368);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(269, 21);
+            this.comboBox1.TabIndex = 15;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1302,6 +1348,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1406,6 +1454,10 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.LinkLabel linkWebsite;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label BatasBawahGeneral;
     }
 }
 

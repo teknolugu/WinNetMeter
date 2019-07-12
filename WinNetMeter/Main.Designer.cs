@@ -103,10 +103,19 @@
             this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.linkDonation = new System.Windows.Forms.LinkLabel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.linkGithub = new System.Windows.Forms.LinkLabel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.linkWebsite = new System.Windows.Forms.LinkLabel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.linkJovan = new System.Windows.Forms.LinkLabel();
+            this.linkJeremy = new System.Windows.Forms.LinkLabel();
+            this.linkAzhe = new System.Windows.Forms.LinkLabel();
+            this.linkArfan = new System.Windows.Forms.LinkLabel();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.richDescription = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -119,16 +128,6 @@
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
-            this.label22 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.label24 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -144,10 +143,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -987,20 +986,19 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.appUpdater1);
             this.tabPage5.Controls.Add(this.label24);
-            this.tabPage5.Controls.Add(this.linkLabel8);
+            this.tabPage5.Controls.Add(this.linkDonation);
             this.tabPage5.Controls.Add(this.pictureBox10);
-            this.tabPage5.Controls.Add(this.linkLabel7);
+            this.tabPage5.Controls.Add(this.linkGithub);
             this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Controls.Add(this.label23);
             this.tabPage5.Controls.Add(this.pictureBox8);
-            this.tabPage5.Controls.Add(this.linkLabel6);
+            this.tabPage5.Controls.Add(this.linkWebsite);
             this.tabPage5.Controls.Add(this.label22);
-            this.tabPage5.Controls.Add(this.linkLabel5);
-            this.tabPage5.Controls.Add(this.linkLabel4);
-            this.tabPage5.Controls.Add(this.linkLabel3);
-            this.tabPage5.Controls.Add(this.linkLabel2);
+            this.tabPage5.Controls.Add(this.linkJovan);
+            this.tabPage5.Controls.Add(this.linkJeremy);
+            this.tabPage5.Controls.Add(this.linkAzhe);
+            this.tabPage5.Controls.Add(this.linkArfan);
             this.tabPage5.Controls.Add(this.lblCopyright);
             this.tabPage5.Controls.Add(this.richDescription);
             this.tabPage5.Controls.Add(this.label20);
@@ -1016,49 +1014,146 @@
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // linkLabel5
+            // label24
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.Location = new System.Drawing.Point(42, 205);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(204, 17);
-            this.linkLabel5.TabIndex = 32;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Jovan Ferryal Ervanda Firmansyah";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(171, 288);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(148, 17);
+            this.label24.TabIndex = 41;
+            this.label24.Text = "for further development";
             // 
-            // linkLabel4
+            // linkDonation
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(42, 184);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(88, 17);
-            this.linkLabel4.TabIndex = 31;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Jeremy Albert";
+            this.linkDonation.AutoSize = true;
+            this.linkDonation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkDonation.Location = new System.Drawing.Point(64, 288);
+            this.linkDonation.Name = "linkDonation";
+            this.linkDonation.Size = new System.Drawing.Size(110, 17);
+            this.linkDonation.TabIndex = 40;
+            this.linkDonation.TabStop = true;
+            this.linkDonation.Text = "Send us donation";
+            this.linkDonation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkDonation_LinkClicked);
             // 
-            // linkLabel3
+            // pictureBox10
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(42, 166);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(60, 17);
-            this.linkLabel3.TabIndex = 30;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Azhe Kun";
+            this.pictureBox10.Image = global::WinNetMeter.Properties.Resources.Love_colored_16px;
+            this.pictureBox10.Location = new System.Drawing.Point(45, 289);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox10.TabIndex = 39;
+            this.pictureBox10.TabStop = false;
             // 
-            // linkLabel2
+            // linkGithub
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(42, 146);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(113, 17);
-            this.linkLabel2.TabIndex = 29;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Muhammad Arfan";
+            this.linkGithub.AutoSize = true;
+            this.linkGithub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGithub.Location = new System.Drawing.Point(280, 265);
+            this.linkGithub.Name = "linkGithub";
+            this.linkGithub.Size = new System.Drawing.Size(146, 17);
+            this.linkGithub.TabIndex = 38;
+            this.linkGithub.TabStop = true;
+            this.linkGithub.Text = "GitHub repository page";
+            this.linkGithub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkGithub_LinkClicked);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::WinNetMeter.Properties.Resources.github_black_16px;
+            this.pictureBox9.Location = new System.Drawing.Point(263, 266);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox9.TabIndex = 37;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(166, 266);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(97, 17);
+            this.label23.TabIndex = 36;
+            this.label23.Text = "And our official";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::WinNetMeter.Properties.Resources.Share_blue_16px;
+            this.pictureBox8.Location = new System.Drawing.Point(45, 267);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox8.TabIndex = 35;
+            this.pictureBox8.TabStop = false;
+            // 
+            // linkWebsite
+            // 
+            this.linkWebsite.AutoSize = true;
+            this.linkWebsite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkWebsite.Location = new System.Drawing.Point(64, 266);
+            this.linkWebsite.Name = "linkWebsite";
+            this.linkWebsite.Size = new System.Drawing.Size(104, 17);
+            this.linkWebsite.TabIndex = 34;
+            this.linkWebsite.TabStop = true;
+            this.linkWebsite.Text = "Visit our website";
+            this.linkWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkWebsite_LinkClicked);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(38, 240);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(64, 20);
+            this.label22.TabIndex = 33;
+            this.label22.Text = "Support";
+            // 
+            // linkJovan
+            // 
+            this.linkJovan.AutoSize = true;
+            this.linkJovan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkJovan.Location = new System.Drawing.Point(42, 205);
+            this.linkJovan.Name = "linkJovan";
+            this.linkJovan.Size = new System.Drawing.Size(204, 17);
+            this.linkJovan.TabIndex = 32;
+            this.linkJovan.TabStop = true;
+            this.linkJovan.Text = "Jovan Ferryal Ervanda Firmansyah";
+            this.linkJovan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkJovan_LinkClicked);
+            // 
+            // linkJeremy
+            // 
+            this.linkJeremy.AutoSize = true;
+            this.linkJeremy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkJeremy.Location = new System.Drawing.Point(42, 184);
+            this.linkJeremy.Name = "linkJeremy";
+            this.linkJeremy.Size = new System.Drawing.Size(88, 17);
+            this.linkJeremy.TabIndex = 31;
+            this.linkJeremy.TabStop = true;
+            this.linkJeremy.Text = "Jeremy Albert";
+            this.linkJeremy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkJeremy_LinkClicked);
+            // 
+            // linkAzhe
+            // 
+            this.linkAzhe.AutoSize = true;
+            this.linkAzhe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAzhe.Location = new System.Drawing.Point(42, 166);
+            this.linkAzhe.Name = "linkAzhe";
+            this.linkAzhe.Size = new System.Drawing.Size(60, 17);
+            this.linkAzhe.TabIndex = 30;
+            this.linkAzhe.TabStop = true;
+            this.linkAzhe.Text = "Azhe Zyu";
+            this.linkAzhe.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkAzhe_LinkClicked);
+            // 
+            // linkArfan
+            // 
+            this.linkArfan.AutoSize = true;
+            this.linkArfan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkArfan.Location = new System.Drawing.Point(42, 146);
+            this.linkArfan.Name = "linkArfan";
+            this.linkArfan.Size = new System.Drawing.Size(113, 17);
+            this.linkArfan.TabIndex = 29;
+            this.linkArfan.TabStop = true;
+            this.linkArfan.Text = "Muhammad Arfan";
+            this.linkArfan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkArfan_LinkClicked);
             // 
             // lblCopyright
             // 
@@ -1075,10 +1170,10 @@
             this.richDescription.BackColor = System.Drawing.SystemColors.Control;
             this.richDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richDescription.Location = new System.Drawing.Point(42, 313);
+            this.richDescription.Location = new System.Drawing.Point(42, 331);
             this.richDescription.Name = "richDescription";
             this.richDescription.ReadOnly = true;
-            this.richDescription.Size = new System.Drawing.Size(471, 74);
+            this.richDescription.Size = new System.Drawing.Size(471, 95);
             this.richDescription.TabIndex = 22;
             this.richDescription.Text = "";
             // 
@@ -1163,102 +1258,6 @@
             this.lineShape8.Y1 = 102;
             this.lineShape8.Y2 = 102;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(38, 238);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(64, 20);
-            this.label22.TabIndex = 33;
-            this.label22.Text = "Support";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.Location = new System.Drawing.Point(64, 264);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(104, 17);
-            this.linkLabel6.TabIndex = 34;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Visit our website";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(166, 264);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 17);
-            this.label23.TabIndex = 36;
-            this.label23.Text = "And our official";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::WinNetMeter.Properties.Resources.Share_blue_16px;
-            this.pictureBox8.Location = new System.Drawing.Point(45, 265);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox8.TabIndex = 35;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::WinNetMeter.Properties.Resources.github_black_16px;
-            this.pictureBox9.Location = new System.Drawing.Point(263, 264);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox9.TabIndex = 37;
-            this.pictureBox9.TabStop = false;
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel7.Location = new System.Drawing.Point(280, 263);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(146, 17);
-            this.linkLabel7.TabIndex = 38;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "GitHub repository page";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::WinNetMeter.Properties.Resources.Love_colored_16px;
-            this.pictureBox10.Location = new System.Drawing.Point(45, 287);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox10.TabIndex = 39;
-            this.pictureBox10.TabStop = false;
-            // 
-            // linkLabel8
-            // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel8.Location = new System.Drawing.Point(64, 286);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(110, 17);
-            this.linkLabel8.TabIndex = 40;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "Send us donation";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(171, 286);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(148, 17);
-            this.label24.TabIndex = 41;
-            this.label24.Text = "for further development";
-            // appUpdater1
-            // 
-            this.appUpdater1.Location = new System.Drawing.Point(288, 136);
-            this.appUpdater1.Name = "appUpdater1";
-            this.appUpdater1.Size = new System.Drawing.Size(249, 104);
-            this.appUpdater1.TabIndex = 33;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1270,6 +1269,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(810, 522);
+            this.MinimumSize = new System.Drawing.Size(810, 522);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WinNetMeter";
@@ -1297,10 +1297,10 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1385,10 +1385,10 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkJeremy;
+        private System.Windows.Forms.LinkLabel linkAzhe;
+        private System.Windows.Forms.LinkLabel linkArfan;
+        private System.Windows.Forms.LinkLabel linkJovan;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape10;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
@@ -1397,15 +1397,14 @@
         private System.Windows.Forms.Button BtnUninstall;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.LinkLabel linkDonation;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.LinkLabel linkGithub;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.LinkLabel linkWebsite;
         private System.Windows.Forms.Label label22;
-        private UserControls.AppUpdater appUpdater1;
     }
 }
 

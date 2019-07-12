@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Core;
 using WinNetMeter.Helper;
@@ -13,54 +14,70 @@ namespace WinNetMeter.UserControls
     public partial class AppUpdater : UserControl
     {
         private WebClient _webClient;
-        private Stopwatch sw = new Stopwatch();
-        private string urlDashboard = "https://cdn.azhe.space/products/win-netmeter/release/WinNetMeter.exe";
-        private string urlShell = "https://cdn.azhe.space/products/win-netmeter/release/WinNetMeter.Shell.dll";
+        private readonly Stopwatch sw = new Stopwatch();
+
+        private readonly string baseUrl = "https://cdn.winten.space";
+        private readonly string urlDashboard = "";
+        private readonly string urlShell = "";
+        private readonly string urlUpdater = "";
         private bool isDownloadDashboard = false;
-        private string imageInsall = "WinNetMeter.aim";
-        private string imageShell = "WinNetMeter.Shell.aim";
-        private string moduleName = "Updater";
+        private readonly string imageInsall = "WinNetMeter.aim";
+        private readonly string imageShell = "WinNetMeter.Shell.aim";
+        private readonly string updaterName = "Updater.exe";
 
         public AppUpdater()
         {
             InitializeComponent();
-            //DownloadFile(urlDashboard, imageInsall);
+
+            urlDashboard = $"{baseUrl}/products/win-netmeter/release/WinNetMeter.exe";
+            urlShell = $"{baseUrl}/products/win-netmeter/release/WinNetMeter.Shell.dll";
+            urlUpdater = $"{baseUrl}/products/win-netmeter/release/Updater.exe";
         }
 
         private void DownloadFile(string urlAddress, string location)
         {
-            using (WebClient wc = new WebClient())
+            //using (WebClient wc = new WebClient())
+            //{
+            //    wc.DownloadFile(urlShell, imageShell);
+            //    wc.DownloadFile(urlUpdater, updaterName);
+            //}
+            try
             {
-                wc.DownloadFile(urlShell, imageShell);
+                using (_webClient = new WebClient())
+                {
+                    _webClient.DownloadFile(urlShell, imageShell);
+                    _webClient.DownloadFile(urlUpdater, updaterName);
+
+                    _webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
+                    _webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
+
+                    // The variable that will be holding the url address (making sure it starts with http://)
+                    Uri URL = urlAddress.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
+                        ? new Uri(urlAddress)
+                        : new Uri("https://" + urlAddress);
+
+                    if (urlAddress.Contains("exe"))
+                    {
+                        isDownloadDashboard = true;
+                    }
+
+                    // Start the stopwatch which we will be using to calculate the download speed
+                    sw.Start();
+
+                    try
+                    {
+                        // Start downloading the file
+                        _webClient.DownloadFileAsync(URL, location);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
-
-            using (_webClient = new WebClient())
+            catch (Exception ex)
             {
-                _webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
-                _webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-
-                // The variable that will be holding the url address (making sure it starts with http://)
-                Uri URL = urlAddress.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
-                    ? new Uri(urlAddress)
-                    : new Uri("https://" + urlAddress);
-
-                if (urlAddress.Contains("exe"))
-                {
-                    isDownloadDashboard = true;
-                }
-
-                // Start the stopwatch which we will be using to calculate the download speed
-                sw.Start();
-
-                try
-                {
-                    // Start downloading the file
-                    _webClient.DownloadFileAsync(URL, location);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show($"Something happened. Message: {ex.Message}", "Updater", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

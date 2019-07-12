@@ -132,6 +132,7 @@
             this.BatasBawahGeneral = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -982,6 +983,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.appUpdater1);
             this.tabPage5.Controls.Add(this.label24);
             this.tabPage5.Controls.Add(this.linkDonation);
             this.tabPage5.Controls.Add(this.pictureBox10);
@@ -1304,6 +1306,13 @@
             this.comboBox1.Size = new System.Drawing.Size(269, 21);
             this.comboBox1.TabIndex = 15;
             // 
+            // appUpdater1
+            // 
+            this.appUpdater1.Location = new System.Drawing.Point(283, 119);
+            this.appUpdater1.Name = "appUpdater1";
+            this.appUpdater1.Size = new System.Drawing.Size(260, 98);
+            this.appUpdater1.TabIndex = 42;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1458,6 +1467,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label BatasBawahGeneral;
+        private UserControls.AppUpdater appUpdater1;
     }
 }
 

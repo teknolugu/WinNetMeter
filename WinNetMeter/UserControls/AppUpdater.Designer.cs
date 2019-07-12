@@ -84,7 +84,7 @@
             this.Controls.Add(this.Description);
             this.Controls.Add(this.Title);
             this.Name = "AppUpdater";
-            this.Size = new System.Drawing.Size(280, 98);
+            this.Size = new System.Drawing.Size(250, 98);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -77,7 +77,6 @@ namespace WinNetMeter.Helper
             GeneralConfiguration.SetValue("AutoUpdate", config.AutoUpdate, RegistryValueKind.String);
             GeneralConfiguration.SetValue("Language", config.Language, RegistryValueKind.String);
             GeneralConfiguration.SetValue("Format", config.Format, RegistryValueKind.String);
-            GeneralConfiguration.SetValue("TrafficLogging", config.TrafficLogging, RegistryValueKind.String);
             GeneralConfiguration.SetValue("MonitoredAdapter", config.MonitoredAdapter, RegistryValueKind.String);
         }
 
@@ -100,7 +99,6 @@ namespace WinNetMeter.Helper
             config.AutoUpdate = Convert.ToBoolean(GeneralConfiguration.GetValue("AutoUpdate"));
             config.Language = (Language)Enum.Parse(typeof(Language), GeneralConfiguration.GetValue("Language").ToString());
             config.Format = GeneralConfiguration.GetValue("Format").ToString();
-            config.TrafficLogging = Convert.ToBoolean(GeneralConfiguration.GetValue("TrafficLogging"));
             config.MonitoredAdapter = GeneralConfiguration.GetValue("MonitoredAdapter").ToString();
 
             return config;

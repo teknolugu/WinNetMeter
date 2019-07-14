@@ -175,11 +175,41 @@
     <Compile Include="Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\About.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AppUpdater.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\AppUpdater.Designer.cs">
       <DependentUpon>AppUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Customize.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customize.Designer.cs">
+      <DependentUpon>Customize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\General.Designer.cs">
+      <DependentUpon>General.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\IntegrationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\IntegrationPage.Designer.cs">
+      <DependentUpon>IntegrationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Log.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -207,8 +237,23 @@
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AppUpdater.resx">
       <DependentUpon>AppUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customize.resx">
+      <DependentUpon>Customize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\General.resx">
+      <DependentUpon>General.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\IntegrationPage.resx">
+      <DependentUpon>IntegrationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.customize = new WinNetMeter.UserControls.Customize();
-            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
-            this.general = new WinNetMeter.UserControls.General();
-            this.log = new WinNetMeter.UserControls.Log();
-            this.about = new WinNetMeter.UserControls.About();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnIntegrate = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
@@ -54,55 +49,19 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.general = new WinNetMeter.UserControls.General();
+            this.log = new WinNetMeter.UserControls.Log();
+            this.customize = new WinNetMeter.UserControls.Customize();
+            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
+            this.about = new WinNetMeter.UserControls.About();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
-            //
-            // integrationPage
-            //
-            this.integrationPage.BackColor = System.Drawing.Color.White;
-            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.integrationPage.Name = "integrationPage";
-            // 
-            // customize
-            // 
-            this.customize.BackColor = System.Drawing.Color.White;
-            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customize.Location = new System.Drawing.Point(3, 3);
-            this.customize.Name = "customize";
-            this.customize.Size = new System.Drawing.Size(562, 479);
-            this.customize.TabIndex = 0;
-            // 
-            // general
-            // 
-            this.general.BackColor = System.Drawing.Color.White;
-            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.general.Location = new System.Drawing.Point(3, 3);
-            this.general.Name = "general";
-            this.general.Size = new System.Drawing.Size(562, 479);
-            this.general.TabIndex = 0;
-            // 
-            // log
-            // 
-            this.log.BackColor = System.Drawing.Color.White;
-            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.log.Location = new System.Drawing.Point(0, 0);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(568, 485);
-            this.log.TabIndex = 0;
-            // 
-            // about
-            // 
-            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.about.Location = new System.Drawing.Point(0, 0);
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(568, 485);
-            this.about.TabIndex = 0;
             // 
             // panel1
             // 
@@ -305,6 +264,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.integrationPage);
             this.tabPage4.Location = new System.Drawing.Point(23, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -312,7 +272,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Controls.Add(integrationPage);
             // 
             // tabPage5
             // 
@@ -323,6 +282,51 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // general
+            // 
+            this.general.BackColor = System.Drawing.Color.White;
+            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.general.Location = new System.Drawing.Point(3, 3);
+            this.general.Name = "general";
+            this.general.Size = new System.Drawing.Size(562, 479);
+            this.general.TabIndex = 0;
+            // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.Color.White;
+            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log.Location = new System.Drawing.Point(0, 0);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(568, 485);
+            this.log.TabIndex = 0;
+            // 
+            // customize
+            // 
+            this.customize.BackColor = System.Drawing.Color.White;
+            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customize.Location = new System.Drawing.Point(3, 3);
+            this.customize.Name = "customize";
+            this.customize.Size = new System.Drawing.Size(562, 479);
+            this.customize.TabIndex = 0;
+            // 
+            // integrationPage
+            // 
+            this.integrationPage.BackColor = System.Drawing.Color.White;
+            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.integrationPage.Location = new System.Drawing.Point(3, 3);
+            this.integrationPage.Name = "integrationPage";
+            this.integrationPage.Size = new System.Drawing.Size(562, 479);
+            this.integrationPage.TabIndex = 0;
+            // 
+            // about
+            // 
+            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.about.Location = new System.Drawing.Point(0, 0);
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(568, 485);
+            this.about.TabIndex = 0;
             // 
             // Main
             // 
@@ -347,6 +351,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 

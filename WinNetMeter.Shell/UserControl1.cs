@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using WinNetMeter.Shell.Controller;
 using WinNetMeter.Shell.Helper;
-using System.IO;
-using System.Threading;
 using WinNetMeter.Shell.Model;
-using System.Drawing.Text;
-using System.Diagnostics;
 
 namespace WinNetMeter.Shell
 {
@@ -30,7 +27,7 @@ namespace WinNetMeter.Shell
 
         protected override void WndProc(ref Message m)
         {
-            if(m.Msg == NativeMethods.WM_RESTART)
+            if (m.Msg == NativeMethods.WM_RESTART)
             {
                 RestartDesk();
             }
@@ -70,7 +67,6 @@ namespace WinNetMeter.Shell
 
         private void ConfigureStyle()
         {
-
             this.BackColor = ColorTranslator.FromHtml("#000");
 
             styleConfiguration = registryManager.GetStyleConfiguration();
@@ -104,7 +100,6 @@ namespace WinNetMeter.Shell
             {
                 pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
-
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
             {
@@ -115,16 +110,14 @@ namespace WinNetMeter.Shell
             {
                 pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
-
             }
             else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
             {
                 pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
-
             }
         }
-        
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             switch (Format)
@@ -152,8 +145,7 @@ namespace WinNetMeter.Shell
 
         private void ConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-                Process.Start(registryManager.GetExecutableLocation());
+            Process.Start(registryManager.GetExecutableLocation());
         }
 
         private void OnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,6 +169,7 @@ namespace WinNetMeter.Shell
             Process.Start(startInfo);
         }
     }
+
     public class MyLabel : Label
     {
         private TextRenderingHint _textRenderingHint = TextRenderingHint.SystemDefault;

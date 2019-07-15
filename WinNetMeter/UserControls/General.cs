@@ -79,6 +79,7 @@ namespace WinNetMeter.UserControls
             {
                 Configuration config = new Configuration
                 {
+                    Monitoring = ToggleMonitor.Checked,
                     AutoUpdate = ToggleAutoUpdate.Checked,
                     Language = (Language)Enum.Parse(typeof(Language), comboBoxLanguage.SelectedItem.ToString()),
                     Format = comboBoxFormat.SelectedItem.ToString(),

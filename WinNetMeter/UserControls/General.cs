@@ -79,21 +79,23 @@ namespace WinNetMeter.UserControls
             {
                 Configuration config = new Configuration
                 {
-                    Monitoring = ToggleMonitor.Checked,
                     AutoUpdate = ToggleAutoUpdate.Checked,
                     Language = (Language)Enum.Parse(typeof(Language), comboBoxLanguage.SelectedItem.ToString()),
                     Format = comboBoxFormat.SelectedItem.ToString(),
                     MonitoredAdapter = ListAdapter.SelectedItem.ToString()
                 };
 
-                //save the settings
+                // Save settings
                 registryManager.Save(config);
 
                 try
                 {
                     NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
                 }
-                catch { }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(this, "An error occured when sending commands to the shell", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

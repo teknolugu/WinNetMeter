@@ -44,8 +44,8 @@
             this.ToggleMonitor = new MetroFramework.Controls.MetroToggle();
             this.ToggleAutoUpdate = new MetroFramework.Controls.MetroToggle();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnSaveGeneral = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
@@ -206,6 +207,7 @@
             // ToggleMonitor
             // 
             this.ToggleMonitor.AutoSize = true;
+            this.ToggleMonitor.Enabled = false;
             this.ToggleMonitor.Location = new System.Drawing.Point(418, 9);
             this.ToggleMonitor.Name = "ToggleMonitor";
             this.ToggleMonitor.Size = new System.Drawing.Size(80, 17);
@@ -235,15 +237,6 @@
             this.shapeContainer1.TabIndex = 18;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 21;
-            this.lineShape1.X2 = 559;
-            this.lineShape1.Y1 = 60;
-            this.lineShape1.Y2 = 60;
-            // 
             // lineShape4
             // 
             this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
@@ -252,6 +245,15 @@
             this.lineShape4.X2 = 10;
             this.lineShape4.Y1 = 3;
             this.lineShape4.Y2 = 482;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 21;
+            this.lineShape1.X2 = 559;
+            this.lineShape1.Y1 = 60;
+            this.lineShape1.Y2 = 60;
             // 
             // btnSaveGeneral
             // 

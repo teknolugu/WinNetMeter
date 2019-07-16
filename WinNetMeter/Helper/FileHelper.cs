@@ -67,5 +67,19 @@ namespace WinNetMeter.Helper
                 FileHelper.SafeDelete(file);
             }
         }
+
+        public static void DeleteFolderInside(string path)
+        {
+            DirectoryInfo di = new DirectoryInfo(path);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+        }
     }
 }

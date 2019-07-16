@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using WinNetMeter.Helper;
 
 namespace WinNetMeter.Core
 {
@@ -136,6 +137,10 @@ namespace WinNetMeter.Core
                 Process.Start(process);
             }
             catch { }
+            finally
+            {
+                FileHelper.DeleteAllIn(Environment.CurrentDirectory + "/temp", "*Installer.bat");
+            }
         }
     }
 }

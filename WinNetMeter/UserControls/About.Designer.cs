@@ -180,9 +180,9 @@
             this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCopyright.Location = new System.Drawing.Point(25, 453);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(185, 15);
+            this.lblCopyright.Size = new System.Drawing.Size(272, 15);
             this.lblCopyright.TabIndex = 44;
-            this.lblCopyright.Text = "Copyright © 2019 WinTenDev Inc.";
+            this.lblCopyright.Text = "© 2019 WinTenDev Inc. by Team and Contributors.";
             // 
             // label20
             // 

@@ -10,32 +10,49 @@ namespace Updater
     {
         private static void Main(string[] args)
         {
-            string baseExe = "WinNetMeter";
-            string baseShell = "WinNetMeter.Shell";
+            string baseExe = "WinNetMeter.exe";
+            string baseShell = "WinNetMeter.Shell.dll";
+            string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
+            string exeUpdateFile = updateDirectory + @"\" + baseExe;
+            string shellUpdateFile = updateDirectory + @"\" + baseShell;
 
-            if (File.Exists($"{baseExe}.aim") && File.Exists($"{baseExe}.aim"))
+            if (File.Exists(exeUpdateFile) && File.Exists(shellUpdateFile))
             {
                 Console.WriteLine("Updating app..");
 
-                //FileHelper.SafeDelete($"{baseExe}.exe");
-                //FileHelper.SafeDelete($"{baseShell}.dll");
+                FileHelper.SafeDelete($"{baseExe}");
 
-                Console.WriteLine("Preparing..");
-                FileHelper.SafeDelete($"{baseExe}.exe.old");
-                FileHelper.SafeDelete($"{baseShell}.dll.old");
+                Console.WriteLine("Installing dashboard..");
+                FileHelper.SaveMove(exeUpdateFile, $"{baseExe}");
 
-                Console.WriteLine("Backing up..");
-                FileHelper.SaveMove($"{baseExe}.exe", $"{baseExe}.exe.old");
-                FileHelper.SaveMove($"{baseShell}.dll", $"{baseShell}.dll.old");
+                Console.WriteLine("Installing shell..");
 
-                Console.WriteLine("Installing..");
-                FileHelper.SaveMove($"{baseExe}.aim", $"{baseExe}.exe");
-                FileHelper.SaveMove($"{baseShell}.aim", $"{baseShell}.dll");
+                // Uninstalling and installing new shell
+                // Uninstall Toolbar first
+                Integration integration = new Integration();
+                integration.UninstallToolbar();
+
+                // Kill explorer.exe process
+                foreach (Process process in Process.GetProcessesByName("explorer"))
+                {
+                    process.Kill();
+                }
+
+
+                // Start the explorer.exe again
+                Process.Start("explorer.exe");
+
+                // Delete shell old file
+                FileHelper.SafeDelete($"{baseShell}");
+                FileHelper.SaveMove(shellUpdateFile, $"{baseShell}");
+
+                integration.InstallToolbar();
+
 
                 Console.WriteLine("Finished..");
                 Thread.Sleep(1000);
 
-                Process.Start($"{baseExe}.exe");
+                Process.Start($"{baseExe}");
                 Environment.Exit(0);
             }
             else

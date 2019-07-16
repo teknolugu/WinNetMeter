@@ -48,9 +48,6 @@ namespace WinNetMeter.UserControls
         {
             using (_webClient = new WebClient())
             {
-                _webClient.DownloadFile(urlUpdater, "Updater.exe");
-
-
                 _webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                 _webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
 
@@ -122,7 +119,7 @@ namespace WinNetMeter.UserControls
                         }
                     }
                 }
-                ZipFile.ExtractToDirectory(updateDirectory + @"\" + updateFile, updateDirectory);
+                ZipFile.ExtractToDirectory(updateDirectory + ".zip", updateDirectory);
 
                 Title.Text = "Restarting App..";
                 BtnCheckUpdates.Enabled = true;
@@ -154,7 +151,7 @@ namespace WinNetMeter.UserControls
             }
             else if (BtnCheckUpdates.Text.Contains("Download"))
             {
-                DownloadFile(zipUpdateFile, updateDirectory);
+                DownloadFile(zipUpdateFile, updateDirectory + ".zip");
             }
         }
 

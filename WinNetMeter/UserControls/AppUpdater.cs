@@ -40,8 +40,6 @@ namespace WinNetMeter.UserControls
             urlUpdater = $"{baseUrl}/products/win-netmeter/release/Updater.exe";
             configuration = registryManager.GetGeneralConfiguration();
             zipUpdateFile = $"{baseUrl}/products/win-netmeter/release/{updateFile}";
-
-            FileHelper.CreateDirectory(updateDirectory);
         }
 
         private void DownloadFile(string urlAddress, string location)
@@ -151,6 +149,7 @@ namespace WinNetMeter.UserControls
             }
             else if (BtnCheckUpdates.Text.Contains("Download"))
             {
+                FileHelper.CreateDirectory(updateDirectory);
                 DownloadFile(zipUpdateFile, updateDirectory + ".zip");
             }
         }

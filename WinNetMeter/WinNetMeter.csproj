@@ -123,8 +123,8 @@
     <Compile Include="Core\ThisApp.cs" />
     <Compile Include="Helper\DbManager.cs" />
     <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Core\Integration.cs" />
     <Compile Include="Helper\NativeMethods.cs" />
-    <Compile Include="Helper\Integration.cs" />
     <Compile Include="Helper\NetworkMonitor.cs" />
     <Compile Include="Helper\Numeric.cs" />
     <Compile Include="Helper\RegistryManager.cs" />

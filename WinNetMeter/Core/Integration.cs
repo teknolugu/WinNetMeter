@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace WinNetMeter.Helper
+namespace WinNetMeter.Core
 {
     internal class Integration
     {
@@ -33,7 +33,6 @@ namespace WinNetMeter.Helper
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
             }
-
 
             File.Create(batchFileLocation).Close();
 

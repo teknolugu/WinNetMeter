@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace WinNetMeter.Helper
@@ -38,6 +39,23 @@ namespace WinNetMeter.Helper
             if (File.Exists(path))
             {
                 File.Copy(path, newPath, true);
+            }
+        }
+
+        public static void CreateDirectory(string dirPath)
+        {
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+        }
+
+        public static bool IsDirectoryEmpty(string path)
+        {
+            IEnumerable<string> items = Directory.EnumerateFileSystemEntries(path);
+            using (IEnumerator<string> en = items.GetEnumerator())
+            {
+                return !en.MoveNext();
             }
         }
     }

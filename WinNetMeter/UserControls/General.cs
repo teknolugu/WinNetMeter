@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinNetMeter.Model;
 using WinNetMeter.Helper;
 using System.Windows.Forms;
@@ -33,7 +26,6 @@ namespace WinNetMeter.UserControls
             {
                 ListAdapter.SelectedIndex = 0;
             }
-
 
             #region LoadConfiguration
 

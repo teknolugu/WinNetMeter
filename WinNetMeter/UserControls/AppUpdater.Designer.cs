@@ -32,6 +32,7 @@
             this.Description = new System.Windows.Forms.Label();
             this.BtnCheckUpdates = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.Changelog = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Title
@@ -56,7 +57,7 @@
             // BtnCheckUpdates
             // 
             this.BtnCheckUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnCheckUpdates.Location = new System.Drawing.Point(5, 67);
+            this.BtnCheckUpdates.Location = new System.Drawing.Point(5, 119);
             this.BtnCheckUpdates.Name = "BtnCheckUpdates";
             this.BtnCheckUpdates.Size = new System.Drawing.Size(117, 28);
             this.BtnCheckUpdates.TabIndex = 34;
@@ -67,7 +68,8 @@
             // BtnCancel
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnCancel.Location = new System.Drawing.Point(128, 67);
+            this.BtnCancel.Enabled = false;
+            this.BtnCancel.Location = new System.Drawing.Point(128, 119);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(116, 26);
             this.BtnCancel.TabIndex = 35;
@@ -75,16 +77,32 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // Changelog
+            // 
+            this.Changelog.AutoSize = true;
+            this.Changelog.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Changelog.Location = new System.Drawing.Point(8, 59);
+            this.Changelog.Name = "Changelog";
+            this.Changelog.Size = new System.Drawing.Size(90, 13);
+            this.Changelog.TabIndex = 36;
+            this.Changelog.TabStop = true;
+            this.Changelog.Text = "View changelog";
+            this.Changelog.Visible = false;
+            this.Changelog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Changelog_LinkClicked);
+            // 
             // AppUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.Controls.Add(this.Changelog);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnCheckUpdates);
             this.Controls.Add(this.Description);
             this.Controls.Add(this.Title);
             this.Name = "AppUpdater";
-            this.Size = new System.Drawing.Size(250, 98);
+            this.Size = new System.Drawing.Size(250, 150);
+            this.Load += new System.EventHandler(this.AppUpdater_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +114,6 @@
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Button BtnCheckUpdates;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.LinkLabel Changelog;
     }
 }

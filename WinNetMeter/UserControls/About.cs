@@ -66,8 +66,33 @@ namespace WinNetMeter.UserControls
             .OfType<AssemblyCompanyAttribute>()
             .FirstOrDefault();
 
-            lblVersion.Text = "v" + Application.ProductVersion;
+            lblVersion.Text = "Dashboard version : v" + Application.ProductVersion;
             lblCopyright.Text = "Copyright © 2019 " + assemblyCompany.Company;
+
+            Assembly assembly;
+
+            try
+            {
+                // Get shell version
+                assembly = Assembly.LoadFrom("WinNetMeter.Shell.dll");
+                lblShellVersion.Text = "Shell version : v" + assembly.GetName().Version.ToString();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                // Get updater version
+                assembly = Assembly.LoadFrom("Updater.exe");
+                lblUpdaterVersion.Text = "Updater version : v" + assembly.GetName().Version.ToString();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

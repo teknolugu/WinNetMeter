@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -73,6 +74,7 @@ namespace WinNetMeter
 
         private void Main_Load(object sender, EventArgs e)
         {
+
             var args = Environment.GetCommandLineArgs();
             try
             {
@@ -81,7 +83,9 @@ namespace WinNetMeter
                     BtnAbout.PerformClick();
                 }
             }
-            catch { }
+            catch {
+            }
+            
         }
 
     }

@@ -87,6 +87,9 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks">
       <HintPath>..\..\WaktuShalat\WaktuShalat\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -99,6 +102,8 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -124,6 +129,8 @@
     <Compile Include="Helper\Numeric.cs" />
     <Compile Include="Helper\RegistryManager.cs" />
     <Compile Include="Helper\TaskBarHelper.cs" />
+    <Compile Include="Helper\UpdateHandler.cs" />
+    <Compile Include="Helper\Updater.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +144,7 @@
     <Compile Include="Model\IconStyle.cs" />
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\StyleConfiguration.cs" />
+    <Compile Include="Model\Update.cs" />
     <Compile Include="Page\StartPage1.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -32,7 +32,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.BatasBawahGeneral = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,7 +64,6 @@
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.BatasBawahGeneral);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
@@ -103,13 +101,6 @@
             this.label26.Size = new System.Drawing.Size(137, 17);
             this.label26.TabIndex = 14;
             this.label26.Text = "Server Update Stream";
-            // 
-            // BatasBawahGeneral
-            // 
-            this.BatasBawahGeneral.Location = new System.Drawing.Point(184, 411);
-            this.BatasBawahGeneral.Name = "BatasBawahGeneral";
-            this.BatasBawahGeneral.Size = new System.Drawing.Size(81, 20);
-            this.BatasBawahGeneral.TabIndex = 13;
             // 
             // label4
             // 
@@ -149,9 +140,9 @@
             this.ListAdapter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListAdapter.FormattingEnabled = true;
             this.ListAdapter.ItemHeight = 15;
-            this.ListAdapter.Location = new System.Drawing.Point(6, 281);
+            this.ListAdapter.Location = new System.Drawing.Point(8, 268);
             this.ListAdapter.Name = "ListAdapter";
-            this.ListAdapter.Size = new System.Drawing.Size(510, 120);
+            this.ListAdapter.Size = new System.Drawing.Size(510, 75);
             this.ListAdapter.TabIndex = 2;
             // 
             // comboBoxLanguage
@@ -173,7 +164,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(3, 249);
+            this.label3.Location = new System.Drawing.Point(5, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 21);
             this.label3.TabIndex = 3;
@@ -293,7 +284,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label BatasBawahGeneral;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

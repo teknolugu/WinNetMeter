@@ -77,10 +77,7 @@ namespace WinNetMeter.UserControls
                 assembly = Assembly.LoadFrom("WinNetMeter.Shell.dll");
                 lblShellVersion.Text = "Shell version : v" + assembly.GetName().Version.ToString();
 
-            }catch(Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }catch { }
 
             try
             {
@@ -89,10 +86,7 @@ namespace WinNetMeter.UserControls
                 lblUpdaterVersion.Text = "Updater version : v" + assembly.GetName().Version.ToString();
 
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch{}
         }
     }
 }

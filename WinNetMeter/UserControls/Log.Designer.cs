@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.linkDefaultLoc);
             this.groupBox1.Controls.Add(this.txtLogPath);
             this.groupBox1.Controls.Add(this.btnBrowseLog);
-            this.groupBox1.Location = new System.Drawing.Point(23, 124);
+            this.groupBox1.Location = new System.Drawing.Point(38, 124);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 110);
             this.groupBox1.TabIndex = 17;
@@ -94,7 +94,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 82);
+            this.label9.Location = new System.Drawing.Point(35, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 17);
             this.label9.TabIndex = 16;
@@ -106,7 +106,7 @@
             this.toggleTraffic.Checked = true;
             this.toggleTraffic.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toggleTraffic.Enabled = false;
-            this.toggleTraffic.Location = new System.Drawing.Point(441, 82);
+            this.toggleTraffic.Location = new System.Drawing.Point(456, 82);
             this.toggleTraffic.Name = "toggleTraffic";
             this.toggleTraffic.Size = new System.Drawing.Size(80, 17);
             this.toggleTraffic.TabIndex = 15;

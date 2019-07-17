@@ -199,9 +199,6 @@
   <data name="Join_our_development_256px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Join_our_development_256px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh_192px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh_192px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Chain_filled_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chain_filled_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,5 +216,11 @@
   </data>
   <data name="Share_blue_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Share_blue_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dun_black_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dun_black_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dun_white_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dun_white_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

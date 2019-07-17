@@ -19,7 +19,7 @@ namespace WinNetMeter.UserControls
         private readonly Stopwatch sw = new Stopwatch();
 
         private readonly string baseUrl = "https://cdn.winten.space";
-        private readonly string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";;
+        private readonly string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
         private readonly string zipUpdateFile;
         private readonly string updateFile = "update.zip";
         private List<string> changelog;

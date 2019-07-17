@@ -146,17 +146,18 @@
             // 
             // btnSaveLog
             // 
+            this.btnSaveLog.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveLog.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSaveLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveLog.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
+            this.btnSaveLog.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.dun_black_16px;
             this.btnSaveLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveLog.Location = new System.Drawing.Point(414, 441);
             this.btnSaveLog.Name = "btnSaveLog";
             this.btnSaveLog.Size = new System.Drawing.Size(121, 33);
             this.btnSaveLog.TabIndex = 18;
             this.btnSaveLog.Text = "  Save";
-            this.btnSaveLog.UseVisualStyleBackColor = true;
+            this.btnSaveLog.UseVisualStyleBackColor = false;
             this.btnSaveLog.Click += new System.EventHandler(this.BtnSaveLog_Click);
             // 
             // Log

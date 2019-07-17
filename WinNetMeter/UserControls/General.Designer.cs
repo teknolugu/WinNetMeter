@@ -246,17 +246,18 @@
             // 
             // btnSaveGeneral
             // 
+            this.btnSaveGeneral.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveGeneral.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSaveGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveGeneral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSaveGeneral.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
+            this.btnSaveGeneral.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveGeneral.Image = global::WinNetMeter.Properties.Resources.dun_black_16px;
             this.btnSaveGeneral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveGeneral.Location = new System.Drawing.Point(414, 441);
             this.btnSaveGeneral.Name = "btnSaveGeneral";
             this.btnSaveGeneral.Size = new System.Drawing.Size(121, 33);
             this.btnSaveGeneral.TabIndex = 16;
             this.btnSaveGeneral.Text = "  Save";
-            this.btnSaveGeneral.UseVisualStyleBackColor = true;
+            this.btnSaveGeneral.UseVisualStyleBackColor = false;
             this.btnSaveGeneral.Click += new System.EventHandler(this.BtnSaveGeneral_Click);
             // 
             // General

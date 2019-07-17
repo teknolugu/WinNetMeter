@@ -395,6 +395,15 @@
     <EmbeddedResource Include="costura32\SQLite.Interop.dll" />
     <EmbeddedResource Include="costura64\SQLite.Interop.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\done_white_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dun_white_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dun_black_16px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

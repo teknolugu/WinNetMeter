@@ -66,27 +66,8 @@ namespace WinNetMeter.UserControls
             .OfType<AssemblyCompanyAttribute>()
             .FirstOrDefault();
 
-            lblVersion.Text = "Dashboard version : v" + Application.ProductVersion;
+            lblVersion.Text = "v" + Application.ProductVersion;
             lblCopyright.Text = "Copyright © 2019 " + assemblyCompany.Company;
-
-            Assembly assembly;
-
-            try
-            {
-                // Get shell version
-                assembly = Assembly.LoadFrom("WinNetMeter.Shell.dll");
-                lblShellVersion.Text = "Shell version : v" + assembly.GetName().Version.ToString();
-
-            }catch { }
-
-            try
-            {
-                // Get updater version
-                assembly = Assembly.LoadFrom("Updater.exe");
-                lblUpdaterVersion.Text = "Updater version : v" + assembly.GetName().Version.ToString();
-
-            }
-            catch{}
         }
     }
 }

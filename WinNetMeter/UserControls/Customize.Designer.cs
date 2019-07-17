@@ -30,6 +30,7 @@
         {
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel2 = new System.Windows.Forms.Panel();
             this.colorGrid1 = new Cyotek.Windows.Forms.ColorGrid();
             this.label14 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.radioPictArrow = new System.Windows.Forms.RadioButton();
             this.radioPictTriangleArrow = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -77,6 +77,15 @@
             this.shapeContainer1.Size = new System.Drawing.Size(568, 485);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.SystemColors.Control;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 22;
+            this.lineShape1.X2 = 559;
+            this.lineShape1.Y1 = 53;
+            this.lineShape1.Y2 = 52;
             // 
             // panel2
             // 
@@ -189,15 +198,6 @@
             this.label12.TabIndex = 44;
             this.label12.Text = "Customize";
             // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 22;
-            this.lineShape1.X2 = 559;
-            this.lineShape1.Y1 = 53;
-            this.lineShape1.Y2 = 52;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::WinNetMeter.Properties.Resources.Triangle_down_arrow_black_16px;
@@ -256,17 +256,18 @@
             // 
             // btnSaveStyle
             // 
+            this.btnSaveStyle.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveStyle.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSaveStyle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSaveStyle.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
+            this.btnSaveStyle.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveStyle.Image = global::WinNetMeter.Properties.Resources.dun_black_16px;
             this.btnSaveStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveStyle.Location = new System.Drawing.Point(414, 441);
             this.btnSaveStyle.Name = "btnSaveStyle";
             this.btnSaveStyle.Size = new System.Drawing.Size(121, 33);
             this.btnSaveStyle.TabIndex = 42;
             this.btnSaveStyle.Text = "  Save";
-            this.btnSaveStyle.UseVisualStyleBackColor = true;
+            this.btnSaveStyle.UseVisualStyleBackColor = false;
             this.btnSaveStyle.Click += new System.EventHandler(this.BtnSaveStyle_Click);
             // 
             // Customize

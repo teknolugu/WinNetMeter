@@ -50,9 +50,6 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.lblShellVersion = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblUpdaterVersion = new System.Windows.Forms.Label();
             this.updater = new WinNetMeter.UserControls.AppUpdater();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -64,7 +61,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(154, 388);
+            this.label24.Location = new System.Drawing.Point(154, 407);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(148, 17);
             this.label24.TabIndex = 57;
@@ -74,7 +71,7 @@
             // 
             this.linkDonation.AutoSize = true;
             this.linkDonation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkDonation.Location = new System.Drawing.Point(47, 388);
+            this.linkDonation.Location = new System.Drawing.Point(47, 407);
             this.linkDonation.Name = "linkDonation";
             this.linkDonation.Size = new System.Drawing.Size(110, 17);
             this.linkDonation.TabIndex = 56;
@@ -86,7 +83,7 @@
             // 
             this.linkGithub.AutoSize = true;
             this.linkGithub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkGithub.Location = new System.Drawing.Point(263, 365);
+            this.linkGithub.Location = new System.Drawing.Point(263, 384);
             this.linkGithub.Name = "linkGithub";
             this.linkGithub.Size = new System.Drawing.Size(146, 17);
             this.linkGithub.TabIndex = 54;
@@ -98,7 +95,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(149, 366);
+            this.label23.Location = new System.Drawing.Point(149, 385);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(97, 17);
             this.label23.TabIndex = 52;
@@ -108,7 +105,7 @@
             // 
             this.linkWebsite.AutoSize = true;
             this.linkWebsite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkWebsite.Location = new System.Drawing.Point(47, 366);
+            this.linkWebsite.Location = new System.Drawing.Point(47, 385);
             this.linkWebsite.Name = "linkWebsite";
             this.linkWebsite.Size = new System.Drawing.Size(104, 17);
             this.linkWebsite.TabIndex = 50;
@@ -120,7 +117,8 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(21, 340);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(21, 359);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(64, 20);
             this.label22.TabIndex = 49;
@@ -130,7 +128,7 @@
             // 
             this.linkJovan.AutoSize = true;
             this.linkJovan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkJovan.Location = new System.Drawing.Point(26, 303);
+            this.linkJovan.Location = new System.Drawing.Point(26, 322);
             this.linkJovan.Name = "linkJovan";
             this.linkJovan.Size = new System.Drawing.Size(204, 17);
             this.linkJovan.TabIndex = 48;
@@ -142,7 +140,7 @@
             // 
             this.linkJeremy.AutoSize = true;
             this.linkJeremy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkJeremy.Location = new System.Drawing.Point(26, 282);
+            this.linkJeremy.Location = new System.Drawing.Point(26, 301);
             this.linkJeremy.Name = "linkJeremy";
             this.linkJeremy.Size = new System.Drawing.Size(88, 17);
             this.linkJeremy.TabIndex = 47;
@@ -154,7 +152,7 @@
             // 
             this.linkAzhe.AutoSize = true;
             this.linkAzhe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkAzhe.Location = new System.Drawing.Point(26, 264);
+            this.linkAzhe.Location = new System.Drawing.Point(26, 283);
             this.linkAzhe.Name = "linkAzhe";
             this.linkAzhe.Size = new System.Drawing.Size(62, 17);
             this.linkAzhe.TabIndex = 46;
@@ -166,7 +164,7 @@
             // 
             this.linkArfan.AutoSize = true;
             this.linkArfan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkArfan.Location = new System.Drawing.Point(26, 244);
+            this.linkArfan.Location = new System.Drawing.Point(26, 263);
             this.linkArfan.Name = "linkArfan";
             this.linkArfan.Size = new System.Drawing.Size(113, 17);
             this.linkArfan.TabIndex = 45;
@@ -188,7 +186,8 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(24, 217);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(24, 236);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(95, 20);
             this.label20.TabIndex = 42;
@@ -268,7 +267,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::WinNetMeter.Properties.Resources.Love_colored_16px;
-            this.pictureBox10.Location = new System.Drawing.Point(28, 389);
+            this.pictureBox10.Location = new System.Drawing.Point(28, 408);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(16, 16);
             this.pictureBox10.TabIndex = 55;
@@ -277,7 +276,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::WinNetMeter.Properties.Resources.github_black_16px;
-            this.pictureBox9.Location = new System.Drawing.Point(246, 366);
+            this.pictureBox9.Location = new System.Drawing.Point(246, 385);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(16, 16);
             this.pictureBox9.TabIndex = 53;
@@ -286,48 +285,18 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::WinNetMeter.Properties.Resources.Share_blue_16px;
-            this.pictureBox8.Location = new System.Drawing.Point(28, 367);
+            this.pictureBox8.Location = new System.Drawing.Point(28, 386);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(16, 16);
             this.pictureBox8.TabIndex = 51;
             this.pictureBox8.TabStop = false;
             // 
-            // lblShellVersion
-            // 
-            this.lblShellVersion.AutoSize = true;
-            this.lblShellVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShellVersion.Location = new System.Drawing.Point(28, 157);
-            this.lblShellVersion.Name = "lblShellVersion";
-            this.lblShellVersion.Size = new System.Drawing.Size(51, 17);
-            this.lblShellVersion.TabIndex = 65;
-            this.lblShellVersion.Text = "v1.0.0.0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "Engine";
-            // 
-            // lblUpdaterVersion
-            // 
-            this.lblUpdaterVersion.AutoSize = true;
-            this.lblUpdaterVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdaterVersion.Location = new System.Drawing.Point(28, 179);
-            this.lblUpdaterVersion.Name = "lblUpdaterVersion";
-            this.lblUpdaterVersion.Size = new System.Drawing.Size(51, 17);
-            this.lblUpdaterVersion.TabIndex = 67;
-            this.lblUpdaterVersion.Text = "v1.0.0.0";
-            // 
             // updater
             // 
             this.updater.AutoSize = true;
-            this.updater.Location = new System.Drawing.Point(250, 124);
+            this.updater.Location = new System.Drawing.Point(21, 113);
             this.updater.Name = "updater";
-            this.updater.Size = new System.Drawing.Size(250, 124);
+            this.updater.Size = new System.Drawing.Size(250, 107);
             this.updater.TabIndex = 64;
             // 
             // About
@@ -335,9 +304,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Controls.Add(this.lblUpdaterVersion);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblShellVersion);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.updater);
             this.Controls.Add(this.lblVersion);
@@ -396,8 +362,5 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label19;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private System.Windows.Forms.Label lblShellVersion;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblUpdaterVersion;
     }
 }

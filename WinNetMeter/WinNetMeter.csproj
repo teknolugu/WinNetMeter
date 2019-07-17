@@ -95,6 +95,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
@@ -123,8 +124,8 @@
     <Compile Include="Core\ThisApp.cs" />
     <Compile Include="Helper\DbManager.cs" />
     <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Core\Integration.cs" />
     <Compile Include="Helper\NativeMethods.cs" />
-    <Compile Include="Helper\Integration.cs" />
     <Compile Include="Helper\NetworkMonitor.cs" />
     <Compile Include="Helper\Numeric.cs" />
     <Compile Include="Helper\RegistryManager.cs" />
@@ -409,7 +410,9 @@
   </Target>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>del "$(TargetDir)*.xml"
-del "$(TargetDir)*.pdb"</PostBuildEvent>
+    <PostBuildEvent>cd $(TargetDir)
+del *.xml
+del *.pdb
+del x*</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -58,5 +58,28 @@ namespace WinNetMeter.Helper
                 return !en.MoveNext();
             }
         }
+
+        public static void DeleteAllIn(string path, string wilcard)
+        {
+            string[] fileList = System.IO.Directory.GetFiles(path, wilcard);
+            foreach (string file in fileList)
+            {
+                FileHelper.SafeDelete(file);
+            }
+        }
+
+        public static void DeleteFolderInside(string path)
+        {
+            DirectoryInfo di = new DirectoryInfo(path);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+        }
     }
 }

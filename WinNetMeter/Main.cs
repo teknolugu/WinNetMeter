@@ -19,7 +19,7 @@ namespace WinNetMeter
         public Main()
         {
             InitializeComponent();
-            panel1.Width = 240;
+            CleaningOnStartup();
         }
 
         #region custom
@@ -70,11 +70,8 @@ namespace WinNetMeter
 
         #endregion custom
 
-
-
         private void Main_Load(object sender, EventArgs e)
         {
-
             var args = Environment.GetCommandLineArgs();
             try
             {
@@ -83,10 +80,16 @@ namespace WinNetMeter
                     BtnAbout.PerformClick();
                 }
             }
-            catch {
+            catch
+            {
             }
-            
         }
 
+        private void CleaningOnStartup()
+        {
+            panel1.Width = 240;
+
+            FileHelper.DeleteAllIn(Environment.CurrentDirectory, "*.old");
+        }
     }
 }

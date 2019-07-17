@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using WinNetMeter.Helper;
 
-namespace WinNetMeter.Helper
+namespace WinNetMeter.Core
 {
     internal class Integration
     {
@@ -33,7 +34,6 @@ namespace WinNetMeter.Helper
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
             }
-
 
             File.Create(batchFileLocation).Close();
 
@@ -137,6 +137,10 @@ namespace WinNetMeter.Helper
                 Process.Start(process);
             }
             catch { }
+            finally
+            {
+                FileHelper.DeleteAllIn(Environment.CurrentDirectory + "/temp", "*Installer.bat");
+            }
         }
     }
 }

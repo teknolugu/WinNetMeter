@@ -3,6 +3,7 @@ using System.Threading;
 using System.IO;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
+using WinNetMeter.Core;
 
 namespace WinNetMeter.Page
 {

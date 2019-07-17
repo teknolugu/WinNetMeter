@@ -15,9 +15,16 @@ namespace Updater
             string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
             string exeUpdateFile = updateDirectory + @"\" + baseExe;
             string shellUpdateFile = updateDirectory + @"\" + baseShell;
-
+            
             if (File.Exists(exeUpdateFile) && File.Exists(shellUpdateFile))
             {
+
+                // Kill explorer.exe process
+                foreach (Process process in Process.GetProcessesByName("explorer"))
+                {
+                    process.Kill();
+                }
+
                 Console.WriteLine("Updating app..");
 
                 FileHelper.SafeDelete($"{baseExe}");
@@ -31,13 +38,6 @@ namespace Updater
                 // Uninstall Toolbar first
                 Integration integration = new Integration();
                 integration.UninstallToolbar();
-
-                // Kill explorer.exe process
-                foreach (Process process in Process.GetProcessesByName("explorer"))
-                {
-                    process.Kill();
-                }
-
 
                 // Start the explorer.exe again
                 Process.Start("explorer.exe");

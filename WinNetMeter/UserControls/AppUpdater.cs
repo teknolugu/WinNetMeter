@@ -19,14 +19,8 @@ namespace WinNetMeter.UserControls
         private readonly Stopwatch sw = new Stopwatch();
 
         private readonly string baseUrl = "https://cdn.winten.space";
-        private readonly string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
-        private readonly string urlDashboard = "";
-        private readonly string urlShell = "";
-        private readonly string urlUpdater = "";
-        private bool isDownloadDashboard = false;
+        private readonly string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";;
         private readonly string zipUpdateFile;
-        private readonly string imageInsall = "WinNetMeter.aim";
-        private readonly string imageShell = "WinNetMeter.Shell.aim";
         private readonly string updateFile = "update.zip";
         private List<string> changelog;
         private RegistryManager registryManager = new RegistryManager();
@@ -36,9 +30,6 @@ namespace WinNetMeter.UserControls
         {
             InitializeComponent();
 
-            urlDashboard = $"{baseUrl}/products/win-netmeter/release/WinNetMeter.exe";
-            urlShell = $"{baseUrl}/products/win-netmeter/release/WinNetMeter.Shell.dll";
-            urlUpdater = $"{baseUrl}/products/win-netmeter/release/Updater.exe";
             configuration = registryManager.GetGeneralConfiguration();
             zipUpdateFile = $"{baseUrl}/products/win-netmeter/release/{updateFile}";
         }
@@ -54,11 +45,6 @@ namespace WinNetMeter.UserControls
                 Uri URL = urlAddress.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
                     ? new Uri(urlAddress)
                     : new Uri("https://" + urlAddress);
-
-                if (urlAddress.Contains(".exe"))
-                {
-                    isDownloadDashboard = true;
-                }
 
                 // Start the stopwatch which we will be using to calculate the download speed
                 sw.Start();
@@ -99,9 +85,7 @@ namespace WinNetMeter.UserControls
                 MessageBox.Show("Download has been canceled.");
                 Title.ResetText();
                 Description.ResetText();
-
-                FileHelper.SafeDelete(imageInsall);
-                FileHelper.SafeDelete(imageShell);
+                FileHelper.SafeDelete(updateDirectory + updateFile);
             }
             else
             {
@@ -186,7 +170,7 @@ namespace WinNetMeter.UserControls
                     if (updater.IsUpdateAvailable() == true)
                     {
                         Title.Text = "New Update available..!!";
-                        Description.Text = updater.getDashboardVersion();
+                        Description.Text = $"v{updater.getDashboardVersion()}";
                         changelog = updater.getChangelog();
 
                         Changelog.Visible = true;
@@ -217,7 +201,7 @@ namespace WinNetMeter.UserControls
         private void Changelog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var currentChangelog = string.Join(Environment.NewLine, changelog);
-            MessageBox.Show(currentChangelog);
+            MessageBox.Show(this,currentChangelog, "What's new?", MessageBoxButtons.OK);
         }
     }
 }

@@ -31,7 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,26 +67,22 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // metroCheckBox1
+            // checkBox1
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.metroCheckBox1.Enabled = false;
-            this.metroCheckBox1.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.metroCheckBox1.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.metroCheckBox1.Location = new System.Drawing.Point(267, 356);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(223, 19);
-            this.metroCheckBox1.TabIndex = 7;
-            this.metroCheckBox1.Text = "Enable app Bandwith monitor";
-            this.metroCheckBox1.UseCustomBackColor = true;
-            this.metroCheckBox1.UseSelectable = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(267, 356);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(208, 21);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Enable app Bandwith monitor";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // StartPage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroCheckBox1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -104,6 +100,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

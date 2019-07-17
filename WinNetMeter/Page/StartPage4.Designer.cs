@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.metroCheckBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,15 +70,13 @@
             // 
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.metroCheckBox1.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.metroCheckBox1.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.metroCheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroCheckBox1.Location = new System.Drawing.Point(296, 358);
             this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(160, 19);
+            this.metroCheckBox1.Size = new System.Drawing.Size(150, 21);
             this.metroCheckBox1.TabIndex = 8;
             this.metroCheckBox1.Text = "I want to participate";
-            this.metroCheckBox1.UseCustomBackColor = true;
-            this.metroCheckBox1.UseSelectable = true;
+            this.metroCheckBox1.UseVisualStyleBackColor = false;
             // 
             // StartPage4
             // 
@@ -101,6 +99,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private System.Windows.Forms.CheckBox metroCheckBox1;
     }
 }

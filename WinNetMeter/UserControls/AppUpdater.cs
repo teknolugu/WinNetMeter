@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
 using WinNetMeter.Model;
@@ -174,23 +175,33 @@ namespace WinNetMeter.UserControls
 
         private void CheckForUpdates()
         {
-            Description.Text = "";
 
-            Updater updater = new Updater();
-            if (updater.IsUpdateAvailable() == true)
+            Thread updateThread = new Thread(delegate ()
             {
-                Title.Text = "New Update available..!!";
-                Description.Text = updater.getDashboardVersion();
-                changelog = updater.getChangelog();
+                this.BeginInvoke(new MethodInvoker(delegate ()
+                {
+                    Title.Text = "Checking for updates..";
+                    Description.Text = "";
 
-                Changelog.Visible = true;
-            }
-            else
-            {
-                Title.Text = "No updates found";
-            }
+                    Updater updater = new Updater();
+                    if (updater.IsUpdateAvailable() == true)
+                    {
+                        Title.Text = "New Update available..!!";
+                        Description.Text = updater.getDashboardVersion();
+                        changelog = updater.getChangelog();
 
-            onFinishCheckForUpdates();
+                        Changelog.Visible = true;
+                    }
+                    else
+                    {
+                        Title.Text = "No updates found";
+                    }
+
+                    onFinishCheckForUpdates();
+                }));
+            });
+
+            updateThread.Start();
         }
 
         private void onFinishCheckForUpdates()

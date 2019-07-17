@@ -1,4 +1,6 @@
-﻿namespace WinNetMeter.UserControls
+﻿using System.Drawing;
+
+namespace WinNetMeter.UserControls
 {
     partial class AppUpdater
     {
@@ -38,37 +40,48 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.Title.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.Black;
             this.Title.Location = new System.Drawing.Point(6, 6);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(174, 25);
+            this.Title.Size = new System.Drawing.Size(134, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Check for Updates";
             // 
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(8, 39);
+            this.Description.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Description.Location = new System.Drawing.Point(8, 35);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(84, 13);
+            this.Description.Size = new System.Drawing.Size(90, 13);
             this.Description.TabIndex = 1;
             this.Description.Text = "Get new version";
             // 
             // BtnCheckUpdates
             // 
             this.BtnCheckUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnCheckUpdates.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BtnCheckUpdates.FlatAppearance.BorderSize = 0;
+            this.BtnCheckUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCheckUpdates.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCheckUpdates.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnCheckUpdates.Location = new System.Drawing.Point(5, 119);
             this.BtnCheckUpdates.Name = "BtnCheckUpdates";
             this.BtnCheckUpdates.Size = new System.Drawing.Size(117, 28);
             this.BtnCheckUpdates.TabIndex = 34;
             this.BtnCheckUpdates.Text = "Check for Updates";
-            this.BtnCheckUpdates.UseVisualStyleBackColor = true;
+            this.BtnCheckUpdates.UseVisualStyleBackColor = false;
             this.BtnCheckUpdates.Click += new System.EventHandler(this.BtnCheckUpdates_Click);
             // 
             // BtnCancel
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnCancel.Enabled = false;
+            this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BtnCancel.Location = new System.Drawing.Point(128, 119);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(116, 26);
@@ -81,7 +94,7 @@
             // 
             this.Changelog.AutoSize = true;
             this.Changelog.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Changelog.Location = new System.Drawing.Point(8, 59);
+            this.Changelog.Location = new System.Drawing.Point(8, 52);
             this.Changelog.Name = "Changelog";
             this.Changelog.Size = new System.Drawing.Size(90, 13);
             this.Changelog.TabIndex = 36;

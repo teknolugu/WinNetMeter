@@ -12,9 +12,11 @@ namespace Updater
         {
             string baseExe = "WinNetMeter.exe";
             string baseShell = "WinNetMeter.Shell.dll";
-            string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
-            string exeUpdateFile = updateDirectory + @"\" + baseExe;
-            string shellUpdateFile = updateDirectory + @"\" + baseShell;
+
+            // Configure update directory
+            string exeUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.exe";
+            string shellUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.Shell.dll";
+
             
             if (File.Exists(exeUpdateFile) && File.Exists(shellUpdateFile))
             {
@@ -27,6 +29,9 @@ namespace Updater
 
                 Console.WriteLine("Updating app..");
 
+                // Start the explorer.exe again
+                Process.Start("explorer.exe");
+
                 FileHelper.SafeDelete($"{baseExe}");
 
                 Console.WriteLine("Installing dashboard..");
@@ -34,13 +39,8 @@ namespace Updater
 
                 Console.WriteLine("Installing shell..");
 
-                // Uninstalling and installing new shell
-                // Uninstall Toolbar first
+                // nstalling new shell
                 Integration integration = new Integration();
-                integration.UninstallToolbar();
-
-                // Start the explorer.exe again
-                Process.Start("explorer.exe");
 
                 // Delete shell old file
                 FileHelper.SafeDelete($"{baseShell}");

@@ -43,17 +43,17 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.general = new WinNetMeter.UserControls.General();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.log = new WinNetMeter.UserControls.Log();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.customize = new WinNetMeter.UserControls.Customize();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.about = new WinNetMeter.UserControls.About();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.general = new WinNetMeter.UserControls.General();
-            this.log = new WinNetMeter.UserControls.Log();
-            this.customize = new WinNetMeter.UserControls.Customize();
-            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
-            this.about = new WinNetMeter.UserControls.About();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -241,6 +241,15 @@
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // general
+            // 
+            this.general.BackColor = System.Drawing.Color.White;
+            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.general.Location = new System.Drawing.Point(3, 3);
+            this.general.Name = "general";
+            this.general.Size = new System.Drawing.Size(562, 479);
+            this.general.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.log);
@@ -250,6 +259,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Log";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.Color.White;
+            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log.Location = new System.Drawing.Point(0, 0);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(568, 485);
+            this.log.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -262,6 +280,15 @@
             this.tabPage2.Text = "Customize";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // customize
+            // 
+            this.customize.BackColor = System.Drawing.Color.White;
+            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customize.Location = new System.Drawing.Point(3, 3);
+            this.customize.Name = "customize";
+            this.customize.Size = new System.Drawing.Size(562, 479);
+            this.customize.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.integrationPage);
@@ -273,6 +300,15 @@
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // integrationPage
+            // 
+            this.integrationPage.BackColor = System.Drawing.Color.White;
+            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.integrationPage.Location = new System.Drawing.Point(3, 3);
+            this.integrationPage.Name = "integrationPage";
+            this.integrationPage.Size = new System.Drawing.Size(562, 479);
+            this.integrationPage.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.about);
@@ -282,42 +318,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // general
-            // 
-            this.general.BackColor = System.Drawing.Color.White;
-            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.general.Location = new System.Drawing.Point(3, 3);
-            this.general.Name = "general";
-            this.general.Size = new System.Drawing.Size(562, 479);
-            this.general.TabIndex = 0;
-            // 
-            // log
-            // 
-            this.log.BackColor = System.Drawing.Color.White;
-            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.log.Location = new System.Drawing.Point(0, 0);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(568, 485);
-            this.log.TabIndex = 0;
-            // 
-            // customize
-            // 
-            this.customize.BackColor = System.Drawing.Color.White;
-            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customize.Location = new System.Drawing.Point(3, 3);
-            this.customize.Name = "customize";
-            this.customize.Size = new System.Drawing.Size(562, 479);
-            this.customize.TabIndex = 0;
-            // 
-            // integrationPage
-            // 
-            this.integrationPage.BackColor = System.Drawing.Color.White;
-            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.integrationPage.Location = new System.Drawing.Point(3, 3);
-            this.integrationPage.Name = "integrationPage";
-            this.integrationPage.Size = new System.Drawing.Size(562, 479);
-            this.integrationPage.TabIndex = 0;
             // 
             // about
             // 
@@ -344,6 +344,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WinNetMeter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

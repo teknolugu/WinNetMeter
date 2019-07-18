@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
-using WinNetMeter.Model;
+using WinNetMeter.Core;
 
 namespace WinNetMeter
 {
@@ -80,16 +80,18 @@ namespace WinNetMeter
                     BtnAbout.PerformClick();
                 }
             }
-            catch
-            {
-            }
+            catch { }
         }
-
         private void CleaningOnStartup()
         {
             panel1.Width = 240;
 
             FileHelper.DeleteAllIn(Environment.CurrentDirectory, "*.old");
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

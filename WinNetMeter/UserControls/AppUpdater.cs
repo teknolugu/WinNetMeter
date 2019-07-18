@@ -18,10 +18,16 @@ namespace WinNetMeter.UserControls
         private WebClient _webClient;
         private readonly Stopwatch sw = new Stopwatch();
 
+        // Configure Server update
         private readonly string baseUrl = "https://cdn.winten.space";
-        private readonly string updateDirectory = AppDomain.CurrentDomain.BaseDirectory + @"update";
-        private readonly string zipUpdateFile;
-        private readonly string updateFile = "update.zip";
+
+        private readonly string zipUpdateURL;
+
+        // Configure local update storage location
+        private readonly string extractedUpdateFileDir = AppDomain.CurrentDomain.BaseDirectory + @"update";
+
+        private readonly string updateFile = AppDomain.CurrentDomain.BaseDirectory + @"temp\update.zip";
+
         private List<string> changelog;
         private RegistryManager registryManager = new RegistryManager();
         private Configuration configuration;
@@ -31,7 +37,7 @@ namespace WinNetMeter.UserControls
             InitializeComponent();
 
             configuration = registryManager.GetGeneralConfiguration();
-            zipUpdateFile = $"{baseUrl}/products/win-netmeter/release/{updateFile}";
+            zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
         }
 
         private void DownloadFile(string urlAddress, string location)
@@ -85,32 +91,29 @@ namespace WinNetMeter.UserControls
                 MessageBox.Show("Download has been canceled.");
                 Title.ResetText();
                 Description.ResetText();
-                FileHelper.SafeDelete(updateDirectory + updateFile);
+                FileHelper.SafeDelete(updateFile);
             }
             else
             {
                 Title.Text = "Extracting..";
 
                 //Extract .zip file
-                if (IsDirectoryEmpty(updateDirectory) == false)
+                if (IsDirectoryEmpty(extractedUpdateFileDir) == false)
                 {
-                    foreach (string file in Directory.GetFiles(updateDirectory))
+                    foreach (string file in Directory.GetFiles(extractedUpdateFileDir))
                     {
-                        if (!file.Contains("update.zip"))
-                        {
-                            FileHelper.SafeDelete(file);
-                        }
+                        FileHelper.SafeDelete(file);
                     }
                 }
-                ZipFile.ExtractToDirectory(updateDirectory + ".zip", updateDirectory);
+                ZipFile.ExtractToDirectory(updateFile, extractedUpdateFileDir);
 
                 Title.Text = "Restarting App..";
                 BtnCheckUpdates.Enabled = true;
                 BtnCancel.Enabled = false;
-                //ThisApp.InstallUpdates();
 
-                Process.Start("Updater.exe");
-                Application.Exit();
+                // Install updates
+                UpdateHandler updateHandler = new UpdateHandler();
+                updateHandler.InstallUpdate();
             }
         }
 
@@ -134,8 +137,14 @@ namespace WinNetMeter.UserControls
             }
             else if (BtnCheckUpdates.Text.Contains("Download"))
             {
-                FileHelper.CreateDirectory(updateDirectory);
-                DownloadFile(zipUpdateFile, updateDirectory + ".zip");
+                // Create temp directory
+                FileHelper.CreateDirectory(Path.GetDirectoryName(updateFile));
+
+                // Create update directory
+                FileHelper.CreateDirectory(extractedUpdateFileDir);
+
+                //Download update file
+                DownloadFile(zipUpdateURL, updateFile);
             }
         }
 
@@ -158,7 +167,6 @@ namespace WinNetMeter.UserControls
 
         private void CheckForUpdates()
         {
-
             Thread updateThread = new Thread(delegate ()
             {
                 this.BeginInvoke(new MethodInvoker(delegate ()
@@ -201,7 +209,7 @@ namespace WinNetMeter.UserControls
         private void Changelog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var currentChangelog = string.Join(Environment.NewLine, changelog);
-            MessageBox.Show(this,currentChangelog, "What's new?", MessageBoxButtons.OK);
+            MessageBox.Show(this, currentChangelog, "What's new?", MessageBoxButtons.OK);
         }
     }
 }

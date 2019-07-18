@@ -137,10 +137,6 @@ namespace WinNetMeter.Core
                 Process.Start(process);
             }
             catch { }
-            finally
-            {
-                FileHelper.DeleteAllIn(Environment.CurrentDirectory + "/temp", "*Installer.bat");
-            }
         }
     }
 }

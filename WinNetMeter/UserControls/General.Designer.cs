@@ -89,15 +89,15 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(6, 412);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 30);
+            this.label2.Size = new System.Drawing.Size(492, 38);
             this.label2.TabIndex = 19;
-            this.label2.Text = "All application settings will be reset to default \r\nincluding general, style, log" +
-    ", shell data, etc.";
+            this.label2.Text = "All application settings will be reset to default including general, style, log, " +
+    "shell data, etc.\r\nWindows Explorer process may will be restarted. Make sure ther" +
+    "e is no file operation activity.";
             // 
             // panel1
             // 

@@ -89,8 +89,8 @@ namespace WinNetMeter.UserControls
             if (e.Cancelled == true)
             {
                 MessageBox.Show("Download has been canceled.");
-                Title.ResetText();
-                Description.ResetText();
+
+                onCancelUpdate();
                 FileHelper.SafeDelete(updateFile);
             }
             else
@@ -137,6 +137,8 @@ namespace WinNetMeter.UserControls
             }
             else if (BtnCheckUpdates.Text.Contains("Download"))
             {
+                BtnCancel.Enabled = true;
+
                 // Create temp directory
                 FileHelper.CreateDirectory(Path.GetDirectoryName(updateFile));
 
@@ -167,11 +169,12 @@ namespace WinNetMeter.UserControls
 
         private void CheckForUpdates()
         {
+            Title.Text = "Checking for updates..";
+
             Thread updateThread = new Thread(delegate ()
             {
                 this.BeginInvoke(new MethodInvoker(delegate ()
                 {
-                    Title.Text = "Checking for updates..";
                     Description.Text = "";
 
                     Updater updater = new Updater();
@@ -195,6 +198,16 @@ namespace WinNetMeter.UserControls
             updateThread.Start();
         }
 
+        #region Fire An Event..!!
+        private void onCancelUpdate()
+        {
+            Title.ResetText();
+            Description.ResetText();
+            BtnCheckUpdates.Text = "Check for Updates";
+            BtnCancel.Enabled = false;
+            Changelog.Visible = false;
+        }
+
         private void onFinishCheckForUpdates()
         {
             BtnCheckUpdates.Enabled = true;
@@ -205,6 +218,7 @@ namespace WinNetMeter.UserControls
                 BtnCheckUpdates.Text = "Download updates";
             }
         }
+        #endregion
 
         private void Changelog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

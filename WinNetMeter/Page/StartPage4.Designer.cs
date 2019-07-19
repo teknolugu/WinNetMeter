@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroCheckBox1 = new System.Windows.Forms.CheckBox();
+            this.checkJoinDevelopment = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,23 +66,24 @@
             this.label2.Text = "Help us to improve our apps, Let\'s build something great together.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // metroCheckBox1
+            // checkJoinDevelopment
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.metroCheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroCheckBox1.Location = new System.Drawing.Point(296, 358);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(150, 21);
-            this.metroCheckBox1.TabIndex = 8;
-            this.metroCheckBox1.Text = "I want to participate";
-            this.metroCheckBox1.UseVisualStyleBackColor = false;
+            this.checkJoinDevelopment.AutoSize = true;
+            this.checkJoinDevelopment.BackColor = System.Drawing.Color.Transparent;
+            this.checkJoinDevelopment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkJoinDevelopment.Location = new System.Drawing.Point(296, 358);
+            this.checkJoinDevelopment.Name = "checkJoinDevelopment";
+            this.checkJoinDevelopment.Size = new System.Drawing.Size(150, 21);
+            this.checkJoinDevelopment.TabIndex = 8;
+            this.checkJoinDevelopment.Text = "I want to participate";
+            this.checkJoinDevelopment.UseVisualStyleBackColor = false;
+            this.checkJoinDevelopment.CheckedChanged += new System.EventHandler(this.CheckJoinDevelopment_CheckedChanged);
             // 
             // StartPage4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroCheckBox1);
+            this.Controls.Add(this.checkJoinDevelopment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -99,6 +100,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox metroCheckBox1;
+        private System.Windows.Forms.CheckBox checkJoinDevelopment;
     }
 }

@@ -30,6 +30,10 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LinkReset = new MetroFramework.Controls.MetroLink();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,6 +66,10 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.LinkReset);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.label4);
@@ -79,9 +87,52 @@
             this.panel3.Size = new System.Drawing.Size(544, 355);
             this.panel3.TabIndex = 17;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(6, 412);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(249, 30);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "All application settings will be reset to default \r\nincluding general, style, log" +
+    ", shell data, etc.";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(270, 485);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(29, 30);
+            this.panel1.TabIndex = 18;
+            // 
+            // LinkReset
+            // 
+            this.LinkReset.ForeColor = System.Drawing.Color.Red;
+            this.LinkReset.Location = new System.Drawing.Point(7, 453);
+            this.LinkReset.Name = "LinkReset";
+            this.LinkReset.Size = new System.Drawing.Size(109, 23);
+            this.LinkReset.TabIndex = 17;
+            this.LinkReset.Text = "Reset settings";
+            this.LinkReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LinkReset.UseSelectable = true;
+            this.LinkReset.Click += new System.EventHandler(this.LinkReset_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(5, 383);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 21);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Reset Settings";
+            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -142,7 +193,7 @@
             this.ListAdapter.ItemHeight = 15;
             this.ListAdapter.Location = new System.Drawing.Point(8, 268);
             this.ListAdapter.Name = "ListAdapter";
-            this.ListAdapter.Size = new System.Drawing.Size(510, 75);
+            this.ListAdapter.Size = new System.Drawing.Size(510, 90);
             this.ListAdapter.TabIndex = 2;
             // 
             // comboBoxLanguage
@@ -271,7 +322,6 @@
             this.Controls.Add(this.shapeContainer1);
             this.Name = "General";
             this.Size = new System.Drawing.Size(568, 485);
-            this.Load += new System.EventHandler(this.General_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -299,5 +349,9 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroLink LinkReset;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -46,8 +46,8 @@ namespace WinNetMeter.Shell
         {
             registryManager.SaveHwnd(this.Handle.ToString());
 
-            ConfigureStyle();
             Load_Config();
+            ConfigureStyle();
         }
 
         private void Load_Config()
@@ -76,11 +76,20 @@ namespace WinNetMeter.Shell
 
             LblDownload.Font = new Font(styleConfiguration.FontFamily, LblDownload.Font.Size);
             LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
+            bool IsDark = false;
 
-            var taskBar = new TaskBarHelper();
-            Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
-
-            bool IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
+            try
+            {
+                var taskBar = new TaskBarHelper();
+                Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
+                IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
+            }
+            catch
+            {
+                goto setIcon;
+            }
+            
+            setIcon:
 
             if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
             {

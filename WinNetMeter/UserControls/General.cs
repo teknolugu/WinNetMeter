@@ -58,15 +58,16 @@ namespace WinNetMeter.UserControls
             #endregion
         }
 
-        private void General_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnSaveGeneral_Click(object sender, EventArgs e)
         {
-            if (ListAdapter.SelectedItem == null) MessageBox.Show(this, "You have not chosen the network inteface", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (comboBoxLanguage.SelectedItem == null || comboBoxLanguage.SelectedItem == null) MessageBox.Show(this, "You have not chosen something", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (ListAdapter.SelectedItem == null)
+            {
+                MessageBox.Show(this, "You have not chosen the network inteface", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboBoxLanguage.SelectedItem == null || comboBoxLanguage.SelectedItem == null)
+            {
+                MessageBox.Show(this, "You have not chosen something", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 Configuration config = new Configuration
@@ -85,11 +86,29 @@ namespace WinNetMeter.UserControls
                 {
                     NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(this, "An error occured when sending commands to the shell", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void LinkReset_Click(object sender, EventArgs e)
+        {
+            switch(MessageBox.Show(this, "Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                case DialogResult.Yes:
+                    // Delete all registry entries
+                    registryManager.Reset();
+
+                    // Restore to default
+                    registryManager.CreateRegistry();
+                    registryManager.MakeDefaultConfiguration();
+
+                    MessageBox.Show("Application settings has been reset", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
+            
         }
     }
 }

@@ -26,6 +26,21 @@ namespace WinNetMeter.Helper
             }
         }
 
+        public void Reset()
+        {
+            var appKey = key.OpenSubKey(@"WinNetMeter", true);
+            foreach(string subKey in appKey.GetSubKeyNames())
+            {
+                try
+                {
+                    appKey.DeleteSubKeyTree(subKey);
+                }
+                catch
+                {
+
+                }
+            }
+        }
         public void MakeDefaultConfiguration()
         {
             //general configuration

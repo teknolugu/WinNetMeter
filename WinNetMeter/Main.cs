@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Text;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
-using WinNetMeter.Core;
 
 namespace WinNetMeter
 {
     public partial class Main : Form
     {
-        private RegistryManager registryManager = new RegistryManager();
 
         public Main()
         {

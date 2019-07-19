@@ -123,10 +123,12 @@ namespace WinNetMeter
             {
                 Properties.Settings.Default.FirstLaunch = false;
                 Properties.Settings.Default.Save();
-
                 Hide();
+
                 Main main = new Main();
                 main.Show();
+
+                if (StartPage4.JoinDevelopment) System.Diagnostics.Process.Start("https://github.com/WinTenDev/WinNetMeter");
             }
         }
 

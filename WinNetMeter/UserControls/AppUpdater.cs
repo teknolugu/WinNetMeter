@@ -36,6 +36,8 @@ namespace WinNetMeter.UserControls
         {
             InitializeComponent();
 
+            BtnCancel.Location = BtnCheckUpdates.Location;
+
             configuration = registryManager.GetGeneralConfiguration();
             zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
         }
@@ -131,14 +133,14 @@ namespace WinNetMeter.UserControls
             if (BtnCheckUpdates.Text.Contains("Check"))
             {
                 Title.Text = "Getting ready..";
-                BtnCheckUpdates.Enabled = false;
-                BtnCancel.Enabled = true;
+                BtnCheckUpdates.Visible = false;
+                BtnCancel.Visible = false;
                 CheckForUpdates();
             }
             else if (BtnCheckUpdates.Text.Contains("Download"))
             {
-                BtnCancel.Enabled = true;
-
+                BtnCancel.Visible = true;
+                BtnCheckUpdates.Visible = false;
                 // Create temp directory
                 FileHelper.CreateDirectory(Path.GetDirectoryName(updateFile));
 
@@ -155,7 +157,7 @@ namespace WinNetMeter.UserControls
             if (_webClient != null)
             {
                 _webClient.CancelAsync();
-                BtnCheckUpdates.Enabled = true;
+                BtnCheckUpdates.Visible = true;
             }
         }
 
@@ -189,6 +191,7 @@ namespace WinNetMeter.UserControls
                     else
                     {
                         Title.Text = "No updates found";
+                        BtnCheckUpdates.Visible = true;
                     }
 
                     onFinishCheckForUpdates();
@@ -199,26 +202,28 @@ namespace WinNetMeter.UserControls
         }
 
         #region Fire An Event..!!
+
         private void onCancelUpdate()
         {
-            Title.ResetText();
+            Title.Text = "Check for Updates";
             Description.ResetText();
             BtnCheckUpdates.Text = "Check for Updates";
-            BtnCancel.Enabled = false;
+            BtnCancel.Visible = false;
             Changelog.Visible = false;
         }
 
         private void onFinishCheckForUpdates()
         {
-            BtnCheckUpdates.Enabled = true;
-            BtnCancel.Enabled = false;
+            BtnCheckUpdates.Visible = true;
+            BtnCancel.Visible = false;
 
             if (Title.Text.Contains("available"))
             {
                 BtnCheckUpdates.Text = "Download updates";
             }
         }
-        #endregion
+
+        #endregion Fire An Event..!!
 
         private void Changelog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

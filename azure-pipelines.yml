@@ -41,9 +41,23 @@ steps:
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
     runInParallel: true
-    
+
+- task: FtpUpload@2
+  inputs:
+        credentialsOption: 'inputs'
+        serverUrl: '156.67.222.68'
+        username: 'u839111123'
+        password: 'C#F=d8mO~BpFv96'
+        rootDirectory: 'Build\Debug'
+        filePatterns: |
+          *.exe
+          *.dll
+        remoteDirectory: '/public_html/cdn/products/win-netmeter/ci/$(Build.BuildId)/'
+        clean: true
+        preservePaths: false
+        trustSSL: false
+        
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'WinTenDev.WinNetMeter'
-    publishLocation: 'Container'

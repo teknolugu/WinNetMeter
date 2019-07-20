@@ -39,12 +39,13 @@ namespace WinNetMeter.UserControls
             // 
             // Title
             // 
-            this.Title.AutoSize = true;
+            this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.Black;
             this.Title.Location = new System.Drawing.Point(6, 6);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(134, 20);
+            this.Title.Size = new System.Drawing.Size(238, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Check for Updates";
             // 
@@ -77,7 +78,6 @@ namespace WinNetMeter.UserControls
             // BtnCancel
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnCancel.Enabled = false;
             this.BtnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,6 +88,7 @@ namespace WinNetMeter.UserControls
             this.BtnCancel.TabIndex = 35;
             this.BtnCancel.Text = "Cancel Update";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Visible = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // Changelog

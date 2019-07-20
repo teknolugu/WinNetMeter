@@ -86,7 +86,7 @@ namespace WinNetMeter.UserControls
                 {
                     NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show(this, "An error occured when sending commands to the shell", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

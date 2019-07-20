@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using WinNetMeter.Core;
 using WinNetMeter.Helper;
 
 namespace WinNetMeter
 {
     public partial class Main : Form
     {
-
+        
         public Main()
         {
             InitializeComponent();
@@ -77,6 +78,8 @@ namespace WinNetMeter
         private void CleaningOnStartup()
         {
             panel1.Width = 240;
+            Integration integration = new Integration();
+            integration.MakeUninstaller();
 
             FileHelper.DeleteAllIn(Environment.CurrentDirectory, "*.old");
         }

@@ -5,26 +5,45 @@ using WinNetMeter.Helper;
 
 namespace WinNetMeter.Core
 {
-    internal class Integration
+    class Integration
     {
         private string batchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarInstaller.bat";
+        private string uninstallerBatchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarUninstaller.bat";
         private string FrameworkLocation;
         private StreamWriter writer;
 
-        public Integration()
+        enum FileType
         {
+            Installer, 
+            Uninstaller
         }
 
-        private void WriteBatFile(string value, bool NewLine)
+        private void WriteBatFile(string value, bool NewLine, FileType fileType)
         {
-            writer = new StreamWriter(batchFileLocation, true);
-            if (NewLine) writer.Write(Environment.NewLine);
+            switch (fileType)
+            {
+                case FileType.Installer:
+                    writer = new StreamWriter(batchFileLocation, true);
+                    if (NewLine) writer.Write(Environment.NewLine);
 
-            //Write the .bat script
-            writer.Write(value);
+                    //Write the .bat script
+                    writer.Write(value);
 
-            //Close the tread
-            writer.Close();
+                    //Close the tread
+                    writer.Close();
+                    break;
+                case FileType.Uninstaller:
+                    writer = new StreamWriter(uninstallerBatchFileLocation, true);
+                    if (NewLine) writer.Write(Environment.NewLine);
+
+                    //Write the .bat script
+                    writer.Write(value);
+
+                    //Close the tread
+                    writer.Close();
+                    break;
+            }
+           
         }
 
         public void InstallToolbar()
@@ -43,8 +62,8 @@ namespace WinNetMeter.Core
                 FrameworkLocation = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework64\v4.0.30319";
                 if (Directory.Exists(FrameworkLocation))
                 {
-                    WriteBatFile("cd " + FrameworkLocation, false);
-                    WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true);
+                    WriteBatFile("cd " + FrameworkLocation, false, FileType.Installer);
+                    WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Installer);
                 }
             }
             else
@@ -52,8 +71,8 @@ namespace WinNetMeter.Core
                 FrameworkLocation = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework\v4.0.30319";
                 if (Directory.Exists(FrameworkLocation))
                 {
-                    WriteBatFile("cd " + FrameworkLocation, false);
-                    WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true);
+                    WriteBatFile("cd " + FrameworkLocation, false, FileType.Installer);
+                    WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Installer);
                 }
             }
 
@@ -82,8 +101,8 @@ namespace WinNetMeter.Core
 
             if (Directory.Exists(FrameworkLocation))
             {
-                WriteBatFile("cd " + FrameworkLocation, false);
-                WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true);
+                WriteBatFile("cd " + FrameworkLocation, false, FileType.Uninstaller);
+                WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Uninstaller);
             }
 
             //Executing the .bat file
@@ -111,18 +130,51 @@ namespace WinNetMeter.Core
 
             if (Directory.Exists(FrameworkLocation))
             {
-                WriteBatFile("cd " + FrameworkLocation, false);
+                WriteBatFile("cd " + FrameworkLocation, false, FileType.Installer);
 
                 // Unregister .dll
-                WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true);
+                WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Installer);
 
                 // Register .dll
-                WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true);
+                WriteBatFile("regasm /codebase " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Installer);
             }
 
             //Executing the .bat file
             runBat();
         }
+        public void MakeUninstaller()
+        {
+            //Create .bat file for toolbar installation
+            if (!Directory.Exists(Path.GetDirectoryName(batchFileLocation)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
+            }
+            if (!File.Exists(uninstallerBatchFileLocation))
+            {
+                File.Create(batchFileLocation).Close();
+
+                //Get .NET Framework path Information
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    FrameworkLocation = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework64\v4.0.30319";
+                }
+                else
+                {
+                    FrameworkLocation = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.NET\Framework\v4.0.30319";
+                }
+
+                if (Directory.Exists(FrameworkLocation))
+                {
+                    WriteBatFile("cd " + FrameworkLocation, false, FileType.Uninstaller);
+                    WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Uninstaller);
+                    WriteBatFile("taskkill /im explorer.exe /f", true, FileType.Uninstaller);
+                    WriteBatFile("start explorer.exe", true, FileType.Uninstaller);
+                    WriteBatFile("exit", true, FileType.Uninstaller);
+                }
+            }
+
+        }
+
 
         private void runBat()
         {

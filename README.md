@@ -59,6 +59,10 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
 
 If you find a bug, kindly open an issue [here](https://github.com/WinTenDev/WinNetMeter/issues/new).
 
+## Feature Request
+
+Feature requests are always welcome. If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/WinTenDev/WinNetMeter/issues/new). Please include sample queries and their corresponding results.
+
 ## License
 The MIT License (MIT)
 

@@ -1,6 +1,37 @@
-![WinNetMeter](https://telegra.ph/file/66b8fc7de6e5d960b49ab.jpg)
+<p align="center">
+  <img src="https://telegra.ph/file/66b8fc7de6e5d960b49ab.jpg"
+      alt="WinNetMeter" />
+</p>
 
-# WinNetMeter - *Realtime network speed monitor*
+<h1 align="center">WinNetMeter - <i>Realtime network speed monitor</i></h1>
+
+<p align="center">
+  <!-- Contributions -->
+  <a href="">
+    <img src="https://img.shields.io/badge/contributions-welcome-orange.svg"
+      alt="Contributions welcome" />
+  </a>
+ <!-- issues -->
+  <a href="https://github.com/WinTenDev/WinNetMeter/issues">
+    <img src="https://img.shields.io/github/issues/WinTenDev/WinNetMeter.svg"
+      alt="Issues" />
+  </a>
+  <!-- Forks Status -->
+  <a href="https://github.com/WinTenDev/WinNetMeter/network/members">
+    <img src="https://img.shields.io/github/forks/WinTenDev/WinNetMeter.svg"
+      alt="Forks Status" />
+  </a>
+  <!-- Stars Status -->
+  <a href="https://github.com/WinTenDev/WinNetMeter/stargazers">
+    <img src="https://img.shields.io/github/stars/WinTenDev/WinNetMeter.svg"
+      alt="Stars Status" />
+  </a>
+ <!-- License --> 
+  <a href="https://github.com/WinTenDev/WinNetMeter/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/WinTenDev/WinNetMeter.svg"
+      alt="License MIT" />
+  </a>
+</p>
 
 WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data jaringan yang dapat dipasang di *Taskbar* Windows sebagai *Shell*. WinNetMeter ditulis dengan bahasa C# (CSharp). Aplikasi ini *free* dan *open source* di bawah lisensi MIT, semua orang berhak menggunakan serta memodifikasi kode sumber.
 
@@ -24,7 +55,7 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
 - Alpha Release
   - [WinNetMeter-1.0.7132.25594-Setup.exe](https://github.com/WinTenDev/WinNetMeter/releases/download/v1.0.7132.25594/WinNetMeter-1.0.7132.25594-Setup.exe) (4.36MB) - [Catatan rilis](https://github.com/WinTenDev/WinNetMeter/releases/tag/v1.0.7132.25594)
 
-### License
+## License
 The MIT License (MIT)
 
 Copyright © 2019 [@WinTenDev](https://t.me/WinTenDev)

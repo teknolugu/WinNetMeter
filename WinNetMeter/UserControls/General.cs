@@ -88,7 +88,7 @@ namespace WinNetMeter.UserControls
                 }
                 catch
                 {
-                    MessageBox.Show(this, "An error occured when sending commands to the shell", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                 }
             }
         }

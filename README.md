@@ -16,9 +16,13 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
 - [ ] Kustom menggunakan icon sendiri
 - [ ] Multi bahasa
 
-## 🖥 System Requirements:
+## 🖥 System requirements
 - Windows 7, 8, 8.1 dan 10
 - [.NET Framework Runtime 4.7](https://dotnet.microsoft.com/download/thank-you/net472-offline) (untuk Windows 10 versi 1607 dan di bawahnya).
+
+## ⬇️ Download
+- Alpha Release
+  - [WinNetMeter-1.0.7132.25594-Setup.exe](https://github.com/WinTenDev/WinNetMeter/releases/download/v1.0.7132.25594/WinNetMeter-1.0.7132.25594-Setup.exe) (4.36MB) - [Catatan rilis](https://github.com/WinTenDev/WinNetMeter/releases/tag/v1.0.7132.25594)
 
 ### License
 The MIT License (MIT)

@@ -2,7 +2,7 @@
 
 # WinNetMeter - *Realtime network speed monitor*
 
-WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data jaringan yang dapat dipasang di *Taskbar* Windows sebagai *Shell*.
+WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data jaringan yang dapat dipasang di *Taskbar* Windows sebagai *Shell*. WinNetMeter ditulis dengan bahasa C# (CSharp). Aplikasi ini *free* dan *open source* di bawah lisensi MIT, semua orang berhak menggunakan serta memodifikasi kode sumber.
 
 ## 💠 Fitur
 - [x] Kustomisasi warna teks, icon, dan font

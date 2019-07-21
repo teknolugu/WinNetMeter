@@ -55,6 +55,10 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
 - Alpha Release
   - [WinNetMeter-1.0.7132.25594-Setup.exe](https://github.com/WinTenDev/WinNetMeter/releases/download/v1.0.7132.25594/WinNetMeter-1.0.7132.25594-Setup.exe) (4.36MB) - [Catatan rilis](https://github.com/WinTenDev/WinNetMeter/releases/tag/v1.0.7132.25594)
 
+## Bug Report
+
+If you find a bug, kindly open an issue [here](https://github.com/WinTenDev/WinNetMeter/issues/new).
+
 ## License
 The MIT License (MIT)
 

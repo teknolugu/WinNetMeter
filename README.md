@@ -20,4 +20,7 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
 - Windows 7, 8, 8.1 dan 10
 - [.NET Framework Runtime 4.7](https://dotnet.microsoft.com/download/thank-you/net472-offline) (untuk Windows 10 versi 1607 dan di bawahnya).
 
-— [@WinTenDev](https://t.me/WinTenDev)
+### License
+The MIT License (MIT)
+
+Copyright © 2019 [@WinTenDev](https://t.me/WinTenDev)

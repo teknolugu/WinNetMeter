@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/66b8fc7de6e5d960b49ab.jpg"
+  <img src="https://telegra.ph/file/d26f8b07fee92f37ff8ce.jpg"
       alt="WinNetMeter" />
 </p>
 

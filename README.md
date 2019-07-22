@@ -31,6 +31,11 @@
     <img src="https://img.shields.io/github/license/WinTenDev/WinNetMeter.svg"
       alt="License MIT" />
   </a>
+  <!-- Telegram -->
+  <a href="https://t.me/WinTenDev">
+    <img src="https://img.shields.io/static/v1.svg?logo=telegram&label=&message=@WinTenDev&color=blue"
+      alt="Telegram" />
+  </a>
 </p>
 
 WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data jaringan yang dapat dipasang di *Taskbar* Windows sebagai *Shell*. WinNetMeter ditulis dengan bahasa C# (CSharp). Aplikasi ini *free* dan *open source* di bawah lisensi MIT, semua orang berhak menggunakan serta memodifikasi kode sumber.

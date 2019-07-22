@@ -59,8 +59,8 @@ namespace WinNetMeter.Page
             }
             catch
             {
-                MessageBox.Show("List adapter sedang dimuat, silakan tunggu.", "WinNetMeter Setup",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("List adapter sedang dimuat, silakan tunggu.", "WinNetMeter Setup",
+                //    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

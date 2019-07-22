@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpdateRecovery = new System.Windows.Forms.Button();
             this.BtnIntegrate = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
             this.BtnDatabase = new System.Windows.Forms.Button();
@@ -52,8 +53,10 @@
             this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.about = new WinNetMeter.UserControls.About();
+            this.tabUpdateRecovery = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
+            this.updaterPage1 = new WinNetMeter.UserControls.UpdaterPage();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -61,11 +64,13 @@
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabUpdateRecovery.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.btnUpdateRecovery);
             this.panel1.Controls.Add(this.BtnIntegrate);
             this.panel1.Controls.Add(this.BtnAbout);
             this.panel1.Controls.Add(this.BtnDatabase);
@@ -80,6 +85,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 483);
             this.panel1.TabIndex = 0;
+            // 
+            // btnUpdateRecovery
+            // 
+            this.btnUpdateRecovery.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdateRecovery.FlatAppearance.BorderSize = 0;
+            this.btnUpdateRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateRecovery.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateRecovery.Image = global::WinNetMeter.Properties.Resources.refresh_darkgrey_16px;
+            this.btnUpdateRecovery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateRecovery.Location = new System.Drawing.Point(3, 289);
+            this.btnUpdateRecovery.Name = "btnUpdateRecovery";
+            this.btnUpdateRecovery.Size = new System.Drawing.Size(235, 46);
+            this.btnUpdateRecovery.TabIndex = 8;
+            this.btnUpdateRecovery.Text = "          Update and Recovery";
+            this.btnUpdateRecovery.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateRecovery.UseVisualStyleBackColor = false;
+            this.btnUpdateRecovery.Click += new System.EventHandler(this.BtnUpdateRecovery_Click);
             // 
             // BtnIntegrate
             // 
@@ -223,6 +245,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabUpdateRecovery);
             this.tabControl1.Location = new System.Drawing.Point(204, -5);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -328,6 +351,25 @@
             this.about.Size = new System.Drawing.Size(568, 485);
             this.about.TabIndex = 0;
             // 
+            // tabUpdateRecovery
+            // 
+            this.tabUpdateRecovery.Controls.Add(this.updaterPage1);
+            this.tabUpdateRecovery.Location = new System.Drawing.Point(23, 4);
+            this.tabUpdateRecovery.Name = "tabUpdateRecovery";
+            this.tabUpdateRecovery.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUpdateRecovery.Size = new System.Drawing.Size(568, 485);
+            this.tabUpdateRecovery.TabIndex = 5;
+            this.tabUpdateRecovery.Text = "tabUpdate";
+            this.tabUpdateRecovery.UseVisualStyleBackColor = true;
+            // 
+            // updaterPage1
+            // 
+            this.updaterPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updaterPage1.Location = new System.Drawing.Point(3, 3);
+            this.updaterPage1.Name = "updaterPage1";
+            this.updaterPage1.Size = new System.Drawing.Size(562, 479);
+            this.updaterPage1.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +396,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabUpdateRecovery.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,6 +427,9 @@
         private System.Windows.Forms.Button BtnIntegrate;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnUpdateRecovery;
+        private System.Windows.Forms.TabPage tabUpdateRecovery;
+        private UserControls.UpdaterPage updaterPage1;
     }
 }
 

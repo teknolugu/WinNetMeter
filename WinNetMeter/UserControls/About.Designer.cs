@@ -46,18 +46,19 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblVersion = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.updater = new WinNetMeter.UserControls.AppUpdater();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label24
@@ -131,7 +132,7 @@
             // 
             this.linkJovan.AutoSize = true;
             this.linkJovan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkJovan.Location = new System.Drawing.Point(26, 322);
+            this.linkJovan.Location = new System.Drawing.Point(5, 101);
             this.linkJovan.Name = "linkJovan";
             this.linkJovan.Size = new System.Drawing.Size(204, 17);
             this.linkJovan.TabIndex = 48;
@@ -143,7 +144,7 @@
             // 
             this.linkJeremy.AutoSize = true;
             this.linkJeremy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkJeremy.Location = new System.Drawing.Point(26, 301);
+            this.linkJeremy.Location = new System.Drawing.Point(5, 80);
             this.linkJeremy.Name = "linkJeremy";
             this.linkJeremy.Size = new System.Drawing.Size(88, 17);
             this.linkJeremy.TabIndex = 47;
@@ -155,7 +156,7 @@
             // 
             this.linkAzhe.AutoSize = true;
             this.linkAzhe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkAzhe.Location = new System.Drawing.Point(26, 283);
+            this.linkAzhe.Location = new System.Drawing.Point(5, 62);
             this.linkAzhe.Name = "linkAzhe";
             this.linkAzhe.Size = new System.Drawing.Size(62, 17);
             this.linkAzhe.TabIndex = 46;
@@ -167,7 +168,7 @@
             // 
             this.linkArfan.AutoSize = true;
             this.linkArfan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkArfan.Location = new System.Drawing.Point(26, 263);
+            this.linkArfan.Location = new System.Drawing.Point(5, 42);
             this.linkArfan.Name = "linkArfan";
             this.linkArfan.Size = new System.Drawing.Size(113, 17);
             this.linkArfan.TabIndex = 45;
@@ -190,11 +191,11 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(24, 236);
+            this.label20.Location = new System.Drawing.Point(3, 15);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(95, 20);
+            this.label20.Size = new System.Drawing.Size(81, 20);
             this.label20.TabIndex = 42;
-            this.label20.Text = "Contributors";
+            this.label20.Text = "Team Core";
             // 
             // lineShape8
             // 
@@ -257,6 +258,26 @@
             this.label19.TabIndex = 59;
             this.label19.Text = "WinNetMeter By WinTenDev Inc.";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(319, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(44, 18);
+            this.panel1.TabIndex = 65;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Alpha";
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::WinNetMeter.Properties.Resources.WinNetMeter_128px;
@@ -294,42 +315,26 @@
             this.pictureBox8.TabIndex = 51;
             this.pictureBox8.TabStop = false;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(319, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(44, 18);
-            this.panel1.TabIndex = 65;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Alpha";
-            // 
-            // updater
-            // 
-            this.updater.AutoSize = true;
-            this.updater.Location = new System.Drawing.Point(21, 113);
-            this.updater.Name = "updater";
-            this.updater.Size = new System.Drawing.Size(250, 107);
-            this.updater.TabIndex = 64;
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.linkArfan);
+            this.panel2.Controls.Add(this.linkAzhe);
+            this.panel2.Controls.Add(this.linkJeremy);
+            this.panel2.Controls.Add(this.linkJovan);
+            this.panel2.Location = new System.Drawing.Point(23, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(336, 146);
+            this.panel2.TabIndex = 66;
             // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.updater);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.label19);
@@ -342,30 +347,25 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.linkWebsite);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.linkJovan);
-            this.Controls.Add(this.linkJeremy);
-            this.Controls.Add(this.linkAzhe);
-            this.Controls.Add(this.linkArfan);
             this.Controls.Add(this.lblCopyright);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "About";
             this.Size = new System.Drawing.Size(568, 485);
             this.Load += new System.EventHandler(this.About_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private AppUpdater updater;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.LinkLabel linkDonation;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -390,5 +390,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

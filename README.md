@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/66b8fc7de6e5d960b49ab.jpg"
+  <img src="https://telegra.ph/file/d26f8b07fee92f37ff8ce.jpg"
       alt="WinNetMeter" />
 </p>
 
@@ -30,6 +30,11 @@
   <a href="https://github.com/WinTenDev/WinNetMeter/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/WinTenDev/WinNetMeter.svg"
       alt="License MIT" />
+  </a>
+  <!-- Telegram -->
+  <a href="https://t.me/WinTenDev">
+    <img src="https://img.shields.io/static/v1.svg?logo=telegram&label=&message=@WinTenDev&color=blue"
+      alt="Telegram" />
   </a>
 </p>
 

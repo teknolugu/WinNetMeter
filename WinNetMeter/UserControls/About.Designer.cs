@@ -322,7 +322,7 @@
             this.panel2.Controls.Add(this.linkAzhe);
             this.panel2.Controls.Add(this.linkJeremy);
             this.panel2.Controls.Add(this.linkJovan);
-            this.panel2.Location = new System.Drawing.Point(23, 100);
+            this.panel2.Location = new System.Drawing.Point(23, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(336, 146);
             this.panel2.TabIndex = 66;

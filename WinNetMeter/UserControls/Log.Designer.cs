@@ -46,7 +46,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 19);
+            this.label11.Location = new System.Drawing.Point(33, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(167, 25);
             this.label11.TabIndex = 13;
@@ -150,7 +150,7 @@
             this.btnSaveLog.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSaveLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveLog.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.dun_black_16px;
+            this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
             this.btnSaveLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveLog.Location = new System.Drawing.Point(414, 441);
             this.btnSaveLog.Name = "btnSaveLog";

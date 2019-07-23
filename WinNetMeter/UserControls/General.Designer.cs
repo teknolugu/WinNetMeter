@@ -66,7 +66,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "https://cdn.winten.space",
             "https://cdn.azhe.space"});
-            this.comboBox1.Location = new System.Drawing.Point(355, 247);
+            this.comboBox1.Location = new System.Drawing.Point(355, 251);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 21);
             this.comboBox1.TabIndex = 15;
@@ -75,7 +75,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(22, 251);
+            this.label26.Location = new System.Drawing.Point(22, 255);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(137, 17);
             this.label26.TabIndex = 14;
@@ -85,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 68);
+            this.label4.Location = new System.Drawing.Point(20, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 155);
+            this.label7.Location = new System.Drawing.Point(21, 159);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 9;
@@ -105,7 +105,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 110);
+            this.label6.Location = new System.Drawing.Point(20, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(187, 17);
             this.label6.TabIndex = 8;
@@ -119,7 +119,7 @@
             this.ListAdapter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListAdapter.FormattingEnabled = true;
             this.ListAdapter.ItemHeight = 15;
-            this.ListAdapter.Location = new System.Drawing.Point(25, 327);
+            this.ListAdapter.Location = new System.Drawing.Point(25, 331);
             this.ListAdapter.Name = "ListAdapter";
             this.ListAdapter.Size = new System.Drawing.Size(510, 90);
             this.ListAdapter.TabIndex = 2;
@@ -133,7 +133,7 @@
             this.comboBoxLanguage.Items.AddRange(new object[] {
             "English",
             "Indonesian"});
-            this.comboBoxLanguage.Location = new System.Drawing.Point(355, 201);
+            this.comboBoxLanguage.Location = new System.Drawing.Point(355, 205);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(160, 21);
             this.comboBoxLanguage.TabIndex = 11;
@@ -143,7 +143,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(22, 295);
+            this.label3.Location = new System.Drawing.Point(22, 299);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 21);
             this.label3.TabIndex = 3;
@@ -153,7 +153,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 201);
+            this.label8.Location = new System.Drawing.Point(21, 205);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 12;
@@ -168,7 +168,7 @@
             "Auto",
             "KB",
             "MB"});
-            this.comboBoxFormat.Location = new System.Drawing.Point(355, 155);
+            this.comboBoxFormat.Location = new System.Drawing.Point(355, 159);
             this.comboBoxFormat.Name = "comboBoxFormat";
             this.comboBoxFormat.Size = new System.Drawing.Size(160, 21);
             this.comboBoxFormat.TabIndex = 10;
@@ -176,7 +176,7 @@
             // ToggleMonitor
             // 
             this.ToggleMonitor.AutoSize = true;
-            this.ToggleMonitor.Location = new System.Drawing.Point(435, 68);
+            this.ToggleMonitor.Location = new System.Drawing.Point(435, 72);
             this.ToggleMonitor.Name = "ToggleMonitor";
             this.ToggleMonitor.Size = new System.Drawing.Size(80, 17);
             this.ToggleMonitor.TabIndex = 4;
@@ -186,7 +186,7 @@
             // ToggleAutoUpdate
             // 
             this.ToggleAutoUpdate.AutoSize = true;
-            this.ToggleAutoUpdate.Location = new System.Drawing.Point(435, 110);
+            this.ToggleAutoUpdate.Location = new System.Drawing.Point(435, 114);
             this.ToggleAutoUpdate.Name = "ToggleAutoUpdate";
             this.ToggleAutoUpdate.Size = new System.Drawing.Size(80, 17);
             this.ToggleAutoUpdate.TabIndex = 7;
@@ -229,7 +229,7 @@
             this.btnSaveGeneral.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnSaveGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveGeneral.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveGeneral.Image = global::WinNetMeter.Properties.Resources.dun_black_16px;
+            this.btnSaveGeneral.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
             this.btnSaveGeneral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveGeneral.Location = new System.Drawing.Point(414, 441);
             this.btnSaveGeneral.Name = "btnSaveGeneral";

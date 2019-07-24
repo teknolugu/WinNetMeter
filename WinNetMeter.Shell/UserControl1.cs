@@ -17,7 +17,7 @@ namespace WinNetMeter.Shell
         private RegistryManager registryManager = new RegistryManager();
         private StyleConfiguration styleConfiguration;
         private DbManager dataManager = new DbManager();
-        private Configuration generalConfiguration;
+        private Configuration configuration;
 
         public UserControl1(CSDeskBand.CSDeskBandWin w)
         {
@@ -36,8 +36,7 @@ namespace WinNetMeter.Shell
 
         private void RestartDesk()
         {
-            this.Controls.Clear();
-            InitializeComponent();
+            killTimer();
             Load_Config();
             ConfigureStyle();
         }
@@ -50,18 +49,49 @@ namespace WinNetMeter.Shell
             ConfigureStyle();
         }
 
+        private void killTimer()
+        {
+            timerAuto.Stop();
+            timerKB.Stop();
+            timerMB.Stop();
+
+            try
+            {
+                monitor.Stop();
+                monitor.Dispose();
+            }
+            catch { }
+        }
+
         private void Load_Config()
         {
-            generalConfiguration = registryManager.GetGeneralConfiguration();
+            configuration = registryManager.GetGeneralConfiguration();
 
-            if (generalConfiguration.Monitoring == true)
+            if (configuration.Monitoring == true)
             {
-                Format = generalConfiguration.Format;
+                Format = configuration.Format;
 
-                adapterController = new AdapterController(generalConfiguration.MonitoredAdapter);
+                adapterController = new AdapterController(configuration.MonitoredAdapter);
                 monitor = new NetworkMonitor(adapterController);
                 monitor.Start();
-                timer1.Start();
+
+                switch (Format)
+                {
+                    case "Auto":
+                        timerAuto.Start();
+                        break;
+                    case "KB":
+                        timerKB.Start();
+                        break;
+                    case "MB":
+                        timerMB.Start();
+                        break;
+                }
+            }
+            else
+            {
+                LblDownload.Text = "......";
+                LblUpload.Text = "......";
             }
         }
 
@@ -88,22 +118,22 @@ namespace WinNetMeter.Shell
             {
                 goto setIcon;
             }
-            
-            setIcon:
+
+        setIcon:
 
             if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
             {
                 pictDownload.Image = Properties.Resources.down_black_16px;
                 pictUpload.Image = Properties.Resources.up_black_16px;
 
-                pictDownload.Location = new Point(10, 15);
+                pictDownload.Location = new Point(10, 19);
             }
             else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
             {
                 pictDownload.Image = Properties.Resources.down_white_16px;
                 pictUpload.Image = Properties.Resources.up_white_16px;
 
-                pictDownload.Location = new Point(10, 15);
+                pictDownload.Location = new Point(10, 19);
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
             {
@@ -129,27 +159,20 @@ namespace WinNetMeter.Shell
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            switch (Format)
-            {
-                case "Auto":
-                    {
-                        LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
-                        LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
-                        break;
-                    }
-                case "KB":
-                    {
-                        LblUpload.Text = string.Format("{0:n} KB/s", adapterController.UploadSpeedKBps);
-                        LblDownload.Text = string.Format("{0:n} KB/s", adapterController.DownloadSpeedKBps);
-                        break;
-                    }
-                case "MB":
-                    {
-                        LblUpload.Text = string.Format("{0:n} MB/s", adapterController.UploadSpeedMBps);
-                        LblDownload.Text = string.Format("{0:n} MB/s", adapterController.DownloadSpeedMBps);
-                        break;
-                    }
-            }
+            LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
+            LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
+        }
+
+        private void TimerKB_Tick(object sender, EventArgs e)
+        {
+            LblUpload.Text = string.Format("{0:n} KB/s", adapterController.UploadSpeedKBps);
+            LblDownload.Text = string.Format("{0:n} KB/s", adapterController.DownloadSpeedKBps);
+        }
+
+        private void TimerMB_Tick(object sender, EventArgs e)
+        {
+            LblUpload.Text = string.Format("{0:n} MB/s", adapterController.UploadSpeedMBps);
+            LblDownload.Text = string.Format("{0:n} MB/s", adapterController.DownloadSpeedMBps);
         }
 
         private void ConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,7 +189,7 @@ namespace WinNetMeter.Shell
         private void OffToolStripMenuItem_Click(object sender, EventArgs e)
         {
             registryManager.Save("Monitoring", "False", ConfigurationType.GeneralConfiguration);
-            timer1.Stop();
+            timerAuto.Stop();
             RestartDesk();
         }
 

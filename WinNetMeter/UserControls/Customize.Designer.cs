@@ -296,7 +296,7 @@
             this.btnSaveStyle.ForeColor = System.Drawing.Color.Black;
             this.btnSaveStyle.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
             this.btnSaveStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveStyle.Location = new System.Drawing.Point(414, 441);
+            this.btnSaveStyle.Location = new System.Drawing.Point(414, 437);
             this.btnSaveStyle.Name = "btnSaveStyle";
             this.btnSaveStyle.Size = new System.Drawing.Size(121, 33);
             this.btnSaveStyle.TabIndex = 42;

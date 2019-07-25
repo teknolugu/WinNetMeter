@@ -152,7 +152,7 @@
             this.btnSaveLog.ForeColor = System.Drawing.Color.Black;
             this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
             this.btnSaveLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveLog.Location = new System.Drawing.Point(414, 441);
+            this.btnSaveLog.Location = new System.Drawing.Point(414, 437);
             this.btnSaveLog.Name = "btnSaveLog";
             this.btnSaveLog.Size = new System.Drawing.Size(121, 33);
             this.btnSaveLog.TabIndex = 18;

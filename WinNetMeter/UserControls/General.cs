@@ -1,7 +1,9 @@
 ﻿using System;
 using WinNetMeter.Model;
 using WinNetMeter.Helper;
+using WinNetMeter.Core;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace WinNetMeter.UserControls
 {
@@ -20,8 +22,8 @@ namespace WinNetMeter.UserControls
             }
 
             //Set to default value
-            comboBoxFormat.SelectedItem = "Auto";
-            comboBoxLanguage.SelectedItem = "English";
+            cmbFormat.SelectedItem = "Auto";
+            radioEnglish.Checked= true;
             if (ListAdapter.Items != null)
             {
                 ListAdapter.SelectedIndex = 0;
@@ -38,16 +40,16 @@ namespace WinNetMeter.UserControls
 
             if (configuration.Format != null)
             {
-                comboBoxFormat.SelectedItem = configuration.Format;
+                cmbFormat.SelectedItem = configuration.Format;
             }
 
             if (configuration.Language == Language.English)
             {
-                comboBoxLanguage.SelectedItem = "English";
+                radioEnglish.Checked = true;
             }
             else
             {
-                comboBoxLanguage.SelectedItem = "Indonesian";
+                radioIndonesia.Checked = true;
             }
 
             if (configuration.MonitoredAdapter != null && ListAdapter.Items.Contains(configuration.MonitoredAdapter))
@@ -64,7 +66,7 @@ namespace WinNetMeter.UserControls
             {
                 MessageBox.Show(this, "You have not chosen the network inteface", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (comboBoxLanguage.SelectedItem == null || comboBoxLanguage.SelectedItem == null)
+            else if (!radioEnglish.Checked && !radioIndonesia.Checked)
             {
                 MessageBox.Show(this, "You have not chosen something", "Oopss!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -74,8 +76,8 @@ namespace WinNetMeter.UserControls
                 {
                     Monitoring = ToggleMonitor.Checked,
                     AutoUpdate = ToggleAutoUpdate.Checked,
-                    Language = (Language)Enum.Parse(typeof(Language), comboBoxLanguage.SelectedItem.ToString()),
-                    Format = comboBoxFormat.SelectedItem.ToString(),
+                    Language = (Language)Enum.Parse(typeof(Language), this.Controls.OfType<RadioButton>().FirstOrDefault(r=>r.Checked).Text),
+                    Format = cmbFormat.SelectedItem.ToString(),
                     MonitoredAdapter = ListAdapter.SelectedItem.ToString()
                 };
 
@@ -93,22 +95,9 @@ namespace WinNetMeter.UserControls
             }
         }
 
-        private void LinkReset_Click(object sender, EventArgs e)
+        private void General_Load(object sender, EventArgs e)
         {
-            switch(MessageBox.Show(this, "Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                case DialogResult.Yes:
-                    // Delete all registry entries
-                    registryManager.Reset();
 
-                    // Restore to default
-                    registryManager.CreateRegistry();
-                    registryManager.MakeDefaultConfiguration();
-
-                    MessageBox.Show("Application settings has been reset", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-            }
-            
         }
     }
 }

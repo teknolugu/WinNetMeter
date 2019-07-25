@@ -42,9 +42,11 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerKB = new System.Windows.Forms.Timer(this.components);
             this.timerMB = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictDownload
@@ -78,7 +80,7 @@
             this.LblDownload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblDownload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDownload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblDownload.Location = new System.Drawing.Point(31, 18);
+            this.LblDownload.Location = new System.Drawing.Point(1, 18);
             this.LblDownload.Name = "LblDownload";
             this.LblDownload.Size = new System.Drawing.Size(77, 12);
             this.LblDownload.TabIndex = 6;
@@ -91,7 +93,7 @@
             this.LblUpload.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblUpload.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUpload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblUpload.Location = new System.Drawing.Point(31, 4);
+            this.LblUpload.Location = new System.Drawing.Point(1, 4);
             this.LblUpload.Name = "LblUpload";
             this.LblUpload.Size = new System.Drawing.Size(77, 12);
             this.LblUpload.TabIndex = 5;
@@ -153,6 +155,16 @@
             // 
             this.timerMB.Tick += new System.EventHandler(this.TimerMB_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LblUpload);
+            this.panel1.Controls.Add(this.LblDownload);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(31, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(80, 38);
+            this.panel1.TabIndex = 7;
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -160,16 +172,16 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.LblDownload);
-            this.Controls.Add(this.LblUpload);
             this.Controls.Add(this.pictUpload);
             this.Controls.Add(this.pictDownload);
+            this.Controls.Add(this.panel1);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(111, 38);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -188,5 +200,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Timer timerKB;
         private System.Windows.Forms.Timer timerMB;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -54,9 +54,9 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.about = new WinNetMeter.UserControls.About();
             this.tabUpdateRecovery = new System.Windows.Forms.TabPage();
+            this.updaterPage1 = new WinNetMeter.UserControls.UpdaterPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.updaterPage1 = new WinNetMeter.UserControls.UpdaterPage();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 483);
+            this.panel1.Size = new System.Drawing.Size(231, 483);
             this.panel1.TabIndex = 0;
             // 
             // btnUpdateRecovery
@@ -224,7 +224,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape3});
-            this.shapeContainer2.Size = new System.Drawing.Size(198, 483);
+            this.shapeContainer2.Size = new System.Drawing.Size(231, 483);
             this.shapeContainer2.TabIndex = 5;
             this.shapeContainer2.TabStop = false;
             // 

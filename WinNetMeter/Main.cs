@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using WinNetMeter.Core;
 using WinNetMeter.Helper;
 
@@ -38,11 +39,13 @@ namespace WinNetMeter
         private void setSelected(Button selectedBtn)
         {
             PnlSelector.Location = new Point(0, selectedBtn.Location.Y);
-            foreach (var button in this.Controls.OfType<Button>())
+
+            foreach (Button button in panel1.Controls.OfType<Button>())
             {
                 if (button == selectedBtn)
                 {
                     selectedBtn.BackColor = ColorTranslator.FromHtml("#F0F0F0");
+                    
                 }
                 else
                 {

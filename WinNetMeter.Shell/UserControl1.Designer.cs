@@ -51,7 +51,7 @@
             // 
             // pictDownload
             // 
-            this.pictDownload.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictDownload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictDownload.Image = global::WinNetMeter.Shell.Properties.Resources.down_white_16px;
             this.pictDownload.Location = new System.Drawing.Point(7, 18);
             this.pictDownload.Name = "pictDownload";
@@ -62,7 +62,7 @@
             // 
             // pictUpload
             // 
-            this.pictUpload.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictUpload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictUpload.Image = global::WinNetMeter.Shell.Properties.Resources.up_white_16px;
             this.pictUpload.Location = new System.Drawing.Point(7, 4);
             this.pictUpload.Name = "pictUpload";

@@ -2,11 +2,12 @@
 using System.Windows.Forms;
 using WinNetMeter.Core;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class IntegrationPage : UserControl
     {
         private ShellController shellControlller = new ShellController();
+
         public IntegrationPage()
         {
             InitializeComponent();

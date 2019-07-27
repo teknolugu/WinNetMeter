@@ -1,15 +1,15 @@
 ﻿using System;
-using WinNetMeter.Model;
-using WinNetMeter.Helper;
-using WinNetMeter.Core;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
+using WinNetMeter.Helper;
+using WinNetMeter.Model;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class General : UserControl
     {
         private RegistryManager registryManager = new RegistryManager();
+
         public General()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace WinNetMeter.UserControls
 
             //Set to default value
             cmbFormat.SelectedItem = "Auto";
-            radioEnglish.Checked= true;
+            radioEnglish.Checked = true;
             if (ListAdapter.Items != null)
             {
                 ListAdapter.SelectedIndex = 0;
@@ -57,7 +57,7 @@ namespace WinNetMeter.UserControls
                 ListAdapter.SelectedItem = configuration.MonitoredAdapter;
             }
 
-            #endregion
+            #endregion LoadConfiguration
         }
 
         private void BtnSaveGeneral_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace WinNetMeter.UserControls
                 {
                     Monitoring = ToggleMonitor.Checked,
                     AutoUpdate = ToggleAutoUpdate.Checked,
-                    Language = (Language)Enum.Parse(typeof(Language), this.Controls.OfType<RadioButton>().FirstOrDefault(r=>r.Checked).Text),
+                    Language = (Language)Enum.Parse(typeof(Language), this.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text),
                     Format = cmbFormat.SelectedItem.ToString(),
                     MonitoredAdapter = ListAdapter.SelectedItem.ToString()
                 };
@@ -90,14 +90,12 @@ namespace WinNetMeter.UserControls
                 }
                 catch
                 {
-                    
                 }
             }
         }
 
         private void General_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

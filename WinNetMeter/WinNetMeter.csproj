@@ -155,34 +155,34 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\StyleConfiguration.cs" />
     <Compile Include="Model\Update.cs" />
-    <Compile Include="Page\StartPage1.cs">
+    <Compile Include="UserControls\FirstRun\StartPage1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page\StartPage1.Designer.cs">
+    <Compile Include="UserControls\FirstRun\StartPage1.Designer.cs">
       <DependentUpon>StartPage1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page\StartPage2.cs">
+    <Compile Include="UserControls\FirstRun\StartPage2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page\StartPage2.Designer.cs">
+    <Compile Include="UserControls\FirstRun\StartPage2.Designer.cs">
       <DependentUpon>StartPage2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page\StartPage3.cs">
+    <Compile Include="UserControls\FirstRun\StartPage3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page\StartPage3.Designer.cs">
+    <Compile Include="UserControls\FirstRun\StartPage3.Designer.cs">
       <DependentUpon>StartPage3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page\StartPage4.cs">
+    <Compile Include="UserControls\FirstRun\StartPage4.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page\StartPage4.Designer.cs">
+    <Compile Include="UserControls\FirstRun\StartPage4.Designer.cs">
       <DependentUpon>StartPage4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page\StartPage5.cs">
+    <Compile Include="UserControls\FirstRun\StartPage5.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page\StartPage5.Designer.cs">
+    <Compile Include="UserControls\FirstRun\StartPage5.Designer.cs">
       <DependentUpon>StartPage5.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -193,64 +193,64 @@
     <Compile Include="Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\About.cs">
+    <Compile Include="UserControls\Pages\About.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\About.Designer.cs">
+    <Compile Include="UserControls\Pages\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\AppUpdater.cs">
+    <Compile Include="UserControls\Controls\AppUpdater.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\AppUpdater.Designer.cs">
+    <Compile Include="UserControls\Controls\AppUpdater.Designer.cs">
       <DependentUpon>AppUpdater.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Customize.cs">
+    <Compile Include="UserControls\Pages\Customize.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Customize.Designer.cs">
+    <Compile Include="UserControls\Pages\Customize.Designer.cs">
       <DependentUpon>Customize.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\General.cs">
+    <Compile Include="UserControls\Pages\General.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\General.Designer.cs">
+    <Compile Include="UserControls\Pages\General.Designer.cs">
       <DependentUpon>General.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\IntegrationPage.cs">
+    <Compile Include="UserControls\Pages\IntegrationPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\IntegrationPage.Designer.cs">
+    <Compile Include="UserControls\Pages\IntegrationPage.Designer.cs">
       <DependentUpon>IntegrationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Log.cs">
+    <Compile Include="UserControls\Pages\Log.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Log.Designer.cs">
+    <Compile Include="UserControls\Pages\Log.Designer.cs">
       <DependentUpon>Log.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UpdaterPage.cs">
+    <Compile Include="UserControls\Pages\UpdaterPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UpdaterPage.Designer.cs">
+    <Compile Include="UserControls\Pages\UpdaterPage.Designer.cs">
       <DependentUpon>UpdaterPage.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\StartPage1.resx">
+    <EmbeddedResource Include="UserControls\FirstRun\StartPage1.resx">
       <DependentUpon>StartPage1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\StartPage2.resx">
+    <EmbeddedResource Include="UserControls\FirstRun\StartPage2.resx">
       <DependentUpon>StartPage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\StartPage3.resx">
+    <EmbeddedResource Include="UserControls\FirstRun\StartPage3.resx">
       <DependentUpon>StartPage3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\StartPage4.resx">
+    <EmbeddedResource Include="UserControls\FirstRun\StartPage4.resx">
       <DependentUpon>StartPage4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page\StartPage5.resx">
+    <EmbeddedResource Include="UserControls\FirstRun\StartPage5.resx">
       <DependentUpon>StartPage5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -261,25 +261,25 @@
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\About.resx">
+    <EmbeddedResource Include="UserControls\Pages\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\AppUpdater.resx">
+    <EmbeddedResource Include="UserControls\Controls\AppUpdater.resx">
       <DependentUpon>AppUpdater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Customize.resx">
+    <EmbeddedResource Include="UserControls\Pages\Customize.resx">
       <DependentUpon>Customize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\General.resx">
+    <EmbeddedResource Include="UserControls\Pages\General.resx">
       <DependentUpon>General.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\IntegrationPage.resx">
+    <EmbeddedResource Include="UserControls\Pages\IntegrationPage.resx">
       <DependentUpon>IntegrationPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Log.resx">
+    <EmbeddedResource Include="UserControls\Pages\Log.resx">
       <DependentUpon>Log.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UpdaterPage.resx">
+    <EmbeddedResource Include="UserControls\Pages\UpdaterPage.resx">
       <DependentUpon>UpdaterPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
@@ -423,6 +423,7 @@
   <ItemGroup>
     <None Include="Resources\dun_black_16px.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

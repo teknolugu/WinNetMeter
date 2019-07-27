@@ -1,4 +1,6 @@
-﻿namespace WinNetMeter
+﻿using WinNetMeter.UserControls.Pages;
+
+namespace WinNetMeter
 {
     partial class Main
     {
@@ -54,12 +56,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.LineHorizontal = new System.Windows.Forms.Label();
             this.LblTitlePages = new System.Windows.Forms.Label();
-            this.general = new WinNetMeter.UserControls.General();
-            this.log = new WinNetMeter.UserControls.Log();
-            this.customize = new WinNetMeter.UserControls.Customize();
-            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
-            this.about = new WinNetMeter.UserControls.About();
-            this.updaterPage1 = new WinNetMeter.UserControls.UpdaterPage();
+            this.general = new General();
+            this.log = new Log();
+            this.customize = new Customize();
+            this.integrationPage = new IntegrationPage();
+            this.about = new About();
+            this.updaterPage1 = new UpdaterPage();
             this.PanelMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -447,11 +449,11 @@
 
         #endregion
 
-        private WinNetMeter.UserControls.IntegrationPage integrationPage;
-        private WinNetMeter.UserControls.Customize customize;
-        private WinNetMeter.UserControls.Log log;
-        private WinNetMeter.UserControls.General general;
-        private WinNetMeter.UserControls.About about;
+        private IntegrationPage integrationPage;
+        private Customize customize;
+        private Log log;
+        private General general;
+        private About about;
         private System.Windows.Forms.Panel PanelMainMenu;
         private System.Windows.Forms.Panel PnlSelector;
         private System.Windows.Forms.Label label2;
@@ -469,7 +471,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabUpdateRecovery;
-        private UserControls.UpdaterPage updaterPage1;
+        private UpdaterPage updaterPage1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LineHorizontal;
         private System.Windows.Forms.Label LblTitlePages;

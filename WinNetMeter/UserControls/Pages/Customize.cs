@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using WinNetMeter.Helper;
 using WinNetMeter.Model;
-using System.Windows.Forms;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class Customize : UserControl
     {
         private RegistryManager registryManager = new RegistryManager();
+
         public Customize()
         {
             InitializeComponent();
@@ -41,7 +36,6 @@ namespace WinNetMeter.UserControls
 
         private void Customize_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void BtnSaveStyle_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace WinNetMeter.UserControls
+﻿namespace WinNetMeter.UserControls.Pages
 {
     partial class Customize
     {

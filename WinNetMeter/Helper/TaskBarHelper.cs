@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinNetMeter.Shell.Helper
+namespace WinNetMeter.Helper
 {
-    class TaskBarHelper
+    internal class TaskBarHelper
     {
         [DllImport("shell32.dll")]
         private static extern IntPtr SHAppBarMessage(int msg, ref APPBARDATA data);
@@ -66,6 +62,7 @@ namespace WinNetMeter.Shell.Helper
                 return screenPixel.GetPixel(0, 0);
             }
         }
+
         public bool IsDarkColor(int R, int G, int B)
         {
             bool IsDark = false;

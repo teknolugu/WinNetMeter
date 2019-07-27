@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
-using WinNetMeter.Page;
+using WinNetMeter.UserControls.FirstRun;
 
 namespace WinNetMeter
 {

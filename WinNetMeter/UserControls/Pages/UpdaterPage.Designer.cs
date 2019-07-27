@@ -1,4 +1,6 @@
-﻿namespace WinNetMeter.UserControls
+﻿using WinNetMeter.UserControls.Controls;
+
+namespace WinNetMeter.UserControls.Pages
 {
     partial class UpdaterPage
     {
@@ -31,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnReset = new WinNetMeter.Components.ButtonEx();
-            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
+            this.appUpdater1 = new AppUpdater();
             this.SuspendLayout();
             // 
             // label2

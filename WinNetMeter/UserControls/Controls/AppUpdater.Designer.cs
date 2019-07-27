@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace WinNetMeter.UserControls
+﻿namespace WinNetMeter.UserControls.Controls
 {
     partial class AppUpdater
     {

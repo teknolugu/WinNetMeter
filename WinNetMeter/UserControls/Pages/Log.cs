@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using WinNetMeter.Helper;
 using WinNetMeter.Model;
-using System.Windows.Forms;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class Log : UserControl
     {
         private RegistryManager registryManager = new RegistryManager();
+
         public Log()
         {
             InitializeComponent();
@@ -26,7 +20,6 @@ namespace WinNetMeter.UserControls
             txtLogPath.Text = dbConfig.CustomLogLocation;
 
             #endregion DatabaseConfiguration
-
         }
 
         private void BtnSaveLog_Click(object sender, EventArgs e)
@@ -55,7 +48,6 @@ namespace WinNetMeter.UserControls
 
         private void Log_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using WinNetMeter.Helper;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class UpdaterPage : UserControl
     {

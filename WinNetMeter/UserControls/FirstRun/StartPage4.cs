@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WinNetMeter.Page
+namespace WinNetMeter.UserControls.FirstRun
 {
     public partial class StartPage4 : UserControl
     {

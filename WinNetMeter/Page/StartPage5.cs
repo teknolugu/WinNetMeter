@@ -29,6 +29,10 @@ namespace WinNetMeter.Page
             {
                 case true:
                     integration.InstallToolbar();
+
+                    // Show the deskband
+                    ShellController shellController = new ShellController();
+                    shellController.callDeskband();
                     break;
                 case false:
                     integration.UninstallToolbar();

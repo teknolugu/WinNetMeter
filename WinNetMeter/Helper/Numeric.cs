@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinNetMeter.Shell.Helper
+namespace WinNetMeter.Helper
 {
-    class Numeric
+    internal class Numeric
     {
         public static string SizeFormat(long bytes, string suffix = null)
         {

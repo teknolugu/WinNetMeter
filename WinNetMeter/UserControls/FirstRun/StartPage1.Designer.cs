@@ -1,4 +1,4 @@
-﻿namespace WinNetMeter.Page
+﻿namespace WinNetMeter.UserControls.FirstRun
 {
     partial class StartPage1
     {

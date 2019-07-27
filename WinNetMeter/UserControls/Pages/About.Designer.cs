@@ -1,4 +1,4 @@
-﻿namespace WinNetMeter.UserControls
+﻿namespace WinNetMeter.UserControls.Pages
 {
     partial class About
     {
@@ -40,10 +40,7 @@
             this.linkArfan = new System.Windows.Forms.LinkLabel();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.linkReport = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblVersion = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,7 +50,6 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -198,47 +194,16 @@
             this.label20.TabIndex = 42;
             this.label20.Text = "Team Core";
             // 
-            // lineShape8
+            // linkLabel1
             // 
-            this.lineShape8.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 21;
-            this.lineShape8.X2 = 559;
-            this.lineShape8.Y1 = 102;
-            this.lineShape8.Y2 = 102;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape4,
-            this.lineShape8});
-            this.shapeContainer1.Size = new System.Drawing.Size(568, 485);
-            this.shapeContainer1.TabIndex = 58;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 13;
-            this.lineShape4.X2 = 13;
-            this.lineShape4.Y1 = 3;
-            this.lineShape4.Y2 = 482;
-            // 
-            // linkReport
-            // 
-            this.linkReport.AutoSize = true;
-            this.linkReport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkReport.Location = new System.Drawing.Point(87, 67);
-            this.linkReport.Name = "linkReport";
-            this.linkReport.Size = new System.Drawing.Size(97, 13);
-            this.linkReport.TabIndex = 62;
-            this.linkReport.TabStop = true;
-            this.linkReport.Text = "Report a problem";
-            this.linkReport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkReport_LinkClicked);
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(87, 67);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
+            this.linkLabel1.TabIndex = 62;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Report a problem";
             // 
             // lblVersion
             // 
@@ -319,7 +284,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.linkArfan);
             this.panel2.Controls.Add(this.linkAzhe);
@@ -327,19 +291,8 @@
             this.panel2.Controls.Add(this.linkJovan);
             this.panel2.Location = new System.Drawing.Point(23, 107);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 154);
+            this.panel2.Size = new System.Drawing.Size(336, 146);
             this.panel2.TabIndex = 66;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(5, 123);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(82, 17);
-            this.linkLabel2.TabIndex = 49;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Ekak Sanjaya";
             // 
             // About
             // 
@@ -348,7 +301,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.linkReport);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.label19);
@@ -362,7 +315,6 @@
             this.Controls.Add(this.linkWebsite);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.lblCopyright);
-            this.Controls.Add(this.shapeContainer1);
             this.Name = "About";
             this.Size = new System.Drawing.Size(568, 485);
             this.Load += new System.EventHandler(this.About_Load);
@@ -395,16 +347,12 @@
         private System.Windows.Forms.LinkLabel linkArfan;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label label20;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private System.Windows.Forms.LinkLabel linkReport;
+        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label19;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

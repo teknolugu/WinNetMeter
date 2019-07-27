@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Threading;
-using System.IO;
 using System.Windows.Forms;
-using WinNetMeter.Helper;
 using WinNetMeter.Core;
+using WinNetMeter.Helper;
 
-namespace WinNetMeter.Page
+namespace WinNetMeter.UserControls.FirstRun
 {
     public partial class StartPage5 : UserControl
     {
         private string batchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarInstaller.bat";
         private Integration integration = new Integration();
+
         public StartPage5()
         {
             InitializeComponent();
@@ -24,7 +23,6 @@ namespace WinNetMeter.Page
 
         private void ToggleInstaller_CheckedChanged(object sender, EventArgs e)
         {
-
             switch (ToggleInstaller.Checked)
             {
                 case true:
@@ -34,6 +32,7 @@ namespace WinNetMeter.Page
                     ShellController shellController = new ShellController();
                     shellController.callDeskband();
                     break;
+
                 case false:
                     integration.UninstallToolbar();
                     break;

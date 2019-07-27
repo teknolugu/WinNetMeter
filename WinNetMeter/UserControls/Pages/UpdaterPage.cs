@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using WinNetMeter.Helper;
 
-namespace WinNetMeter.UserControls
+namespace WinNetMeter.UserControls.Pages
 {
     public partial class UpdaterPage : UserControl
     {
@@ -24,8 +24,11 @@ namespace WinNetMeter.UserControls
                     // Restore to default
                     registryManager.CreateRegistry();
                     registryManager.MakeDefaultConfiguration();
+                    var setupForm = new Setup();
 
                     MessageBox.Show("Application settings has been reset", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setupForm.Show();
+                    ((Form)this.TopLevelControl).Hide();
                     break;
             }
         }

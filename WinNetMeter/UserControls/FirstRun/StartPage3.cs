@@ -3,7 +3,7 @@ using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
 
-namespace WinNetMeter.Page
+namespace WinNetMeter.UserControls.FirstRun
 {
     public partial class StartPage3 : UserControl
     {

@@ -47,18 +47,21 @@ namespace WinNetMeter
         private void BtnGeneral_Click(object sender, EventArgs e)
         {
             setSelected(BtnGeneral);
+            LblTitlePages.Text = "General";
             tabControl1.SelectedTab = tabPage1;
         }
 
         private void BtnIntegrate_Click(object sender, EventArgs e)
         {
             setSelected(BtnIntegrate);
+            LblTitlePages.Text = "Integrate";
             tabControl1.SelectedTab = tabPage4;
         }
 
         private void BtnCustomization_Click(object sender, EventArgs e)
         {
             setSelected(BtnCustomization);
+            LblTitlePages.Text = "Customization";
             tabControl1.SelectedTab = tabPage2;
         }
 
@@ -66,12 +69,11 @@ namespace WinNetMeter
         {
             PnlSelector.Location = new Point(0, selectedBtn.Location.Y);
 
-            foreach (Button button in panel1.Controls.OfType<Button>())
+            foreach (Button button in PanelMainMenu.Controls.OfType<Button>())
             {
                 if (button == selectedBtn)
                 {
                     selectedBtn.BackColor = ColorTranslator.FromHtml("#F0F0F0");
-                    
                 }
                 else
                 {
@@ -89,18 +91,21 @@ namespace WinNetMeter
         private void BtnDatabase_Click(object sender, EventArgs e)
         {
             setSelected(BtnDatabase);
+            LblTitlePages.Text = "Database";
             tabControl1.SelectedTab = tabPage3;
         }
 
         private void BtnUpdateRecovery_Click(object sender, EventArgs e)
         {
             setSelected(btnUpdateRecovery);
+            LblTitlePages.Text = "Update & Recovery";
             tabControl1.SelectedTab = tabUpdateRecovery;
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             setSelected(BtnAbout);
+            LblTitlePages.Text = "About";
             tabControl1.SelectedTab = tabPage5;
         }
 
@@ -121,7 +126,7 @@ namespace WinNetMeter
 
         private void CleaningOnStartup()
         {
-            panel1.Width = 240;
+            PanelMainMenu.Width = 247;
             Integration integration = new Integration();
             integration.MakeUninstaller();
 

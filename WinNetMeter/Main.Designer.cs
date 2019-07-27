@@ -1,4 +1,6 @@
-﻿namespace WinNetMeter
+﻿using WinNetMeter.UserControls.Pages;
+
+namespace WinNetMeter
 {
     partial class Main
     {
@@ -30,7 +32,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelMainMenu = new System.Windows.Forms.Panel();
+            this.LineAboutSeparator = new System.Windows.Forms.GroupBox();
+            this.LineVertikal = new System.Windows.Forms.Label();
             this.btnUpdateRecovery = new System.Windows.Forms.Button();
             this.BtnIntegrate = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
@@ -40,24 +44,25 @@
             this.PnlSelector = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.general = new WinNetMeter.UserControls.General();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.log = new WinNetMeter.UserControls.Log();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.customize = new WinNetMeter.UserControls.Customize();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.integrationPage = new WinNetMeter.UserControls.IntegrationPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.about = new WinNetMeter.UserControls.About();
             this.tabUpdateRecovery = new System.Windows.Forms.TabPage();
-            this.updaterPage1 = new WinNetMeter.UserControls.UpdaterPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
-            this.panel1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LineHorizontal = new System.Windows.Forms.Label();
+            this.LblTitlePages = new System.Windows.Forms.Label();
+            this.general = new General();
+            this.log = new Log();
+            this.customize = new Customize();
+            this.integrationPage = new IntegrationPage();
+            this.about = new About();
+            this.updaterPage1 = new UpdaterPage();
+            this.PanelMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -65,26 +70,50 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabUpdateRecovery.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // PanelMainMenu
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.btnUpdateRecovery);
-            this.panel1.Controls.Add(this.BtnIntegrate);
-            this.panel1.Controls.Add(this.BtnAbout);
-            this.panel1.Controls.Add(this.BtnDatabase);
-            this.panel1.Controls.Add(this.BtnCustomization);
-            this.panel1.Controls.Add(this.BtnGeneral);
-            this.panel1.Controls.Add(this.PnlSelector);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 483);
-            this.panel1.TabIndex = 0;
+            this.PanelMainMenu.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PanelMainMenu.Controls.Add(this.LineAboutSeparator);
+            this.PanelMainMenu.Controls.Add(this.LineVertikal);
+            this.PanelMainMenu.Controls.Add(this.btnUpdateRecovery);
+            this.PanelMainMenu.Controls.Add(this.BtnIntegrate);
+            this.PanelMainMenu.Controls.Add(this.BtnAbout);
+            this.PanelMainMenu.Controls.Add(this.BtnDatabase);
+            this.PanelMainMenu.Controls.Add(this.BtnCustomization);
+            this.PanelMainMenu.Controls.Add(this.BtnGeneral);
+            this.PanelMainMenu.Controls.Add(this.PnlSelector);
+            this.PanelMainMenu.Controls.Add(this.label2);
+            this.PanelMainMenu.Controls.Add(this.label1);
+            this.PanelMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelMainMenu.Name = "PanelMainMenu";
+            this.PanelMainMenu.Size = new System.Drawing.Size(200, 483);
+            this.PanelMainMenu.TabIndex = 0;
+            // 
+            // LineAboutSeparator
+            // 
+            this.LineAboutSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LineAboutSeparator.Location = new System.Drawing.Point(9, 425);
+            this.LineAboutSeparator.Name = "LineAboutSeparator";
+            this.LineAboutSeparator.Size = new System.Drawing.Size(176, 2);
+            this.LineAboutSeparator.TabIndex = 10;
+            this.LineAboutSeparator.TabStop = false;
+            // 
+            // LineVertikal
+            // 
+            this.LineVertikal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LineVertikal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LineVertikal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LineVertikal.Location = new System.Drawing.Point(193, 5);
+            this.LineVertikal.Name = "LineVertikal";
+            this.LineVertikal.Size = new System.Drawing.Size(2, 471);
+            this.LineVertikal.TabIndex = 9;
+            this.LineVertikal.Text = "label3";
             // 
             // btnUpdateRecovery
             // 
@@ -217,26 +246,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "WinNetMeter";
             // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape3});
-            this.shapeContainer2.Size = new System.Drawing.Size(231, 483);
-            this.shapeContainer2.TabIndex = 5;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 11;
-            this.lineShape3.X2 = 227;
-            this.lineShape3.Y1 = 418;
-            this.lineShape3.Y2 = 418;
-            // 
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
@@ -246,11 +255,11 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabUpdateRecovery);
-            this.tabControl1.Location = new System.Drawing.Point(204, -5);
+            this.tabControl1.Location = new System.Drawing.Point(204, 50);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(595, 493);
+            this.tabControl1.Size = new System.Drawing.Size(595, 438);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -259,38 +268,20 @@
             this.tabPage1.Location = new System.Drawing.Point(23, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(568, 485);
+            this.tabPage1.Size = new System.Drawing.Size(568, 430);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // general
-            // 
-            this.general.BackColor = System.Drawing.Color.White;
-            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.general.Location = new System.Drawing.Point(3, 3);
-            this.general.Name = "general";
-            this.general.Size = new System.Drawing.Size(562, 479);
-            this.general.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.log);
             this.tabPage3.Location = new System.Drawing.Point(23, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(568, 485);
+            this.tabPage3.Size = new System.Drawing.Size(568, 430);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Log";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // log
-            // 
-            this.log.BackColor = System.Drawing.Color.White;
-            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.log.Location = new System.Drawing.Point(0, 0);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(568, 485);
-            this.log.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -298,19 +289,10 @@
             this.tabPage2.Location = new System.Drawing.Point(23, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(568, 485);
+            this.tabPage2.Size = new System.Drawing.Size(568, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customize";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // customize
-            // 
-            this.customize.BackColor = System.Drawing.Color.White;
-            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customize.Location = new System.Drawing.Point(3, 3);
-            this.customize.Name = "customize";
-            this.customize.Size = new System.Drawing.Size(562, 479);
-            this.customize.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -318,38 +300,20 @@
             this.tabPage4.Location = new System.Drawing.Point(23, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(568, 485);
+            this.tabPage4.Size = new System.Drawing.Size(568, 430);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // integrationPage
-            // 
-            this.integrationPage.BackColor = System.Drawing.Color.White;
-            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.integrationPage.Location = new System.Drawing.Point(3, 3);
-            this.integrationPage.Name = "integrationPage";
-            this.integrationPage.Size = new System.Drawing.Size(562, 479);
-            this.integrationPage.TabIndex = 0;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.about);
             this.tabPage5.Location = new System.Drawing.Point(23, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(568, 485);
+            this.tabPage5.Size = new System.Drawing.Size(568, 430);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // about
-            // 
-            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.about.Location = new System.Drawing.Point(0, 0);
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(568, 485);
-            this.about.TabIndex = 0;
             // 
             // tabUpdateRecovery
             // 
@@ -357,17 +321,96 @@
             this.tabUpdateRecovery.Location = new System.Drawing.Point(23, 4);
             this.tabUpdateRecovery.Name = "tabUpdateRecovery";
             this.tabUpdateRecovery.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpdateRecovery.Size = new System.Drawing.Size(568, 485);
+            this.tabUpdateRecovery.Size = new System.Drawing.Size(568, 430);
             this.tabUpdateRecovery.TabIndex = 5;
             this.tabUpdateRecovery.Text = "tabUpdate";
             this.tabUpdateRecovery.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.LineHorizontal);
+            this.panel2.Controls.Add(this.LblTitlePages);
+            this.panel2.Location = new System.Drawing.Point(246, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(548, 46);
+            this.panel2.TabIndex = 15;
+            // 
+            // LineHorizontal
+            // 
+            this.LineHorizontal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LineHorizontal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LineHorizontal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LineHorizontal.Location = new System.Drawing.Point(7, 42);
+            this.LineHorizontal.Name = "LineHorizontal";
+            this.LineHorizontal.Size = new System.Drawing.Size(526, 2);
+            this.LineHorizontal.TabIndex = 1;
+            this.LineHorizontal.Text = "label3";
+            // 
+            // LblTitlePages
+            // 
+            this.LblTitlePages.AutoSize = true;
+            this.LblTitlePages.Font = new System.Drawing.Font("Segoe UI Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitlePages.Location = new System.Drawing.Point(3, 3);
+            this.LblTitlePages.Name = "LblTitlePages";
+            this.LblTitlePages.Size = new System.Drawing.Size(105, 37);
+            this.LblTitlePages.TabIndex = 0;
+            this.LblTitlePages.Text = "General";
+            // 
+            // general
+            // 
+            this.general.BackColor = System.Drawing.Color.White;
+            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.general.Location = new System.Drawing.Point(3, 3);
+            this.general.Name = "general";
+            this.general.Size = new System.Drawing.Size(562, 424);
+            this.general.TabIndex = 0;
+            // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.Color.White;
+            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log.Location = new System.Drawing.Point(0, 0);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(568, 430);
+            this.log.TabIndex = 0;
+            // 
+            // customize
+            // 
+            this.customize.BackColor = System.Drawing.Color.White;
+            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customize.Location = new System.Drawing.Point(3, 3);
+            this.customize.Name = "customize";
+            this.customize.Size = new System.Drawing.Size(562, 424);
+            this.customize.TabIndex = 0;
+            // 
+            // integrationPage
+            // 
+            this.integrationPage.BackColor = System.Drawing.Color.White;
+            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.integrationPage.Location = new System.Drawing.Point(3, 3);
+            this.integrationPage.Name = "integrationPage";
+            this.integrationPage.Size = new System.Drawing.Size(562, 424);
+            this.integrationPage.TabIndex = 0;
+            // 
+            // about
+            // 
+            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.about.Location = new System.Drawing.Point(0, 0);
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(568, 430);
+            this.about.TabIndex = 0;
+            // 
             // updaterPage1
             // 
+            this.updaterPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.updaterPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updaterPage1.Location = new System.Drawing.Point(3, 3);
             this.updaterPage1.Name = "updaterPage1";
-            this.updaterPage1.Size = new System.Drawing.Size(562, 479);
+            this.updaterPage1.Size = new System.Drawing.Size(562, 424);
             this.updaterPage1.TabIndex = 0;
             // 
             // Main
@@ -376,7 +419,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(794, 483);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PanelMainMenu);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -388,8 +432,8 @@
             this.Text = "WinNetMeter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PanelMainMenu.ResumeLayout(false);
+            this.PanelMainMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -397,18 +441,20 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabUpdateRecovery.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private WinNetMeter.UserControls.IntegrationPage integrationPage;
-        private WinNetMeter.UserControls.Customize customize;
-        private WinNetMeter.UserControls.Log log;
-        private WinNetMeter.UserControls.General general;
-        private WinNetMeter.UserControls.About about;
-        private System.Windows.Forms.Panel panel1;
+        private IntegrationPage integrationPage;
+        private Customize customize;
+        private Log log;
+        private General general;
+        private About about;
+        private System.Windows.Forms.Panel PanelMainMenu;
         private System.Windows.Forms.Panel PnlSelector;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -416,20 +462,23 @@
         private System.Windows.Forms.Button BtnCustomization;
         private System.Windows.Forms.Button BtnDatabase;
         private System.Windows.Forms.Button BtnAbout;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ColorDialog colorSelector;
-        private System.Windows.Forms.Button BtnIntegrate;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btnUpdateRecovery;
         private System.Windows.Forms.TabPage tabUpdateRecovery;
-        private UserControls.UpdaterPage updaterPage1;
+        private UpdaterPage updaterPage1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label LineHorizontal;
+        private System.Windows.Forms.Label LblTitlePages;
+        private System.Windows.Forms.Label LineVertikal;
+        private System.Windows.Forms.Button btnUpdateRecovery;
+        private System.Windows.Forms.Button BtnIntegrate;
+        private System.Windows.Forms.GroupBox LineAboutSeparator;
     }
 }
 

@@ -84,8 +84,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(412, 35);
             this.label13.TabIndex = 48;
-            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nth" +
-    "en replace with new Version.";
+            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nthen replace with new Version.";
             // 
             // label18
             // 
@@ -94,9 +93,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(410, 62);
             this.label18.TabIndex = 47;
-            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, \r\nYou can try Re-Register " +
-    "Shell. Before click Re-Register, please\r\nremove WinNetMeter from toolbar on the " +
-    "TaskBar for better troubleshooting";
+            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, You can try Re-Register Shell.";
             // 
             // BtnRegister
             // 

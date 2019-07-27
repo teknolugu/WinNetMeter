@@ -7,6 +7,7 @@ namespace WinNetMeter.UserControls.Pages
     public partial class IntegrationPage : UserControl
     {
         private ShellController shellControlller = new ShellController();
+        private Integration integration = new Integration();
 
         public IntegrationPage()
         {
@@ -17,7 +18,7 @@ namespace WinNetMeter.UserControls.Pages
         {
             try
             {
-                Integration integration = new Integration();
+                shellControlller.hideDeskband();
                 integration.ReinstallToolbar();
                 MessageBox.Show("Re-Register Shell Integration Successfully.", "WinNetMeter Integration",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -33,7 +34,7 @@ namespace WinNetMeter.UserControls.Pages
         {
             try
             {
-                Integration integration = new Integration();
+                shellControlller.hideDeskband();
                 integration.UninstallToolbar();
                 MessageBox.Show("Uninstall Shell Integration Successfully.", "WinNetMeter Integration",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

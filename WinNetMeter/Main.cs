@@ -10,11 +10,37 @@ namespace WinNetMeter
 {
     public partial class Main : Form
     {
+        private static Main main;
+
+        private static FormWindowState state;
+
+        public static FormWindowState State
+        {
+            get
+            {
+                return state;
+            }
+            set
+            {
+                state = value;
+
+                if (value == FormWindowState.Minimized)
+                {
+                    main.WindowState = FormWindowState.Minimized;
+                }
+            }
+        }
+
         public Main()
         {
             InitializeComponent();
             CleaningOnStartup();
+
+            main = this;
+            State = this.WindowState;
         }
+
+       
 
         #region custom
 

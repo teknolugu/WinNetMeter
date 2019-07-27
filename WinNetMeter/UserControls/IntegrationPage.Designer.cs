@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.label12 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.BtnUninstall = new System.Windows.Forms.Button();
@@ -46,51 +42,11 @@
             this.LinkRefresh = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 10;
-            this.lineShape4.X2 = 10;
-            this.lineShape4.Y1 = 3;
-            this.lineShape4.Y2 = 482;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape7,
-            this.lineShape4});
-            this.shapeContainer1.Size = new System.Drawing.Size(568, 485);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape7
-            // 
-            this.lineShape7.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 21;
-            this.lineShape7.X2 = 559;
-            this.lineShape7.Y1 = 60;
-            this.lineShape7.Y2 = 60;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 25);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Integration";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label21.Location = new System.Drawing.Point(29, 219);
+            this.label21.Location = new System.Drawing.Point(20, 161);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(135, 25);
             this.label21.TabIndex = 51;
@@ -100,7 +56,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label17.Location = new System.Drawing.Point(29, 68);
+            this.label17.Location = new System.Drawing.Point(20, 10);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(163, 25);
             this.label17.TabIndex = 50;
@@ -113,7 +69,7 @@
             this.BtnUninstall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUninstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUninstall.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnUninstall.Location = new System.Drawing.Point(34, 295);
+            this.BtnUninstall.Location = new System.Drawing.Point(25, 237);
             this.BtnUninstall.Name = "BtnUninstall";
             this.BtnUninstall.Size = new System.Drawing.Size(130, 34);
             this.BtnUninstall.TabIndex = 49;
@@ -124,7 +80,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(31, 251);
+            this.label13.Location = new System.Drawing.Point(22, 193);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(412, 35);
             this.label13.TabIndex = 48;
@@ -134,7 +90,7 @@
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(33, 101);
+            this.label18.Location = new System.Drawing.Point(24, 43);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(410, 62);
             this.label18.TabIndex = 47;
@@ -149,7 +105,7 @@
             this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnRegister.Location = new System.Drawing.Point(36, 165);
+            this.BtnRegister.Location = new System.Drawing.Point(27, 107);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(128, 35);
             this.BtnRegister.TabIndex = 46;
@@ -161,7 +117,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(29, 351);
+            this.label1.Location = new System.Drawing.Point(20, 293);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 25);
             this.label1.TabIndex = 52;
@@ -171,7 +127,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 380);
+            this.label2.Location = new System.Drawing.Point(23, 322);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 53;
@@ -182,7 +138,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblStatus.Location = new System.Drawing.Point(74, 380);
+            this.lblStatus.Location = new System.Drawing.Point(65, 322);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(63, 15);
             this.lblStatus.TabIndex = 54;
@@ -195,7 +151,7 @@
             this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnShow.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnShow.Location = new System.Drawing.Point(34, 408);
+            this.BtnShow.Location = new System.Drawing.Point(25, 350);
             this.BtnShow.Name = "BtnShow";
             this.BtnShow.Size = new System.Drawing.Size(130, 35);
             this.BtnShow.TabIndex = 55;
@@ -208,7 +164,7 @@
             this.BtnHide.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.BtnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHide.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnHide.Location = new System.Drawing.Point(175, 407);
+            this.BtnHide.Location = new System.Drawing.Point(166, 349);
             this.BtnHide.Name = "BtnHide";
             this.BtnHide.Size = new System.Drawing.Size(129, 36);
             this.BtnHide.TabIndex = 56;
@@ -220,7 +176,7 @@
             // 
             this.LinkRefresh.AutoSize = true;
             this.LinkRefresh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkRefresh.Location = new System.Drawing.Point(141, 360);
+            this.LinkRefresh.Location = new System.Drawing.Point(132, 302);
             this.LinkRefresh.Name = "LinkRefresh";
             this.LinkRefresh.Size = new System.Drawing.Size(46, 13);
             this.LinkRefresh.TabIndex = 57;
@@ -245,8 +201,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.BtnRegister);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.shapeContainer1);
             this.Name = "IntegrationPage";
             this.Size = new System.Drawing.Size(568, 485);
             this.Load += new System.EventHandler(this.IntegrationPage_Load);
@@ -256,11 +210,6 @@
         }
 
         #endregion
-
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private System.Windows.Forms.Label label12;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BtnUninstall;

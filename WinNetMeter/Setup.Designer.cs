@@ -36,8 +36,6 @@ namespace WinNetMeter
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblProductDesc = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.linkBack = new MetroFramework.Controls.MetroLink();
@@ -75,7 +73,6 @@ namespace WinNetMeter
             this.panel2.Controls.Add(this.lblProductDesc);
             this.panel2.Controls.Add(this.lblProductName);
             this.panel2.Controls.Add(this.linkBack);
-            this.panel2.Controls.Add(this.shapeContainer1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -101,26 +98,6 @@ namespace WinNetMeter
             this.lblProductName.Size = new System.Drawing.Size(130, 25);
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "WinNetMeter";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(803, 47);
-            this.shapeContainer1.TabIndex = 3;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.SystemColors.Control;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 7;
-            this.lineShape1.X2 = 796;
-            this.lineShape1.Y1 = 43;
-            this.lineShape1.Y2 = 43;
             // 
             // panelContainer
             // 
@@ -180,8 +157,6 @@ namespace WinNetMeter
         private System.Windows.Forms.Label lblProductName;
         private MetroFramework.Controls.MetroLink linkBack;
         private System.Windows.Forms.Panel panelContainer;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label lblProductDesc;
         private MetroFramework.Controls.MetroLink metroLink2;
     }

@@ -31,11 +31,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnReset = new WinNetMeter.Components.ButtonEx();
-            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.BtnReset = new WinNetMeter.Components.ButtonEx();
+            this.appUpdater1 = new WinNetMeter.UserControls.AppUpdater();
             this.SuspendLayout();
             // 
             // label5
@@ -72,25 +72,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Reset Settings";
             // 
-            // BtnReset
-            // 
-            this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReset.Location = new System.Drawing.Point(34, 280);
-            this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(140, 34);
-            this.BtnReset.TabIndex = 23;
-            this.BtnReset.Text = "ResetSettings";
-            this.BtnReset.UseVisualStyleBackColor = true;
-            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
-            // 
-            // appUpdater1
-            // 
-            this.appUpdater1.AutoSize = true;
-            this.appUpdater1.Location = new System.Drawing.Point(23, 64);
-            this.appUpdater1.Name = "appUpdater1";
-            this.appUpdater1.Size = new System.Drawing.Size(502, 115);
-            this.appUpdater1.TabIndex = 9;
-            // 
             // lineShape4
             // 
             this.lineShape4.BorderColor = System.Drawing.SystemColors.ControlLight;
@@ -120,6 +101,25 @@
             this.lineShape7.X2 = 559;
             this.lineShape7.Y1 = 60;
             this.lineShape7.Y2 = 60;
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReset.Location = new System.Drawing.Point(34, 280);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(140, 34);
+            this.BtnReset.TabIndex = 23;
+            this.BtnReset.Text = "ResetSettings";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // appUpdater1
+            // 
+            this.appUpdater1.AutoSize = true;
+            this.appUpdater1.Location = new System.Drawing.Point(23, 64);
+            this.appUpdater1.Name = "appUpdater1";
+            this.appUpdater1.Size = new System.Drawing.Size(502, 115);
+            this.appUpdater1.TabIndex = 9;
             // 
             // UpdaterPage
             // 

@@ -54,6 +54,12 @@ namespace WinNetMeter.UserControls
             // Call the shell
             shellControlller.callDeskband();
 
+            try
+            {
+                Main.State = FormWindowState.Minimized;
+            }
+            catch { }
+
             // Refresh shell status
             CheckIsShellActive();
         }

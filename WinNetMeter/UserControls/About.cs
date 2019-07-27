@@ -69,5 +69,10 @@ namespace WinNetMeter.UserControls
             lblVersion.Text = "v" + Application.ProductVersion;
             lblCopyright.Text = "Copyright © 2019 " + assemblyCompany.Company;
         }
+
+        private void LinkReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://t.me/WinTenGroup");
+        }
     }
 }

@@ -46,22 +46,21 @@ namespace WinNetMeter
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.general = new WinNetMeter.UserControls.Pages.General();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.log = new WinNetMeter.UserControls.Pages.Log();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.customize = new WinNetMeter.UserControls.Pages.Customize();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.integrationPage = new WinNetMeter.UserControls.Pages.IntegrationPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.about = new WinNetMeter.UserControls.Pages.About();
             this.tabUpdateRecovery = new System.Windows.Forms.TabPage();
+            this.updaterPage1 = new WinNetMeter.UserControls.Pages.UpdaterPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.colorSelector = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LineHorizontal = new System.Windows.Forms.Label();
             this.LblTitlePages = new System.Windows.Forms.Label();
-            this.general = new General();
-            this.log = new Log();
-            this.customize = new Customize();
-            this.integrationPage = new IntegrationPage();
-            this.about = new About();
-            this.updaterPage1 = new UpdaterPage();
             this.PanelMainMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -273,6 +272,15 @@ namespace WinNetMeter
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // general
+            // 
+            this.general.BackColor = System.Drawing.Color.White;
+            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.general.Location = new System.Drawing.Point(3, 3);
+            this.general.Name = "general";
+            this.general.Size = new System.Drawing.Size(562, 424);
+            this.general.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.log);
@@ -282,6 +290,15 @@ namespace WinNetMeter
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Log";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // log
+            // 
+            this.log.BackColor = System.Drawing.Color.White;
+            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log.Location = new System.Drawing.Point(0, 0);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(568, 430);
+            this.log.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -294,6 +311,15 @@ namespace WinNetMeter
             this.tabPage2.Text = "Customize";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // customize
+            // 
+            this.customize.BackColor = System.Drawing.Color.White;
+            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customize.Location = new System.Drawing.Point(3, 3);
+            this.customize.Name = "customize";
+            this.customize.Size = new System.Drawing.Size(562, 424);
+            this.customize.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.integrationPage);
@@ -305,6 +331,15 @@ namespace WinNetMeter
             this.tabPage4.Text = "Integration";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // integrationPage
+            // 
+            this.integrationPage.BackColor = System.Drawing.Color.White;
+            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.integrationPage.Location = new System.Drawing.Point(3, 3);
+            this.integrationPage.Name = "integrationPage";
+            this.integrationPage.Size = new System.Drawing.Size(562, 424);
+            this.integrationPage.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.about);
@@ -314,6 +349,15 @@ namespace WinNetMeter
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "About";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // about
+            // 
+            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.about.Location = new System.Drawing.Point(0, 0);
+            this.about.Name = "about";
+            this.about.Size = new System.Drawing.Size(568, 430);
+            this.about.TabIndex = 0;
             // 
             // tabUpdateRecovery
             // 
@@ -326,28 +370,25 @@ namespace WinNetMeter
             this.tabUpdateRecovery.Text = "tabUpdate";
             this.tabUpdateRecovery.UseVisualStyleBackColor = true;
             // 
+            // updaterPage1
+            // 
+            this.updaterPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.updaterPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updaterPage1.Location = new System.Drawing.Point(3, 3);
+            this.updaterPage1.Name = "updaterPage1";
+            this.updaterPage1.Size = new System.Drawing.Size(562, 424);
+            this.updaterPage1.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.LineHorizontal);
             this.panel2.Controls.Add(this.LblTitlePages);
             this.panel2.Location = new System.Drawing.Point(246, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(548, 46);
             this.panel2.TabIndex = 15;
-            // 
-            // LineHorizontal
-            // 
-            this.LineHorizontal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LineHorizontal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LineHorizontal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LineHorizontal.Location = new System.Drawing.Point(7, 42);
-            this.LineHorizontal.Name = "LineHorizontal";
-            this.LineHorizontal.Size = new System.Drawing.Size(526, 2);
-            this.LineHorizontal.TabIndex = 1;
-            this.LineHorizontal.Text = "label3";
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
             // LblTitlePages
             // 
@@ -358,60 +399,6 @@ namespace WinNetMeter
             this.LblTitlePages.Size = new System.Drawing.Size(105, 37);
             this.LblTitlePages.TabIndex = 0;
             this.LblTitlePages.Text = "General";
-            // 
-            // general
-            // 
-            this.general.BackColor = System.Drawing.Color.White;
-            this.general.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.general.Location = new System.Drawing.Point(3, 3);
-            this.general.Name = "general";
-            this.general.Size = new System.Drawing.Size(562, 424);
-            this.general.TabIndex = 0;
-            // 
-            // log
-            // 
-            this.log.BackColor = System.Drawing.Color.White;
-            this.log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.log.Location = new System.Drawing.Point(0, 0);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(568, 430);
-            this.log.TabIndex = 0;
-            // 
-            // customize
-            // 
-            this.customize.BackColor = System.Drawing.Color.White;
-            this.customize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customize.Location = new System.Drawing.Point(3, 3);
-            this.customize.Name = "customize";
-            this.customize.Size = new System.Drawing.Size(562, 424);
-            this.customize.TabIndex = 0;
-            // 
-            // integrationPage
-            // 
-            this.integrationPage.BackColor = System.Drawing.Color.White;
-            this.integrationPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.integrationPage.Location = new System.Drawing.Point(3, 3);
-            this.integrationPage.Name = "integrationPage";
-            this.integrationPage.Size = new System.Drawing.Size(562, 424);
-            this.integrationPage.TabIndex = 0;
-            // 
-            // about
-            // 
-            this.about.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.about.Location = new System.Drawing.Point(0, 0);
-            this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(568, 430);
-            this.about.TabIndex = 0;
-            // 
-            // updaterPage1
-            // 
-            this.updaterPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.updaterPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updaterPage1.Location = new System.Drawing.Point(3, 3);
-            this.updaterPage1.Name = "updaterPage1";
-            this.updaterPage1.Size = new System.Drawing.Size(562, 424);
-            this.updaterPage1.TabIndex = 0;
             // 
             // Main
             // 
@@ -473,7 +460,6 @@ namespace WinNetMeter
         private System.Windows.Forms.TabPage tabUpdateRecovery;
         private UpdaterPage updaterPage1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label LineHorizontal;
         private System.Windows.Forms.Label LblTitlePages;
         private System.Windows.Forms.Label LineVertikal;
         private System.Windows.Forms.Button btnUpdateRecovery;

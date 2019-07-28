@@ -93,9 +93,5 @@ namespace WinNetMeter.UserControls.Pages
                 }
             }
         }
-
-        private void General_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

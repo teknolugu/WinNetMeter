@@ -43,7 +43,7 @@
             this.groupBox1.Controls.Add(this.linkDefaultLoc);
             this.groupBox1.Controls.Add(this.txtLogPath);
             this.groupBox1.Controls.Add(this.btnBrowseLog);
-            this.groupBox1.Location = new System.Drawing.Point(23, 52);
+            this.groupBox1.Location = new System.Drawing.Point(26, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 110);
             this.groupBox1.TabIndex = 17;
@@ -80,7 +80,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 10);
+            this.label9.Location = new System.Drawing.Point(23, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 17);
             this.label9.TabIndex = 16;
@@ -109,7 +109,7 @@
             this.btnSaveLog.ForeColor = System.Drawing.Color.Black;
             this.btnSaveLog.Image = global::WinNetMeter.Properties.Resources.Checked_outline_16px;
             this.btnSaveLog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveLog.Location = new System.Drawing.Point(403, 241);
+            this.btnSaveLog.Location = new System.Drawing.Point(414, 375);
             this.btnSaveLog.Name = "btnSaveLog";
             this.btnSaveLog.Size = new System.Drawing.Size(121, 33);
             this.btnSaveLog.TabIndex = 18;
@@ -127,7 +127,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.toggleTraffic);
             this.Name = "Log";
-            this.Size = new System.Drawing.Size(541, 289);
+            this.Size = new System.Drawing.Size(560, 420);
             this.Load += new System.EventHandler(this.Log_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

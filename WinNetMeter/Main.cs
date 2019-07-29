@@ -47,21 +47,21 @@ namespace WinNetMeter
         {
             setSelected(BtnGeneral);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabPage1;
+            TabMainMenu.SelectedTab = tabPage1;
         }
 
         private void BtnIntegrate_Click(object sender, EventArgs e)
         {
             setSelected(BtnIntegrate);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabPage4;
+            TabMainMenu.SelectedTab = tabPage4;
         }
 
         private void BtnCustomization_Click(object sender, EventArgs e)
         {
             setSelected(BtnCustomization);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabPage2;
+            TabMainMenu.SelectedTab = tabPage2;
         }
 
         private void setSelected(Button selectedBtn)
@@ -85,21 +85,21 @@ namespace WinNetMeter
         {
             setSelected(BtnDatabase);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabPage3;
+            TabMainMenu.SelectedTab = tabPage3;
         }
 
         private void BtnUpdateRecovery_Click(object sender, EventArgs e)
         {
             setSelected(btnUpdateRecovery);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabUpdateRecovery;
+            TabMainMenu.SelectedTab = tabUpdateRecovery;
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             setSelected(BtnAbout);
             LblTitlePages.Text = (sender as Button).Text.Trim();
-            tabControl1.SelectedTab = tabPage5;
+            TabMainMenu.SelectedTab = tabPage5;
         }
 
         #endregion custom
@@ -129,6 +129,14 @@ namespace WinNetMeter
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TabMainMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

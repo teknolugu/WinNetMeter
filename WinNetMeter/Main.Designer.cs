@@ -44,7 +44,7 @@ namespace WinNetMeter
             this.PnlSelector = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.TabMainMenu = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.general = new WinNetMeter.UserControls.Pages.General();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -62,7 +62,7 @@ namespace WinNetMeter
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitlePages = new System.Windows.Forms.Label();
             this.PanelMainMenu.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.TabMainMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -245,21 +245,22 @@ namespace WinNetMeter
             this.label1.TabIndex = 1;
             this.label1.Text = "WinNetMeter";
             // 
-            // tabControl1
+            // TabMainMenu
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabUpdateRecovery);
-            this.tabControl1.Location = new System.Drawing.Point(204, 50);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(595, 438);
-            this.tabControl1.TabIndex = 14;
+            this.TabMainMenu.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.TabMainMenu.Controls.Add(this.tabPage1);
+            this.TabMainMenu.Controls.Add(this.tabPage3);
+            this.TabMainMenu.Controls.Add(this.tabPage2);
+            this.TabMainMenu.Controls.Add(this.tabPage4);
+            this.TabMainMenu.Controls.Add(this.tabPage5);
+            this.TabMainMenu.Controls.Add(this.tabUpdateRecovery);
+            this.TabMainMenu.Location = new System.Drawing.Point(204, 50);
+            this.TabMainMenu.Multiline = true;
+            this.TabMainMenu.Name = "TabMainMenu";
+            this.TabMainMenu.SelectedIndex = 0;
+            this.TabMainMenu.Size = new System.Drawing.Size(595, 438);
+            this.TabMainMenu.TabIndex = 14;
+            this.TabMainMenu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabMainMenu_KeyDown);
             // 
             // tabPage1
             // 
@@ -407,7 +408,7 @@ namespace WinNetMeter
             this.ClientSize = new System.Drawing.Size(794, 483);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelMainMenu);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.TabMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -420,7 +421,7 @@ namespace WinNetMeter
             this.Load += new System.EventHandler(this.Main_Load);
             this.PanelMainMenu.ResumeLayout(false);
             this.PanelMainMenu.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.TabMainMenu.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -448,7 +449,7 @@ namespace WinNetMeter
         private System.Windows.Forms.Button BtnCustomization;
         private System.Windows.Forms.Button BtnDatabase;
         private System.Windows.Forms.Button BtnAbout;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl TabMainMenu;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;

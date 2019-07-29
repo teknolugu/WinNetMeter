@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WinNetMeter.Core;
 using WinNetMeter.Helper;
 
 namespace WinNetMeter.UserControls.Pages
@@ -11,6 +12,10 @@ namespace WinNetMeter.UserControls.Pages
         public UpdaterPage()
         {
             InitializeComponent();
+            if (ThisApp.IsUwpApp())
+            {
+                appUpdater1.Visible=false;
+            }
         }
 
         private void BtnReset_Click(object sender, EventArgs e)

@@ -43,7 +43,7 @@
             this.Title.ForeColor = System.Drawing.Color.Black;
             this.Title.Location = new System.Drawing.Point(6, 6);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(238, 20);
+            this.Title.Size = new System.Drawing.Size(263, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Check for Updates";
             // 
@@ -65,7 +65,7 @@
             this.BtnCheckUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCheckUpdates.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCheckUpdates.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCheckUpdates.Location = new System.Drawing.Point(5, 119);
+            this.BtnCheckUpdates.Location = new System.Drawing.Point(14, 116);
             this.BtnCheckUpdates.Name = "BtnCheckUpdates";
             this.BtnCheckUpdates.Size = new System.Drawing.Size(117, 28);
             this.BtnCheckUpdates.TabIndex = 34;
@@ -80,7 +80,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnCancel.Location = new System.Drawing.Point(128, 119);
+            this.BtnCancel.Location = new System.Drawing.Point(137, 116);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(116, 26);
             this.BtnCancel.TabIndex = 35;
@@ -106,14 +106,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.Controls.Add(this.Changelog);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnCheckUpdates);
             this.Controls.Add(this.Description);
             this.Controls.Add(this.Title);
             this.Name = "AppUpdater";
-            this.Size = new System.Drawing.Size(250, 150);
+            this.Size = new System.Drawing.Size(275, 150);
             this.Load += new System.EventHandler(this.AppUpdater_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

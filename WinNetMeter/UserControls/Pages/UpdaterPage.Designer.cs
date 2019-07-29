@@ -32,15 +32,19 @@ namespace WinNetMeter.UserControls.Pages
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.appUpdater1 = new WinNetMeter.UserControls.Controls.AppUpdater();
             this.BtnReset = new WinNetMeter.Components.ButtonEx();
-            this.appUpdater1 = new AppUpdater();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(27, 175);
+            this.label2.Location = new System.Drawing.Point(8, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(492, 38);
             this.label2.TabIndex = 22;
@@ -54,16 +58,42 @@ namespace WinNetMeter.UserControls.Pages
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(20, 145);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Reset Settings";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.BtnReset);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(3, 136);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 162);
+            this.panel1.TabIndex = 24;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.appUpdater1);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(523, 316);
+            this.flowLayoutPanel1.TabIndex = 25;
+            // 
+            // appUpdater1
+            // 
+            this.appUpdater1.Location = new System.Drawing.Point(3, 3);
+            this.appUpdater1.Name = "appUpdater1";
+            this.appUpdater1.Size = new System.Drawing.Size(511, 127);
+            this.appUpdater1.TabIndex = 9;
+            // 
             // BtnReset
             // 
             this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReset.Location = new System.Drawing.Point(31, 226);
+            this.BtnReset.Location = new System.Drawing.Point(14, 91);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(140, 34);
             this.BtnReset.TabIndex = 23;
@@ -71,27 +101,18 @@ namespace WinNetMeter.UserControls.Pages
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // appUpdater1
-            // 
-            this.appUpdater1.AutoSize = true;
-            this.appUpdater1.Location = new System.Drawing.Point(20, 10);
-            this.appUpdater1.Name = "appUpdater1";
-            this.appUpdater1.Size = new System.Drawing.Size(502, 115);
-            this.appUpdater1.TabIndex = 9;
-            // 
             // UpdaterPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.BtnReset);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.appUpdater1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UpdaterPage";
-            this.Size = new System.Drawing.Size(541, 344);
+            this.Size = new System.Drawing.Size(555, 344);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -100,5 +121,7 @@ namespace WinNetMeter.UserControls.Pages
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Components.ButtonEx BtnReset;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

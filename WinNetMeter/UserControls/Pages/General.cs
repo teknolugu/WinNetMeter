@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WinNetMeter.Core;
 using WinNetMeter.Helper;
 using WinNetMeter.Model;
 
@@ -27,6 +28,13 @@ namespace WinNetMeter.UserControls.Pages
             if (ListAdapter.Items != null)
             {
                 ListAdapter.SelectedIndex = 0;
+            }
+
+            if (ThisApp.IsUwpApp())
+            {
+                ToggleAutoUpdate.Checked = false;
+                ToggleAutoUpdate.Enabled = false;
+                label6.Text += " (Disabled)";
             }
 
             #region LoadConfiguration

@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using WinNetMeter.Core;
 using WinNetMeter.Helper;
 
@@ -38,31 +37,35 @@ namespace WinNetMeter
 
             main = this;
             State = this.WindowState;
+            if (ThisApp.IsUwpApp())
+            {
+                Text += " (UWP)";
+            }
         }
 
-       
+
 
         #region custom
 
         private void BtnGeneral_Click(object sender, EventArgs e)
         {
             setSelected(BtnGeneral);
-            LblTitlePages.Text = "General";
-            tabControl1.SelectedTab = tabPage1;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabPage1;
         }
 
         private void BtnIntegrate_Click(object sender, EventArgs e)
         {
             setSelected(BtnIntegrate);
-            LblTitlePages.Text = "Integrate";
-            tabControl1.SelectedTab = tabPage4;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabPage4;
         }
 
         private void BtnCustomization_Click(object sender, EventArgs e)
         {
             setSelected(BtnCustomization);
-            LblTitlePages.Text = "Customization";
-            tabControl1.SelectedTab = tabPage2;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabPage2;
         }
 
         private void setSelected(Button selectedBtn)
@@ -80,33 +83,27 @@ namespace WinNetMeter
                     button.BackColor = Color.Transparent;
                 }
             }
-
-            //btn1.BackColor = Color.Transparent;
-            //btn2.BackColor = Color.Transparent;
-            //btn3.BackColor = Color.Transparent;
-            //btn4.BackColor = Color.Transparent;
-            //btnUpdateRecovery.BackColor = Color.Transparent;
         }
 
         private void BtnDatabase_Click(object sender, EventArgs e)
         {
             setSelected(BtnDatabase);
-            LblTitlePages.Text = "Database";
-            tabControl1.SelectedTab = tabPage3;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabPage3;
         }
 
         private void BtnUpdateRecovery_Click(object sender, EventArgs e)
         {
             setSelected(btnUpdateRecovery);
-            LblTitlePages.Text = "Update & Recovery";
-            tabControl1.SelectedTab = tabUpdateRecovery;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabUpdateRecovery;
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             setSelected(BtnAbout);
-            LblTitlePages.Text = "About";
-            tabControl1.SelectedTab = tabPage5;
+            LblTitlePages.Text = (sender as Button).Text.Trim();
+            TabMainMenu.SelectedTab = tabPage5;
         }
 
         #endregion custom
@@ -138,9 +135,12 @@ namespace WinNetMeter
             Application.Exit();
         }
 
-        private void Panel2_Paint(object sender, PaintEventArgs e)
+        private void TabMainMenu_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -19,8 +19,8 @@ namespace WinNetMeter.Helper
 
         internal Updater()
         {
-            // urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/{updaterConfig}";
-            urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/simulate/{updaterConfig}";
+            urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/{updaterConfig}";
+          
         }
 
 

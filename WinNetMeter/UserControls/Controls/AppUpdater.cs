@@ -23,9 +23,9 @@ namespace WinNetMeter.UserControls.Controls
         private readonly string zipUpdateURL;
 
         // Configure local update storage location
-        private readonly string extractedUpdateFileDir = AppDomain.CurrentDomain.BaseDirectory + @"update";
-
-        private readonly string updateFile = AppDomain.CurrentDomain.BaseDirectory + @"temp\update.zip";
+        private readonly string baseLocalApp = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private readonly string extractedUpdateFileDir;
+        private readonly string updateFile;
 
         private List<string> changelog;
         private RegistryManager registryManager = new RegistryManager();
@@ -37,8 +37,12 @@ namespace WinNetMeter.UserControls.Controls
 
             BtnCancel.Location = BtnCheckUpdates.Location;
 
+            extractedUpdateFileDir = baseLocalApp + @"\WinTenDev\update";
+            updateFile = baseLocalApp + @"\WinTenDev\temp\update.zip";
+
             configuration = registryManager.GetGeneralConfiguration();
-            zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
+            //zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
+            zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/simulate/update.zip";
         }
 
         private void DownloadFile(string urlAddress, string location)

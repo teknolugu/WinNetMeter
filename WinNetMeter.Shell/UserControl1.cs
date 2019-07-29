@@ -22,8 +22,9 @@ namespace WinNetMeter.Shell
         public UserControl1(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
-            ConfigureStyle();
         }
+
+        #region Core Controller
 
         protected override void WndProc(ref Message m)
         {
@@ -36,18 +37,13 @@ namespace WinNetMeter.Shell
 
         private void RestartDesk()
         {
+            this.Controls.Clear();
+            InitializeComponent();
             killTimer();
             Load_Config();
             ConfigureStyle();
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-            registryManager.SaveHwnd(this.Handle.ToString());
-
-            Load_Config();
-            ConfigureStyle();
-        }
 
         private void killTimer()
         {
@@ -63,36 +59,56 @@ namespace WinNetMeter.Shell
             catch { }
         }
 
+        #endregion
+
+
+        private void UserControl1_Load(object sender, EventArgs e)
+        {
+            registryManager.SaveHwnd(this.Handle.ToString());
+
+            Load_Config();
+            ConfigureStyle();
+        }
+
+        #region Configuration Loader
         private void Load_Config()
         {
-            configuration = registryManager.GetGeneralConfiguration();
-
-            if (configuration.Monitoring == true)
+            try
             {
-                Format = configuration.Format;
+                configuration = registryManager.GetGeneralConfiguration();
 
-                adapterController = new AdapterController(configuration.MonitoredAdapter);
-                monitor = new NetworkMonitor(adapterController);
-                monitor.Start();
-
-                switch (Format)
+                if (configuration.Monitoring == true)
                 {
-                    case "Auto":
-                        timerAuto.Start();
-                        break;
-                    case "KB":
-                        timerKB.Start();
-                        break;
-                    case "MB":
-                        timerMB.Start();
-                        break;
+                    Format = configuration.Format;
+
+                    adapterController = new AdapterController(configuration.MonitoredAdapter);
+                    monitor = new NetworkMonitor(adapterController);
+                    monitor.Start();
+
+                    switch (Format)
+                    {
+                        case "Auto":
+                            timerAuto.Start();
+                            break;
+                        case "KB":
+                            timerKB.Start();
+                            break;
+                        case "MB":
+                            timerMB.Start();
+                            break;
+                    }
+                }
+                else
+                {
+                    LblUpload.Text = "......";
+                    LblDownload.Text = "......";
                 }
             }
-            else
+            catch(Exception ex)
             {
-                LblDownload.Text = "......";
-                LblUpload.Text = "......";
+                MessageBox.Show(this, ex.Message, "WinNetMeter.Shell", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void ConfigureStyle()
@@ -101,11 +117,12 @@ namespace WinNetMeter.Shell
 
             styleConfiguration = registryManager.GetStyleConfiguration();
 
-            LblDownload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
             LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
+            LblDownload.ForeColor = LblUpload.ForeColor;
 
-            LblDownload.Font = new Font(styleConfiguration.FontFamily, LblDownload.Font.Size);
             LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
+            LblDownload.Font = LblUpload.Font;
+
             bool IsDark = false;
 
             try
@@ -123,40 +140,46 @@ namespace WinNetMeter.Shell
 
             if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
             {
-                pictDownload.Image = Properties.Resources.down_black_16px;
                 pictUpload.Image = Properties.Resources.up_black_16px;
+                pictDownload.Image = Properties.Resources.down_black_16px;
+                
 
-                pictDownload.Location = new Point(10, 19);
+                pictDownload.Location = new Point(11, 17);
             }
             else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
             {
-                pictDownload.Image = Properties.Resources.down_white_16px;
                 pictUpload.Image = Properties.Resources.up_white_16px;
-
-                pictDownload.Location = new Point(10, 19);
+                pictDownload.Image = Properties.Resources.down_white_16px;
+                
+                pictDownload.Location = new Point(11, 17);
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
             {
-                pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
+                pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
+                
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
             {
-                pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
+                pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
+                
             }
             else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
             {
-                pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
+                pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
+                
             }
             else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
             {
-                pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
                 pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
+                pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
+                
             }
         }
 
+        #endregion
         private void Timer1_Tick(object sender, EventArgs e)
         {
             LblUpload.Text = adapterController.UploadSpeedAutoFormatting;

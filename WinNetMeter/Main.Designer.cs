@@ -177,7 +177,7 @@ namespace WinNetMeter
             this.BtnDatabase.Name = "BtnDatabase";
             this.BtnDatabase.Size = new System.Drawing.Size(235, 46);
             this.BtnDatabase.TabIndex = 4;
-            this.BtnDatabase.Text = "          Database";
+            this.BtnDatabase.Text = "          Traffic Log";
             this.BtnDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDatabase.UseVisualStyleBackColor = false;
             this.BtnDatabase.Click += new System.EventHandler(this.BtnDatabase_Click);

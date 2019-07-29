@@ -41,8 +41,8 @@ namespace WinNetMeter.UserControls.Controls
             updateFile = baseLocalApp + @"\WinTenDev\temp\update.zip";
 
             configuration = registryManager.GetGeneralConfiguration();
-            //zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
-            zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/simulate/update.zip";
+            zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/update.zip";
+            //zipUpdateURL = $"{baseUrl}/products/win-netmeter/release/simulate/update.zip";
         }
 
         private void DownloadFile(string urlAddress, string location)

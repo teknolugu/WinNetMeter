@@ -48,6 +48,12 @@ namespace WinNetMeter.Core
             //Application.Exit();
         }
 
+        public static bool IsUwpApp()
+        {
+            var helpers = new DesktopBridge.Helpers();
+            return helpers.IsRunningAsUwp();
+        }
+
         private static void runBat(string path)
         {
             //Executing the .bat file

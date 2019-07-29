@@ -37,6 +37,10 @@ namespace WinNetMeter
 
             main = this;
             State = this.WindowState;
+            if (ThisApp.IsUwpApp())
+            {
+                Text += " (UWP)";
+            }
         }
 
 

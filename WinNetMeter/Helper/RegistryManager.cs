@@ -1,8 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
-using WinNetMeter.Model;
-using System.Drawing.Text;
 using System.Windows.Forms;
+using WinNetMeter.Model;
 
 namespace WinNetMeter.Helper
 {
@@ -29,7 +28,7 @@ namespace WinNetMeter.Helper
         public void Reset()
         {
             var appKey = key.OpenSubKey(@"WinNetMeter", true);
-            foreach(string subKey in appKey.GetSubKeyNames())
+            foreach (string subKey in appKey.GetSubKeyNames())
             {
                 try
                 {

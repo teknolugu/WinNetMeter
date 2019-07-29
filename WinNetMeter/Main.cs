@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using WinNetMeter.Core;
 using WinNetMeter.Helper;
 
@@ -40,28 +39,28 @@ namespace WinNetMeter
             State = this.WindowState;
         }
 
-       
+
 
         #region custom
 
         private void BtnGeneral_Click(object sender, EventArgs e)
         {
             setSelected(BtnGeneral);
-            LblTitlePages.Text = "General";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabPage1;
         }
 
         private void BtnIntegrate_Click(object sender, EventArgs e)
         {
             setSelected(BtnIntegrate);
-            LblTitlePages.Text = "Integrate";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabPage4;
         }
 
         private void BtnCustomization_Click(object sender, EventArgs e)
         {
             setSelected(BtnCustomization);
-            LblTitlePages.Text = "Customization";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabPage2;
         }
 
@@ -80,32 +79,26 @@ namespace WinNetMeter
                     button.BackColor = Color.Transparent;
                 }
             }
-
-            //btn1.BackColor = Color.Transparent;
-            //btn2.BackColor = Color.Transparent;
-            //btn3.BackColor = Color.Transparent;
-            //btn4.BackColor = Color.Transparent;
-            //btnUpdateRecovery.BackColor = Color.Transparent;
         }
 
         private void BtnDatabase_Click(object sender, EventArgs e)
         {
             setSelected(BtnDatabase);
-            LblTitlePages.Text = "Database";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabPage3;
         }
 
         private void BtnUpdateRecovery_Click(object sender, EventArgs e)
         {
             setSelected(btnUpdateRecovery);
-            LblTitlePages.Text = "Update & Recovery";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabUpdateRecovery;
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             setSelected(BtnAbout);
-            LblTitlePages.Text = "About";
+            LblTitlePages.Text = (sender as Button).Text.Trim();
             tabControl1.SelectedTab = tabPage5;
         }
 
@@ -136,11 +129,6 @@ namespace WinNetMeter
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

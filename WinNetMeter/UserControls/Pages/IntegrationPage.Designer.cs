@@ -45,20 +45,20 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(20, 161);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(135, 25);
+            this.label21.Size = new System.Drawing.Size(127, 24);
             this.label21.TabIndex = 51;
             this.label21.Text = "Uninstall Shell";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(20, 10);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(163, 25);
+            this.label17.Size = new System.Drawing.Size(156, 24);
             this.label17.TabIndex = 50;
             this.label17.Text = "Re-Register Shell";
             // 
@@ -82,18 +82,20 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(22, 193);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(412, 35);
+            this.label13.Size = new System.Drawing.Size(507, 35);
             this.label13.TabIndex = 48;
-            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nthen replace with new Version.";
+            this.label13.Text = "If you want update or uninstall WinNetMeter, you can Uninstall Shell before, \r\nth" +
+    "en replace with new Version.";
             // 
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(24, 43);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(410, 62);
+            this.label18.Size = new System.Drawing.Size(505, 32);
             this.label18.TabIndex = 47;
-            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, You can try Re-Register Shell.";
+            this.label18.Text = "If WinNetMeter is not working properly on the TaskBar, You can try Re-Register Sh" +
+    "ell.";
             // 
             // BtnRegister
             // 
@@ -102,7 +104,7 @@
             this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnRegister.Location = new System.Drawing.Point(27, 107);
+            this.BtnRegister.Location = new System.Drawing.Point(27, 78);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(128, 35);
             this.BtnRegister.TabIndex = 46;
@@ -113,10 +115,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 293);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 25);
+            this.label1.Size = new System.Drawing.Size(107, 24);
             this.label1.TabIndex = 52;
             this.label1.Text = "Shell Status";
             // 

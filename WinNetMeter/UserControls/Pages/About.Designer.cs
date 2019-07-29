@@ -60,9 +60,10 @@
             // 
             // label24
             // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(154, 407);
+            this.label24.Location = new System.Drawing.Point(154, 323);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(148, 17);
             this.label24.TabIndex = 57;
@@ -70,9 +71,10 @@
             // 
             // linkDonation
             // 
+            this.linkDonation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkDonation.AutoSize = true;
             this.linkDonation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkDonation.Location = new System.Drawing.Point(47, 407);
+            this.linkDonation.Location = new System.Drawing.Point(47, 323);
             this.linkDonation.Name = "linkDonation";
             this.linkDonation.Size = new System.Drawing.Size(110, 17);
             this.linkDonation.TabIndex = 56;
@@ -82,9 +84,10 @@
             // 
             // linkGithub
             // 
+            this.linkGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkGithub.AutoSize = true;
             this.linkGithub.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkGithub.Location = new System.Drawing.Point(263, 384);
+            this.linkGithub.Location = new System.Drawing.Point(263, 301);
             this.linkGithub.Name = "linkGithub";
             this.linkGithub.Size = new System.Drawing.Size(146, 17);
             this.linkGithub.TabIndex = 54;
@@ -94,9 +97,10 @@
             // 
             // label23
             // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(149, 385);
+            this.label23.Location = new System.Drawing.Point(149, 301);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(97, 17);
             this.label23.TabIndex = 52;
@@ -104,9 +108,10 @@
             // 
             // linkWebsite
             // 
+            this.linkWebsite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkWebsite.AutoSize = true;
             this.linkWebsite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkWebsite.Location = new System.Drawing.Point(47, 385);
+            this.linkWebsite.Location = new System.Drawing.Point(47, 301);
             this.linkWebsite.Name = "linkWebsite";
             this.linkWebsite.Size = new System.Drawing.Size(104, 17);
             this.linkWebsite.TabIndex = 50;
@@ -116,10 +121,11 @@
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(21, 359);
+            this.label22.Location = new System.Drawing.Point(21, 275);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(64, 20);
             this.label22.TabIndex = 49;
@@ -175,9 +181,10 @@
             // 
             // lblCopyright
             // 
+            this.lblCopyright.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(25, 453);
+            this.lblCopyright.Location = new System.Drawing.Point(25, 369);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(272, 15);
             this.lblCopyright.TabIndex = 44;
@@ -257,8 +264,9 @@
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox10.Image = global::WinNetMeter.Properties.Resources.Love_colored_16px;
-            this.pictureBox10.Location = new System.Drawing.Point(28, 408);
+            this.pictureBox10.Location = new System.Drawing.Point(28, 324);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(16, 16);
             this.pictureBox10.TabIndex = 55;
@@ -266,8 +274,9 @@
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox9.Image = global::WinNetMeter.Properties.Resources.github_black_16px;
-            this.pictureBox9.Location = new System.Drawing.Point(246, 385);
+            this.pictureBox9.Location = new System.Drawing.Point(246, 302);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(16, 16);
             this.pictureBox9.TabIndex = 53;
@@ -275,8 +284,9 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox8.Image = global::WinNetMeter.Properties.Resources.Share_blue_16px;
-            this.pictureBox8.Location = new System.Drawing.Point(28, 386);
+            this.pictureBox8.Location = new System.Drawing.Point(28, 302);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(16, 16);
             this.pictureBox8.TabIndex = 51;
@@ -291,7 +301,7 @@
             this.panel2.Controls.Add(this.linkJovan);
             this.panel2.Location = new System.Drawing.Point(23, 107);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 146);
+            this.panel2.Size = new System.Drawing.Size(336, 131);
             this.panel2.TabIndex = 66;
             // 
             // About
@@ -316,7 +326,7 @@
             this.Controls.Add(this.label22);
             this.Controls.Add(this.lblCopyright);
             this.Name = "About";
-            this.Size = new System.Drawing.Size(568, 485);
+            this.Size = new System.Drawing.Size(568, 404);
             this.Load += new System.EventHandler(this.About_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

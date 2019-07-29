@@ -19,7 +19,8 @@ namespace WinNetMeter.Helper
 
         internal Updater()
         {
-            urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/{updaterConfig}";
+            // urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/{updaterConfig}";
+            urlUpdateConfig = $"{baseUrl}/products/win-netmeter/release/simulate/{updaterConfig}";
         }
 
 
@@ -62,8 +63,6 @@ namespace WinNetMeter.Helper
             Update update = new Update()
             {
                 DashboardVersion = "1.0",
-                ShellVersion = "1.0",
-                UpdaterVersion = "1.0",
                 Changelog = new List<string>()
                 {
                     "ewoasdasd",

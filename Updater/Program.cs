@@ -14,18 +14,24 @@ namespace Updater
             string baseShell = "WinNetMeter.Shell.dll";
 
             // Configure update directory
-            string exeUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.exe";
-            string shellUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.Shell.dll";
+            string baseLocalAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+            string exeUpdateFile = baseLocalAppData + @"\WinTenDev\update\WinNetMeter.exe";
+            string shellUpdateFile = baseLocalAppData + @"\WinTenDev\update\WinNetMeter.Shell.dll";
+
+            //string exeUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.exe";
+            //string shellUpdateFile = AppDomain.CurrentDomain.BaseDirectory + @"update/WinNetMeter.Shell.dll";
 
             
             if (File.Exists(exeUpdateFile) && File.Exists(shellUpdateFile))
             {
 
                 // Kill explorer.exe process
-                foreach (Process process in Process.GetProcessesByName("explorer"))
-                {
-                    process.Kill();
-                }
+
+                    foreach (Process process in Process.GetProcessesByName("explorer"))
+                    {
+                        process.Kill();
+                    }
 
                 Console.WriteLine("Updating app..");
 

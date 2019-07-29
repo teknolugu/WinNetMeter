@@ -15,7 +15,7 @@ namespace WinNetMeter.Helper
                 integration.UninstallToolbar();
 
                 FileHelper.SafeDelete("Updater.exe");
-                FileHelper.SaveMove(AppDomain.CurrentDomain.BaseDirectory + @"update/Updater.exe", "Updater.exe");
+                FileHelper.SaveMove(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\WinTenDev\update\Updater.exe", "Updater.exe");
 
                 // Running updater.exe for processing update files
                 Process.Start("Updater.exe");

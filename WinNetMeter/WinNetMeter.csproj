@@ -423,7 +423,12 @@
   <ItemGroup>
     <None Include="Resources\dun_black_16px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WinNetMeter.Core\WinNetMeter.Core.csproj">
+      <Project>{DE5E5F74-6F2F-444F-A376-0CC32E9509CE}</Project>
+      <Name>WinNetMeter.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

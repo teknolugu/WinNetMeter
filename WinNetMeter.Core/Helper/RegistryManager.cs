@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows.Forms;
-using WinNetMeter.Model;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Core.Helper
 {

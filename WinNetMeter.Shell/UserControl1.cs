@@ -100,13 +100,14 @@ namespace WinNetMeter.Shell
                 }
                 else
                 {
-                    LblUpload.Text = "......";
-                    LblDownload.Text = "......";
+                    LblUpload.Text = "N/A";
+                    LblDownload.Text = "N/A";
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "WinNetMeter.Shell", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblUpload.Text = "N/A";
+                LblDownload.Text = "N/A";
             }
             
         }

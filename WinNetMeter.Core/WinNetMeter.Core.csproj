@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Build\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,9 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DesktopBridge.Helpers, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DesktopBridge.Helpers.1.2.1\lib\net45\DesktopBridge.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +50,7 @@
     <Compile Include="Helper\FileHelper.cs" />
     <Compile Include="Helper\RegistryManager.cs" />
     <Compile Include="Helper\TaskBarHelper.cs" />
-    <Compile Include="Helper\Integration.cs" />
+    <Compile Include="Integration.cs" />
     <Compile Include="Model\Configuration.cs" />
     <Compile Include="Model\ConfigurationType.cs" />
     <Compile Include="Model\DatabaseConfiguration.cs" />
@@ -54,8 +58,22 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\StyleConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\ShellController.cs" />
+    <Compile Include="ShellController.cs" />
+    <Compile Include="ThisApp.cs" />
+    <Compile Include="Views\FormUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormUpdater.Designer.cs">
+      <DependentUpon>FormUpdater.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FormUpdater.resx">
+      <DependentUpon>FormUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

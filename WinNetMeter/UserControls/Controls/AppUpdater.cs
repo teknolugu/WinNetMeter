@@ -194,7 +194,8 @@ namespace WinNetMeter.UserControls.Controls
                     }
                     else
                     {
-                        Title.Text = "No updates found";
+                        Title.Text = "Check for Updates";
+                        Description.Text = "No updates found";
                         BtnCheckUpdates.Visible = true;
                     }
 

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using WinNetMeter.Core.Views;
 
 namespace WinNetMeter.UserControls.Pages
 {
@@ -67,6 +68,12 @@ namespace WinNetMeter.UserControls.Pages
         private void LinkReport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://t.me/WinTenGroup");
+        }
+
+        private void BtnTest_Click(object sender, EventArgs e)
+        {
+            var updaterForm = new FormUpdater();
+            updaterForm.Show();
         }
     }
 }

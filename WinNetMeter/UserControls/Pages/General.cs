@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using WinNetMeter.Core;
+using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
 using WinNetMeter.Helper;
-using WinNetMeter.Model;
 
 namespace WinNetMeter.UserControls.Pages
 {

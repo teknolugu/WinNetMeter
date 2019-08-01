@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using WinNetMeter.Core;
+using WinNetMeter.Core.Helper;
 namespace WinNetMeter.Helper
 {
     class UpdateHandler

@@ -1,6 +1,6 @@
 ﻿namespace WinNetMeter.Core.Model
 {
-    internal enum ConfigurationType
+    public enum ConfigurationType
     {
         GeneralConfiguration,
         StyleConfiguration,

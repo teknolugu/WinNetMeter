@@ -1,6 +1,6 @@
 ﻿namespace WinNetMeter.Core.Model
 {
-    class StyleConfiguration
+    public class StyleConfiguration
     {
         string textColor;
         string fontFamily;

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using WinNetMeter.Core;
+using WinNetMeter.Core.Helper;
 using WinNetMeter.Helper;
 
 namespace WinNetMeter

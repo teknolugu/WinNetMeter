@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace WinNetMeter.Core.Helper
 {
-    internal class TaskBarHelper
+    public class TaskBarHelper
     {
         [DllImport("shell32.dll")]
         private static extern IntPtr SHAppBarMessage(int msg, ref APPBARDATA data);

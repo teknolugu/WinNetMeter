@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace WinNetMeter.Core
+namespace WinNetMeter.Core.Helper
 {
-    internal class ShellController
+    public class ShellController
     {
         private int hr;
         private Guid deskbandGuid = new Guid("0F0283BE-FADD-4EAA-9984-9C1822AE469A");
@@ -38,7 +38,7 @@ namespace WinNetMeter.Core
                     throw new Exception("Error while trying to show deskband: " + hr);
                 obj.DeskBandRegistrationChanged();
             }
-            catch (Exception e)
+            catch
             {
                 
             }

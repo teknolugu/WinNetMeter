@@ -1,7 +1,7 @@
 ﻿
 namespace WinNetMeter.Core.Model
 {
-    class DatabaseConfiguration
+    public class DatabaseConfiguration
     {
         bool trafficLogging;
         string customLogLocation;

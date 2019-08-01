@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using WinNetMeter.Core;
-using WinNetMeter.Helper;
+using WinNetMeter.Core.Helper;
 
 namespace WinNetMeter.UserControls.FirstRun
 {
@@ -18,7 +17,7 @@ namespace WinNetMeter.UserControls.FirstRun
         private void StartPage5_Load(object sender, EventArgs e)
         {
             RegistryManager registryManager = new RegistryManager();
-            registryManager.SaveExecutableLocation();
+            registryManager.SaveExecutableLocation(Application.ExecutablePath);
         }
 
         private void ToggleInstaller_CheckedChanged(object sender, EventArgs e)

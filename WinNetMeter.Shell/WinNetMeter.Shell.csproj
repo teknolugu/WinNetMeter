@@ -88,6 +88,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinNetMeter.Core">
+      <HintPath>..\WinNetMeter.Core\bin\Debug\WinNetMeter.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdapterController.cs" />
@@ -97,14 +100,6 @@
     <Compile Include="Helper\NativeMethods.cs" />
     <Compile Include="Helper\NetworkMonitor.cs" />
     <Compile Include="Helper\Numeric.cs" />
-    <Compile Include="Helper\RegistryManager.cs" />
-    <Compile Include="Helper\TaskBarHelper.cs" />
-    <Compile Include="Model\Configuration.cs" />
-    <Compile Include="Model\ConfigurationType.cs" />
-    <Compile Include="Model\DatabaseConfiguration.cs" />
-    <Compile Include="Model\IconStyle.cs" />
-    <Compile Include="Model\Language.cs" />
-    <Compile Include="Model\StyleConfiguration.cs" />
     <Compile Include="Model\TrafficLog.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

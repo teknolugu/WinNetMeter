@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using WinNetMeter.Core;
+using WinNetMeter.Core.Helper;
 
 namespace WinNetMeter.UserControls.Pages
 {

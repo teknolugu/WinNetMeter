@@ -1,11 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Windows.Forms;
-using WinNetMeter.Model;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Core.Helper
 {
-    internal class RegistryManager
+    public class RegistryManager
     {
         private Configuration config = new Configuration();
         private DatabaseConfiguration dbConfig = new DatabaseConfiguration();
@@ -15,7 +14,7 @@ namespace WinNetMeter.Core.Helper
         private RegistryKey DatabaseConfiguration;
         private RegistryKey StyleConfiguration;
 
-        internal RegistryManager()
+        public RegistryManager()
         {
             CreateRegistry();
 
@@ -141,10 +140,10 @@ namespace WinNetMeter.Core.Helper
             hwndLoc.SetValue("hwnd", value, RegistryValueKind.String);
         }
 
-        public void SaveExecutableLocation()
+        public void SaveExecutableLocation(string path)
         {
             var exeKey = key.OpenSubKey(@"WinNetMeter", true);
-            exeKey.SetValue("ExecutablePath", Application.ExecutablePath, RegistryValueKind.String);
+            exeKey.SetValue("ExecutablePath", path, RegistryValueKind.String);
         }
         public string GetExecutableLocation()
         {

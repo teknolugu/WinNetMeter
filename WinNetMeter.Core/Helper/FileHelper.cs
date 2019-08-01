@@ -4,7 +4,7 @@ using System.IO;
 
 namespace WinNetMeter.Core.Helper
 {
-    internal class FileHelper
+    public class FileHelper
     {
         public static void WriteBatFile(string path, string value, bool NewLine)
         {

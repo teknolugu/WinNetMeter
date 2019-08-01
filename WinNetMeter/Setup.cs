@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using WinNetMeter.Helper;
+using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
 using WinNetMeter.UserControls.FirstRun;
 
 namespace WinNetMeter
@@ -99,7 +100,7 @@ namespace WinNetMeter
             {
                 if (StartPage3.SelectedAdapter != null)
                 {
-                    settingsManager.Save("MonitoredAdapter", StartPage3.SelectedAdapter, Model.ConfigurationType.GeneralConfiguration);
+                    settingsManager.Save("MonitoredAdapter", StartPage3.SelectedAdapter, ConfigurationType.GeneralConfiguration);
 
                     StartPage4 page4 = new StartPage4();
                     page4.Dock = DockStyle.Fill;

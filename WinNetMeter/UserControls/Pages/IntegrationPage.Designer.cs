@@ -46,7 +46,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(20, 161);
+            this.label21.Location = new System.Drawing.Point(20, 147);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(127, 24);
             this.label21.TabIndex = 51;
@@ -69,7 +69,7 @@
             this.BtnUninstall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUninstall.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUninstall.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnUninstall.Location = new System.Drawing.Point(25, 237);
+            this.BtnUninstall.Location = new System.Drawing.Point(25, 223);
             this.BtnUninstall.Name = "BtnUninstall";
             this.BtnUninstall.Size = new System.Drawing.Size(130, 34);
             this.BtnUninstall.TabIndex = 49;
@@ -80,7 +80,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(22, 193);
+            this.label13.Location = new System.Drawing.Point(22, 179);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(507, 35);
             this.label13.TabIndex = 48;

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using WinNetMeter.Helper;
 
-namespace WinNetMeter.Core
+namespace WinNetMeter.Core.Helper
 {
-    class Integration
+    public class Integration
     {
         private string batchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarInstaller.bat";
         private string uninstallerBatchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarUninstaller.bat";

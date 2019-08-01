@@ -8,7 +8,8 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
-using WinNetMeter.Model;
+using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.UserControls.Controls
 {

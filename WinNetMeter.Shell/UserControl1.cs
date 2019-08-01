@@ -5,7 +5,8 @@ using System.Drawing.Text;
 using System.Windows.Forms;
 using WinNetMeter.Shell.Controller;
 using WinNetMeter.Shell.Helper;
-using WinNetMeter.Shell.Model;
+using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Shell
 {
@@ -201,7 +202,15 @@ namespace WinNetMeter.Shell
 
         private void ConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(registryManager.GetExecutableLocation());
+            try
+            {
+                Process.Start(registryManager.GetExecutableLocation());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+         
         }
 
         private void OnToolStripMenuItem_Click(object sender, EventArgs e)

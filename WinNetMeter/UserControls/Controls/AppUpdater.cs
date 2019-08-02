@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Helper;
+using WinNetMeter.Core.Views;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
 
@@ -232,8 +233,8 @@ namespace WinNetMeter.UserControls.Controls
 
         private void Changelog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var currentChangelog = string.Join(Environment.NewLine, changelog);
-            MessageBox.Show(this, currentChangelog, "What's new?", MessageBoxButtons.OK);
+            FormUpdater formUpdater = new FormUpdater();
+            formUpdater.Show();
         }
     }
 }

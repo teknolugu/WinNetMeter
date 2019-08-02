@@ -129,16 +129,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller\AdapterController.cs" />
-    <Compile Include="Core\ShellController.cs" />
-    <Compile Include="Core\ThisApp.cs" />
     <Compile Include="Helper\DbManager.cs" />
-    <Compile Include="Helper\FileHelper.cs" />
-    <Compile Include="Core\Integration.cs" />
     <Compile Include="Helper\NativeMethods.cs" />
-    <Compile Include="Helper\NetworkMonitor.cs" />
     <Compile Include="Helper\Numeric.cs" />
-    <Compile Include="Helper\RegistryManager.cs" />
-    <Compile Include="Helper\TaskBarHelper.cs" />
+    <Compile Include="Helper\ThisApp.cs" />
     <Compile Include="Helper\UpdateHandler.cs" />
     <Compile Include="Helper\Updater.cs" />
     <Compile Include="Main.cs">
@@ -148,12 +142,6 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\NetworkIntefaceModule.cs" />
-    <Compile Include="Model\Configuration.cs" />
-    <Compile Include="Model\ConfigurationType.cs" />
-    <Compile Include="Model\DatabaseConfiguration.cs" />
-    <Compile Include="Model\IconStyle.cs" />
-    <Compile Include="Model\Language.cs" />
-    <Compile Include="Model\StyleConfiguration.cs" />
     <Compile Include="Model\Update.cs" />
     <Compile Include="UserControls\FirstRun\StartPage1.cs">
       <SubType>UserControl</SubType>

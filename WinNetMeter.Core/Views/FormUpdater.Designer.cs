@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,26 +54,15 @@
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.Url = new System.Uri("https://cdn.winten.space/products/win-netmeter/release/changelog.html", System.UriKind.Absolute);
             // 
-            // BtnClose
-            // 
-            this.BtnClose.Location = new System.Drawing.Point(538, 10);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(40, 37);
-            this.BtnClose.TabIndex = 2;
-            this.BtnClose.Text = "X";
-            this.BtnClose.UseVisualStyleBackColor = true;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
             // FormUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 351);
-            this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -91,6 +79,5 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Button BtnClose;
     }
 }

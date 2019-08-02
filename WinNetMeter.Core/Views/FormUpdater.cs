@@ -17,11 +17,6 @@ namespace WinNetMeter.Core.Views
             InitializeComponent();
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void FormUpdater_Deactivate(object sender, EventArgs e)
         {
             Close();

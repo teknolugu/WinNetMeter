@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timerAuto = new System.Windows.Forms.Timer(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.timerAuto = new System.Windows.Forms.Timer();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitoringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerKB = new System.Windows.Forms.Timer(this.components);
-            this.timerMB = new System.Windows.Forms.Timer(this.components);
+            this.timerKB = new System.Windows.Forms.Timer();
+            this.timerMB = new System.Windows.Forms.Timer();
             this.pictDownload = new System.Windows.Forms.PictureBox();
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.LblDownload = new WinNetMeter.Shell.MyLabel();
@@ -169,6 +168,7 @@
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(111, 38);
             this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.Resize += new System.EventHandler(this.UserControl1_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).EndInit();

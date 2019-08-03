@@ -233,6 +233,11 @@ namespace WinNetMeter.Shell
             startInfo.Arguments = "-about";
             Process.Start(startInfo);
         }
+
+        private void UserControl1_Resize(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
     }
 
     public class MyLabel : Label

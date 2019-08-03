@@ -16,7 +16,7 @@ namespace WinNetMeter.Shell
         public Deskband()
         {
             Options.MinHorizontalSize = new Size(111, 30);
-            _control = new UserControl1(this);
+            _control = new DeskBandUI(this);
         }
 
         protected override Control Control => _control;

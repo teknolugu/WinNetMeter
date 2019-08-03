@@ -12,7 +12,7 @@ using WinNetMeter.Shell.Helper;
 
 namespace WinNetMeter.Shell
 {
-    public partial class UserControl1 : UserControl
+    public partial class DeskBandUI : UserControl
     {
         private AdapterController adapterController;
         private NetworkMonitor monitor;
@@ -22,7 +22,7 @@ namespace WinNetMeter.Shell
         private DbManager dataManager = new DbManager();
         private Configuration configuration;
 
-        public UserControl1(CSDeskBand.CSDeskBandWin w)
+        public DeskBandUI(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
         }

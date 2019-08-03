@@ -1,6 +1,6 @@
 ﻿namespace WinNetMeter.Shell
 {
-    partial class UserControl1
+    partial class DeskBandUI
     {
         /// <summary> 
         /// Required designer variable.

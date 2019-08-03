@@ -6,12 +6,18 @@ namespace WinNetMeter.Core.Helper
 {
     public class Integration
     {
-        private string batchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarInstaller.bat";
-        private string uninstallerBatchFileLocation = AppDomain.CurrentDomain.BaseDirectory + @"temp\toolbarUninstaller.bat";
+        private string baseLocalAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        private string batchFileLocation = "";
+        private string uninstallerBatchFileLocation = "";
         private string FrameworkLocation;
         private StreamWriter writer;
 
-        private enum FileType
+        public Integration(){
+            batchFileLocation = baseLocalAppData + @"\temp\toolbarInstaller.bat";
+            uninstallerBatchFileLocation = baseLocalAppData + @"\temp\toolbarUninstaller.bat";
+        }
+        enum FileType
         {
             Installer,
             Uninstaller

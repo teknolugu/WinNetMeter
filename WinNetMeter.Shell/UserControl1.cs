@@ -250,6 +250,11 @@ namespace WinNetMeter.Shell
 
             TrafficLogs.Save(data);
         }
+
+        private void UserControl1_Resize(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
     }
 
     public class MyLabel : Label

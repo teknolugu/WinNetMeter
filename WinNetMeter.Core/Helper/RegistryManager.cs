@@ -35,10 +35,10 @@ namespace WinNetMeter.Core.Helper
                 }
                 catch
                 {
-
                 }
             }
         }
+
         public void MakeDefaultConfiguration()
         {
             //general configuration
@@ -75,9 +75,11 @@ namespace WinNetMeter.Core.Helper
                 case ConfigurationType.GeneralConfiguration:
                     GeneralConfiguration.SetValue(config, value, RegistryValueKind.String);
                     break;
+
                 case ConfigurationType.DatabaseConfiguration:
                     DatabaseConfiguration.SetValue(config, value, RegistryValueKind.String);
                     break;
+
                 case ConfigurationType.StyleConfiguration:
                     StyleConfiguration.SetValue(config, value, RegistryValueKind.String);
                     break;
@@ -145,15 +147,29 @@ namespace WinNetMeter.Core.Helper
             var exeKey = key.OpenSubKey(@"WinNetMeter", true);
             exeKey.SetValue("ExecutablePath", path, RegistryValueKind.String);
         }
+
         public string GetExecutableLocation()
         {
             var exeKey = key.OpenSubKey(@"WinNetMeter", true);
             return exeKey.GetValue("ExecutablePath").ToString();
         }
+
         public string GetHwnd()
         {
             var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
             return hwndLoc.GetValue("hwnd").ToString();
+        }
+
+        public void WriteToRegistry(string path, string keyReg, string valReg)
+        {
+            var exeKey = key.OpenSubKey(@path, true);
+            exeKey.SetValue(keyReg, valReg, RegistryValueKind.String);
+        }
+
+        public object ReadFromRegistry(string path, string keyReg)
+        {
+            var exeKey = key.OpenSubKey(@path, true);
+            return exeKey.GetValue(keyReg);
         }
     }
 }

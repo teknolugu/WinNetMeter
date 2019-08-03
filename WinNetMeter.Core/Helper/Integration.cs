@@ -11,9 +11,9 @@ namespace WinNetMeter.Core.Helper
         private string FrameworkLocation;
         private StreamWriter writer;
 
-        enum FileType
+        private enum FileType
         {
-            Installer, 
+            Installer,
             Uninstaller
         }
 
@@ -31,6 +31,7 @@ namespace WinNetMeter.Core.Helper
                     //Close the tread
                     writer.Close();
                     break;
+
                 case FileType.Uninstaller:
                     writer = new StreamWriter(uninstallerBatchFileLocation, true);
                     if (NewLine) writer.Write(Environment.NewLine);
@@ -42,7 +43,6 @@ namespace WinNetMeter.Core.Helper
                     writer.Close();
                     break;
             }
-           
         }
 
         public void InstallToolbar()
@@ -141,6 +141,7 @@ namespace WinNetMeter.Core.Helper
             //Executing the .bat file
             runBat();
         }
+
         public void MakeUninstaller()
         {
             //Create .bat file for toolbar installation
@@ -150,6 +151,8 @@ namespace WinNetMeter.Core.Helper
             }
             if (!File.Exists(uninstallerBatchFileLocation))
             {
+                FileHelper.SafeDelete(batchFileLocation);
+
                 File.Create(batchFileLocation).Close();
 
                 //Get .NET Framework path Information
@@ -171,9 +174,7 @@ namespace WinNetMeter.Core.Helper
                     WriteBatFile("exit", true, FileType.Uninstaller);
                 }
             }
-
         }
-
 
         private void runBat()
         {

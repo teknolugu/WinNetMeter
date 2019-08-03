@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Core.Services;
 
 namespace WinNetMeter.UserControls.Pages
 {
@@ -48,6 +50,21 @@ namespace WinNetMeter.UserControls.Pages
 
         private void Log_Load(object sender, EventArgs e)
         {
+        }
+
+        private void BtnTestHit_Click(object sender, EventArgs e)
+        {
+            //var data = new Dictionary<string, string>()
+            //{
+            //    {"date", DateTime.Now.ToShortDateString() },
+            //    {"time", DateTime.Now.ToShortTimeString() },
+            //    {"download", "1024" },
+            //    {"upload", "768" }
+            //};
+
+            //TrafficLogs.Save(data);
+
+            EventLog.WriteLog("Test log");
         }
     }
 }

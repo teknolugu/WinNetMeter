@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using WinNetMeter.Shell.Controller;
-using WinNetMeter.Shell.Helper;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Core.Services;
+using WinNetMeter.Shell.Controller;
+using WinNetMeter.Shell.Helper;
 
 namespace WinNetMeter.Shell
 {
@@ -45,7 +47,6 @@ namespace WinNetMeter.Shell
             ConfigureStyle();
         }
 
-
         private void killTimer()
         {
             timerAuto.Stop();
@@ -60,8 +61,7 @@ namespace WinNetMeter.Shell
             catch { }
         }
 
-        #endregion
-
+        #endregion Core Controller
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
@@ -72,6 +72,7 @@ namespace WinNetMeter.Shell
         }
 
         #region Configuration Loader
+
         private void Load_Config()
         {
             try
@@ -91,9 +92,11 @@ namespace WinNetMeter.Shell
                         case "Auto":
                             timerAuto.Start();
                             break;
+
                         case "KB":
                             timerKB.Start();
                             break;
+
                         case "MB":
                             timerMB.Start();
                             break;
@@ -105,12 +108,11 @@ namespace WinNetMeter.Shell
                     LblDownload.Text = "N/A";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LblUpload.Text = "N/A";
                 LblDownload.Text = "N/A";
             }
-            
         }
 
         private void ConfigureStyle()
@@ -144,7 +146,6 @@ namespace WinNetMeter.Shell
             {
                 pictUpload.Image = Properties.Resources.up_black_16px;
                 pictDownload.Image = Properties.Resources.down_black_16px;
-                
 
                 pictDownload.Location = new Point(11, 17);
             }
@@ -152,40 +153,39 @@ namespace WinNetMeter.Shell
             {
                 pictUpload.Image = Properties.Resources.up_white_16px;
                 pictDownload.Image = Properties.Resources.down_white_16px;
-                
+
                 pictDownload.Location = new Point(11, 17);
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
             {
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
                 pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
-                
             }
             else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
             {
                 pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
                 pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
-                
             }
             else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
             {
                 pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
                 pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
-                
             }
             else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
             {
                 pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
                 pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
-                
             }
         }
 
-        #endregion
+        #endregion Configuration Loader
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
             LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
+
+            //SaveTrafficLog();
         }
 
         private void TimerKB_Tick(object sender, EventArgs e)
@@ -206,11 +206,10 @@ namespace WinNetMeter.Shell
             {
                 Process.Start(registryManager.GetExecutableLocation());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-         
         }
 
         private void OnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -232,6 +231,24 @@ namespace WinNetMeter.Shell
             startInfo.FileName = registryManager.GetExecutableLocation();
             startInfo.Arguments = "-about";
             Process.Start(startInfo);
+        }
+
+        private void TimerTrafficLog_Tick(object sender, EventArgs e)
+        {
+            SaveTrafficLog();
+        }
+
+        private void SaveTrafficLog()
+        {
+            var data = new Dictionary<string, string>()
+            {
+                {"date", DateTime.Now.ToString("yyyy-MM-dd") },
+                {"time", DateTime.Now.ToString("HH:mm:ss") },
+                {"download", adapterController.DownloadSpeed.ToString() },
+                {"upload", adapterController.UploadSpeed.ToString() }
+            };
+
+            TrafficLogs.Save(data);
         }
     }
 

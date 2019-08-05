@@ -1,6 +1,6 @@
 ﻿namespace WinNetMeter.Shell
 {
-    partial class UserControl1
+    partial class DeskBandUI
     {
         /// <summary> 
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.LblDownload = new WinNetMeter.Shell.MyLabel();
             this.LblUpload = new WinNetMeter.Shell.MyLabel();
+            this.timerTrafficLog = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).BeginInit();
@@ -154,6 +155,12 @@
             this.LblUpload.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.LblUpload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             // 
+            // timerTrafficLog
+            // 
+            this.timerTrafficLog.Enabled = true;
+            this.timerTrafficLog.Interval = 1000;
+            this.timerTrafficLog.Tick += new System.EventHandler(this.TimerTrafficLog_Tick);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -190,5 +197,6 @@
         private System.Windows.Forms.PictureBox pictUpload;
         private MyLabel LblDownload;
         private MyLabel LblUpload;
+        private System.Windows.Forms.Timer timerTrafficLog;
     }
 }

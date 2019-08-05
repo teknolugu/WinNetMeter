@@ -18,6 +18,20 @@ namespace WinNetMeter.Core.Helper
             writer.Close();
         }
 
+        public static void WriteToFile(string path, string value, bool append = true, bool newLine = true)
+        {
+            if (!append) SafeDelete(path);
+
+            var writer = new StreamWriter(path, true);
+
+            //Write the .bat script
+            writer.Write(value);
+            if (newLine) writer.Write(Environment.NewLine);
+
+            //Close the tread
+            writer.Close();
+        }
+
         public static void SafeDelete(string path)
         {
             if (File.Exists(path))

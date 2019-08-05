@@ -6,12 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter", "WinNetMeter\WinNetMeter.csproj", "{320D7488-F517-443C-B134-6B7AB9A4A725}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0} = {8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0}
+		{BA5BBEDE-037D-4518-BFB4-C95C003585FB} = {BA5BBEDE-037D-4518-BFB4-C95C003585FB}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.Shell", "WinNetMeter.Shell\WinNetMeter.Shell.csproj", "{BA5BBEDE-037D-4518-BFB4-C95C003585FB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{320D7488-F517-443C-B134-6B7AB9A4A725} = {320D7488-F517-443C-B134-6B7AB9A4A725}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0}"
 EndProject

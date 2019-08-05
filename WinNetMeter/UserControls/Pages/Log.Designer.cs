@@ -35,6 +35,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.toggleTraffic = new MetroFramework.Controls.MetroToggle();
             this.btnSaveLog = new System.Windows.Forms.Button();
+            this.BtnTestHit = new WinNetMeter.Components.ButtonEx();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +118,22 @@
             this.btnSaveLog.UseVisualStyleBackColor = false;
             this.btnSaveLog.Click += new System.EventHandler(this.BtnSaveLog_Click);
             // 
+            // BtnTestHit
+            // 
+            this.BtnTestHit.Location = new System.Drawing.Point(404, 216);
+            this.BtnTestHit.Name = "BtnTestHit";
+            this.BtnTestHit.Size = new System.Drawing.Size(107, 43);
+            this.BtnTestHit.TabIndex = 19;
+            this.BtnTestHit.Text = "buttonEx1";
+            this.BtnTestHit.UseVisualStyleBackColor = true;
+            this.BtnTestHit.Click += new System.EventHandler(this.BtnTestHit_Click);
+            // 
             // Log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.BtnTestHit);
             this.Controls.Add(this.btnSaveLog);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.Button btnBrowseLog;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroToggle toggleTraffic;
+        private Components.ButtonEx BtnTestHit;
     }
 }

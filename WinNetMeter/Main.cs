@@ -43,8 +43,6 @@ namespace WinNetMeter
             }
         }
 
-
-
         #region custom
 
         private void BtnGeneral_Click(object sender, EventArgs e)
@@ -128,6 +126,9 @@ namespace WinNetMeter
             integration.MakeUninstaller();
 
             FileHelper.DeleteAllIn(Environment.CurrentDirectory, "*.old");
+
+            RegistryManager registryManager = new RegistryManager();
+            registryManager.WriteToRegistry("WinNetMeter", "AppBasePath", Environment.CurrentDirectory);
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)

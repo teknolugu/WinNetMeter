@@ -57,6 +57,7 @@
     <Compile Include="Model\DatabaseConfiguration.cs" />
     <Compile Include="Model\IconStyle.cs" />
     <Compile Include="Model\Language.cs" />
+    <Compile Include="Model\PathInfo.cs" />
     <Compile Include="Model\StyleConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\FormUpdater.cs">

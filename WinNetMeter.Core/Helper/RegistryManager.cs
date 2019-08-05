@@ -41,7 +41,7 @@ namespace WinNetMeter.Core.Helper
         }
         public void MakeDefaultConfiguration()
         {
-            //general configuration
+            // General configuration
             GeneralConfiguration.SetValue("Monitoring", true, RegistryValueKind.String);
             GeneralConfiguration.SetValue("AutoUpdate", false, RegistryValueKind.String);
             GeneralConfiguration.SetValue("Language", "English", RegistryValueKind.String);
@@ -49,11 +49,12 @@ namespace WinNetMeter.Core.Helper
             GeneralConfiguration.SetValue("TrafficLogging", false, RegistryValueKind.String);
             GeneralConfiguration.SetValue("MonitoredAdapter", "", RegistryValueKind.String);
 
-            //database configuration
+            // Database configuration
             DatabaseConfiguration.SetValue("TrafficLogging", false, RegistryValueKind.String);
             DatabaseConfiguration.SetValue("CustomLogLocation", "", RegistryValueKind.String);
 
-            //style configuration
+            // Style configuration
+            StyleConfiguration.SetValue("Adaptive", false, RegistryValueKind.String);
             StyleConfiguration.SetValue("BackgroundColor", "Black", RegistryValueKind.String);
             StyleConfiguration.SetValue("TextColor", "White", RegistryValueKind.String);
             StyleConfiguration.SetValue("Font", "Segoe UI", RegistryValueKind.String);
@@ -101,6 +102,7 @@ namespace WinNetMeter.Core.Helper
 
         public void Save(StyleConfiguration config)
         {
+            StyleConfiguration.SetValue("Adaptive", config.Adaptive, RegistryValueKind.String);
             StyleConfiguration.SetValue("TextColor", config.TextColor, RegistryValueKind.String);
             StyleConfiguration.SetValue("Font", config.FontFamily, RegistryValueKind.String);
             StyleConfiguration.SetValue("Icon", config.Icon, RegistryValueKind.String);
@@ -127,6 +129,7 @@ namespace WinNetMeter.Core.Helper
 
         public StyleConfiguration GetStyleConfiguration()
         {
+            styleConfig.Adaptive = bool.Parse(StyleConfiguration.GetValue("Adaptive").ToString());
             styleConfig.TextColor = StyleConfiguration.GetValue("TextColor").ToString();
             styleConfig.FontFamily = StyleConfiguration.GetValue("Font").ToString();
             styleConfig.Icon = (IconStyle)Enum.Parse(typeof(IconStyle), StyleConfiguration.GetValue("Icon").ToString());

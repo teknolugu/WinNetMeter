@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
@@ -117,8 +118,19 @@ namespace WinNetMeter.Shell
 
         private void ConfigureStyle()
         {
-            this.BackColor = ColorTranslator.FromHtml("#000");
 
+            //Thread styleThread = new Thread( delegate()
+            //{
+            //    this.BeginInvoke(new MethodInvoker(delegate ()
+            //    {
+
+
+            //    }));
+
+            //});
+
+            //styleThread.Start();
+            this.BackColor = ColorTranslator.FromHtml("#000");
             styleConfiguration = registryManager.GetStyleConfiguration();
 
             LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
@@ -176,6 +188,7 @@ namespace WinNetMeter.Shell
                 pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
                 pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
             }
+
         }
 
         #endregion Configuration Loader

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             this.timerAuto = new System.Windows.Forms.Timer();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

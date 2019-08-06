@@ -119,75 +119,73 @@ namespace WinNetMeter.Shell
         private void ConfigureStyle()
         {
 
-            //Thread styleThread = new Thread( delegate()
-            //{
-            //    this.BeginInvoke(new MethodInvoker(delegate ()
-            //    {
+            Thread styleThread = new Thread(delegate ()
+           {
+               this.BeginInvoke(new MethodInvoker(delegate ()
+               {
+                   this.BackColor = ColorTranslator.FromHtml("#000");
+                   styleConfiguration = registryManager.GetStyleConfiguration();
 
+                   LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
+                   LblDownload.ForeColor = LblUpload.ForeColor;
 
-            //    }));
+                   LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
+                   LblDownload.Font = LblUpload.Font;
 
-            //});
+                   bool IsDark = false;
 
-            //styleThread.Start();
-            this.BackColor = ColorTranslator.FromHtml("#000");
-            styleConfiguration = registryManager.GetStyleConfiguration();
+                   try
+                   {
+                       var taskBar = new TaskBarHelper();
+                       Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
+                       IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
+                   }
+                   catch
+                   {
+                       goto setIcon;
+                   }
 
-            LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
-            LblDownload.ForeColor = LblUpload.ForeColor;
+               setIcon:
 
-            LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
-            LblDownload.Font = LblUpload.Font;
+                   if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
+                   {
+                       pictUpload.Image = Properties.Resources.up_black_16px;
+                       pictDownload.Image = Properties.Resources.down_black_16px;
 
-            bool IsDark = false;
+                       pictDownload.Location = new Point(11, 17);
+                   }
+                   else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
+                   {
+                       pictUpload.Image = Properties.Resources.up_white_16px;
+                       pictDownload.Image = Properties.Resources.down_white_16px;
 
-            try
-            {
-                var taskBar = new TaskBarHelper();
-                Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
-                IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
-            }
-            catch
-            {
-                goto setIcon;
-            }
+                       pictDownload.Location = new Point(11, 17);
+                   }
+                   else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
+                   {
+                       pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
+                       pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
+                   }
+                   else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
+                   {
+                       pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
+                       pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
+                   }
+                   else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
+                   {
+                       pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
+                       pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
+                   }
+                   else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
+                   {
+                       pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
+                       pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
+                   }
+               }));
 
-        setIcon:
+           });
 
-            if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
-            {
-                pictUpload.Image = Properties.Resources.up_black_16px;
-                pictDownload.Image = Properties.Resources.down_black_16px;
-
-                pictDownload.Location = new Point(11, 17);
-            }
-            else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
-            {
-                pictUpload.Image = Properties.Resources.up_white_16px;
-                pictDownload.Image = Properties.Resources.down_white_16px;
-
-                pictDownload.Location = new Point(11, 17);
-            }
-            else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
-            {
-                pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
-                pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
-            }
-            else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
-            {
-                pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
-                pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
-            }
-            else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
-            {
-                pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
-                pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
-            }
-            else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
-            {
-                pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
-                pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
-            }
+            styleThread.Start();
 
         }
 
@@ -248,7 +246,7 @@ namespace WinNetMeter.Shell
 
         private void TimerTrafficLog_Tick(object sender, EventArgs e)
         {
-            SaveTrafficLog();
+            //SaveTrafficLog();
         }
 
         private void SaveTrafficLog()

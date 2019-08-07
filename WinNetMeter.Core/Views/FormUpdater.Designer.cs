@@ -70,7 +70,7 @@
             this.MinimizeBox = false;
             this.Name = "FormUpdater";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormUpdater";
+            this.Text = "Updater";
             this.Deactivate += new System.EventHandler(this.FormUpdater_Deactivate);
             this.ResumeLayout(false);
             this.PerformLayout();

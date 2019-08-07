@@ -18,12 +18,16 @@
                 x:Name="button"
                 Height="39"
                 Margin="2"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="GeneralPage"
                 Content="General"
                 Focusable="False" />
             <Button
                 x:Name="button_Copy"
                 Height="39"
                 Margin="2"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="CustomizationPage"
                 Content="Customization"
                 Focusable="False" />
             <Button
@@ -58,6 +62,8 @@
             Margin="14,0,0,10"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="AboutPage"
             Content="About"
             Focusable="False" />
         <TextBlock

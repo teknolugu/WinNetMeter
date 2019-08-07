@@ -6,5 +6,8 @@
     <Unmanaged64Assemblies>
       SQLite.Interop
     </Unmanaged64Assemblies>
+    <ExcludeAssemblies>
+    	WinNetMeter.Core
+    </ExcludeAssemblies>
   </Costura>
 </Weavers>

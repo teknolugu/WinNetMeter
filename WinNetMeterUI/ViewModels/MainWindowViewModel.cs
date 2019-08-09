@@ -6,13 +6,21 @@ namespace WinNetMeterUI.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        private string _title = "WinNetMeter Preview";
+        private string _pagetitle = "General";
+
         private readonly IRegionManager _regionManager;
 
         public string Title
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
+        }
+
+        public string PageTitle
+        {
+            get { return _pagetitle; }
+            set { SetProperty(ref _pagetitle, value); }
         }
 
         public DelegateCommand<string> NavigateCommand { get; set; }
@@ -34,8 +42,7 @@ namespace WinNetMeterUI.ViewModels
 
         private void NavigationComplete(NavigationResult result)
         {
-            //            Title = "Dashboard Internal - " + result.Context.Uri;
-            // System.Windows.MessageBox.Show($"Navigation to {result.Context.Uri} {result.Result}. ");
+            PageTitle = result.Context.Uri.ToString().Replace("Page", "");
         }
     }
 }

@@ -456,8 +456,7 @@
   <PropertyGroup>
     <PostBuildEvent>cd $(TargetDir)
 del *.xml
-del *.pdb
-del x*</PostBuildEvent>
+</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Fody.5.1.1\build\Fody.targets" Condition="Exists('..\packages\Fody.5.1.1\build\Fody.targets')" />
 </Project>

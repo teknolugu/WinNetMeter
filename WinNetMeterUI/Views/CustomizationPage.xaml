@@ -7,36 +7,42 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mvvm="http://prismlibrary.com/"
     xmlns:prism="http://prismlibrary.com/"
-    d:DesignHeight="550"
+    d:DesignHeight="650"
     d:DesignWidth="750"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Background="White"
     mc:Ignorable="d">
     <Grid>
         <colorPickerWpf:ColorPickRow
-            Width="263"
-            Margin="23,70,0,0"
+            Width="276"
+            Margin="10,40,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Options="LoadCustomPalette" />
+        <!--<colorPickerWpf:ColorPickerControl
+            Margin="10,182,31,-12"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />-->
         <Label
             x:Name="label"
-            Margin="23,39,0,0"
+            Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Text Color" />
+            Content="Text Color"
+            Style="{StaticResource LabelCommonCaption}" />
         <ComboBox
             x:Name="comboBox"
             Width="263"
-            Margin="23,142,0,0"
+            Margin="10,123,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" />
         <Label
             x:Name="label1"
-            Margin="23,116,0,0"
+            Margin="10,93,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Fonts" />
+            Content="Fonts"
+            Style="{StaticResource LabelCommonCaption}" />
     </Grid>
 </UserControl>

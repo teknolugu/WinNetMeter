@@ -12,16 +12,15 @@ namespace WinNetMeterUI.Autoloaders
 {
     internal class MainViewAutoloader : IModule
     {
-        public MainViewAutoloader()
-        {
-            // ignored
-        }
-
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<GeneralPage>();
-            containerRegistry.RegisterForNavigation<CustomizationPage>();
             containerRegistry.RegisterForNavigation<AboutPage>();
+            containerRegistry.RegisterForNavigation<CustomizationPage>();
+            containerRegistry.RegisterForNavigation<GeneralPage>();
+            containerRegistry.RegisterForNavigation<IntegrationPage>();
+            containerRegistry.RegisterForNavigation<RecoveryPage>();
+            containerRegistry.RegisterForNavigation<TrafficLogsPage>();
+            containerRegistry.RegisterForNavigation<UpdatePage>();
         }
 
         public void OnInitialized(IContainerProvider containerProvider)

@@ -1,9 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace WinNetMeter.Core.Model
 {
@@ -25,6 +20,7 @@ namespace WinNetMeter.Core.Model
         public static readonly string updateLocation = $@"{baseLocalData}\{companyFolderName}\{updateFolderName}";
         public static readonly string toolBarInstallerLocation = $@"{baseLocalData}\{companyFolderName}\{tempFolderName}\{toolBarInstallerFileName}";
         public static readonly string toolBarUninstallerLocation = $@"{baseLocalData}\{companyFolderName}\{tempFolderName}\{toolBarUninstallerFileName}";
-        public static readonly string shellLocation = $"{baseApp} + WinNetMeter.Shell.dll";
+        public static readonly string appLocation = $"{baseApp}WinNetMeter.exe";
+        public static readonly string shellLocation = $"{baseApp}WinNetMeter.Shell.dll";
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using WinNetMeter.Helper;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
 
@@ -9,11 +8,13 @@ namespace WinNetMeter.UserControls.Pages
 {
     public partial class Customize : UserControl
     {
-        private RegistryManager registryManager = new RegistryManager();
+        private RegistryManager registryManager;
 
         public Customize()
         {
             InitializeComponent();
+
+            registryManager = new RegistryManager();
 
             #region StyleConfiguration
 

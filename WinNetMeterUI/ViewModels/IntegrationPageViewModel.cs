@@ -42,6 +42,9 @@ namespace WinNetMeterUI.ViewModels
             integration.ReinstallToolbar();
             MessageBox.Show("Re-Register Shell Integration Successfully.", "WinNetMeter Integration",
                 MessageBoxButton.OK, MessageBoxImage.Information);
+
+            shellController.hideDeskband();
+            shellController.callDeskband();
         }
 
         private void UninstallShell()

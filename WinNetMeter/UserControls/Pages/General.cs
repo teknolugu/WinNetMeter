@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows.Forms;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
-using WinNetMeter.Helper;
 
 namespace WinNetMeter.UserControls.Pages
 {
@@ -30,7 +29,7 @@ namespace WinNetMeter.UserControls.Pages
                 ListAdapter.SelectedIndex = 0;
             }
 
-            if (ThisApp.IsUwpApp())
+            if (EnvironmentHelper.IsUwpApp())
             {
                 ToggleAutoUpdate.Checked = false;
                 ToggleAutoUpdate.Enabled = false;

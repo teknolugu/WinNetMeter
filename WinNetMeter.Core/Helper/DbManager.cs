@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Windows.Forms;
 
-namespace WinNetMeter.Shell.Helper
+namespace WinNetMeter.Core.Helper
 {
     public class DbManager
     {

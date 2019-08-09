@@ -8,8 +8,7 @@ using System.Windows.Forms;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
 using WinNetMeter.Core.Services;
-using WinNetMeter.Shell.Controller;
-using WinNetMeter.Shell.Helper;
+using WinNetMeter.Core.Controllers;
 
 namespace WinNetMeter.Shell
 {
@@ -118,7 +117,6 @@ namespace WinNetMeter.Shell
 
         private void ConfigureStyle()
         {
-
             Thread styleThread = new Thread(delegate ()
            {
                this.BeginInvoke(new MethodInvoker(delegate ()
@@ -182,11 +180,9 @@ namespace WinNetMeter.Shell
                        pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
                    }
                }));
-
            });
 
             styleThread.Start();
-
         }
 
         #endregion Configuration Loader

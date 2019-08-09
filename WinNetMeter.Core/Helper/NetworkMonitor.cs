@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Timers;
 using System.Runtime.InteropServices;
+using System.Timers;
 using Microsoft.Win32.SafeHandles;
 using WinNetMeter.Core.Controllers;
 
-namespace WinNetMeter.Shell.Helper
+namespace WinNetMeter.Core.Helper
 {
     public class NetworkMonitor : IDisposable
     {

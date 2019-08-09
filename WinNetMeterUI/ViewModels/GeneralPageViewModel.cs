@@ -15,6 +15,7 @@ namespace WinNetMeterUI.ViewModels
         private bool _useAllNetworkAdapter;
 
         private RegistryManager registryManager;
+        private ShellController shellController;
 
         public string SelectedNetworkAdapter
         {
@@ -47,6 +48,7 @@ namespace WinNetMeterUI.ViewModels
         public GeneralPageViewModel()
         {
             registryManager = new RegistryManager();
+            shellController = new ShellController();
 
             EnableNetworkAdapterSelector = !UseAllNetworkAdapter;
 
@@ -73,6 +75,7 @@ namespace WinNetMeterUI.ViewModels
         private void SaveNetworkAdapter(string adapterName)
         {
             registryManager.WriteToRegistry(@"WinNetMeter\General", "MonitoredAdapter", SelectedNetworkAdapter);
+            shellController.RestartShell();
         }
     }
 

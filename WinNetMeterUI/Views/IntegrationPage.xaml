@@ -60,8 +60,8 @@
             VerticalAlignment="Top"
             Focusable="False"
             IsChecked="{Binding ShowShellOnTaskbar}"
+            IsEnabled="{Binding IsShellInstalled}"
             OffLabel="Hide shell"
-            OnLabel="Show Shell"
-            d:LayoutOverrides="VerticalAlignment" />
+            OnLabel="Show Shell" />
     </Grid>
 </UserControl>

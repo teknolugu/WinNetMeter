@@ -13,6 +13,7 @@ namespace WinNetMeterUI.ViewModels
         private ShellController shellController;
         private Integration integration;
         private bool _showShellOnTaskbar;
+        private bool _isShellInstalled;
 
         public bool ShowShellOnTaskbar
         {
@@ -22,6 +23,12 @@ namespace WinNetMeterUI.ViewModels
                 SetProperty(ref _showShellOnTaskbar, value);
                 ShellBehaviour(_showShellOnTaskbar);
             }
+        }
+
+        public bool IsShellInstalled
+        {
+            get { return _isShellInstalled; }
+            set => SetProperty(ref _isShellInstalled, value);
         }
 
         public DelegateCommand RegisterShellCommand { get; set; }
@@ -34,6 +41,9 @@ namespace WinNetMeterUI.ViewModels
 
             RegisterShellCommand = new DelegateCommand(RegisterShell);
             UninstallShellCommand = new DelegateCommand(UninstallShell);
+
+            ShowShellOnTaskbar = shellController.IsShellShown();
+            IsShellInstalled = shellController.IsShellInstalled();
         }
 
         private void RegisterShell()
@@ -42,6 +52,8 @@ namespace WinNetMeterUI.ViewModels
             integration.ReinstallToolbar();
             MessageBox.Show("Re-Register Shell Integration Successfully.", "WinNetMeter Integration",
                 MessageBoxButton.OK, MessageBoxImage.Information);
+
+            IsShellInstalled = shellController.IsShellInstalled();
 
             shellController.hideDeskband();
             shellController.callDeskband();
@@ -53,6 +65,9 @@ namespace WinNetMeterUI.ViewModels
             integration.UninstallToolbar();
             MessageBox.Show("Uninstall Shell Integration Successfully.", "WinNetMeter Integration",
                 MessageBoxButton.OK, MessageBoxImage.Information);
+
+            ShowShellOnTaskbar = false;
+            IsShellInstalled = shellController.IsShellInstalled();
         }
 
         private void ShellBehaviour(bool isShow)

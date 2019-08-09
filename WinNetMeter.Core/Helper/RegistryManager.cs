@@ -10,6 +10,7 @@ namespace WinNetMeter.Core.Helper
         private DatabaseConfiguration dbConfig = new DatabaseConfiguration();
         private StyleConfiguration styleConfig = new StyleConfiguration();
         private RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software", true);
+        private RegistryKey keyClassesRoot;
         private RegistryKey GeneralConfiguration;
         private RegistryKey DatabaseConfiguration;
         private RegistryKey StyleConfiguration;

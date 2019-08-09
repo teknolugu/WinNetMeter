@@ -68,7 +68,7 @@ namespace WinNetMeter.UserControls.Pages
 
         private void CheckIsShellActive()
         {
-            if (shellControlller.IsShellShown() == 0)
+            if (shellControlller.IsShellShown())
             {
                 lblStatus.Text = "Active";
                 lblStatus.ForeColor = System.Drawing.Color.Green;

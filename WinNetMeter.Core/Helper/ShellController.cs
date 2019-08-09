@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
 namespace WinNetMeter.Core.Helper
 {
     public class ShellController
     {
+        private RegistryManager registryManager;
         private int hr;
         private Guid deskbandGuid = new Guid("0F0283BE-FADD-4EAA-9984-9C1822AE469A");
 
@@ -25,6 +27,11 @@ namespace WinNetMeter.Core.Helper
             int DeskBandRegistrationChanged();
         }
 
+        public ShellController()
+        {
+            registryManager = new RegistryManager();
+        }
+
         public void callDeskband()
         {
             ITrayDeskband obj = null;
@@ -40,7 +47,6 @@ namespace WinNetMeter.Core.Helper
             }
             catch
             {
-                
             }
             finally
             {
@@ -64,7 +70,6 @@ namespace WinNetMeter.Core.Helper
             }
             catch (Exception e)
             {
-                
             }
             finally
             {
@@ -73,14 +78,26 @@ namespace WinNetMeter.Core.Helper
             }
         }
 
-        public int IsShellShown()
+        public bool IsShellShown()
         {
             ITrayDeskband obj = null;
             Type trayDeskbandType = System.Type.GetTypeFromCLSID(new Guid("E6442437-6C68-4f52-94DD-2CFED267EFB9"));
 
             obj = (ITrayDeskband)Activator.CreateInstance(trayDeskbandType);
             obj.DeskBandRegistrationChanged();
-            return obj.IsDeskBandShown(ref deskbandGuid);
+            var cek = obj.IsDeskBandShown(ref deskbandGuid);
+            return cek == 0;
+        }
+
+        public bool IsShellInstalled()
+        {
+            RegistryKey shellClassRoot = Registry.ClassesRoot.OpenSubKey("WinNetMeter.Shell.Deskband");
+            return shellClassRoot != null && shellClassRoot.ValueCount == 1;
+        }
+
+        public void RestartShell()
+        {
+            NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
         }
     }
 }

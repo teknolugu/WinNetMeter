@@ -185,6 +185,9 @@
       <Name>WinNetMeter.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

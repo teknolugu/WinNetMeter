@@ -13,6 +13,7 @@
     SaveWindowPosition="True">
     <Grid>
         <StackPanel
+            Name="StackPanelMenu"
             Width="183"
             Margin="10,86,0,60"
             HorizontalAlignment="Left">
@@ -20,6 +21,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="GeneralPage"
                 Content="General"
@@ -29,6 +31,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="CustomizationPage"
                 Content="Customization"
@@ -38,6 +41,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="TrafficLogsPage"
                 Content="Traffic Logs"
@@ -47,6 +51,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="UpdatePage"
                 Content="Update"
@@ -56,6 +61,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="RecoveryPage"
                 Content="Recovery"
@@ -65,6 +71,7 @@
                 Width="171"
                 Height="40"
                 Margin="2,2,0,2"
+                Click="ButtonMenu_OnClick"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="IntegrationPage"
                 Content="Integration"
@@ -85,6 +92,7 @@
             Margin="14,0,0,10"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
+            Click="ButtonMenu_OnClick"
             Command="{Binding NavigateCommand}"
             CommandParameter="AboutPage"
             Content="About"

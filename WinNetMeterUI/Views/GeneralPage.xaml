@@ -49,7 +49,7 @@
             Margin="10,172,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Network Adapter"
+            Content="Network Adapter (Shell will blinked)"
             FontSize="18" />
         <mah:ToggleSwitch
             Width="120"

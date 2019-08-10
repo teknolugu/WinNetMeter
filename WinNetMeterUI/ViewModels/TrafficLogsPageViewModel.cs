@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Mvvm;
-using WinNetMeter.Core;
+using System;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
 
@@ -34,7 +33,7 @@ namespace WinNetMeterUI.ViewModels
             set
             {
                 SetProperty(ref _isEnableLogs, value);
-                registryManager.WriteToRegistry(@"WinNetMeter\Database", "EnableTrafficLog", value.ToString());
+                registryManager.WriteToRegistry(@"WinNetMeter\Database", "TrafficLogging", value.ToString());
             }
         }
 

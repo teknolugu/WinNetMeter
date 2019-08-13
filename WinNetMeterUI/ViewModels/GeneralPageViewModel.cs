@@ -10,6 +10,8 @@ namespace WinNetMeterUI.ViewModels
 {
     public class GeneralPageViewModel : BindableBase
     {
+        private bool _enableNetworkMonitoring;
+        private bool _enableAutoUpdates;
         private string _selectedNetworkAdapter;
         private bool _enableNetworkAdapterSelector;
         private bool _useAllNetworkAdapter;
@@ -17,13 +19,34 @@ namespace WinNetMeterUI.ViewModels
         private RegistryManager registryManager;
         private ShellController shellController;
 
+        public bool EnableNetworkMonitoring
+        {
+            get => _enableNetworkMonitoring;
+            set
+            {
+                SetProperty(ref _enableNetworkMonitoring, value);
+                registryManager.WriteToRegistry(@"WinNetMeter\General", "Monitoring", value.ToString());
+            }
+        }
+
+        public bool EnableAutoUpdates
+        {
+            get => _enableNetworkMonitoring;
+            set
+            {
+                SetProperty(ref _enableAutoUpdates, value);
+                registryManager.WriteToRegistry(@"WinNetMeter\General", "AutoUpdate", value.ToString());
+            }
+        }
+
         public string SelectedNetworkAdapter
         {
             get { return _selectedNetworkAdapter; }
             set
             {
                 SetProperty(ref _selectedNetworkAdapter, value);
-                SaveNetworkAdapter(value);
+                registryManager.WriteToRegistry(@"WinNetMeter\General", "MonitoredAdapter", value);
+                shellController.RestartShell();
             }
         }
 
@@ -51,6 +74,8 @@ namespace WinNetMeterUI.ViewModels
             shellController = new ShellController();
 
             EnableNetworkAdapterSelector = !UseAllNetworkAdapter;
+            EnableNetworkMonitoring = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "Monitoring"));
+            EnableAutoUpdates = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "AutoUpdate"));
 
             LoadNetworkAdapter();
         }

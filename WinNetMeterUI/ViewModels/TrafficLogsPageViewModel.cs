@@ -33,19 +33,28 @@ namespace WinNetMeterUI.ViewModels
             set
             {
                 SetProperty(ref _isEnableLogs, value);
-                registryManager.WriteToRegistry(@"WinNetMeter\Database", "TrafficLogging", value.ToString());
             }
         }
 
         public DelegateCommand ChangePathCommand { get; set; }
+        public DelegateCommand SaveEnableTrafficLogCommand { get; set; }
+        public DelegateCommand SaveDbPathCommand { get; set; }
 
         public TrafficLogsPageViewModel()
         {
             registryManager = new RegistryManager();
 
-            IsEnableLogs = Convert.ToBoolean(registryManager.ReadFromRegistry("WinNetMeter", "TrafficLogging"));
-
             ChangePathCommand = new DelegateCommand(OpenDialog);
+            SaveEnableTrafficLogCommand = new DelegateCommand(SaveEnableTrafficLog);
+            SaveDbPathCommand = new DelegateCommand(OnViewLoaded);
+
+            IsEnableLogs = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\Database", "TrafficLogging"));
+            SelectedPath = registryManager.ReadFromRegistry(@"WinNetMeter\Database", "DbFilePath").ToString();
+        }
+
+        private void OnViewLoaded()
+        {
+            registryManager.WriteToRegistry(@"WinNetMeter\Database", "TrafficLogging", IsEnableLogs.ToString());
         }
 
         private void OpenDialog()
@@ -64,6 +73,11 @@ namespace WinNetMeterUI.ViewModels
             {
                 EventLog.WriteLog("Nothing path selected");
             }
+        }
+
+        private void SaveEnableTrafficLog()
+        {
+            registryManager.WriteToRegistry(@"WinNetMeter\Database", "TrafficLogging", IsEnableLogs.ToString());
         }
     }
 }

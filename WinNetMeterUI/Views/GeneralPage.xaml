@@ -27,12 +27,11 @@
         <mah:ToggleSwitch
             Width="120"
             Margin="10,39,0,0"
-            IsChecked="{Binding IsEnableLogs}" />
+            IsChecked="{Binding EnableNetworkMonitoring}" />
         <mah:ToggleSwitch
             Width="120"
-            Height="38"
             Margin="10,108,0,0"
-            IsChecked="{Binding IsEnableLogs}" />
+            IsChecked="{Binding EnableAutoUpdates}" />
         <ListBox
             Width="500"
             Height="120"

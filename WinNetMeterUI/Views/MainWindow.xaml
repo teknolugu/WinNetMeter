@@ -10,7 +10,8 @@
     MinWidth="750"
     MinHeight="520"
     prism:ViewModelLocator.AutoWireViewModel="True"
-    SaveWindowPosition="True">
+    SaveWindowPosition="True"
+    TitleCharacterCasing="Normal">
     <Grid>
         <StackPanel
             Name="StackPanelMenu"

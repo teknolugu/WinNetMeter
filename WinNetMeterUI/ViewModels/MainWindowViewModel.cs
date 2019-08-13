@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using WinNetMeterUI.Helpers;
 
 namespace WinNetMeterUI.ViewModels
 {
@@ -13,14 +14,14 @@ namespace WinNetMeterUI.ViewModels
 
         public string Title
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get => _title;
+            set => SetProperty(ref _title, value);
         }
 
         public string PageTitle
         {
-            get { return _pagetitle; }
-            set { SetProperty(ref _pagetitle, value); }
+            get => _pagetitle;
+            set => SetProperty(ref _pagetitle, value);
         }
 
         public DelegateCommand<string> NavigateCommand { get; set; }
@@ -30,6 +31,11 @@ namespace WinNetMeterUI.ViewModels
             _regionManager = regionManager;
 
             NavigateCommand = new DelegateCommand<string>(DoNavigate);
+
+            if (!Env.IsProd())
+            {
+                Title += " (Internal)";
+            }
         }
 
         private void DoNavigate(string navigatePath)

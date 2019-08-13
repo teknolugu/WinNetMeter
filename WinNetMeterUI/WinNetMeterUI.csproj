@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\Env.cs" />
     <Compile Include="Interfaces\IOService.cs" />
     <Compile Include="ViewModels\IntegrationPageViewModel.cs" />
     <Compile Include="ViewModels\RecoveryPageViewModel.cs" />
@@ -185,9 +186,7 @@
       <Name>WinNetMeter.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>

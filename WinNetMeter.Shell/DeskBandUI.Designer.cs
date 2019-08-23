@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             this.timerAuto = new System.Windows.Forms.Timer();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +41,8 @@
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.LblDownload = new WinNetMeter.Shell.MyLabel();
             this.LblUpload = new WinNetMeter.Shell.MyLabel();
-            this.timerTrafficLog = new System.Windows.Forms.Timer(this.components);
+            this.timerTrafficLog = new System.Windows.Forms.Timer();
+            this.MonitorStyle = new System.Windows.Forms.Timer();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictUpload)).BeginInit();
@@ -162,7 +162,7 @@
             this.timerTrafficLog.Interval = 1000;
             this.timerTrafficLog.Tick += new System.EventHandler(this.TimerTrafficLog_Tick);
             // 
-            // UserControl1
+            // DeskBandUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -173,9 +173,11 @@
             this.Controls.Add(this.LblDownload);
             this.Controls.Add(this.pictUpload);
             this.Controls.Add(this.pictDownload);
-            this.Name = "UserControl1";
+            this.Name = "DeskBandUI";
             this.Size = new System.Drawing.Size(111, 38);
             this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.MouseLeave += new System.EventHandler(this.DeskBandUI_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.DeskBandUI_MouseHover);
             this.Resize += new System.EventHandler(this.UserControl1_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).EndInit();
@@ -199,5 +201,6 @@
         private MyLabel LblDownload;
         private MyLabel LblUpload;
         private System.Windows.Forms.Timer timerTrafficLog;
+        private System.Windows.Forms.Timer MonitorStyle;
     }
 }

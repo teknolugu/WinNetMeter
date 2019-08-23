@@ -81,6 +81,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -100,6 +101,7 @@
     <Compile Include="Helper\NativeMethods.cs" />
     <Compile Include="Helper\NetworkMonitor.cs" />
     <Compile Include="Helper\Numeric.cs" />
+    <Compile Include="Helper\ThemeMonitor.cs" />
     <Compile Include="Model\TrafficLog.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

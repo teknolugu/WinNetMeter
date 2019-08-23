@@ -14,7 +14,13 @@ namespace WinNetMeterUI.Autoloaders
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<AboutPage>();
+            containerRegistry.RegisterForNavigation<CustomizationPage>();
             containerRegistry.RegisterForNavigation<GeneralPage>();
+            containerRegistry.RegisterForNavigation<IntegrationPage>();
+            containerRegistry.RegisterForNavigation<RecoveryPage>();
+            containerRegistry.RegisterForNavigation<TrafficLogsPage>();
+            containerRegistry.RegisterForNavigation<UpdatePage>();
         }
 
         public void OnInitialized(IContainerProvider containerProvider)

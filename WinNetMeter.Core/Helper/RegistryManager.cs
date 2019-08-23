@@ -174,13 +174,5 @@ namespace WinNetMeter.Core.Helper
             var exeKey = key.OpenSubKey(@path, true);
             return exeKey.GetValue(keyReg);
         }
-        public Theme GetTheme()
-        {
-            var Personalize = key.OpenSubKey(@"Microsoft\Windows\CurrentVersion\Themes\Personalize");
-
-            return (Theme)Personalize.GetValue("SystemUsesLightTheme");
-        }
-
-        
     }
 }

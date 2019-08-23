@@ -46,7 +46,6 @@
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,7 +70,6 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\PathInfo.cs" />
     <Compile Include="Model\StyleConfiguration.cs" />
-    <Compile Include="Model\Theme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DbConnection.cs" />
     <Compile Include="Services\TrafficLogs.cs" />
@@ -81,19 +79,10 @@
     <Compile Include="Views\FormUpdater.Designer.cs">
       <DependentUpon>FormUpdater.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmFlyOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FrmFlyOut.Designer.cs">
-      <DependentUpon>FrmFlyOut.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\FormUpdater.resx">
       <DependentUpon>FormUpdater.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmFlyOut.resx">
-      <DependentUpon>FrmFlyOut.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

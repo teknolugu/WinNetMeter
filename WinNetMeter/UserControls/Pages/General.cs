@@ -101,6 +101,5 @@ namespace WinNetMeter.UserControls.Pages
                 }
             }
         }
-
     }
 }

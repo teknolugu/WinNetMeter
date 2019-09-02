@@ -71,6 +71,7 @@
     <Compile Include="Helper\RegistryManager.cs" />
     <Compile Include="Helper\ShellController.cs" />
     <Compile Include="Helper\TaskBarHelper.cs" />
+    <Compile Include="Helper\ThemeMonitor.cs" />
     <Compile Include="Model\Configuration.cs" />
     <Compile Include="Model\ConfigurationType.cs" />
     <Compile Include="Model\DatabaseConfiguration.cs" />

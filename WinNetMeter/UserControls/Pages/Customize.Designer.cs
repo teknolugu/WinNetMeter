@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.ToggleMonitor = new MetroFramework.Controls.MetroToggle();
+            this.ToggleAdaptive = new MetroFramework.Controls.MetroToggle();
             this.colorGrid1 = new Cyotek.Windows.Forms.ColorGrid();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.ToggleMonitor);
+            this.panel2.Controls.Add(this.ToggleAdaptive);
             this.panel2.Controls.Add(this.colorGrid1);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
@@ -92,16 +92,16 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Adaptive style";
             // 
-            // ToggleMonitor
+            // ToggleAdaptive
             // 
-            this.ToggleMonitor.AutoSize = true;
-            this.ToggleMonitor.Enabled = false;
-            this.ToggleMonitor.Location = new System.Drawing.Point(434, 7);
-            this.ToggleMonitor.Name = "ToggleMonitor";
-            this.ToggleMonitor.Size = new System.Drawing.Size(80, 17);
-            this.ToggleMonitor.TabIndex = 41;
-            this.ToggleMonitor.Text = "Off";
-            this.ToggleMonitor.UseSelectable = true;
+            this.ToggleAdaptive.AutoSize = true;
+            this.ToggleAdaptive.Location = new System.Drawing.Point(434, 7);
+            this.ToggleAdaptive.Name = "ToggleAdaptive";
+            this.ToggleAdaptive.Size = new System.Drawing.Size(80, 17);
+            this.ToggleAdaptive.TabIndex = 41;
+            this.ToggleAdaptive.Text = "Off";
+            this.ToggleAdaptive.UseSelectable = true;
+            this.ToggleAdaptive.CheckedChanged += new System.EventHandler(this.ToggleAdaptive_CheckedChanged);
             // 
             // colorGrid1
             // 
@@ -297,6 +297,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSaveStyle;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroToggle ToggleMonitor;
+        private MetroFramework.Controls.MetroToggle ToggleAdaptive;
     }
 }

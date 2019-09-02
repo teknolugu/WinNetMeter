@@ -33,6 +33,10 @@ namespace WinNetMeter.UserControls.Pages
 
             if (ComboboxFont.Items.Contains("")) ComboboxFont.Items.Remove("");
 
+            ToggleAdaptive.Checked = styleConfig.Adaptive;
+
+            var isAdaptiveChecked = ToggleAdaptive.Checked ? colorGrid1.Enabled = false : colorGrid1.Enabled = true;
+
             #endregion StyleConfiguration
         }
 
@@ -46,8 +50,9 @@ namespace WinNetMeter.UserControls.Pages
             {
                 StyleConfiguration styleConfiguration = new StyleConfiguration
                 {
+                    Adaptive = ToggleAdaptive.Checked,
                     TextColor = ColorTranslator.ToHtml(colorGrid1.Color),
-                    FontFamily = ComboboxFont.SelectedItem.ToString(),
+                    FontFamily = ComboboxFont.SelectedItem.ToString()
                 };
 
                 if (radioPictArrow.Checked == true) styleConfiguration.Icon = IconStyle.Arrow;
@@ -66,6 +71,11 @@ namespace WinNetMeter.UserControls.Pages
                 NativeMethods.PostMessage(new IntPtr(Convert.ToInt32(registryManager.GetHwnd())), NativeMethods.WM_RESTART, IntPtr.Zero, IntPtr.Zero);
             }
             catch { }
+        }
+
+        private void ToggleAdaptive_CheckedChanged(object sender, EventArgs e)
+        {
+            var isChecked = ToggleAdaptive.Checked ? colorGrid1.Enabled = false : colorGrid1.Enabled = true;
         }
     }
 }

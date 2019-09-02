@@ -339,3 +339,7 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /Premastering
+
+WinNetMeter.Installer/WinNetMeter.Installer-cache/
+
+WinNetMeter.Installer/WinNetMeter.Installer-SetupFiles/

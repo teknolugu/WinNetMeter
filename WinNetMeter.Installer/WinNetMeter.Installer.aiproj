@@ -1,0 +1,79 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>019787d8-736f-4f01-b4c6-6005a8981f72</ProjectGuid>
+    <OutputType>msi</OutputType>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>WinNetMeter.Installer.aip</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <AssemblyName>WinNetMeter.Installer</AssemblyName>
+    <Name>WinNetMeter.Installer</Name>
+    <RootNamespace>WinNetMeter.Installer</RootNamespace>
+    <LoadFromTemplate>
+    </LoadFromTemplate>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' ">
+    <DebugAppId>WinNetMeter</DebugAppId>
+    <DebugArchitecture />
+    <OutputPath>D:\Projek\CS.NET\WinTenGroup\WinNetMeter\Build\Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildUwpAppX' " />
+  <PropertyGroup Condition=" '$(Configuration)' == 'All' ">
+    <OutputPath>D:\Projek\CS.NET\WinTenGroup\WinNetMeter\Build\Premastering</OutputPath>
+    <DebugAppId>WinNetMeter</DebugAppId>
+    <DebugArchitecture />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="WinNetMeter.Installer.aip">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Updater\Updater.csproj">
+      <Name>Updater</Name>
+      <Project>{8efae16e-dd5f-49ea-9c82-6c4a2c6e01e0}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\WinNetMeter.Core\WinNetMeter.Core.csproj">
+      <Name>WinNetMeter.Core</Name>
+      <Project>{de5e5f74-6f2f-444f-a376-0cc32e9509ce}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\WinNetMeter.Shell\WinNetMeter.Shell.csproj">
+      <Name>WinNetMeter.Shell</Name>
+      <Project>{ba5bbede-037d-4518-bfb4-c95c003585fb}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\WinNetMeterUI\WinNetMeterUI.csproj">
+      <Name>WinNetMeterUI</Name>
+      <Project>{d5e6273f-1c60-4a8b-9650-992a7c6d381a}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput</OutputsToImport>
+    </ProjectReference>
+    <ProjectReference Include="..\WinNetMeter\WinNetMeter.csproj">
+      <Name>WinNetMeter</Name>
+      <Project>{320d7488-f517-443c-b134-6b7ab9a4a725}</Project>
+      <Private>True</Private>
+      <OutputsToImport>PrimaryOutput</OutputsToImport>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="Build">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Rebuild">
+    <Error Text="This project requires Advanced Installer tool. Please download it from https://www.advancedinstaller.com/download.html" />
+  </Target>
+  <Target Name="Clean">
+  </Target>
+  <Target Name="ResolveAssemblyReferences">
+  </Target>
+  <Import Condition="'$(AdvancedInstallerMSBuildTargets)' != ''" Project="$(AdvancedInstallerMSBuildTargets)\AdvInstExtTasks.Targets" />
+  <Import Condition="('$(AdvancedInstallerMSBuildTargets)' == '') And (Exists('$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets'))" Project="$(MSBuildExtensionsPath32)\Caphyon\Advanced Installer\AdvInstExtTasks.Targets" />
+</Project>

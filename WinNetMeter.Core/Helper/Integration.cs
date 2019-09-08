@@ -177,7 +177,7 @@ namespace WinNetMeter.Core.Helper
                 WriteBatFile("exit", true, FileType.Uninstaller);
             }
 
-            runBat("toolbarUninstaller.bat");
+            //runBat("toolbarUninstaller.bat");
         }
 
         private void runBat(string fileName)

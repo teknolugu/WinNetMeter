@@ -61,6 +61,12 @@ WinNetMeter adalah Aplikasi yang dapat menampilkan kecepatan lalu lintas data ja
   - [WinNetMeter-1.0.7149.24681-Setup.exe](https://github.com/WinTenDev/WinNetMeter/releases/download/v1.0.7149.24681/WinNetMeter-1.0.7149.24681-Setup.exe) - [Catatan rilis](https://github.com/WinTenDev/WinNetMeter/releases/tag/v1.0.7149.24681)
   - [WinNetMeter-1.0.7132.25594-Setup.exe](https://github.com/WinTenDev/WinNetMeter/releases/download/v1.0.7132.25594/WinNetMeter-1.0.7132.25594-Setup.exe) - [Catatan rilis](https://github.com/WinTenDev/WinNetMeter/releases/tag/v1.0.7132.25594)
 
+## Requirement to build
+- [Visual Studio minimum Community Version 2015](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+- [.NET Framework Developer Pack 4.7.2](https://dotnet.microsoft.com/download/thank-you/net472-developer-pack)
+- [Prism Template Pack](http://prismlibrary.github.io/https://visualstudiogallery.msdn.microsoft.com/e7b6bde2-ba59-43dd-9d14-58409940ffa0)
+- [Advanced Installer tool](https://www.advancedinstaller.com/download.html)
+
 ## Bug Report
 
 If you find a bug, kindly open an issue [here](https://github.com/WinTenDev/WinNetMeter/issues/new).

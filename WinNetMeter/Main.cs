@@ -108,6 +108,7 @@ namespace WinNetMeter
 
         private void Main_Load(object sender, EventArgs e)
         {
+
             var args = Environment.GetCommandLineArgs();
             try
             {

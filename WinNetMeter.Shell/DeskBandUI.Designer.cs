@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.timerAuto = new System.Windows.Forms.Timer();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.timerAuto = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitoringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerKB = new System.Windows.Forms.Timer();
-            this.timerMB = new System.Windows.Forms.Timer();
+            this.timerKB = new System.Windows.Forms.Timer(this.components);
+            this.timerMB = new System.Windows.Forms.Timer(this.components);
             this.pictDownload = new System.Windows.Forms.PictureBox();
             this.pictUpload = new System.Windows.Forms.PictureBox();
             this.LblDownload = new WinNetMeter.Shell.MyLabel();
@@ -162,7 +162,7 @@
             this.timerTrafficLog.Interval = 1000;
             this.timerTrafficLog.Tick += new System.EventHandler(this.TimerTrafficLog_Tick);
             // 
-            // UserControl1
+            // DeskBandUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.LblDownload);
             this.Controls.Add(this.pictUpload);
             this.Controls.Add(this.pictDownload);
-            this.Name = "UserControl1";
+            this.Name = "DeskBandUI";
             this.Size = new System.Drawing.Size(111, 38);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.Resize += new System.EventHandler(this.UserControl1_Resize);

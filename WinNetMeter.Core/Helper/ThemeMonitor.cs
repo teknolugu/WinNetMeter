@@ -21,7 +21,6 @@ namespace WinNetMeter.Core.Helper
         public ThemeMonitor()
         {
             registryManager = new RegistryManager();
-            MessageBox.Show(path);
         }
 
         private EventHandler onThemeChanged;
@@ -49,10 +48,6 @@ namespace WinNetMeter.Core.Helper
 
         public void Start()
         {
-            //WindowsIdentity currentUser = WindowsIdentity.GetCurrent();
-            /*query = new WqlEventQuery("SELECT * FROM RegistryTreeChangeEvent WHERE " +
-               "Hive = 'HKEY_USERS'" +
-              @"AND RootPath = '" + currentUser.User.Value + "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize'");*/
             WindowsIdentity currentUser = WindowsIdentity.GetCurrent();
             query = new WqlEventQuery("SELECT * FROM RegistryTreeChangeEvent WHERE " +
                             "Hive = 'HKEY_USERS' " +
@@ -65,7 +60,7 @@ namespace WinNetMeter.Core.Helper
 
         public WindowsTheme GetTheme()
         {
-            var theme = registryManager.ReadFromRegistry(path, "SystemUsesLightTheme");
+            var theme = registryManager.ReadFromRegistry(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme");
             return (WindowsTheme)theme;
         }
 

@@ -8,6 +8,7 @@ using System.Threading;
 using System.Windows.Forms;
 using WinNetMeter.Core.Controllers;
 using WinNetMeter.Core.Helper;
+using WinNetMeter.Shell.Controller;
 using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Shell
@@ -25,21 +26,35 @@ namespace WinNetMeter.Shell
         private Configuration configuration;
         private ThemeMonitor themeMonitor;
         private WindowsTheme theme;
+        private InterfaceController interfaceController = new InterfaceController();
+
+        public static PictureBox UploadIcon;
+        public static PictureBox DownloadIcon;
+        public static Label DownloadLabel;
+        public static Label UploadLabel;
+
+ 
 
         #endregion Declaration Variable
 
         public DeskBandUI(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
+
+            DownloadLabel = this.LblDownload;
+            UploadLabel = this.LblUpload;
+            UploadIcon = this.pictUpload;
+            DownloadIcon = this.pictDownload;
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
-            MessageBox.Show(registryManager.ReadFromRegistry(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme").ToString());
+            //MessageBox.Show(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            //Clipboard.SetText(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            //MessageBox.Show(registryManager.ReadFromRegistry(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme").ToString());
             registryManager.SaveHwnd(this.Handle.ToString());
 
-            // Let's Initialize Configuration
+            // Initialize Configuration
             BackgroundWorker ConfigurationLoader = new BackgroundWorker();
             ConfigurationLoader.DoWork += OnGettingConfiguration;
             ConfigurationLoader.RunWorkerCompleted += OnConfigurationLoaded;
@@ -51,8 +66,9 @@ namespace WinNetMeter.Shell
             BeginInvoke(new MethodInvoker(delegate ()
             {
                 configuration = registryManager.GetGeneralConfiguration();
-                Style = registryManager.GetStyleConfiguration();
             }));
+
+            Style = registryManager.GetStyleConfiguration();
         }
 
         private void OnConfigurationLoaded(object sender, RunWorkerCompletedEventArgs e)
@@ -61,7 +77,6 @@ namespace WinNetMeter.Shell
 
             if (Style.Adaptive)
             {
-                MessageBox.Show("yes is adaptive");
                 themeMonitor = new ThemeMonitor();
                 themeMonitor.OnThemeChanged += OnThemeChanged;
 
@@ -73,15 +88,14 @@ namespace WinNetMeter.Shell
 
         private void OnThemeChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("theme changed");
             this.theme = themeMonitor.GetTheme();
             switch (theme)
             {
                 case WindowsTheme.Dark:
-                    MessageBox.Show("theme is dark");
+                    interfaceController.darkTheme(Style);
                     break;
                 case WindowsTheme.Light:
-                    MessageBox.Show("theme is light");
+                    interfaceController.lightTheme(Style);
                     break;
             }
         }
@@ -91,11 +105,6 @@ namespace WinNetMeter.Shell
             var taskBar = new TaskBarHelper();
             Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
             return taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
-        }
-
-        private void ApplyTheme(WindowsTheme theme)
-        {
-
         }
 
         #region Core Controller

@@ -175,7 +175,7 @@
             this.Controls.Add(this.pictDownload);
             this.Name = "DeskBandUI";
             this.Size = new System.Drawing.Size(111, 38);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.Load += new System.EventHandler(this.DeskBandUI_Load);
             this.Resize += new System.EventHandler(this.UserControl1_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictDownload)).EndInit();

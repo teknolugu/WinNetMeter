@@ -32,7 +32,7 @@ namespace WinNetMeter.Shell
         public static PictureBox DownloadIcon;
         public static Label DownloadLabel;
         public static Label UploadLabel;
-
+        public static UserControl deskUI;
  
 
         #endregion Declaration Variable
@@ -45,21 +45,10 @@ namespace WinNetMeter.Shell
             UploadLabel = this.LblUpload;
             UploadIcon = this.pictUpload;
             DownloadIcon = this.pictDownload;
+            deskUI = this;
+
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-            //MessageBox.Show(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
-            //Clipboard.SetText(Registry.CurrentUser + @"\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
-            //MessageBox.Show(registryManager.ReadFromRegistry(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme").ToString());
-            registryManager.SaveHwnd(this.Handle.ToString());
-
-            // Initialize Configuration
-            BackgroundWorker ConfigurationLoader = new BackgroundWorker();
-            ConfigurationLoader.DoWork += OnGettingConfiguration;
-            ConfigurationLoader.RunWorkerCompleted += OnConfigurationLoaded;
-            ConfigurationLoader.RunWorkerAsync();
-        }
 
         private void OnGettingConfiguration(object sender, DoWorkEventArgs e)
         {
@@ -75,36 +64,37 @@ namespace WinNetMeter.Shell
         {
             ApplyConfig();
 
+            interfaceController.Style = this.Style;
+            interfaceController.InitializeStyle();
+
+
             if (Style.Adaptive)
             {
                 themeMonitor = new ThemeMonitor();
                 themeMonitor.OnThemeChanged += OnThemeChanged;
 
-                themeMonitor.Start();
+                themeMonitor.Start();   
             }
 
-            ApplyStyle();
         }
 
         private void OnThemeChanged(object sender, EventArgs e)
+        {
+            CheckTheme();
+        }
+
+        private void CheckTheme()
         {
             this.theme = themeMonitor.GetTheme();
             switch (theme)
             {
                 case WindowsTheme.Dark:
-                    interfaceController.darkTheme(Style);
+                    interfaceController.darkTheme();
                     break;
                 case WindowsTheme.Light:
-                    interfaceController.lightTheme(Style);
+                    interfaceController.lightTheme();
                     break;
             }
-        }
-
-        private bool IsTaskBarDark()
-        {
-            var taskBar = new TaskBarHelper();
-            Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
-            return taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
         }
 
         #region Core Controller
@@ -120,13 +110,8 @@ namespace WinNetMeter.Shell
 
         private void RestartDesk()
         {
-            this.Controls.Clear();
-            InitializeComponent();
-
             killTimer();
-            ApplyConfig();
-
-            ApplyStyle();
+            this.RunConfigurationLoader();
         }
 
         private void killTimer()
@@ -134,13 +119,21 @@ namespace WinNetMeter.Shell
             timerAuto.Stop();
             timerKB.Stop();
             timerMB.Stop();
-
             try
             {
                 monitor.Stop();
                 monitor.Dispose();
             }
             catch { }
+        }
+
+        private void RunConfigurationLoader()
+        {
+
+            BackgroundWorker ConfigurationLoader = new BackgroundWorker();
+            ConfigurationLoader.DoWork += OnGettingConfiguration;
+            ConfigurationLoader.RunWorkerCompleted += OnConfigurationLoaded;
+            ConfigurationLoader.RunWorkerAsync();
         }
 
         #endregion Core Controller
@@ -191,58 +184,7 @@ namespace WinNetMeter.Shell
             }
         }
 
-        private void ApplyStyle()
-        {
-            Thread styleThread = new Thread(delegate ()
-            {
-                this.BeginInvoke(new MethodInvoker(delegate ()
-                {
-                    this.BackColor = ColorTranslator.FromHtml("#000");
-
-                    LblUpload.ForeColor = ColorTranslator.FromHtml(Style.TextColor);
-                    LblDownload.ForeColor = LblUpload.ForeColor;
-
-                    LblUpload.Font = new Font(Style.FontFamily, LblUpload.Font.Size);
-                    LblDownload.Font = LblUpload.Font;
-
-                    bool IsDark = this.IsTaskBarDark();
-
-                    if (Style.Icon == IconStyle.Arrow && IsDark)
-                    {
-                        pictUpload.Image = Properties.Resources.up_white_16px;
-                        pictDownload.Image = Properties.Resources.down_white_16px;
-                    }
-                    else if (Style.Icon == IconStyle.Arrow && IsDark == false)
-                    {
-                        pictUpload.Image = Properties.Resources.up_black_16px;
-                        pictDownload.Image = Properties.Resources.down_black_16px;
-                    }
-                    else if (Style.Icon == IconStyle.Outline_Arrow && IsDark)
-                    {
-                        pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
-                        pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
-                    }
-                    else if (Style.Icon == IconStyle.Outline_Arrow && IsDark == false)
-                    {
-                        pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
-                        pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
-                    }
-                    else if (Style.Icon == IconStyle.TriangleArrow && IsDark)
-                    {
-                        pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
-                        pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
-                    }
-                    else if (Style.Icon == IconStyle.TriangleArrow && IsDark == false)
-                    {
-                        pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
-                        pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
-                    }
-                }));
-            });
-
-            styleThread.Start();
-        }
-
+      
         #endregion ApplyConfiguration
 
         #region Timer
@@ -323,6 +265,14 @@ namespace WinNetMeter.Shell
         private void UserControl1_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
+        }
+
+        private void DeskBandUI_Load(object sender, EventArgs e)
+        {
+            registryManager.SaveHwnd(this.Handle.ToString());
+
+            // Initialize Configuration
+            this.RunConfigurationLoader();
         }
     }
 

@@ -69,9 +69,10 @@ namespace WinNetMeter.Shell
 
 
             if (Style.Adaptive)
-            {
+            { 
                 themeMonitor = new ThemeMonitor();
                 themeMonitor.OnThemeChanged += OnThemeChanged;
+                CheckTheme();
 
                 themeMonitor.Start();   
             }

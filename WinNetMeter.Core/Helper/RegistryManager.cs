@@ -132,7 +132,9 @@ namespace WinNetMeter.Core.Helper
 
         public StyleConfiguration GetStyleConfiguration()
         {
-           styleConfig.Adaptive = Convert.ToBoolean(StyleConfiguration.GetValue("Adaptive").ToString());
+            if(StyleConfiguration.GetValue("Adaptive").ToString() != null) {
+                styleConfig.Adaptive = Convert.ToBoolean(StyleConfiguration.GetValue("Adaptive").ToString());
+            } 
             styleConfig.TextColor = StyleConfiguration.GetValue("TextColor").ToString();
             styleConfig.FontFamily = StyleConfiguration.GetValue("Font").ToString();
             styleConfig.Icon = (IconStyle)Enum.Parse(typeof(IconStyle), StyleConfiguration.GetValue("Icon").ToString());

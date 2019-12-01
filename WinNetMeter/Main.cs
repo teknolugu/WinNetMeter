@@ -13,6 +13,9 @@ namespace WinNetMeter
 
         private static FormWindowState state;
 
+        private RegistryManager registryManager;
+        private Integration integration;
+
         public static FormWindowState State
         {
             get
@@ -33,6 +36,9 @@ namespace WinNetMeter
         public Main()
         {
             InitializeComponent();
+            registryManager = new RegistryManager();
+            integration = new Integration();
+
             CleaningOnStartup();
 
             main = this;
@@ -108,7 +114,6 @@ namespace WinNetMeter
 
         private void Main_Load(object sender, EventArgs e)
         {
-
             var args = Environment.GetCommandLineArgs();
             try
             {
@@ -123,12 +128,10 @@ namespace WinNetMeter
         private void CleaningOnStartup()
         {
             PanelMainMenu.Width = 247;
-            Integration integration = new Integration();
             integration.MakeUninstaller();
 
             FileHelper.DeleteAllIn(Environment.CurrentDirectory, "*.old");
 
-            RegistryManager registryManager = new RegistryManager();
             registryManager.WriteToRegistry("WinNetMeter", "AppBasePath", Environment.CurrentDirectory);
         }
 

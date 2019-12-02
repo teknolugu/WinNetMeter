@@ -93,7 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AdapterController.cs" />
+    <Compile Include="Controller\InterfaceController.cs" />
     <Compile Include="CSDeskBand.cs" />
     <Compile Include="Deskband.cs" />
     <Compile Include="Helper\DbManager.cs" />

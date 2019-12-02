@@ -30,7 +30,6 @@ namespace WinNetMeter
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.PanelMainMenu = new System.Windows.Forms.Panel();
             this.LineAboutSeparator = new System.Windows.Forms.GroupBox();
@@ -57,7 +56,7 @@ namespace WinNetMeter
             this.about = new WinNetMeter.UserControls.Pages.About();
             this.tabUpdateRecovery = new System.Windows.Forms.TabPage();
             this.updaterPage1 = new WinNetMeter.UserControls.Pages.UpdaterPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.colorSelector = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblTitlePages = new System.Windows.Forms.Label();

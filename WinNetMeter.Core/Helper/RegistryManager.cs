@@ -132,7 +132,16 @@ namespace WinNetMeter.Core.Helper
 
         public StyleConfiguration GetStyleConfiguration()
         {
-            //            styleConfig.Adaptive = Convert.ToBoolean(StyleConfiguration.GetValue("Adaptive").ToString());
+            try
+            {
+                // if (StyleConfiguration.GetValue("Adaptive").ToString() != null) {
+                styleConfig.Adaptive = Convert.ToBoolean(StyleConfiguration.GetValue("Adaptive").ToString());
+                // }
+            }
+            catch
+            {
+                //ignored
+            }
             styleConfig.TextColor = StyleConfiguration.GetValue("TextColor").ToString();
             styleConfig.FontFamily = StyleConfiguration.GetValue("Font").ToString();
             styleConfig.Icon = (IconStyle)Enum.Parse(typeof(IconStyle), StyleConfiguration.GetValue("Icon").ToString());
@@ -172,8 +181,10 @@ namespace WinNetMeter.Core.Helper
 
         public object ReadFromRegistry(string path, string keyReg)
         {
-            var exeKey = key.OpenSubKey(@path, true);
-            return exeKey.GetValue(keyReg);
+            //var exeKey = key.OpenSubKey(@path, true);
+            var regKey = Registry.CurrentUser.OpenSubKey(path, true);
+
+            return regKey.GetValue(keyReg);
         }
     }
 }

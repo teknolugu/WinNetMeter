@@ -1,30 +1,101 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Threading;
 using System.Windows.Forms;
-using WinNetMeter.Core.Helper;
-using WinNetMeter.Core.Model;
-using WinNetMeter.Core.Services;
 using WinNetMeter.Core.Controllers;
+using WinNetMeter.Core.Helper;
+using WinNetMeter.Shell.Controller;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Shell
 {
     public partial class DeskBandUI : UserControl
     {
+        #region Declaration Variable
+
         private AdapterController adapterController;
         private NetworkMonitor monitor;
         private string Format;
         private RegistryManager registryManager = new RegistryManager();
-        private StyleConfiguration styleConfiguration;
+        private StyleConfiguration Style;
         private DbManager dataManager = new DbManager();
         private Configuration configuration;
+        private ThemeMonitor themeMonitor;
+        private WindowsTheme theme;
+        private InterfaceController interfaceController = new InterfaceController();
+
+        public static PictureBox UploadIcon;
+        public static PictureBox DownloadIcon;
+        public static Label DownloadLabel;
+        public static Label UploadLabel;
+        public static UserControl deskUI;
+ 
+
+        #endregion Declaration Variable
 
         public DeskBandUI(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
+
+            DownloadLabel = this.LblDownload;
+            UploadLabel = this.LblUpload;
+            UploadIcon = this.pictUpload;
+            DownloadIcon = this.pictDownload;
+            deskUI = this;
+
+        }
+
+
+        private void OnGettingConfiguration(object sender, DoWorkEventArgs e)
+        {
+            BeginInvoke(new MethodInvoker(delegate ()
+            {
+                configuration = registryManager.GetGeneralConfiguration();
+            }));
+
+            Style = registryManager.GetStyleConfiguration();
+        }
+
+        private void OnConfigurationLoaded(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ApplyConfig();
+
+            interfaceController.Style = this.Style;
+            interfaceController.InitializeStyle();
+
+
+            if (Style.Adaptive)
+            { 
+                themeMonitor = new ThemeMonitor();
+                themeMonitor.OnThemeChanged += OnThemeChanged;
+                CheckTheme();
+
+                themeMonitor.Start();   
+            }
+
+        }
+
+        private void OnThemeChanged(object sender, EventArgs e)
+        {
+            CheckTheme();
+        }
+
+        private void CheckTheme()
+        {
+            this.theme = themeMonitor.GetTheme();
+            switch (theme)
+            {
+                case WindowsTheme.Dark:
+                    interfaceController.darkTheme();
+                    break;
+                case WindowsTheme.Light:
+                    interfaceController.lightTheme();
+                    break;
+            }
         }
 
         #region Core Controller
@@ -40,11 +111,8 @@ namespace WinNetMeter.Shell
 
         private void RestartDesk()
         {
-            this.Controls.Clear();
-            InitializeComponent();
             killTimer();
-            Load_Config();
-            ConfigureStyle();
+            this.RunConfigurationLoader();
         }
 
         private void killTimer()
@@ -52,7 +120,6 @@ namespace WinNetMeter.Shell
             timerAuto.Stop();
             timerKB.Stop();
             timerMB.Stop();
-
             try
             {
                 monitor.Stop();
@@ -61,51 +128,54 @@ namespace WinNetMeter.Shell
             catch { }
         }
 
-        #endregion Core Controller
-
-        private void UserControl1_Load(object sender, EventArgs e)
+        private void RunConfigurationLoader()
         {
-            registryManager.SaveHwnd(this.Handle.ToString());
 
-            Load_Config();
-            ConfigureStyle();
+            BackgroundWorker ConfigurationLoader = new BackgroundWorker();
+            ConfigurationLoader.DoWork += OnGettingConfiguration;
+            ConfigurationLoader.RunWorkerCompleted += OnConfigurationLoaded;
+            ConfigurationLoader.RunWorkerAsync();
         }
 
-        #region Configuration Loader
+        #endregion Core Controller
 
-        private void Load_Config()
+        #region ApplyConfiguration
+
+        private void ApplyConfig()
         {
             try
             {
-                configuration = registryManager.GetGeneralConfiguration();
-
-                if (configuration.Monitoring == true)
+                switch (configuration.Monitoring)
                 {
-                    Format = configuration.Format;
+                    case true:
+                        // Configure format
+                        Format = configuration.Format;
+                        // Initialize adapter
+                        adapterController = new AdapterController(configuration.MonitoredAdapter);
+                        monitor = new NetworkMonitor(adapterController);
+                        // Start Monitoring
+                        monitor.Start();
 
-                    adapterController = new AdapterController(configuration.MonitoredAdapter);
-                    monitor = new NetworkMonitor(adapterController);
-                    monitor.Start();
+                        switch (Format)
+                        {
+                            case "Auto":
+                                timerAuto.Start();
+                                break;
 
-                    switch (Format)
-                    {
-                        case "Auto":
-                            timerAuto.Start();
-                            break;
+                            case "KB":
+                                timerKB.Start();
+                                break;
 
-                        case "KB":
-                            timerKB.Start();
-                            break;
+                            case "MB":
+                                timerMB.Start();
+                                break;
+                        }
+                        break;
 
-                        case "MB":
-                            timerMB.Start();
-                            break;
-                    }
-                }
-                else
-                {
-                    LblUpload.Text = "N/A";
-                    LblDownload.Text = "N/A";
+                    case false:
+                        LblUpload.Text = "N/A";
+                        LblDownload.Text = "N/A";
+                        break;
                 }
             }
             catch (Exception ex)
@@ -115,77 +185,10 @@ namespace WinNetMeter.Shell
             }
         }
 
-        private void ConfigureStyle()
-        {
-            Thread styleThread = new Thread(delegate ()
-           {
-               this.BeginInvoke(new MethodInvoker(delegate ()
-               {
-                   this.BackColor = ColorTranslator.FromHtml("#000");
-                   styleConfiguration = registryManager.GetStyleConfiguration();
+      
+        #endregion ApplyConfiguration
 
-                   LblUpload.ForeColor = ColorTranslator.FromHtml(styleConfiguration.TextColor);
-                   LblDownload.ForeColor = LblUpload.ForeColor;
-
-                   LblUpload.Font = new Font(styleConfiguration.FontFamily, LblUpload.Font.Size);
-                   LblDownload.Font = LblUpload.Font;
-
-                   bool IsDark = false;
-
-                   try
-                   {
-                       var taskBar = new TaskBarHelper();
-                       Color taskBarColor = taskBar.GetColourAt(taskBar.GetTaskbarPosition().Location);
-                       IsDark = taskBar.IsDarkColor((int)taskBarColor.R, (int)taskBarColor.G, (int)taskBarColor.B);
-                   }
-                   catch
-                   {
-                       goto setIcon;
-                   }
-
-               setIcon:
-
-                   if (styleConfiguration.Icon == IconStyle.Arrow && IsDark == false)
-                   {
-                       pictUpload.Image = Properties.Resources.up_black_16px;
-                       pictDownload.Image = Properties.Resources.down_black_16px;
-
-                       pictDownload.Location = new Point(11, 17);
-                   }
-                   else if (styleConfiguration.Icon == IconStyle.Arrow && IsDark)
-                   {
-                       pictUpload.Image = Properties.Resources.up_white_16px;
-                       pictDownload.Image = Properties.Resources.down_white_16px;
-
-                       pictDownload.Location = new Point(11, 17);
-                   }
-                   else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark == false)
-                   {
-                       pictUpload.Image = Properties.Resources.Triangle_up_arrow_black_16px;
-                       pictDownload.Image = Properties.Resources.Triangle_down_arrow_black_16px;
-                   }
-                   else if (styleConfiguration.Icon == IconStyle.TriangleArrow && IsDark)
-                   {
-                       pictUpload.Image = Properties.Resources.Triangle_up_arrow_16px;
-                       pictDownload.Image = Properties.Resources.Triangle_down_arrow_16px;
-                   }
-                   else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark == false)
-                   {
-                       pictUpload.Image = Properties.Resources.outline_arrow_up_black_16px;
-                       pictDownload.Image = Properties.Resources.outline_arrow_down_black_16px;
-                   }
-                   else if (styleConfiguration.Icon == IconStyle.Outline_Arrow && IsDark)
-                   {
-                       pictUpload.Image = Properties.Resources.outline_arrow_up_white_16px;
-                       pictDownload.Image = Properties.Resources.outline_arrow_down_white_16px;
-                   }
-               }));
-           });
-
-            styleThread.Start();
-        }
-
-        #endregion Configuration Loader
+        #region Timer
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -206,6 +209,8 @@ namespace WinNetMeter.Shell
             LblUpload.Text = string.Format("{0:n} MB/s", adapterController.UploadSpeedMBps);
             LblDownload.Text = string.Format("{0:n} MB/s", adapterController.DownloadSpeedMBps);
         }
+
+        #endregion Timer
 
         private void ConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,22 +252,32 @@ namespace WinNetMeter.Shell
 
         private void SaveTrafficLog()
         {
-            var data = new Dictionary<string, string>()
-            {
-                {"date", DateTime.Now.ToString("yyyy-MM-dd") },
-                {"time", DateTime.Now.ToString("HH:mm:ss") },
-                {"download", adapterController.DownloadSpeed.ToString() },
-                {"upload", adapterController.UploadSpeed.ToString() }
-            };
+            //var data = new Dictionary<string, string>()
+            //{
+            //    {"date", DateTime.Now.ToString("yyyy-MM-dd") },
+            //    {"time", DateTime.Now.ToString("HH:mm:ss") },
+            //    {"download", adapterController.DownloadSpeed.ToString() },
+            //    {"upload", adapterController.UploadSpeed.ToString() }
+            //};
 
-            TrafficLogs.Save(data);
+            //TrafficLogs.Save(data);
         }
 
         private void UserControl1_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
         }
+
+        private void DeskBandUI_Load(object sender, EventArgs e)
+        {
+            registryManager.SaveHwnd(this.Handle.ToString());
+
+            // Initialize Configuration
+            this.RunConfigurationLoader();
+        }
     }
+
+    #region Custom Component
 
     public class MyLabel : Label
     {
@@ -280,4 +295,7 @@ namespace WinNetMeter.Shell
             base.OnPaint(e);
         }
     }
+
+    #endregion Custom Component
+
 }

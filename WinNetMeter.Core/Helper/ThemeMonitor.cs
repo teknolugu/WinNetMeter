@@ -3,6 +3,9 @@ using System;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using WinNetMeter.Core.Model;
+using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace WinNetMeter.Core.Helper
 {
@@ -12,6 +15,13 @@ namespace WinNetMeter.Core.Helper
         private bool disposed = false;
         private SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
         private ManagementEventWatcher watcher;
+        private RegistryManager registryManager;
+        private readonly string path = Registry.CurrentUser + @"\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
+
+        public ThemeMonitor()
+        {
+            registryManager = new RegistryManager();
+        }
 
         private EventHandler onThemeChanged;
 
@@ -36,16 +46,22 @@ namespace WinNetMeter.Core.Helper
             disposed = true;
         }
 
-        private void Start()
+        public void Start()
         {
             WindowsIdentity currentUser = WindowsIdentity.GetCurrent();
             query = new WqlEventQuery("SELECT * FROM RegistryTreeChangeEvent WHERE " +
-               "Hive = 'HKEY_USERS'" +
-              @"AND RootPath = 'SOFTWARE\\Microsoft\\.NETFramework'");
+                            "Hive = 'HKEY_USERS' " +
+                             @"AND RootPath = '" + currentUser.User.Value + @"\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize'");
             watcher = new ManagementEventWatcher(query);
 
             watcher.EventArrived += new EventArrivedEventHandler(OnThemeChanged);
             watcher.Start();
+        }
+
+        public WindowsTheme GetTheme()
+        {
+            var theme = registryManager.ReadFromRegistry(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme");
+            return (WindowsTheme)theme;
         }
 
         private void Stop()
@@ -54,10 +70,7 @@ namespace WinNetMeter.Core.Helper
             {
                 watcher.Stop();
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch{}
         }
    }
 

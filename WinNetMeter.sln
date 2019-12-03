@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.Core", "WinNetMeter.Core\WinNetMeter.Core.csproj", "{DE5E5F74-6F2F-444F-A376-0CC32E9509CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeterUI", "WinNetMeterUI\WinNetMeterUI.csproj", "{D5E6273F-1C60-4A8B-9650-992A7C6D381A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.UI", "WinNetMeter.UI\WinNetMeter.UI.csproj", "{D5E6273F-1C60-4A8B-9650-992A7C6D381A}"
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "WinNetMeter.Installer", "WinNetMeter.Installer\WinNetMeter.Installer.aiproj", "{019787D8-736F-4F01-B4C6-6005A8981F72}"
 EndProject

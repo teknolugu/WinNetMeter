@@ -1,0 +1,70 @@
+﻿<UserControl
+    x:Class="WinNetMeter.UI.Views.TrafficLogsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    d:DesignHeight="450"
+    d:DesignWidth="700"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="White"
+    mc:Ignorable="d">
+    <!-- <i:Interaction.Triggers> -->
+    <!--     <i:EventTrigger EventName="Loaded"> -->
+    <!--         <i:InvokeCommandAction Command="{Binding OnViewLoadedCommand}" /> -->
+    <!--     </i:EventTrigger> -->
+    <!-- </i:Interaction.Triggers> -->
+    <Grid>
+        <mahapps:ToggleSwitch
+            Height="38"
+            Margin="10,39,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsChecked="{Binding IsEnableLogs}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="IsCheckedChanged">
+                    <i:InvokeCommandAction Command="{Binding SaveEnableTrafficLogCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </mahapps:ToggleSwitch>
+        <Label
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Enable Traffic Logs"
+            FontSize="14" />
+        <Label
+            Margin="10,97,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Db Location path"
+            FontSize="14" />
+        <TextBox
+            Height="23"
+            Margin="10,131,108,0"
+            VerticalAlignment="Top"
+            IsEnabled="{Binding IsEnableLogs}"
+            IsReadOnly="True"
+            Text="{Binding SelectedPath}"
+            TextWrapping="Wrap">
+            <!-- <i:Interaction.Triggers> -->
+            <!--     <i:EventTrigger EventName="Loaded"> -->
+            <!--         <i:InvokeCommandAction Command="{Binding OnViewLoadedCommand}" /> -->
+            <!--     </i:EventTrigger> -->
+            <!-- </i:Interaction.Triggers> -->
+        </TextBox>
+        <Button
+            Width="54"
+            Height="26"
+            Margin="0,131,49,0"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Command="{Binding ChangePathCommand}"
+            Content="..."
+            IsEnabled="{Binding IsEnableLogs}" />
+    </Grid>
+</UserControl>

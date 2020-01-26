@@ -183,8 +183,12 @@ namespace WinNetMeter.Core.Helper
         {
             //var exeKey = key.OpenSubKey(@path, true);
             var regKey = Registry.CurrentUser.OpenSubKey(path, true);
+            if (regKey != null)
+            {
+                return regKey.GetValue(keyReg);
+            }
 
-            return regKey.GetValue(keyReg);
+            return null;
         }
     }
 }

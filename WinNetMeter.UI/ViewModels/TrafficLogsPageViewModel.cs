@@ -48,8 +48,16 @@ namespace WinNetMeter.UI.ViewModels
             SaveEnableTrafficLogCommand = new DelegateCommand(SaveEnableTrafficLog);
             SaveDbPathCommand = new DelegateCommand(OnViewLoaded);
 
-            IsEnableLogs = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\Database", "TrafficLogging"));
-            SelectedPath = registryManager.ReadFromRegistry(@"WinNetMeter\Database", "DbFilePath").ToString();
+            try
+            {
+
+                IsEnableLogs = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\Database", "TrafficLogging"));
+                SelectedPath = registryManager.ReadFromRegistry(@"WinNetMeter\Database", "DbFilePath").ToString() ?? "";
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void OnViewLoaded()

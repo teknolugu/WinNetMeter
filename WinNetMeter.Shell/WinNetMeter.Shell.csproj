@@ -193,7 +193,13 @@
   </Target>
   <PropertyGroup>
     <PreBuildEvent>
-    </PreBuildEvent>
+if exist $(TargetPath) (
+%25windir%25\Microsoft.NET\Framework\v4.0.30319\RegAsm.exe /unregister $(TargetPath)
+)
+Exit /b 0
+
+taskkill /F /IM explorer.exe &amp; start  %25windir%25\explorer.exe
+Exit /b 0</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>

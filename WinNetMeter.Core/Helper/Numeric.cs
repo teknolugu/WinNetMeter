@@ -2,9 +2,9 @@
 
 namespace WinNetMeter.Core.Helper
 {
-    internal class Numeric
+    public static class Numeric
     {
-        public static string SizeFormat(long bytes, string suffix = null)
+        public static string SizeFormat(this long bytes, string suffix = null)
         {
             string[] norm = { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
             int count = norm.Length - 1;

@@ -59,7 +59,7 @@ namespace WinNetMeter.Core.Helper
         public void InstallToolbar()
         {
             FileHelper.SafeDelete(batchFileLocation);
-            FileHelper.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
+            FileHelper.EnsureDirectory(Path.GetDirectoryName(batchFileLocation));
 
             File.Create(batchFileLocation).Close();
 
@@ -85,7 +85,7 @@ namespace WinNetMeter.Core.Helper
         public void UninstallToolbar()
         {
             FileHelper.SafeDelete(uninstallerBatchFileLocation);
-            FileHelper.CreateDirectory(Path.GetDirectoryName(uninstallerBatchFileLocation));
+            FileHelper.EnsureDirectory(Path.GetDirectoryName(uninstallerBatchFileLocation));
 
             File.Create(uninstallerBatchFileLocation).Close();
 
@@ -105,19 +105,21 @@ namespace WinNetMeter.Core.Helper
             {
                 WriteBatFile("cd " + FrameworkLocation, true, FileType.Uninstaller);
                 WriteBatFile("regasm /unregister " + "\"" + AppDomain.CurrentDomain.BaseDirectory + @"WinNetMeter.Shell.dll" + "\"", true, FileType.Uninstaller);
-                WriteBatFile("taskkill /F /IM explorer.exe & start explorer", true, FileType.Uninstaller);
+                WriteBatFile("taskkill /F /IM explorer.exe", true, FileType.Uninstaller);
                 WriteBatFile("exit", true, FileType.Uninstaller);
             }
 
 
             //Executing the .bat file
             runBat("toolbarUninstaller.bat");
+            
+            EnvironmentHelper.RestartExplorer();
         }
 
         public void ReinstallToolbar()
         {
             FileHelper.SafeDelete(batchFileLocation);
-            FileHelper.CreateDirectory(Path.GetDirectoryName(batchFileLocation));
+            FileHelper.EnsureDirectory(Path.GetDirectoryName(batchFileLocation));
             File.Create(batchFileLocation).Close();
 
             WriteBatFile(forRunAs, false, FileType.Installer);
@@ -153,7 +155,7 @@ namespace WinNetMeter.Core.Helper
         public void MakeUninstaller()
         {
             FileHelper.SafeDelete(uninstallerBatchFileLocation);
-            FileHelper.CreateDirectory(Path.GetDirectoryName(uninstallerBatchFileLocation));
+            FileHelper.EnsureDirectory(Path.GetDirectoryName(uninstallerBatchFileLocation));
             WriteBatFile(forRunAs, true, FileType.Uninstaller);
 
             File.Create(uninstallerBatchFileLocation).Close();

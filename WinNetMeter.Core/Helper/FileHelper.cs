@@ -4,7 +4,7 @@ using System.IO;
 
 namespace WinNetMeter.Core.Helper
 {
-    public class FileHelper
+    public static class FileHelper
     {
         public static void WriteBatFile(string path, string value, bool NewLine)
         {
@@ -56,15 +56,18 @@ namespace WinNetMeter.Core.Helper
             }
         }
 
-        public static void CreateDirectory(string dirPath)
+        public static string EnsureDirectory(this string dirPath)
         {
+            dirPath = Path.GetDirectoryName(dirPath);
             if (!Directory.Exists(dirPath))
             {
                 Directory.CreateDirectory(dirPath);
             }
+
+            return dirPath;
         }
 
-        public static bool IsDirectoryEmpty(string path)
+        public static bool IsDirectoryEmpty(this string path)
         {
             IEnumerable<string> items = Directory.EnumerateFileSystemEntries(path);
             using (IEnumerator<string> en = items.GetEnumerator())
@@ -73,7 +76,7 @@ namespace WinNetMeter.Core.Helper
             }
         }
 
-        public static void DeleteAllIn(string path, string wilcard)
+        public static void DeleteAllIn(this string path, string wilcard)
         {
             string[] fileList = System.IO.Directory.GetFiles(path, wilcard);
             foreach (string file in fileList)

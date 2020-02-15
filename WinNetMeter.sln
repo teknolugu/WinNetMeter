@@ -9,12 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter", "WinNetMeter\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.Shell", "WinNetMeter.Shell\WinNetMeter.Shell.csproj", "{BA5BBEDE-037D-4518-BFB4-C95C003585FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE5E5F74-6F2F-444F-A376-0CC32E9509CE} = {DE5E5F74-6F2F-444F-A376-0CC32E9509CE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.Core", "WinNetMeter.Core\WinNetMeter.Core.csproj", "{DE5E5F74-6F2F-444F-A376-0CC32E9509CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.UI", "WinNetMeter.UI\WinNetMeter.UI.csproj", "{D5E6273F-1C60-4A8B-9650-992A7C6D381A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0} = {8EFAE16E-DD5F-49EA-9C82-6C4A2C6E01E0}
+	EndProjectSection
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "WinNetMeter.Installer", "WinNetMeter.Installer\WinNetMeter.Installer.aiproj", "{019787D8-736F-4F01-B4C6-6005A8981F72}"
 EndProject

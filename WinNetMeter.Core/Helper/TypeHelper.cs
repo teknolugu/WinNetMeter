@@ -17,5 +17,10 @@ namespace WinNetMeter.Core.Helpers
         {
             return Convert.ToInt32(obj);
         }
+
+        public static float ToFloat(this object obj)
+        {
+            return Convert.ToSingle(obj);
+        }
     }
 }

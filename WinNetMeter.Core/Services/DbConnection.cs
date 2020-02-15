@@ -25,8 +25,8 @@ namespace WinNetMeter.Core.Services
         private readonly SQLiteConnection _SqliteConnection;
         private readonly SQLiteDataAdapter _SqliteDataAdapter;
 
-        private string dbFile = @"D:\Projek\CS.NET\WinTenGroup\WinNetMeter\Build\Debug\Sources\Store.db";
-        //private string dbFile = @"Sources\Store.db";
+        // private string dbFile = @"D:\Projek\CS.NET\WinTenGroup\WinNetMeter\Build\Debug\Sources\Store.db";
+        private string dbFile = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
 
         public DbConnection()
         {

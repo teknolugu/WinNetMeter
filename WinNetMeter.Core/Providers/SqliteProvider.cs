@@ -9,26 +9,29 @@ using Serilog;
 using SqlKata;
 using SqlKata.Compilers;
 using SqlKata.Execution;
+using WinNetMeter.Core.Helper;
 
 namespace WinNetMeter.Core.Providers
 {
-    static class SqliteProvider
+    public static class SqliteProvider
     {
-        static string dbPath = "Storage/Common/LocalStorage.db";
+        public static string DbPath { get; set; } = "Storage/Common/LocalStorage.db";
 
         private static SQLiteConnection InitSqLite()
         {
+            Path.GetDirectoryName(DbPath).EnsureDirectory();
+
             var connBuilder = new SQLiteConnectionStringBuilder();
-            connBuilder.DataSource = dbPath;
+            connBuilder.DataSource = DbPath;
             connBuilder.JournalMode = SQLiteJournalModeEnum.Memory;
             connBuilder.Version = 3;
 
             // var connStr = $"Data Source={dbPath};Version=3;Journal Mode=Memory";
             var connStr = connBuilder.ConnectionString;
-            if (File.Exists(dbPath)) return new SQLiteConnection(connStr);
+            if (File.Exists(DbPath)) return new SQLiteConnection(connStr);
 
-            Log.Information($"Creating {dbPath} for LocalStorage");
-            SQLiteConnection.CreateFile(dbPath);
+            Log.Information($"Creating {DbPath} for LocalStorage");
+            SQLiteConnection.CreateFile(DbPath);
 
             return new SQLiteConnection(connStr);
         }

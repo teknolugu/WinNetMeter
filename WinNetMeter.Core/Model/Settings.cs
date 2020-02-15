@@ -5,6 +5,11 @@ namespace WinNetMeter.Core.Model
 {
     public static class Settings
     {
+        public static string AppDirectory
+        {
+            get => RegistryProvider.ReadFromRegistry("General", "AppDirectory").ToString();
+            set => RegistryProvider.WriteToRegistry("General", "AppDirectory", value);
+        }
         public static bool EnableMonitoring
         {
             get => RegistryProvider.ReadFromRegistry("General", "Monitoring").ToBool();

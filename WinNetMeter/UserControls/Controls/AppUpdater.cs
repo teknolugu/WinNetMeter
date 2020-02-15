@@ -7,10 +7,11 @@ using System.IO.Compression;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
-using WinNetMeter.Helper;
-using WinNetMeter.Core.Views;
 using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Views;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Helper;
+using Numeric = WinNetMeter.Core.Helper.Numeric;
 
 namespace WinNetMeter.UserControls.Controls
 {
@@ -147,10 +148,10 @@ namespace WinNetMeter.UserControls.Controls
                 BtnCancel.Visible = true;
                 BtnCheckUpdates.Visible = false;
                 // Create temp directory
-                FileHelper.CreateDirectory(Path.GetDirectoryName(updateFile));
+                FileHelper.EnsureDirectory(Path.GetDirectoryName(updateFile));
 
                 // Create update directory
-                FileHelper.CreateDirectory(extractedUpdateFileDir);
+                FileHelper.EnsureDirectory(extractedUpdateFileDir);
 
                 //Download update file
                 DownloadFile(zipUpdateURL, updateFile);

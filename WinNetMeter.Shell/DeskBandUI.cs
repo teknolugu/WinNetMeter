@@ -1,15 +1,20 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Serilog;
 using WinNetMeter.Core.Controllers;
 using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Helpers;
 using WinNetMeter.Shell.Controller;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Core.Providers;
+using WinNetMeter.Core.Services;
 
 namespace WinNetMeter.Shell
 {
@@ -40,12 +45,30 @@ namespace WinNetMeter.Shell
         public DeskBandUI(CSDeskBand.CSDeskBandWin w)
         {
             InitializeComponent();
+            RegistryProvider.Init();
+
+            var logPath = Settings.AppDirectory + @"\Storage\Logs\activity-.log";
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(logPath,
+                    rollingInterval: RollingInterval.Day,
+                    flushToDiskInterval: TimeSpan.FromSeconds(1),
+                    shared: true)
+                .CreateLogger();
+
+            Log.Information("Starting NetMeter shell..");
+
+
+            SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
 
             DownloadLabel = this.LblDownload;
             UploadLabel = this.LblUpload;
             UploadIcon = this.pictUpload;
             DownloadIcon = this.pictDownload;
             deskUI = this;
+
+            Log.Information("NetMeter started successfully..");
 
         }
 
@@ -145,7 +168,7 @@ namespace WinNetMeter.Shell
         {
             try
             {
-                switch (configuration.Monitoring)
+                switch (Settings.EnableMonitoring)
                 {
                     case true:
                         // Configure format
@@ -192,10 +215,27 @@ namespace WinNetMeter.Shell
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
-            LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
+            SaveTrafficLog();
 
-            //SaveTrafficLog();
+            try
+            {
+                var currentTraffic = TrafficLogs.GetTrafficRate();
+
+                Log.Information($"Traffic: {currentTraffic.ToJson(true)}");
+
+                var uploadRate = currentTraffic.UploadRate.ToFloat();
+                var downloadRate = currentTraffic.DownloadRate.ToFloat();
+
+                LblUpload.Text = Numeric.SizeFormat(uploadRate, "/s");
+                LblDownload.Text = Numeric.SizeFormat(downloadRate, "/s");
+
+            }catch(Exception ex)
+            {
+                Log.Error(ex, "Something Happened when calculating Speed.");
+            }
+            // LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
+            // LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
+
         }
 
         private void TimerKB_Tick(object sender, EventArgs e)
@@ -247,20 +287,27 @@ namespace WinNetMeter.Shell
 
         private void TimerTrafficLog_Tick(object sender, EventArgs e)
         {
-            //SaveTrafficLog();
+            // SaveTrafficLog();
         }
 
         private void SaveTrafficLog()
         {
-            //var data = new Dictionary<string, string>()
-            //{
-            //    {"date", DateTime.Now.ToString("yyyy-MM-dd") },
-            //    {"time", DateTime.Now.ToString("HH:mm:ss") },
-            //    {"download", adapterController.DownloadSpeed.ToString() },
-            //    {"upload", adapterController.UploadSpeed.ToString() }
-            //};
+            // try
+            // {
+                var data = new Dictionary<string, string>()
+                {
+                    {"date", DateTime.Now.ToString("yyyy-MM-dd")},
+                    {"time", DateTime.Now.ToString("HH:mm:ss")},
+                    {"download", adapterController.DownloadSpeed.ToString()},
+                    {"upload", adapterController.UploadSpeed.ToString()}
+                };
 
-            //TrafficLogs.Save(data);
+                TrafficLogs.Save(data);
+            // }
+            // catch (Exception ex)
+            // {
+            //     Log.Error(ex,"Error when saving traffic log!!");
+            // }
         }
 
         private void UserControl1_Resize(object sender, EventArgs e)

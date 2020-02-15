@@ -221,7 +221,7 @@ namespace WinNetMeter.Shell
             {
                 var currentTraffic = TrafficLogs.GetTrafficRate();
 
-                Log.Information($"Traffic: {currentTraffic.ToJson(true)}");
+                // Log.Information($"Traffic: {currentTraffic.ToJson(true)}");
 
                 var uploadRate = currentTraffic.UploadRate.ToFloat();
                 var downloadRate = currentTraffic.DownloadRate.ToFloat();

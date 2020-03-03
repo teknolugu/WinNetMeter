@@ -1,16 +1,22 @@
 ﻿using System.Windows;
 using Prism.Ioc;
 using Prism.Modularity;
+using WinNetMeter.Core.Providers;
 using WinNetMeter.UI.Autoloaders;
 using WinNetMeter.UI.Views;
 
 namespace WinNetMeter.UI
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///     Interaction logic for App.xaml
     /// </summary>
     public partial class App
     {
+        public App()
+        {
+            RegistryProvider.Init();
+        }
+
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();

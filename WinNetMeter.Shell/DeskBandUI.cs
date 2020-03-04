@@ -217,24 +217,25 @@ namespace WinNetMeter.Shell
         {
             SaveTrafficLog();
 
-            try
-            {
-                var currentTraffic = TrafficLogs.GetTrafficRate();
+            // try
+            // {
+            //     var currentTraffic = TrafficLogs.GetTrafficRate();
+            //
+            //     // Log.Information($"Traffic: {currentTraffic.ToJson(true)}");
+            //
+            //     var uploadRate = currentTraffic.UploadRate.ToFloat();
+            //     var downloadRate = currentTraffic.DownloadRate.ToFloat();
+            //
+            //     LblUpload.Text = Numeric.SizeFormat(uploadRate, "/s");
+            //     LblDownload.Text = Numeric.SizeFormat(downloadRate, "/s");
+            //
+            // }catch(Exception ex)
+            // {
+            //     Log.Error(ex, "Something Happened when calculating Speed.");
+            // }
 
-                // Log.Information($"Traffic: {currentTraffic.ToJson(true)}");
-
-                var uploadRate = currentTraffic.UploadRate.ToFloat();
-                var downloadRate = currentTraffic.DownloadRate.ToFloat();
-
-                LblUpload.Text = Numeric.SizeFormat(uploadRate, "/s");
-                LblDownload.Text = Numeric.SizeFormat(downloadRate, "/s");
-
-            }catch(Exception ex)
-            {
-                Log.Error(ex, "Something Happened when calculating Speed.");
-            }
-            // LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
-            // LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
+            LblUpload.Text = adapterController.UploadSpeedAutoFormatting;
+            LblDownload.Text = adapterController.DownloadSpeedAutoFormatting;
 
         }
 

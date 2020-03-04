@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Prism.Ioc;
 using Prism.Modularity;
+using WinNetMeter.Core.Model;
 using WinNetMeter.Core.Providers;
 using WinNetMeter.UI.Autoloaders;
 using WinNetMeter.UI.Views;
@@ -15,6 +17,12 @@ namespace WinNetMeter.UI
         public App()
         {
             RegistryProvider.Init();
+
+            Settings.AppDirectory = Environment.CurrentDirectory;
+
+            SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
+
+            EvolveProvider.Initialize();
         }
 
         protected override Window CreateShell()

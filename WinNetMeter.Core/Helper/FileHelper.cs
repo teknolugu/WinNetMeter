@@ -58,10 +58,10 @@ namespace WinNetMeter.Core.Helper
 
         public static string EnsureDirectory(this string dirPath)
         {
-            dirPath = Path.GetDirectoryName(dirPath);
-            if (!Directory.Exists(dirPath))
+            var path = Path.GetDirectoryName(dirPath);
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(dirPath);
+                Directory.CreateDirectory(path);
             }
 
             return dirPath;
@@ -93,6 +93,7 @@ namespace WinNetMeter.Core.Helper
             {
                 file.Delete();
             }
+
             foreach (DirectoryInfo dir in di.GetDirectories())
             {
                 dir.Delete(true);

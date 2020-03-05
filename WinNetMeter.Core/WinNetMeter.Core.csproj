@@ -78,9 +78,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\NetAdapterProvider.cs" />
     <Compile Include="Providers\RegistryProvider.cs" />
+    <Compile Include="Providers\SerilogProvider.cs" />
     <Compile Include="Providers\SqliteProvider.cs" />
     <Compile Include="Services\DbConnection.cs" />
     <Compile Include="Services\TrafficLogs.cs" />
+    <Compile Include="Shells\WebSearchDeskband.cs" />
+    <Compile Include="Shells\WebSearchUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shells\WebSearchUI.Designer.cs">
+      <DependentUpon>WebSearchUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormUpdater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Shells\WebSearchUI.resx">
+      <DependentUpon>WebSearchUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormUpdater.resx">
       <DependentUpon>FormUpdater.cs</DependentUpon>
     </EmbeddedResource>

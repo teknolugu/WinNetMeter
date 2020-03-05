@@ -6,12 +6,20 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:WinNetMeter.UI.ViewModels"
     d:DesignHeight="1000"
     d:DesignWidth="700"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Background="White"
     mc:Ignorable="d">
-    <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+    <UserControl.DataContext>
+        <vm:GeneralPageViewModel />
+    </UserControl.DataContext>
+
+    <Grid
+        ScrollViewer.CanContentScroll="True"
+        ScrollViewer.VerticalScrollBarVisibility="Auto">
         <Label
             Margin="10,10,0,0"
             HorizontalAlignment="Left"

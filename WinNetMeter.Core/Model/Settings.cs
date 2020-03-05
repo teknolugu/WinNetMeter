@@ -10,6 +10,13 @@ namespace WinNetMeter.Core.Model
             get => RegistryProvider.ReadFromRegistry("General", "AppDirectory").ToString();
             set => RegistryProvider.WriteToRegistry("General", "AppDirectory", value);
         }
+
+        public static string AppExePath
+        {
+            get => RegistryProvider.ReadFromRegistry("General", "AppExePath").ToString();
+            set => RegistryProvider.WriteToRegistry("General", "AppExePath", value);
+        }
+
         public static bool EnableMonitoring
         {
             get => RegistryProvider.ReadFromRegistry("General", "Monitoring").ToBool();

@@ -40,6 +40,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Serilog">
+      <HintPath>..\packages\Serilog.2.9.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -180,7 +183,10 @@
     <PackageReference Include="MahApps.Metro">
       <Version>1.6.5</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
+    <PackageReference Include="Prism.Unity" Version="7.2.0.1367" />
+    <PackageReference Include="Serilog">
+      <Version>2.9.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WinNetMeter.Core\WinNetMeter.Core.csproj">

@@ -1,20 +1,17 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Text;
-using System.Threading;
 using System.Windows.Forms;
 using Serilog;
 using WinNetMeter.Core.Controllers;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Helpers;
-using WinNetMeter.Shell.Controller;
 using WinNetMeter.Core.Model;
 using WinNetMeter.Core.Providers;
 using WinNetMeter.Core.Services;
+using WinNetMeter.Shell.Controller;
 
 namespace WinNetMeter.Shell
 {
@@ -38,7 +35,6 @@ namespace WinNetMeter.Shell
         public static Label DownloadLabel;
         public static Label UploadLabel;
         public static UserControl deskUI;
- 
 
         #endregion Declaration Variable
 
@@ -47,18 +43,16 @@ namespace WinNetMeter.Shell
             InitializeComponent();
             RegistryProvider.Init();
 
-            var logPath = Settings.AppDirectory + @"\Storage\Logs\activity-.log";
+            SerilogProvider.Initialize();
 
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .WriteTo.File(logPath,
-                    rollingInterval: RollingInterval.Day,
-                    flushToDiskInterval: TimeSpan.FromSeconds(1),
-                    shared: true)
-                .CreateLogger();
+            // var logPath = Settings.AppDirectory + @"\Storage\Logs\activity-.log";
+            //
+            // Log.Logger = new LoggerConfiguration() .MinimumLevel.Debug() .WriteTo.File(logPath,
+            // rollingInterval: RollingInterval.Day,
+            // flushToDiskInterval: TimeSpan.FromSeconds(1),
+            // shared: true) .CreateLogger();
 
             Log.Information("Starting NetMeter shell..");
-
 
             SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
 
@@ -69,16 +63,11 @@ namespace WinNetMeter.Shell
             deskUI = this;
 
             Log.Information("NetMeter started successfully..");
-
         }
-
 
         private void OnGettingConfiguration(object sender, DoWorkEventArgs e)
         {
-            BeginInvoke(new MethodInvoker(delegate ()
-            {
-                configuration = registryManager.GetGeneralConfiguration();
-            }));
+            BeginInvoke(new MethodInvoker(delegate() { configuration = registryManager.GetGeneralConfiguration(); }));
 
             Style = registryManager.GetStyleConfiguration();
         }
@@ -90,16 +79,14 @@ namespace WinNetMeter.Shell
             interfaceController.Style = this.Style;
             interfaceController.InitializeStyle();
 
-
             if (Style.Adaptive)
-            { 
+            {
                 themeMonitor = new ThemeMonitor();
                 themeMonitor.OnThemeChanged += OnThemeChanged;
                 CheckTheme();
 
-                themeMonitor.Start();   
+                themeMonitor.Start();
             }
-
         }
 
         private void OnThemeChanged(object sender, EventArgs e)
@@ -115,6 +102,7 @@ namespace WinNetMeter.Shell
                 case WindowsTheme.Dark:
                     interfaceController.darkTheme();
                     break;
+
                 case WindowsTheme.Light:
                     interfaceController.lightTheme();
                     break;
@@ -129,6 +117,7 @@ namespace WinNetMeter.Shell
             {
                 RestartDesk();
             }
+
             base.WndProc(ref m);
         }
 
@@ -148,12 +137,13 @@ namespace WinNetMeter.Shell
                 monitor.Stop();
                 monitor.Dispose();
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         private void RunConfigurationLoader()
         {
-
             BackgroundWorker ConfigurationLoader = new BackgroundWorker();
             ConfigurationLoader.DoWork += OnGettingConfiguration;
             ConfigurationLoader.RunWorkerCompleted += OnConfigurationLoaded;
@@ -193,6 +183,7 @@ namespace WinNetMeter.Shell
                                 timerMB.Start();
                                 break;
                         }
+
                         break;
 
                     case false:
@@ -208,7 +199,6 @@ namespace WinNetMeter.Shell
             }
         }
 
-      
         #endregion ApplyConfiguration
 
         #region Timer
@@ -257,7 +247,8 @@ namespace WinNetMeter.Shell
         {
             try
             {
-                Process.Start(registryManager.GetExecutableLocation());
+                Process.Start(Settings.AppExePath);
+                // Process.Start(registryManager.GetExecutableLocation());
             }
             catch (Exception ex)
             {
@@ -293,22 +284,17 @@ namespace WinNetMeter.Shell
 
         private void SaveTrafficLog()
         {
-            // try
-            // {
-                var data = new Dictionary<string, string>()
-                {
-                    {"date", DateTime.Now.ToString("yyyy-MM-dd")},
-                    {"time", DateTime.Now.ToString("HH:mm:ss")},
-                    {"download", adapterController.DownloadSpeed.ToString()},
-                    {"upload", adapterController.UploadSpeed.ToString()}
-                };
+            // try {
+            var data = new Dictionary<string, string>()
+            {
+                {"date", DateTime.Now.ToString("yyyy-MM-dd")},
+                {"time", DateTime.Now.ToString("HH:mm:ss")},
+                {"download", adapterController.DownloadSpeed.ToString()},
+                {"upload", adapterController.UploadSpeed.ToString()}
+            };
 
-                TrafficLogs.Save(data);
-            // }
-            // catch (Exception ex)
-            // {
-            //     Log.Error(ex,"Error when saving traffic log!!");
-            // }
+            TrafficLogs.Save(data);
+            // } catch (Exception ex) { Log.Error(ex,"Error when saving traffic log!!"); }
         }
 
         private void UserControl1_Resize(object sender, EventArgs e)
@@ -345,5 +331,4 @@ namespace WinNetMeter.Shell
     }
 
     #endregion Custom Component
-
 }

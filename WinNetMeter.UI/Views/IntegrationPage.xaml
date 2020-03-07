@@ -5,23 +5,29 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:WinNetMeter.UI.ViewModels"
     d:DesignHeight="750"
     d:DesignWidth="700"
-    prism:ViewModelLocator.AutoWireViewModel="True"
     Background="White"
     mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <vm:IntegrationPageViewModel/>
+    </UserControl.DataContext>
+
     <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
         <Label
             Margin="11,10,0,0"
-            VerticalAlignment="Top"
-            Content="Re-register shell"
+            Content="Register shell"
             Style="{StaticResource ResourceKey=LabelMenuModule}" />
-        <Label
+        <TextBlock
             Height="39"
             Margin="10,53,55,0"
+            Width="500"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="If WinNetMeter Shell is not working properly on Windows Taskbar, you can try to Re-register Shell." />
+            TextWrapping="Wrap"
+            Text="If NetMeter Shell is not working properly on Windows Taskbar, you can try to Re-register Shell." />
         <Button
             Width="138"
             Height="35"
@@ -31,16 +37,15 @@
             Content="Re-register Shell" />
         <Label
             Margin="11,153,0,0"
-            VerticalAlignment="Top"
             Content="Uninstall shell"
             Style="{StaticResource ResourceKey=LabelMenuModule}" />
-        <Label
-            Width="634"
-            Height="42"
+        <TextBlock
+            Width="500"
+            Height="35"
             Margin="11,192,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="If you want to update or uninstall WinNetMeter, you must uninstall Shell before doing." />
+            Text="If you want to update or uninstall WinNetMeter, you must uninstall Shell before doing." />
         <Button
             Width="138"
             Margin="24,232,0,0"
@@ -48,10 +53,10 @@
             Command="{Binding UninstallShellCommand}"
             Content="Uninstall Shell" />
         <Label
-            Margin="11,297,55,0"
+            Margin="11,297,0,0"
             VerticalAlignment="Top"
             Content="Show Shell on Windows taskbar"
-            FontSize="15" />
+            FontSize="15" HorizontalAlignment="Left" Width="279" />
         <mah:ToggleSwitch
             Height="35"
             Margin="24,328,0,0"

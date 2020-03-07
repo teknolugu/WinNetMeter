@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Prism.Mvvm;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
 
@@ -54,7 +54,11 @@ namespace WinNetMeter.UI.ViewModels
         public bool EnableNetworkAdapterSelector
         {
             get => _enableNetworkAdapterSelector;
-            set { SetProperty(ref _enableNetworkAdapterSelector, value); }
+            set
+            {
+                SetProperty(ref _enableNetworkAdapterSelector, value);
+                shellController.RestartShell();
+            }
         }
 
         public bool UseAllNetworkAdapter
@@ -77,6 +81,12 @@ namespace WinNetMeter.UI.ViewModels
             EnableNetworkAdapterSelector = !UseAllNetworkAdapter;
             EnableNetworkMonitoring = Settings.EnableMonitoring;
             EnableAutoUpdates = Settings.EnableAutoUpdate;
+
+            EnableNetworkMonitoring = Settings.EnableMonitoring;
+            EnableAutoUpdates = Settings.EnableAutoUpdate;
+
+            // EnableNetworkMonitoring = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "Monitoring"));
+            // EnableAutoUpdates = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "AutoUpdate"));
 
             LoadNetworkAdapter();
         }

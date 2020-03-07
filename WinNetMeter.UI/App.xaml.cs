@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -23,6 +24,8 @@ namespace WinNetMeter.UI
             SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
 
             EvolveProvider.Initialize();
+
+            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
         }
 
         protected override Window CreateShell()

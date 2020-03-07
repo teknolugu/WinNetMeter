@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Serilog;
 
 namespace WinNetMeter.Core.Providers
 {
@@ -11,11 +12,18 @@ namespace WinNetMeter.Core.Providers
         public static void Init()
         {
             registryBase.CreateSubKey(rootPath);
-            _registryRoot = registryBase.OpenSubKey(rootPath,true);
+            _registryRoot = registryBase.OpenSubKey(rootPath, true);
 
-            _registryRoot.CreateSubKey("General");
-            _registryRoot.CreateSubKey("Database");
-            _registryRoot.CreateSubKey("Style");
+            if (_registryRoot != null)
+            {
+                _registryRoot.CreateSubKey("General");
+                _registryRoot.CreateSubKey("Database");
+                _registryRoot.CreateSubKey("Style");
+            }
+            else
+            {
+                Log.Error("You must execute RegistryProvider.Init() on startup.");
+            }
         }
 
         public static void Reset()
@@ -41,7 +49,7 @@ namespace WinNetMeter.Core.Providers
 
         public static bool IsKeyExist(string regPath)
         {
-            var regKey =_registryRoot.OpenSubKey(regPath);
+            var regKey = _registryRoot.OpenSubKey(regPath);
             return regKey != null;
         }
 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Prism.Mvvm;
 using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.UI.ViewModels
 {
@@ -23,7 +23,9 @@ namespace WinNetMeter.UI.ViewModels
             set
             {
                 SetProperty(ref _enableNetworkMonitoring, value);
+                Settings.EnableMonitoring = value;
                 registryManager.WriteToRegistry(@"WinNetMeter\General", "Monitoring", value.ToString());
+                shellController.RestartShell();
             }
         }
 
@@ -33,6 +35,7 @@ namespace WinNetMeter.UI.ViewModels
             set
             {
                 SetProperty(ref _enableAutoUpdates, value);
+                Settings.EnableAutoUpdate = value;
                 registryManager.WriteToRegistry(@"WinNetMeter\General", "AutoUpdate", value.ToString());
             }
         }
@@ -72,8 +75,8 @@ namespace WinNetMeter.UI.ViewModels
             shellController = new ShellController();
 
             EnableNetworkAdapterSelector = !UseAllNetworkAdapter;
-            EnableNetworkMonitoring = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "Monitoring"));
-            EnableAutoUpdates = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\General", "AutoUpdate"));
+            EnableNetworkMonitoring = Settings.EnableMonitoring;
+            EnableAutoUpdates = Settings.EnableAutoUpdate;
 
             LoadNetworkAdapter();
         }

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using WinNetMeter.Core.Model;
 
 namespace WinNetMeter.Core.Helper
 {
@@ -195,6 +198,44 @@ namespace WinNetMeter.Core.Helper
                 Process.Start(process);
             }
             catch { }
+        }
+
+        public static void InstallShell()
+        {
+            var runtimePath = RuntimeEnvironment.GetRuntimeDirectory();
+            var currentDir = Settings.AppDirectory;
+
+            if (Environment.Is64BitOperatingSystem) runtimePath = runtimePath.Replace("Framework", "Framework64");
+            var cmdUninst = $@"/c {runtimePath}RegAsm.exe /unregister {currentDir}\WinNetMeter.Shell.dll";
+            var cmdRegist = $@"/c {runtimePath}RegAsm.exe /codebase {currentDir}\WinNetMeter.Shell.dll";
+
+            Log.Information($"InstallCmd: {cmdUninst}");
+            var procUninst = Process.Start("cmd.exe",cmdUninst);
+            procUninst.WaitForExit();
+
+            Log.Information($"Uninst: {procUninst.ExitCode}");
+
+            Log.Information($"InstallCmd: {cmdRegist}");
+            var procRegist = Process.Start("cmd.exe",cmdRegist);
+            procRegist.WaitForExit();
+
+            Log.Information($"Regist: {procRegist.ExitCode}");
+
+        }
+
+        public static void UninstallShell()
+        {
+            var runtimePath = RuntimeEnvironment.GetRuntimeDirectory();
+            var currentDir = Settings.AppDirectory;
+
+            if (Environment.Is64BitOperatingSystem) runtimePath = runtimePath.Replace("Framework", "Framework64");
+            var cmdUninst = $@"/c {runtimePath}RegAsm.exe /unregister {currentDir}\WinNetMeter.Shell.dll";
+
+            Log.Information($"InstallCmd: {cmdUninst}");
+            var procUninst = Process.Start("cmd.exe", cmdUninst);
+            procUninst.WaitForExit();
+
+            Log.Information($"Uninst: {procUninst.ExitCode}");
         }
     }
 }

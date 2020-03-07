@@ -235,6 +235,8 @@ namespace WinNetMeter.Core.Helper
             var procUninst = Process.Start("cmd.exe", cmdUninst);
             procUninst.WaitForExit();
 
+            ProcessHelper.RestartExplorer();
+
             Log.Information($"Uninst: {procUninst.ExitCode}");
         }
     }

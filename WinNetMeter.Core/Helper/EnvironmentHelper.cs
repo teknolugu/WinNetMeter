@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 using Serilog;
 
 namespace WinNetMeter.Core.Helper
@@ -20,6 +21,15 @@ namespace WinNetMeter.Core.Helper
         public static void RestartExplorer()
         {
             Process.Start(Path.Combine(Environment.GetEnvironmentVariable("windir"), "explorer.exe"));
+        }
+
+        public static bool IsWindows10()
+        {
+            var reg = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+
+            string productName = (string)reg.GetValue("ProductName");
+
+            return productName.StartsWith("Windows 10");
         }
     }
 }

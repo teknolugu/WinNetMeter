@@ -21,17 +21,5 @@ namespace WinNetMeter.Core.Providers
 
             return Log.Logger;
         }
-
-        public static ILogger GetInstance()
-        {
-            if (Log.Logger != null)
-            {
-                return Log.Logger;
-            }
-            else
-            {
-                throw new Exception("You must call Initialize before.");
-            }
-        }
     }
 }

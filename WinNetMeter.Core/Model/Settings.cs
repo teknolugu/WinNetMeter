@@ -23,6 +23,12 @@ namespace WinNetMeter.Core.Model
             set => RegistryProvider.WriteToRegistry("General", "Monitoring", value.ToString());
         }
 
+        public static string MonitoredAdapter
+        {
+            get => RegistryProvider.ReadFromRegistry("General", "MonitoredAdapter").ToString();
+            set => RegistryProvider.WriteToRegistry("General", "MonitoredAdapter", value.ToString());
+        }
+
         public static bool EnableAutoUpdate
         {
             get => RegistryProvider.ReadFromRegistry("General", "AutoUpdate").ToBool();

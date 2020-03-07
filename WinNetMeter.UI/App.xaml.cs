@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Windows;
 using Prism.Ioc;
 using Prism.Modularity;
+using Serilog;
 using WinNetMeter.Core.Model;
 using WinNetMeter.Core.Providers;
 using WinNetMeter.UI.Autoloaders;
@@ -20,17 +21,24 @@ namespace WinNetMeter.UI
             RegistryProvider.Init();
 
             Settings.AppDirectory = Environment.CurrentDirectory;
+            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
+
+            SerilogProvider.Initialize();
+
+            Log.Information("Starting App..");
 
             SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
 
             EvolveProvider.Initialize();
 
-            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
         }
 
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            var container = Container.Resolve<MainWindow>();
+            Log.Information("App Started");
+
+            return container;
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

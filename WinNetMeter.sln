@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinNetMeter.UI", "WinNetMet
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "WinNetMeter.Installer", "WinNetMeter.Installer\WinNetMeter.Installer.aiproj", "{019787D8-736F-4F01-B4C6-6005A8981F72}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WinNetMeter.Setup", "WinNetMeter.Setup\WinNetMeter.Setup.vdproj", "{A72F7E65-E72F-40DD-B266-EDDA72ADC486}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -145,6 +147,15 @@ Global
 		{019787D8-736F-4F01-B4C6-6005A8981F72}.Release|x64.Build.0 = DefaultBuild
 		{019787D8-736F-4F01-B4C6-6005A8981F72}.Release|x86.ActiveCfg = DefaultBuild
 		{019787D8-736F-4F01-B4C6-6005A8981F72}.Release|x86.Build.0 = DefaultBuild
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.All|Any CPU.ActiveCfg = Release
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.All|x64.ActiveCfg = Release
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.All|x86.ActiveCfg = Release
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Debug|Any CPU.ActiveCfg = Debug
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Debug|x64.ActiveCfg = Debug
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Debug|x86.ActiveCfg = Debug
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Release|Any CPU.ActiveCfg = Release
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Release|x64.ActiveCfg = Release
+		{A72F7E65-E72F-40DD-B266-EDDA72ADC486}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

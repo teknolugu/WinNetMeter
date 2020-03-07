@@ -80,6 +80,7 @@
     <Compile Include="Providers\RegistryProvider.cs" />
     <Compile Include="Providers\SerilogProvider.cs" />
     <Compile Include="Providers\SqliteProvider.cs" />
+    <Compile Include="Repositories\SqliteRepository.cs" />
     <Compile Include="Services\DbConnection.cs" />
     <Compile Include="Services\TrafficLogs.cs" />
     <Compile Include="Shells\WebSearchDeskband.cs" />

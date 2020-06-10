@@ -1,11 +1,8 @@
-﻿using System;
-using System.Reflection;
-using System.Windows;
-using Prism.Ioc;
+﻿using Prism.Ioc;
 using Prism.Modularity;
 using Serilog;
-using WinNetMeter.Core.Model;
-using WinNetMeter.Core.Providers;
+using System.Windows;
+using WinNetMeter.Core.Helper;
 using WinNetMeter.UI.Autoloaders;
 using WinNetMeter.UI.Views;
 
@@ -18,19 +15,20 @@ namespace WinNetMeter.UI
     {
         public App()
         {
-            RegistryProvider.Init();
+            // RegistryProvider.Init();
+            //
+            // Settings.AppDirectory = Environment.CurrentDirectory;
+            // Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
+            //
+            // SerilogProvider.Initialize();
+            //
+            // Log.Information("Starting App..");
+            //
+            // SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
+            //
+            // EvolveProvider.Initialize();
 
-            Settings.AppDirectory = Environment.CurrentDirectory;
-            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
-
-            SerilogProvider.Initialize();
-
-            Log.Information("Starting App..");
-
-            SqliteProvider.DbPath = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
-
-            EvolveProvider.Initialize();
-
+            InitHelper.InitializeAll();
         }
 
         protected override Window CreateShell()

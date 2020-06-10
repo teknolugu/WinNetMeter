@@ -170,7 +170,13 @@ namespace WinNetMeter.Core.Helper
         public string GetHwnd()
         {
             var hwndLoc = key.OpenSubKey(@"WinNetMeter", true);
-            return hwndLoc.GetValue("hwnd").ToString();
+            var hwndVal = hwndLoc.GetValue("hwnd");
+            if (hwndVal == null)
+            {
+                return "-1";
+            }
+
+            return hwndVal.ToString();
         }
 
         public void WriteToRegistry(string path, string keyReg, string valReg)

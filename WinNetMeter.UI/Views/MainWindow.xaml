@@ -10,6 +10,7 @@
     MinWidth="750"
     MinHeight="520"
     prism:ViewModelLocator.AutoWireViewModel="True"
+    Icon="/WinNetMeter.UI;component/winnetmeterlogo.ico"
     SaveWindowPosition="True"
     TitleCharacterCasing="Normal">
     <Grid>

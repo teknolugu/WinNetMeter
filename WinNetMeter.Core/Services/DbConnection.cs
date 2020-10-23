@@ -26,24 +26,26 @@ namespace WinNetMeter.Core.Services
         private readonly SQLiteDataAdapter _SqliteDataAdapter;
 
         // private string dbFile = @"D:\Projek\CS.NET\WinTenGroup\WinNetMeter\Build\Debug\Sources\Store.db";
-        private string dbFile = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
+        // private string dbFile = Settings.AppDirectory + @"\Storage\Common\LocalStorage.db";
+        private string DBFile { get; set; }
 
         public DbConnection()
         {
+            var appdir = Settings.AppDirectory;
+            DBFile = Path.Combine(appdir, "Storage/Common/LocalStorage.db");
             try
             {
-                if (File.Exists(dbFile))
+                if (!File.Exists(DBFile))
                 {
-                    var connString = $"Data Source={dbFile}";
+                    SQLiteConnection.CreateFile(DBFile);
+                    // throw new Exception($"DB file is not exist. File {dbFile}.");
+                }
 
-                    _SqliteConnection = new SQLiteConnection(connString);
-                    _SqliteCommand = new SQLiteCommand();
-                    _SqliteDataAdapter = new SQLiteDataAdapter();
-                }
-                else
-                {
-                    throw new Exception($"DB file is not exist. File {dbFile}.");
-                }
+                var connString = $"Data Source={DBFile}";
+
+                _SqliteConnection = new SQLiteConnection(connString);
+                _SqliteCommand = new SQLiteCommand();
+                _SqliteDataAdapter = new SQLiteDataAdapter();
             }
             catch (Exception ex)
             {

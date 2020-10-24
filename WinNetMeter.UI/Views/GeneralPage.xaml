@@ -32,12 +32,16 @@
             FontSize="14" />
         <mah:ToggleSwitch
             Width="120"
+            Height="40"
             Margin="10,39,0,0"
-            IsChecked="{Binding EnableNetworkMonitoring}" />
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsOn="{Binding EnableNetworkMonitoring}" />
         <mah:ToggleSwitch
             Width="120"
+            Height="37"
             Margin="10,108,0,0"
-            IsChecked="{Binding EnableAutoUpdates}" />
+            IsOn="{Binding EnableAutoUpdates}" />
         <ListBox
             Width="500"
             Height="120"
@@ -58,12 +62,12 @@
             FontSize="18" />
         <mah:ToggleSwitch
             Width="120"
-            Height="30"
+            Height="38"
             Margin="10,382,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            IsChecked="{Binding UseAllNetworkAdapter}"
-            IsEnabled="False" />
+            IsEnabled="False"
+            IsOn="{Binding UseAllNetworkAdapter}" />
         <Label
             x:Name="label"
             Margin="10,347,0,0"

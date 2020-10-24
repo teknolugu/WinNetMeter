@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
     <Style
-        BasedOn="{StaticResource MetroButton}"
+        BasedOn="{StaticResource ResourceKey=MahApps.Styles.Button}"
         TargetType="Button">
         <Setter Property="Height" Value="35" />
         <Setter Property="Width" Value="110" />
@@ -19,7 +19,7 @@
 
     <Style
         x:Key="BtnStyle"
-        BasedOn="{StaticResource MetroButton}"
+        BasedOn="{StaticResource ResourceKey=MahApps.Styles.Button}"
         TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Style.Triggers>

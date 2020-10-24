@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Shell.Modules;
 
 namespace WinNetMeter.UI.ViewModels
 {
@@ -93,8 +94,9 @@ namespace WinNetMeter.UI.ViewModels
 
         private void LoadNetworkAdapter()
         {
-            NetworkIntefaceModule netModule = new NetworkIntefaceModule();
-            var adapters = netModule.GetNetworkInterface();
+            // NetworkIntefaceModule netModule = new NetworkIntefaceModule();
+            // var adapters = netModule.GetNetworkInterface();
+            var adapters = NetworkInterfaceModule.GetActiveNetworkInterface();
             var data = new ObservableCollection<AdapterName>();
             foreach (var adapter in adapters)
             {

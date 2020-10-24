@@ -61,14 +61,14 @@
             Content="Show Shell on Windows taskbar"
             FontSize="15" />
         <mah:ToggleSwitch
-            Height="35"
+            Height="47"
             Margin="24,328,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False"
-            IsChecked="{Binding ShowDeskbandOnTaskbar}"
-            IsEnabled="{Binding IsDeskbandInstalled}"
-            OffLabel="Hide shell"
-            OnLabel="Show Shell" />
+            IsEnabled="{Binding Path=IsDeskbandInstalled}"
+            IsOn="{Binding Path=ShowDeskbandOnTaskbar}"
+            OffContent="Hide shell"
+            OnContent="Show Shell" />
     </Grid>
 </UserControl>

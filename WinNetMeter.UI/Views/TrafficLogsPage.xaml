@@ -23,12 +23,13 @@
             Margin="10,39,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            IsChecked="{Binding IsEnableLogs}">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="IsCheckedChanged">
-                    <i:InvokeCommandAction Command="{Binding SaveEnableTrafficLogCommand}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+            IsOn="{Binding IsEnableLogs}">
+
+            <!-- <i:Interaction.Triggers> -->
+            <!--     <i:EventTrigger EventName="IsCheckedChanged"> -->
+            <!--         <i:InvokeCommandAction Command="{Binding SaveEnableTrafficLogCommand}" /> -->
+            <!--     </i:EventTrigger> -->
+            <!-- </i:Interaction.Triggers> -->
         </mahapps:ToggleSwitch>
         <Label
             Margin="10,10,0,0"

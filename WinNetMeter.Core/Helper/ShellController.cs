@@ -10,8 +10,7 @@ namespace WinNetMeter.Core.Helper
         private int hr;
         private Guid deskbandGuid = new Guid("0F0283BE-FADD-4EAA-9984-9C1822AE469A");
 
-        [ComImport, Guid("6D67E846-5B9C-4db8-9CBC-DDE12F4254F1"),
-     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [ComImport, Guid("6D67E846-5B9C-4db8-9CBC-DDE12F4254F1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         public interface ITrayDeskband
         {
             [PreserveSig]

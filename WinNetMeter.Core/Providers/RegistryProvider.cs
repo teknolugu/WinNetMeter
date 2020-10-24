@@ -5,14 +5,14 @@ namespace WinNetMeter.Core.Providers
 {
     public static class RegistryProvider
     {
-        private static readonly RegistryKey registryBase = Registry.CurrentUser.OpenSubKey(@"Software", true);
+        private static readonly RegistryKey RegistryBase = Registry.CurrentUser.OpenSubKey(@"Software", true);
         private static RegistryKey _registryRoot;
         private static string rootPath = @"WinTenDev\NetMeter";
 
         public static void Init()
         {
-            registryBase.CreateSubKey(rootPath);
-            _registryRoot = registryBase.OpenSubKey(rootPath, true);
+            RegistryBase.CreateSubKey(rootPath);
+            _registryRoot = RegistryBase.OpenSubKey(rootPath, true);
 
             if (_registryRoot != null)
             {

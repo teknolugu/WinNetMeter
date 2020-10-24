@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Serilog;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
@@ -9,7 +10,8 @@ namespace WinNetMeter.Core.Providers
     {
         public static ILogger Initialize()
         {
-            var logPath = Settings.AppDirectory + @"\Storage\Logs\activity-.log".EnsureDirectory();
+            var appDir = Settings.AppDirectory;
+            var logPath = Path.Combine(appDir, "Storage/Logs/activity-.log").EnsureDirectory();
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()

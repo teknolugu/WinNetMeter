@@ -34,5 +34,28 @@ namespace WinNetMeter.Core.Model
             get => RegistryProvider.ReadFromRegistry("General", "AutoUpdate").ToBool();
             set => RegistryProvider.WriteToRegistry("General", "AutoUpdate", value.ToString());
         }
+
+        public static string DBFilePath
+        {
+            get
+            {
+                var conf = RegistryProvider.ReadFromRegistry("Database", "DBFilePath");
+                if (conf == null)
+                {
+                    return "";
+                }
+                else
+                {
+                    return conf.ToString();
+                }
+            }
+            set => RegistryProvider.WriteToRegistry("Database", "DBFilePath", value);
+        }
+
+        public static string ShellHwnd
+        {
+            get => RegistryProvider.ReadFromRegistry("General", "hwnd").ToString();
+            set => RegistryProvider.WriteToRegistry("General", "hwnd", value);
+        }
     }
 }

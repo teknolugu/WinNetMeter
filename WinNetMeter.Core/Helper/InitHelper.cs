@@ -16,10 +16,10 @@ namespace WinNetMeter.Core.Helper
         {
             RegistryProvider.Init();
 
-            Settings.AppDirectory = Environment.CurrentDirectory;
-            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
+            // Settings.AppDirectory = Environment.CurrentDirectory;
+            // Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
 
-            SerilogProvider.Initialize();
+            // SerilogHelper.Initialize();
 
             Log.Information("Starting App..");
 

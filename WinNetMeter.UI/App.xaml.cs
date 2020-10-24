@@ -1,9 +1,14 @@
-﻿using Prism.Ioc;
+﻿using System;
+using System.Reflection;
+using Prism.Ioc;
 using Prism.Modularity;
 using Serilog;
 using System.Windows;
 using WinNetMeter.Core.Helper;
+using WinNetMeter.Core.Model;
+using WinNetMeter.Core.Providers;
 using WinNetMeter.UI.Autoloaders;
+using WinNetMeter.UI.Helpers;
 using WinNetMeter.UI.Views;
 
 namespace WinNetMeter.UI
@@ -15,12 +20,12 @@ namespace WinNetMeter.UI
     {
         public App()
         {
-            // RegistryProvider.Init();
-            //
-            // Settings.AppDirectory = Environment.CurrentDirectory;
-            // Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
-            //
-            // SerilogProvider.Initialize();
+            RegistryProvider.Init();
+
+            Settings.AppDirectory = Environment.CurrentDirectory;
+            Settings.AppExePath = Assembly.GetExecutingAssembly().Location;
+
+            SerilogHelper.Initialize();
             //
             // Log.Information("Starting App..");
             //
@@ -29,6 +34,11 @@ namespace WinNetMeter.UI
             // EvolveProvider.Initialize();
 
             InitHelper.InitializeAll();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            Log.Debug("Application exit. ExitEvent: {@e} ", e);
         }
 
         protected override Window CreateShell()

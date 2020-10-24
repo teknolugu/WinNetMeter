@@ -2,7 +2,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
-    <Style BasedOn="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" TargetType="mah:ToggleSwitch">
+    <Style
+        BasedOn="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}"
+        TargetType="mah:ToggleSwitch">
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="Background" Value="Black" />
         <Setter Property="VerticalAlignment" Value="Top" />

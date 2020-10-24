@@ -4,6 +4,7 @@ using Prism.Commands;
 using Prism.Mvvm;
 using WinNetMeter.Core.Helper;
 using WinNetMeter.Core.Model;
+using WinNetMeter.Core.Providers;
 
 namespace WinNetMeter.UI.ViewModels
 {
@@ -16,10 +17,7 @@ namespace WinNetMeter.UI.ViewModels
 
         public string SelectedPath
         {
-            get
-            {
-                return _selectedPath;
-            }
+            get { return _selectedPath; }
             set
             {
                 SetProperty(ref _selectedPath, value);
@@ -30,10 +28,7 @@ namespace WinNetMeter.UI.ViewModels
         public bool IsEnableLogs
         {
             get => _isEnableLogs;
-            set
-            {
-                SetProperty(ref _isEnableLogs, value);
-            }
+            set { SetProperty(ref _isEnableLogs, value); }
         }
 
         public DelegateCommand ChangePathCommand { get; set; }
@@ -50,9 +45,9 @@ namespace WinNetMeter.UI.ViewModels
 
             try
             {
-
                 IsEnableLogs = Convert.ToBoolean(registryManager.ReadFromRegistry(@"WinNetMeter\Database", "TrafficLogging"));
-                SelectedPath = registryManager.ReadFromRegistry(@"WinNetMeter\Database", "DbFilePath").ToString() ?? "";
+                // SelectedPath = registryManager.ReadFromRegistry(@"WinNetMeter\Database", "DbFilePath").ToString() ?? "";
+                SelectedPath = Settings.DBFilePath;
             }
             catch
             {

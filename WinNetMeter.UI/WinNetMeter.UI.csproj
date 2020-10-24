@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -195,6 +195,10 @@
     <ProjectReference Include="..\WinNetMeter.Core\WinNetMeter.Core.csproj">
       <Project>{de5e5f74-6f2f-444f-a376-0cc32e9509ce}</Project>
       <Name>WinNetMeter.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinNetMeter.Shell\WinNetMeter.Shell.csproj">
+      <Project>{ba5bbede-037d-4518-bfb4-c95c003585fb}</Project>
+      <Name>WinNetMeter.Shell</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

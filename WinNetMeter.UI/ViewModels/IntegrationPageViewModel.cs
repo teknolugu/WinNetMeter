@@ -1,31 +1,32 @@
-﻿using System.Windows;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
-using WinNetMeter.Core.Helper;
+using System.Windows;
+using WinNetMeter.Shell.Helper;
 
 namespace WinNetMeter.UI.ViewModels
 {
     public class IntegrationPageViewModel : BindableBase
     {
-        private ShellController shellController;
-        private Integration integration;
-        private bool _showShellOnTaskbar;
-        private bool _isShellInstalled;
+        // private ShellController shellController;
+        // private Integration integration;
+        private bool _showDeskbandOnTaskbar;
 
-        public bool ShowShellOnTaskbar
+        private bool _isDeskbandInstalled;
+
+        public bool ShowDeskbandOnTaskbar
         {
-            get { return _showShellOnTaskbar; }
+            get { return _showDeskbandOnTaskbar; }
             set
             {
-                SetProperty(ref _showShellOnTaskbar, value);
-                ShellBehaviour(_showShellOnTaskbar);
+                SetProperty(ref _showDeskbandOnTaskbar, value);
+                ShellBehaviour(_showDeskbandOnTaskbar);
             }
         }
 
-        public bool IsShellInstalled
+        public bool IsDeskbandInstalled
         {
-            get { return _isShellInstalled; }
-            set => SetProperty(ref _isShellInstalled, value);
+            get { return _isDeskbandInstalled; }
+            set => SetProperty(ref _isDeskbandInstalled, value);
         }
 
         public DelegateCommand RegisterShellCommand { get; set; }
@@ -33,42 +34,54 @@ namespace WinNetMeter.UI.ViewModels
 
         public IntegrationPageViewModel()
         {
-            shellController = new ShellController();
-            integration = new Integration();
+            // shellController = new ShellController();
+            // integration = new Integration();
 
             RegisterShellCommand = new DelegateCommand(RegisterShell);
             UninstallShellCommand = new DelegateCommand(UninstallShell);
 
-            ShowShellOnTaskbar = shellController.IsShellShown();
-            IsShellInstalled = shellController.IsShellInstalled();
+            // ShowShellOnTaskbar = shellController.IsShellShown();
+            // IsShellInstalled = shellController.IsShellInstalled();
+
+            ShowDeskbandOnTaskbar = DeskbandHelper.IsDeskbandVisible();
+            IsDeskbandInstalled = DeskbandHelper.IsDeskbandInstalled();
         }
 
         private void RegisterShell()
         {
-            shellController.hideDeskband();
+            // shellController.hideDeskband();
+            DeskbandHelper.HideDeskband();
+
             //integration.ReinstallToolbar();
-            Integration.InstallShell();
+            IntegrationHelper.InstallShell();
 
             MessageBox.Show("Re-Register Shell Integration Successfully.", "WinNetMeter Integration",
                 MessageBoxButton.OK, MessageBoxImage.Information);
 
-            IsShellInstalled = shellController.IsShellInstalled();
+            // IsShellInstalled = shellController.IsShellInstalled();
+            IsDeskbandInstalled = DeskbandHelper.IsDeskbandInstalled();
 
-            shellController.hideDeskband();
-            shellController.callDeskband();
+            // shellController.hideDeskband();
+            // shellController.callDeskband();
+
+            DeskbandHelper.HideDeskband();
+            DeskbandHelper.CallDeskband();
         }
 
         private void UninstallShell()
         {
-            shellController.hideDeskband();
+            // shellController.hideDeskband();
+            DeskbandHelper.HideDeskband();
+
             // integration.UninstallToolbar();
-            Integration.UninstallShell();
+            IntegrationHelper.UninstallShell();
 
             MessageBox.Show("Uninstall Shell Integration Successfully.", "WinNetMeter Integration",
                 MessageBoxButton.OK, MessageBoxImage.Information);
 
-            ShowShellOnTaskbar = false;
-            IsShellInstalled = shellController.IsShellInstalled();
+            ShowDeskbandOnTaskbar = false;
+            // IsShellInstalled = shellController.IsShellInstalled();
+            IsDeskbandInstalled = DeskbandHelper.IsDeskbandInstalled();
         }
 
         private void ShellBehaviour(bool isShow)
@@ -76,11 +89,13 @@ namespace WinNetMeter.UI.ViewModels
             if (isShow)
             {
                 // MessageBox.Show("Shell shown");
-                shellController.callDeskband();
+                // shellController.callDeskband();
+                DeskbandHelper.CallDeskband();
             }
             else
             {
-                shellController.hideDeskband();
+                DeskbandHelper.HideDeskband();
+                // shellController.hideDeskband();
                 // MessageBox.Show("Shell hidden");
             }
         }

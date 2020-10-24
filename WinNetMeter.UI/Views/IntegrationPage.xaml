@@ -12,22 +12,23 @@
     mc:Ignorable="d">
 
     <UserControl.DataContext>
-        <vm:IntegrationPageViewModel/>
+        <vm:IntegrationPageViewModel />
     </UserControl.DataContext>
 
-    <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+    <Grid
+        ScrollViewer.CanContentScroll="True"
+        ScrollViewer.VerticalScrollBarVisibility="Auto">
         <Label
             Margin="11,10,0,0"
             Content="Register shell"
             Style="{StaticResource ResourceKey=LabelMenuModule}" />
         <TextBlock
             Height="39"
-            Margin="10,53,55,0"
-            Width="500"
+            Margin="10,53,5,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap"
-            Text="If NetMeter Shell is not working properly on Windows Taskbar, you can try to Re-register Shell." />
+            Text="If NetMeter Shell is not working properly on Windows Taskbar, you can try to Re-register Shell."
+            TextWrapping="Wrap" />
         <Button
             Width="138"
             Height="35"
@@ -53,18 +54,20 @@
             Command="{Binding UninstallShellCommand}"
             Content="Uninstall Shell" />
         <Label
+            Width="279"
             Margin="11,297,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Show Shell on Windows taskbar"
-            FontSize="15" HorizontalAlignment="Left" Width="279" />
+            FontSize="15" />
         <mah:ToggleSwitch
             Height="35"
             Margin="24,328,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False"
-            IsChecked="{Binding ShowShellOnTaskbar}"
-            IsEnabled="{Binding IsShellInstalled}"
+            IsChecked="{Binding ShowDeskbandOnTaskbar}"
+            IsEnabled="{Binding IsDeskbandInstalled}"
             OffLabel="Hide shell"
             OnLabel="Show Shell" />
     </Grid>

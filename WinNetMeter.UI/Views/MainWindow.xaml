@@ -123,8 +123,12 @@
             HorizontalAlignment="Left"
             BorderBrush="#B59696"
             BorderThickness="1" />
-        <ScrollViewer Margin="200,61,0,0" VerticalScrollBarVisibility="Auto">
-            <mahapps:TransitioningContentControl Margin="0,0,0,10" prism:RegionManager.RegionName="MainRegion" />
+        <ScrollViewer
+            Margin="200,61,0,0"
+            VerticalScrollBarVisibility="Auto">
+            <mahapps:TransitioningContentControl
+                Margin="0,0,0,10"
+                prism:RegionManager.RegionName="MainRegion" />
         </ScrollViewer>
         <TextBlock
             Height="46"

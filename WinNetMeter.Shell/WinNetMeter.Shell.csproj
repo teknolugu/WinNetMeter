@@ -88,7 +88,7 @@
     <Compile Include="Helper\DeskbandHelper.cs" />
     <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Helper\TypeHelper.cs" />
-    <Compile Include="Model\Settings.cs" />
+    <Compile Include="Model\AppSettings.cs" />
     <Compile Include="Model\TrafficLog.cs" />
     <Compile Include="Helper\NetworkInterfaceHelper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

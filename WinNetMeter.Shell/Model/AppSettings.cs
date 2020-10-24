@@ -40,14 +40,7 @@ namespace WinNetMeter.Shell.Model
             get
             {
                 var conf = RegistryProvider.ReadFromRegistry("Database", "DBFilePath");
-                if (conf == null)
-                {
-                    return "";
-                }
-                else
-                {
-                    return conf.ToString();
-                }
+                return conf == null ? "" : conf.ToString();
             }
             set => RegistryProvider.WriteToRegistry("Database", "DBFilePath", value);
         }
